@@ -1,0 +1,200 @@
+.password-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.email-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+ 
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.password-wrapper input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.email-wrapper input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.password-wrapper i{
+    position: absolute;
+    margin-right: 10px;
+    
+ 
+  
+}
+.inner-signin{
+   
+
+
+display: flex;
+
+justify-content: space-between;
+
+min-height: 80vh;
+width: 90%;
+
+}
+.signin{
+   
+    background-color: #D5BCFF;
+ display: flex;
+ min-height: 100vh;
+   align-items: center;
+   justify-content: center;
+   padding: 40px 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+  
+   
+    
+}
+.forgot{
+    color: red;
+    align-self: flex-end;
+}
+.pols{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+    padding: 5px;
+}
+.input-section{
+    background-color: white;
+    justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create{
+    width: 100%;
+}
+.facebook{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.google{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.email{
+    width: 100%;
+}
+.email-div{
+    position: relative;
+    width: 99%;
+}
+.keep-logged-in{
+    display: flex;
+    align-items: center;
+}
+.line{
+    height: 1px;
+    background-color: black;
+    width: 50%;
+    border: none;
+}
+.orandline{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.pols h1{
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+.textandimage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px;
+    width: 50%;
+    background-image: url('../../Asset/image-20-1@1x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    background-color: rgb(15, 15, 15);
+    background-blend-mode: overlay;
+}
+.textandimage-logo{
+    height: 20%;
+    color: white;
+}
+.copy{
+    color: white;
+}
+.textandimage p{
+width: 70%;
+color: white;
+
+}
+.textandimage h2{
+    text-align: left;
+    color: #9760f7;
+  
+}
+@media screen and (max-width:960px) {
+    
+    .inner-signin{
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      padding: 15px ;
+      margin-top: 15px;
+      margin-bottom: 15px;
+     
+        
+    }
+    .input-section{
+        min-width: 100%;
+        
+    }
+    .pols h1{
+        text-align: center;
+        margin: 30px auto;
+        margin-bottom: 10px;
+    }
+    .header-parag{
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .textandimage{
+       width: auto;
+      padding: 10px ;
+      overflow: hidden;
+      
+       
+  
+      
+    }
+   
+    .textandimage p{
+        width: 80%;
+        
+        }
+}

@@ -1,0 +1,79 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+   
+    
+    
+   
+}
+.NavRightContent{
+    display: flex;
+   
+}
+.NavRightContent button{
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #9953FF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+   
+}
+.NavRightContent p{
+    margin-right: 50px;
+}
+.Navlogo{
+    display: flex;
+    align-items: center;
+}
+.mobilenavrightcontent{
+    display: none;
+}
+.mobilenavrightbar{
+    display: none;
+}
+@media screen and (max-width:960px) {
+    .mobilenavrightbar{
+        display: flex;
+        
+        
+    } 
+    
+    .NavBar{
+      
+       display: flex;
+       flex-direction: column;
+       
+    }
+    .mobilenavrightcontent{
+        background-color: white;
+        display: none;
+        justify-content: center;
+        transition:1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: top 1s ease;
+       float: right;
+        border-radius: 5px;
+        width: 150px;
+        align-self: flex-end;
+       position: absolute;
+        flex-direction: column;
+        border: 1px solid black;
+        margin-top: 18px;
+       
+       
+    }
+    .mobilenavrightcontent button{
+        width: 100px;
+        margin: 0px auto;
+        margin-bottom: 10px;
+        border: none;
+        padding: 8px;
+        background-color: #9953FF;
+        border-radius: 5px;
+    }
+    .NavRightContent{
+        display: none;
+    }
+    
+}
