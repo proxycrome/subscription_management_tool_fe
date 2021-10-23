@@ -1,0 +1,253 @@
+.signup-password-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.signup-email-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+ 
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.signup-firstname{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+ 
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.signup-lastname{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+ 
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.signup-password-wrapper input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.signup-email-wrapper input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.signup-firstname input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.signup-lastname input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#selectlist{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    
+}
+.signup-password-wrapper i{
+    position: absolute;
+    margin-right: 10px;
+    
+ 
+  
+}
+.inner-signup{
+   
+
+
+display: flex;
+
+justify-content: space-between;
+
+min-height: 60vh;
+
+width: 90%;
+
+
+
+
+}
+.signup{
+   
+    background-color: #D5BCFF;
+ display: flex;
+ min-height: 100%;
+
+   align-items: center;
+   justify-content: center;
+   padding: 60px 20px;
+  
+   
+    
+}
+
+
+.signup-pols{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.signup-input-section{
+   background-color: white;
+    justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+   
+   
+}
+.signup-create{
+    width: 100%;
+}
+.signup-facebook{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.signup-email{
+    width: 100%;
+}
+.signup-email-div{
+    position: relative;
+    width: 99%;
+}
+.signup-remember-me{
+    display: flex;
+    align-items: center;
+}
+.signup-line{
+    height: 1px;
+    background-color: black;
+    width: 50%;
+    border: none;
+}
+.signup-orandline{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.signup-pols h2{
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+.signup-textandimage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px 30px;
+    width: 50%;
+    
+    background-image: url('../../Asset/image-20-1@1x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    background-color: rgb(15, 15, 15);
+    background-blend-mode: overlay;
+}
+.signup-textandimage-logo{
+    height: 20%;
+}
+.signup-textandimage p{
+width: 70%;
+color: white;
+
+}
+.signup-textandimage h2{
+    text-align: left;
+   color: #9760f7;
+  
+}
+.Terms-and-condition{
+    color: red;
+   
+}
+.terms p{
+    text-align: left;
+}
+.select-placeholder{
+    color: brown;
+    font-size: large;
+    opacity: 0.5;
+}
+#selectlist{
+    font-weight: lighter;
+}
+.signup-copyright{
+    color: white;
+}
+.signup-textandimage-logo{
+    color: white;
+}
+.signup-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width:960px) {
+    .inner-signup{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 15px;
+       
+    }
+    .signup-input-section{
+        width: 100%;
+    }
+    .signup-textandimage{
+        width: auto;
+       
+      padding: 10px;
+      
+      
+    }
+    .signup{
+        padding: 20px;
+    }
+    
+    .signup-textandimage p{
+        width: 80%;
+        
+        }
+}

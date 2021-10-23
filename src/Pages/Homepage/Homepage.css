@@ -1,0 +1,163 @@
+.Homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+   
+}
+.Homebody{
+  
+    padding: 0 100px;
+ 
+   
+}
+.Bodyinner{
+    margin-top: 40px;
+}
+.Innercontent{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+   
+}
+.Innercontent div{
+    width: 50%;
+   color: #191D6C;
+}
+.Bodyinners div{
+    display: flex;
+    justify-content: space-between;
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.contents-operate{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-end;
+    align-self: flex-end;
+    background-color: brown;
+    width: 30%;
+    
+}
+.contents-operate h2{
+    align-self: flex-start;
+  color: aqua;
+  width: 70%;
+  
+}
+.contents-operate p{
+    width: 80%;
+}
+.contents p{
+    width: 80%;
+}
+.Image{
+    display: flex;
+   justify-content: center;
+}
+.buttons{
+    display: flex;
+}
+.buttons-partner{
+    display: flex;
+}
+.buttons-partner button{
+    width: 140px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #9953FF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons button{
+    width: 140px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: #9953FF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.work{
+    display: flex;
+    margin-top: 20px;
+    
+}
+.workcontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    box-shadow: gainsboro 10px;
+    padding: 15px;
+    width: 30%;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    
+}
+.blog p{
+    width: 40%;
+    margin: 0px auto;
+   
+}
+.love p{
+    width: 40%;
+    margin: 0px auto;
+   
+}
+@media screen and (max-width:960px){
+    .Homepage{ 
+        
+        padding-top: 20px;
+    }
+    .Innercontent{       
+    display: flex;
+    flex-direction: column;
+
+}
+.Homebody{
+    padding: 0 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.Innercontent div{
+    width: 100%;
+}
+.Innercontent h2{
+    text-align: center;
+}
+.Innercontent p{
+    text-align: center;
+}
+.work{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contents{
+    align-items: center;
+   
+}
+.workcontent{
+    width: 70%;
+    margin-top: 20px;
+    margin-right: 0px;
+}
+.buttons-partner{
+    justify-content: center;
+}
+.buttons button{
+    margin-right: 10px;
+}
+
+}
