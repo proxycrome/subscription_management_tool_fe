@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Navbar/Navbar.css'
 import { FaBars,FaTimes } from "react-icons/fa"; 
+import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {useState} from 'react'
 
 
@@ -10,7 +11,7 @@ return(
     <div className='NavBar'>
         <div className="Nav">
             <div className="Navlogo">
-                LOGO
+              <FlexLogo style={{width:"108px",height:"42px"}}/>
             </div>
             <div className="mobilenavrightbar">
 

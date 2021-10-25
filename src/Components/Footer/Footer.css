@@ -11,9 +11,7 @@
 .upperfooter{
     display: flex;
 }
-.upperfooter div{
-    width: 30%;
-}
+
 .lowerfooters{
     margin-top: 20px;
     display: flex;
@@ -43,16 +41,20 @@
     max-height: 100%;
     width: 30%;
    
+   
 }
 .quicklinks{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+   
+   
     width: 30%;
 }
 .newsletter{
     display: flex;
     flex-direction: column;
+    
    width:  40%;
 }
 .newsletter input{

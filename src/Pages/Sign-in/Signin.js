@@ -1,11 +1,12 @@
 import React from 'react'
-import {FaEye} from "react-icons/fa"; 
+import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
 import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/facebook.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
+import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import Recaptcha from 'react-recaptcha'
 import {signindetails,signin} from '../../redux/flex/flex.actions'
 import axios from 'axios'
@@ -15,14 +16,30 @@ import '../Sign-in/Signin.css'
     
      function Signin({detailssignin,signindetails}){
     const[passwordshow, setPasswordshow]=useState(false)
+    const[password,setPassword]=useState("")
+    const[email,setEmail]=useState("")
     const[verified, setVerified]=useState(false)
     const[loggedins, setLoggedins]=useState(false)
     const history=useHistory()
 
-    let newToken;
-    const Recaptchaloaded=(()=>{
-        console.log('loaded')
+
+
+    useEffect(()=>{
+        let remeberEmail=JSON.parse(localStorage.getItem('userEmail'))
+        let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
+    if((remeberEmail && rememberPassword)!==null){
+        setEmail(remeberEmail)
+      setPassword(rememberPassword)
+      signindetails({email:email})
+      signindetails({password:password})
+
+    }
+
+
     })
+
+    let newToken;
+    
 
    
    
@@ -60,7 +77,10 @@ import '../Sign-in/Signin.css'
       if(res.data.status==='success'){
           //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
           if(loggedins===true){
+              if((JSON.parse(localStorage.getItem('userToken')))!=null){
             localStorage.setItem('usertoken', JSON.stringify(newToken));
+        }
+        else{localStorage.setItem('usertoken', JSON.stringify(newToken));}
           }
        
           history.push("/Dashboard")
@@ -90,28 +110,15 @@ import '../Sign-in/Signin.css'
     //}
     
 
-    const verifystate=((res)=>{
-
-        if(res){
-            setVerified(true)
-        }
-    })
-    const expire= (()=>{
-        alert('expire')
-    })
-    const onchange=(()=>{
-       
-    })
-   // render="explicit"
-          //  expiredCallback={expire}
-           // onloadCallback={Recaptchaloaded}
-           // verifyCallback={verifystate}
-           //?onload=onloadCallback&render=explicit"
+    
     return(
         <div className="signin" >
             <div className="inner-signin">
             <div className="textandimage">
-                <div className="textandimage-logo">LOGO</div>
+                <div className="textandimage-logo">
+                    <FlexLogo style={{width:"108px",height:"42px"}}/>
+                   
+                    </div>
                 <div className="">
                 <h2>Stay connected always</h2>
                 <p>All-in-one subscription management platform. Keep track of your expenses, set auto-renewal
@@ -120,49 +127,49 @@ import '../Sign-in/Signin.css'
 
                 </p>
                 </div>
-                <div className="copy">&copy;2021 Flexdesignteam</div>
+               
             </div>
             <div className="input-section">
+                <div className="inner-input-section">
                 <div className="pols">
-            <h1>WELCOME BACK!</h1>
-            <p className="header-parag">Sign in to continue with Flex</p>
+            <h2>WELCOME BACK!</h2>
+            <p className="header-parag">Enter your details to continue..</p>
             
             <div className="email-wrapper">
-            <input type="email" name="email" placeholder="Email" onChange={(e)=>{signindetails({[e.target.name]:e.target.value})}}/>
+            <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setEmail(e.target.value)}}/>
           
           
             </div>
            <div className="password-wrapper">
-            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password"
-            onChange={(e)=>{signindetails({[e.target.name]:e.target.value})}}/>
-            <i onClick={handletoggle}><FaEye/></i>
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
+            onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setPassword(e.target.value)}}/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
           
             </div>
+            <div className="forgot-and-remember">
             
-            <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
            <span className="keep-logged-in"> <input type="checkbox" value="loggedin"
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
-                <p>Keep me logged in</p>
+                <p>Remember me</p>
            </span>
+           <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+           </div>
 
-           <Recaptcha
-            sitekey="6Lf85dwcAAAAAGRU-xn3R_77p-3DkqkSyeq9WX__"
-         render="explicit"
-            expiredCallback={expire}
-            onloadCallback={Recaptchaloaded}
-           verifyCallback={verifystate}
-            
-            />
+          
 
 
 
 
 
-            <button className="create" onClick={handlesignin}>Sign in</button>
+            <button className="create" onClick={handlesignin}>Log in</button>
           <div className="orandline">  <hr className="line"/>OR <hr className="line"/></div>
-            <button className="google"><GoogleLogo/>Sign up with Google</button>
-            <button className="facebook"><FacebookLogo/>Sign up with Facebook</button>
-            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+          <div className="alternateSignin">
+            <button className="google"><GoogleLogo className="googleLogo" />Log in with Google</button>
+            <button className="facebook"><FaFacebookF className="faceLogo"/>Log in with Facebook</button>
+            </div>
+            </div>
+            <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
             </div>
             </div>
             </div>

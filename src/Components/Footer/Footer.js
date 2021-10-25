@@ -7,7 +7,7 @@ return(
     <div className="Footer">
         <div className="upperfooter">
          <div className="quicklinks">
-             <div >
+             <span >
          <h3>QUICK LINKS</h3>
              <p>Company</p>
              <p>How it works</p>
@@ -15,18 +15,18 @@ return(
              <p>Partnerships</p>
              <p>Blogs</p>
              <p>Customer support</p>
-             </div>
-             <div>
+             </span>
+             <span>
                  <p>Copyright @ 2021 Flex</p>
-             </div>
+             </span>
          </div>
 
-        <div className="newsletter">
+        <span className="newsletter">
             <h3>Newsletter</h3>
             <p>Subscribe to our weekly newsletter</p>
             <input type="email" name="email" placeholder="Enter email"/>
             <button>Submit</button>
-        </div>
+        </span>
         <div className="footer-contact-us">
             <div>
             <h3>Contact us</h3>
