@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import {useHistory} from 'react-router-dom'
+
 import '../Homepage/Homepage.css'
 import Footer from '../../Components/Footer/Footer'
 
@@ -67,11 +68,12 @@ return(
                     <h2>Our Partners</h2>
                     <p>We build trust and confidence with our partners by being one of the first brands to create a well secured payment
                         platform with some of the best companies recognized globally </p>
-                        <div className="buttons-partner">
-
-                        <button>Become a partner</button>
+                        
                        
-                        </div>
+
+                        <button className="buttons-partner">Become a partner</button>
+                       
+                       
                 </div>
                
                 </div>
