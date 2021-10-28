@@ -1,0 +1,170 @@
+.partner-sections{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+   padding-left: 100px;
+   padding-right: 100px;
+   margin-top: 60px;
+   max-height: 300px;
+   
+}
+.header-image{
+  
+ height: 330px;
+ 
+ width: 50%;
+ background-repeat: no-repeat;
+}
+.design{
+    display: flex;
+    align-items: center;
+}
+.design div{
+   
+  background-color: blue;
+    border: 1px solid blue ;
+    height:40px;
+    margin-right: 10px;
+}
+.header-image img{
+    height: 100%;
+}
+.partner-sections h1{
+    width: 50%;
+    text-align: left;
+}
+.partner-second-section{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin-top: 70px;
+    
+   
+}
+.partner-input-class{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.Partner-areas{
+    display: flex;
+    justify-content: space-between;
+  
+    padding: 0 50px;
+
+}
+.Partner-areas div{
+    width: 50%;
+   
+}
+.Partner-areas div input{
+    width: 80%;
+}
+.partners-text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+}
+.partner-right-text{
+    text-align: left;
+    margin-left: 70px;
+    width: 50%;
+}
+.partner-input{
+    display: flex;
+    flex-direction: column;
+   
+}
+.partner-input-area{
+    border: 1px solid black;
+    width: 40%;
+    margin: 10px auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+}
+.partner-extra{
+    text-align: left;
+    padding-left: 50px;
+}
+@media screen and (max-width:1000px) {
+    .header-image{
+     width: 100px;
+     padding-left: 0px;
+     margin-left: 0px;
+    ;
+    }
+    .design{
+        min-height: 200px;
+    }
+    .design div{
+        min-height: 100px;
+        margin-right: 5px;
+    }
+    .Partner-areas  input{
+       
+        padding: 0 20px;
+      
+       
+
+    }
+    .partner-right-text{
+        width: 100%;
+    }
+    
+    .Partner-areas{
+        flex-direction: column;
+        padding: 0 20px;
+      
+      
+    }
+    .textarea{
+        width: 100%;
+    }
+    .partner-sections{
+     
+       flex-direction: column;
+       padding-left: 20px;
+       padding-right: 20px;
+    }
+    .partner-sections h1{
+        width: 100%;
+    }
+    .partner-second-section{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+       
+    }
+    .partners-text{
+        width: 100%;
+    }
+    .partner-right-text{
+        width: 100%;
+       
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+    .partner-input-area{
+        width: 80%;
+      
+    }
+    .partner-extra{
+        padding-left: 20px;
+        padding-right: 20px;
+       
+        max-width: 100%;
+    }
+    .partner-extra button{
+        width: 100%;
+    }
+    .partner-input-class{
+       
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+}

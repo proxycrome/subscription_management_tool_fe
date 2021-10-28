@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {ReactComponent as FacebookLogo} from '../../Asset/facebook.svg';
+import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import Recaptcha from 'react-recaptcha'
@@ -132,6 +132,7 @@ import '../Sign-in/Signin.css'
             <div className="input-section">
                 <div className="inner-input-section">
                 <div className="pols">
+                    <div>
             <h2>WELCOME BACK!</h2>
             <p className="header-parag">Enter your details to continue..</p>
             
@@ -161,15 +162,15 @@ import '../Sign-in/Signin.css'
 
 
 
-            <button className="create" onClick={handlesignin}>Log in</button>
-          <div className="orandline">  <hr className="line"/>OR <hr className="line"/></div>
+            <button className="create" onClick={handlesignin}>LOG IN</button>
+          <div className="orandline">  <hr className="line-left"/>OR <hr className="line-right"/></div>
           <div className="alternateSignin">
             <button className="google"><GoogleLogo className="googleLogo" />Log in with Google</button>
-            <button className="facebook"><FaFacebookF className="faceLogo"/>Log in with Facebook</button>
+            <button className="facebook"><FacebookLogo className="faceLogo"/>Log in with Facebook</button>
             </div>
             </div>
             <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
-           
+            </div>
             </div>
             </div>
             </div>
