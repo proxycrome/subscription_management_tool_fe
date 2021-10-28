@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import {useHistory} from 'react-router-dom'
+import partner from '../../Asset/Partner-image.png'
 
 import '../Homepage/Homepage.css'
 import Footer from '../../Components/Footer/Footer'
@@ -19,29 +20,29 @@ function Homepage(){
     },[])
 return(
     <div className="Homepage">
-       
+       <Navbar/>
         <div className="Homebody">
-        <Navbar/>
+        
 
         <div className="Bodyinner">
             <div >
-                <div className="Innercontent">
-                <div className="contents">
+                <div className="Innercontent-original">
+                <div className="contents-original">
                     <h2>Subscription Management Made Easy!</h2>
                     <p>Flex is a subscription management platform that allows you to manage multiple
                         subsription plans. It gives you the freedom to control and keep track of your
                         expenses </p>
-                        <div className="buttons">
+                        <span className="buttons">
 
                         
                         <button onClick={(()=>{history.push("/signup")})}>REGISTER</button>
                         <button onClick={(()=>{history.push("/signin")})}>LOGIN</button>
-                        </div>
+                        </span>
                 </div>
-                <div>IMAGE</div>
+                <div><img src={partner}/></div>
                 </div>
                 <div className="Innercontent">
-                <div>IMAGE</div>
+                <div><img src={partner}/></div>
                 <div className="contents">
                     <h2>Operate on a single platform</h2>
                     <p>Managing and keeping track of multiple subscriptions could be tedious. With Flex,
@@ -57,13 +58,13 @@ return(
                         to worry about security because we have gott you covered </p>
                         
                 </div>
-                <div>IMAGE</div>
+                <div><img src={partner}/></div>
                 </div>
                 
                
                 
                 <div className="Innercontent">
-                <div className="Image">IMAGE</div>
+                <div className="Image"> <img src={partner}/></div>
                 <div className="contents">
                     <h2>Our Partners</h2>
                     <p>We build trust and confidence with our partners by being one of the first brands to create a well secured payment
@@ -75,11 +76,42 @@ return(
                        
                        
                 </div>
+                
                
+                </div>
+                <div className="mobile-inner-content">
+                <h2>Operate on a single platform</h2>
+                <div> <img src={partner}/></div>
+                <p>Managing and keeping track of multiple subscriptions could be tedious. With Flex,
+                        you need not worry about that as all subscriptions are easily managed on one platform. </p>
+
+
+                </div>
+                <div className="mobile-inner-content">
+                <h2>Take your subscription plan to another level</h2>
+                <div>IMAGE</div>
+                <p>We provide our esteemed users with so much flexibility with our payment platforms. No need
+                        to worry about security because we have gott you covered </p>
+
+
+                </div>
+                <div className="mobile-inner-content">
+                <h2>Our Partners</h2>
+                <div>  <img src={partner}/> </div>
+                <p>We build trust and confidence with our partners by being one of the first brands to create a well secured payment
+                        platform with some of the best companies recognized globally </p>
+                        
+                       
+
+                        <button className="buttons-partner">Become a partner</button>
+
                 </div>
                 <div className="love">
 
                     <h2>Love from customers</h2>
+                   
+                   
+                   
                     <p>We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
                 </div>

@@ -1,0 +1,59 @@
+.company-doing{
+    display: flex;
+    flex-direction: column;
+}
+.company-doing-content{
+    display: flex;
+   width: 90%;
+ 
+}
+.company-doing-content div{
+   width: 40%;
+   margin-right: 10px;
+    border: 1px solid black;
+}
+.company-doing-content p{
+    width: 20%;
+}
+.company-learn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.learn-left{
+    width: 50%;
+    text-align: left;
+}
+.learn-right{
+    width: 50%;
+}
+.company-provide{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+    align-items: center;
+}
+.company-provide div{
+    width: 50%;
+}
+.company-provide-left{
+    margin-right: 70px;
+}
+.company-how{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+  
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+.company-how div{
+    width: 50%;
+}
+.company-how-left{
+    text-align: left;
+}

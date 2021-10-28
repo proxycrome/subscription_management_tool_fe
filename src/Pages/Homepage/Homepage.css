@@ -16,14 +16,29 @@
 }
 .Innercontent{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+   
+}
+.Innercontent-original{
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     margin-top: 20px;
     
    
 }
 .Innercontent div{
-    width: 40%;
+    width: 45%;
+   color: #191D6C;
+   margin-top: 80px;
+  
+  
+}
+.Innercontent-original div{
+    width: 45%;
    color: #191D6C;
    margin-top: 80px;
   
@@ -35,6 +50,12 @@
    
 }
 .contents{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
+}
+.contents-original{
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -52,7 +73,7 @@
 }
 .contents-operate h2{
     align-self: flex-start;
-  color: aqua;
+ 
   width: 70%;
   
 }
@@ -60,6 +81,9 @@
     width: 100%;
 }
 .contents p{
+    width: 100%;
+}
+.contents-original p{
     width: 100%;
 }
 .Image{
@@ -128,12 +152,20 @@
 .love{
     margin-top: 80px ;
 }
+.mobile-inner-content{
+    display: none;
+}
 @media screen and (max-width:960px){
+     img{
+        width: 250px;
+    }
+    
     .Homepage{ 
         
         padding-top: 20px;
     }
-    .Innercontent{       
+    
+.Innercontent-original{       
     display: flex;
     flex-direction: column;
 
@@ -143,14 +175,16 @@
     padding-right: 40px;
     padding-left: 40px;
 }
-.Innercontent div{
+.Innercontent-original div{
     width: 100%;
 }
-.Innercontent h2{
-    text-align: center;
+.Innercontent-original h2{
+    text-align: left;
+    width: 100%;
 }
-.Innercontent p{
-    text-align: center;
+.Innercontent-original p{
+    text-align: left;
+    width: 100%;
 }
 .work{
     display: flex;
@@ -158,7 +192,7 @@
     align-items: center;
 }
 
-.contents{
+.contents-original{
     align-items: center;
    
 }
@@ -171,7 +205,33 @@
     justify-content: center;
 }
 .buttons button{
-    margin-right: 10px;
+   
+    width: 100%;
 }
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.Innercontent{
+    display: none;
+    background-color: blue;
+}
+.mobile-inner-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.mobile-inner-content button{ 
+    width: 100%;
+}
+.love p{
+    width: 100%;
+}
+.blog p{
+    width: 100%;
+    
+}
+
 
 }

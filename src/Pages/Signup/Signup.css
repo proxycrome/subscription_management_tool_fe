@@ -4,44 +4,75 @@
     justify-content: flex-end;
   
     align-items: center;
-    width: 100%;
+    width: 370px;
+
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    
+    color: black;
    
    
 }
 .signup-password-wrapper input{
 
     width: 100%;
-    height: 50px;
-    padding-left: 20px;
-    margin-bottom: 0px;
-    border-radius: 5px;
-    border: 1px solid #c4c4c4;
+    border: none;
+    padding-right: 0px;
+   
+   
+    
+}
+::placeholder{
     color: #c4c4c4;
 }
-.signup-email-wrapper input:hover{
+.select-placeholder{
+    color: #c4c4c4;
+}
+.signup-email-wrapper:hover{
     border: 1px solid #6200f0;
     outline: none;
+}
+.signup-email-wrapper:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+    color: black;
 }
 .signup-email-wrapper input:focus{
+    border: none;
+    outline: none;
+    
+}
+.signup-email-wrapper input:hover{
+    border: none;
+    outline: none;
+    
+}
+.signup-password-wrapper:hover{
     border: 1px solid #6200f0;
     outline: none;
 }
-.signup-password-wrapper input:hover{
+.signup-password-wrapper:focus{
     border: 1px solid #6200f0;
+    outline: none;
+    color: black;
+}
+.signup-password-wrapper input:hover{
+    border: none;
     outline: none;
 }
 .signup-password-wrapper input:focus{
-    border: 1px solid #6200f0;
+    border: none;
     outline: none;
+    
 }
 .signup-email-wrapper input{
     width: 100%;
-    height: 50px;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    border: 1px solid #c4c4c4;
-    color: #c4c4c4;
+    border: none;
+    
 
 }
 .signup-email-wrapper{
@@ -50,7 +81,16 @@
     justify-content: flex-end;
  
     align-items: center;
-    width: 100%;
+    width: 370px;
+
+    height: 35px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    color: #c4c4c4;
+    color: black;
+    padding-right: 20px;
    
    
 }
@@ -60,7 +100,15 @@
     justify-content: flex-end;
  
     align-items: center;
-    width: 100%;
+    width: 370px;
+    height: 35px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+  
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+   
+    padding-right: 20px;
    
    
 }
@@ -71,7 +119,17 @@
     justify-content: flex-end;
  
     align-items: center;
-    width: 100%;
+    width: 370px;
+
+    height: 35px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    color: #c4c4c4;
+    font-weight: light;
+    color: black;
+    padding-right: 20px;
    
    
 }
@@ -79,61 +137,100 @@
 .signup-firstname input{
    
     width: 100%;
-    height: 50px;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    border: 1px solid #c4c4c4;
     color: #c4c4c4;
+    color: black;
+    border: none;
+    
+    font-size: 14px;
+}
+.signup-firstname:hover{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.signup-firstname:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+    color: black;
 }
 .signup-firstname input:hover{
-    border: 1px solid #6200f0;
+    border: none;
     outline: none;
 }
 .signup-firstname input:focus{
+    border: none;
+    outline: none;
+}
+.signup-lastname:hover{
     border: 1px solid #6200f0;
     outline: none;
+}
+.signup-lastname:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+    color: black;
 }
 .signup-lastname input:hover{
-    border: 1px solid #6200f0;
+    border: none;
     outline: none;
+    
 }
 .signup-lastname input:focus{
-    border: 1px solid #6200f0;
+    border: none;
     outline: none;
+    color: black;
 }
 .signup-lastname input{
     width: 100%;
-    height: 50px;
+    border: none;
+    
+}
+.select-div{
+width: 370px;
+    height: 35px;
     padding-left: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
-    color: #c4c4c4;
-    font-weight: light;
+    
+    padding-right:20px;
+    display: flex;
+    align-items: center;
+   
 }
 #selectlist{
-    
     width: 100%;
-    height: 50px;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    border: 1px solid #c4c4c4;
+    color: #503f3f;
     color: #c4c4c4;
+    border: none;
+   
+    
+   
+   
     
 }
-#selectlist:hover{
+.select-div:hover{
     border: 1px solid #6200f0;
     outline: none;
+}
+.select-div:focus {
+    border: 1px solid #6200f0;
+    outline: none;
+    color: black;
 }
 #selectlist:focus{
-    border: 1px solid #6200f0;
+    border: none;
     outline: none;
+}
+#selectlist:hover{
+    border: none;
+    outline: none;
+}
+#selectlist option{
+    color: black;
 }
 .signup-password-wrapper i{
     position: absolute;
-    margin-right: 10px;
+    margin-right: 0px;
     
  
   
@@ -146,9 +243,13 @@ display: flex;
 
 justify-content: space-between;
 
-min-height: 60vh;
+min-height: 60%;
+max-height: 60%;
+margin-top: 20px;
+margin-bottom: 20px;
+width: 95%;
+background-color: firebrick;
 
-width: 90%;
 
 
 
@@ -159,11 +260,14 @@ width: 90%;
    
     background-color: #D5BCFF;
  display: flex;
- min-height: 100%;
+ /*min-height: 100vh;*/
+ /*max-height: 100vh;*/
 
+ 
    align-items: center;
    justify-content: center;
-   padding: 60px 20px;
+   padding:0px 00px;
+   margin:  auto;
   
    
     
@@ -175,19 +279,29 @@ width: 90%;
     flex-direction: column;
     align-items: flex-start;
     width: 410px;
-    padding-bottom: 55px;
-    padding-top: 55px;
+    padding-bottom:10px;
+    
+   
+    
+  
+   
+  
+   
+    
    
 }
 .signup-input-section{
    background-color: white;
-    justify-content: center;
+    justify-content:flex-start;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 0px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+   
+  
+    
     
    
    
@@ -196,17 +310,23 @@ width: 90%;
     font-size: 24px;
     color: #4C0FAE;
     font-style: bold;
+    margin-bottom: 30px;
+   
 }
 .signup-create{
     width: 100%;
     height: 60px;
-    margin-top: 0px;
+    margin-top: 10px;
     background-color: #9953ff;
     border-radius: 5px;
     border: none;
     height: 40px;
     background-color: #6200f0;
     background-color: #9953ff;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
    
 }
@@ -216,13 +336,14 @@ width: 90%;
 }
 .signup-facebook{
     width: 50%;
-   height: 60px;
+   height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border:1px solid #c4c4c4;
     border-radius: 5px;
     background-color: #fff;
+    padding: 0px 5px;
 }
 .signup-facebook p{
     font-size: 14px;
@@ -231,6 +352,7 @@ width: 90%;
     font-style: normal;
     color: #c4c4c4;
    color: black;
+   
 }
 .signup-google p{
     font-size: 14px;
@@ -238,17 +360,19 @@ width: 90%;
     color: #9597bc;
     font-style: normal;
     color: black;
+    
 }
 .signup-google{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 60px;
+    height: 50px;
     margin-right: 10px;
     border:1px solid #c4c4c4;
     border-radius: 5px;
     background-color: #fff;
+  
     
    
 }
@@ -273,6 +397,7 @@ width: 90%;
     font-weight:light;
     font-style: normal;
     color:black;
+    
 }
 .signup-line{
     height: 1px;
@@ -280,12 +405,14 @@ width: 90%;
     width: 50%;
     border: none;
     background-color:#c4c4c4;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 .signup-orandline{
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0px;
     color:#c4c4c4;
 
@@ -303,9 +430,10 @@ width: 90%;
     justify-content: space-between;
     text-align: left;
     padding: 40px 30px;
-    width: 640px;
-    height: 1049px;
+    width: 50%;
+  
     background-image: url('../../Asset/image-20-1@1x.png');
+  
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -376,8 +504,10 @@ font-style: normal;
 }
 
 .already-have-account{
-    margin: 0 auto;
+    margin: 10px auto;
     color: #000;
+    align-self: flex-end;
+  
 }
 .google-AND-facebook{
     display: flex;
@@ -390,16 +520,15 @@ font-style: normal;
 .logoGoogle{
     width: 30px;
     height: 30px;
+    margin-right: 5px;
+    
 }
 .logoFace{
     width: 30px;
     height: 30px;
-    color: white;
-    background-color: rgb(61, 61, 119);
-    border-radius: 100%;
-  
-    padding: 5px;
-    margin-right: 1px;
+    margin-right: 10px;
+    margin-left: 5px;
+   
 }
 .privacy{
 
@@ -418,11 +547,13 @@ font-style: normal;
 width: 20px;
 height: 20px;
 border-radius: 5px;
+margin-right: 15px;
 }
 .remember-checkbox{
     width: 20px;
     height: 20px;
     border-radius: 5px;
+    margin-right: 15px;
     }
 
 @media screen and (max-width:960px) {
