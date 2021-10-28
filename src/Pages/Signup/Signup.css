@@ -12,8 +12,9 @@
     margin-bottom: 0px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
+
     
-    color: black;
+    color: #333333;
    
    
 }
@@ -22,6 +23,7 @@
     width: 100%;
     border: none;
     padding-right: 0px;
+    color: #333333;
    
    
     
@@ -37,9 +39,10 @@
     outline: none;
 }
 .signup-email-wrapper:focus{
-    border: 1px solid #6200f0;
+    border: 1px solid #030640;
     outline: none;
-    color: black;
+    color: #333333;
+   
 }
 .signup-email-wrapper input:focus{
     border: none;
@@ -58,7 +61,8 @@
 .signup-password-wrapper:focus{
     border: 1px solid #6200f0;
     outline: none;
-    color: black;
+    color: #333333;
+    border: 1px solid #030640;
 }
 .signup-password-wrapper input:hover{
     border: none;
@@ -72,6 +76,7 @@
 .signup-email-wrapper input{
     width: 100%;
     border: none;
+    color: #333333;
     
 
 }
@@ -91,6 +96,7 @@
     color: #c4c4c4;
     color: black;
     padding-right: 20px;
+  
    
    
 }
@@ -138,7 +144,7 @@
    
     width: 100%;
     color: #c4c4c4;
-    color: black;
+    color: #333333;
     border: none;
     
     font-size: 14px;
@@ -150,7 +156,8 @@
 .signup-firstname:focus{
     border: 1px solid #6200f0;
     outline: none;
-    color: black;
+    color: #333333;
+    border: 1px solid #030640;
 }
 .signup-firstname input:hover{
     border: none;
@@ -168,6 +175,7 @@
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
 }
 .signup-lastname input:hover{
     border: none;
@@ -177,11 +185,12 @@
 .signup-lastname input:focus{
     border: none;
     outline: none;
-    color: black;
+    color: #333333;
 }
 .signup-lastname input{
     width: 100%;
     border: none;
+    color: #333333;
     
 }
 .select-div{
@@ -216,6 +225,7 @@ width: 370px;
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
 }
 #selectlist:focus{
     border: none;
@@ -227,6 +237,7 @@ width: 370px;
 }
 #selectlist option{
     color: black;
+    color: #333333;
 }
 .signup-password-wrapper i{
     position: absolute;
@@ -248,7 +259,7 @@ max-height: 60%;
 margin-top: 20px;
 margin-bottom: 20px;
 width: 95%;
-background-color: firebrick;
+
 
 
 
@@ -260,7 +271,7 @@ background-color: firebrick;
    
     background-color: #D5BCFF;
  display: flex;
- /*min-height: 100vh;*/
+ min-height: 100vh;
  /*max-height: 100vh;*/
 
  
@@ -268,6 +279,7 @@ background-color: firebrick;
    justify-content: center;
    padding:0px 00px;
    margin:  auto;
+   font-family: DMSans ;
   
    
     
@@ -280,6 +292,7 @@ background-color: firebrick;
     align-items: flex-start;
     width: 410px;
     padding-bottom:10px;
+   
     
    
     
@@ -327,12 +340,15 @@ background-color: firebrick;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    background-color: #191D6C;
     
    
 }
 .signup-create:hover{
     background-color: #191D6C;
     color: white;
+    background-color: #030640;
 }
 .signup-facebook{
     width: 50%;
@@ -402,11 +418,10 @@ background-color: firebrick;
 .signup-line{
     height: 1px;
     background-color: black;
-    width: 50%;
+    width:30%;
     border: none;
     background-color:#c4c4c4;
-    margin-left: 16px;
-    margin-right: 16px;
+   
 }
 .signup-orandline{
     display: flex;
@@ -520,14 +535,15 @@ font-style: normal;
 .logoGoogle{
     width: 30px;
     height: 30px;
-    margin-right: 5px;
+   
     
 }
 .logoFace{
     width: 30px;
     height: 30px;
-    margin-right: 10px;
-    margin-left: 5px;
+    margin-right: 10px
+    /*margin-right: 10px;
+    margin-left: 5px;*/
    
 }
 .privacy{
