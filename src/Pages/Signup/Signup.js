@@ -282,10 +282,10 @@ function Signup({details,signupdetails,signup}){
             </div>
             </div>
            
-          <div className="signup-orandline">  <hr className="signup-line"/>OR <hr className="signup-line"/></div>
+          <div className="signup-orandline">  <hr className="signup-line"/>Sign up with <hr className="signup-line"/></div>
           <div className="google-AND-facebook">
-            <button className="signup-google"><GoogleLogo className="logoGoogle"/><p> Sign up with Google</p></button>
-            <button className="signup-facebook"> <FacebookLogo className="logoFace"/><p> Sign up with Facebook</p></button>
+            <button className="signup-google"><GoogleLogo className="logoGoogle"/><p> GOOGLE</p></button>
+            <button className="signup-facebook"> <FacebookLogo className="logoFace"/><p> FACEBOOK</p></button>
             </div>
             </div> 
             <p className="already-have-account">Already have an account? <Link to="/signin" className="already-have-account-log">Log in</Link></p>

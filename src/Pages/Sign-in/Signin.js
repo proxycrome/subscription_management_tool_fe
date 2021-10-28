@@ -163,10 +163,10 @@ import '../Sign-in/Signin.css'
 
 
             <button className="create" onClick={handlesignin}>LOG IN</button>
-          <div className="orandline">  <hr className="line-left"/>OR <hr className="line-right"/></div>
+          <div className="orandline">  <hr className="line-left"/>Log in with <hr className="line-right"/></div>
           <div className="alternateSignin">
-            <button className="google"><GoogleLogo className="googleLogo" />Log in with Google</button>
-            <button className="facebook"><FacebookLogo className="faceLogo"/>Log in with Facebook</button>
+            <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>
+            <button className="facebook"><FacebookLogo className="faceLogo"/>FACEBOOK</button>
             </div>
             </div>
             <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>

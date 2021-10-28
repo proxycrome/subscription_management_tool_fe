@@ -3,6 +3,7 @@ import '../Navbar/Navbar.css'
 import { FaBars,FaTimes } from "react-icons/fa"; 
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 
 function Navbar(){
@@ -11,7 +12,8 @@ return(
     <div className='NavBar'>
         <div className="Nav">
             <div className="Navlogo">
-              <FlexLogo style={{width:"108px",height:"42px"}}/>
+              <FlexLogo className="laptop-logo" />
+             
             </div>
             <div className="mobilenavrightbar">
 
@@ -19,11 +21,11 @@ return(
             </div>
             
             <div className="NavRightContent">
-                <p>Company</p>
-                <p>How it works</p>
-                <p>Blogs</p>
-                <p>Partnership</p>
-                <button>Contact Us</button>
+               <Link className="links" to="/company"> <p>Company</p></Link>
+               <Link className="links" to="/howworks"> <p>How it works</p></Link>
+               <Link className="links" to="/blog" > <p>Blogs</p></Link>
+               <Link className="links" to="/partners"><p>Partnership</p></Link>
+                <button>CONTACT US</button>
             </div>
         </div>
         <div style={mobilenavcontent} className="mobilenavrightcontent">
@@ -32,7 +34,7 @@ return(
                 <p>How it works</p>
                 <p>Blogs</p>
                 <p>Partnership</p>
-                <button>Get Started</button>
+                <button>Contact us</button>
             </div>
     </div>
 )

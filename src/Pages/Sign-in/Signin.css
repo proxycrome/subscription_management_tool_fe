@@ -47,6 +47,7 @@
     width: 100%;
   border: none;
   outline: none;
+  color: #333333;
     
 
     
@@ -59,11 +60,13 @@
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
 }
 .password-wrapper input:focus{
     border: none;
     outline: none;
     color: black;
+    color: #333333;
 }
 .password-wrapper input:focus{
     border: none;
@@ -76,6 +79,7 @@
     border: none;
     outline: none;
     height: 50px;
+    color: #333333;
     
 }
 .email-wrapper:hover{
@@ -86,6 +90,8 @@
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
+    color: #333333;
 }
 .email-wrapper input:hover{
     border: none;
@@ -194,10 +200,14 @@ width: 90%;
     height: 40px;
     color: white;
    
+    background-color: #191D6C;
+   
 }
 .create:hover{
-    background-color: #191D6C;
+    background-color: #030640;
+    
     color: white;
+    
 }
 .facebook{
     width: 100%;
@@ -256,6 +266,9 @@ width: 90%;
     margin-right: 15px;
     height: 20px;
     width: 20px;
+    color: white;
+    border: #030640;
+    
 }
 .line{
     height: 1px;
@@ -265,20 +278,23 @@ width: 90%;
     
 }
 .line-left{
-    margin-right: 16px;
+   
     height: 1px;
     background-color: #c4c4c4;
-    width: 50%;
+    width:40%;
     border: none;
+    margin-left: 0px;
 }
 .line-right{
-    margin-left: 16px;
+    
+   margin-right: 0px;
     height: 1px;
     background-color: #c4c4c4;
-    width: 50%;
+    width:33%;
     border: none;
 }
 .orandline{
+   padding: 0px;
     display: flex;
     align-items: center;
     width: 100%;

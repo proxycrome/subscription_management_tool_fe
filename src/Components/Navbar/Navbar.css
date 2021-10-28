@@ -3,7 +3,8 @@
     justify-content: space-between;
     padding-left: 100px;
     padding-right: 100px;
-   
+   color:#030640;
+  font-size: 18px;
     
     
    
@@ -13,14 +14,19 @@
    
 }
 .NavRightContent button{
-    width: 120px;
-    height: 40px;
+    width: 138px;
+    height: 56px;
     margin-top: 10px;
-    background-color: #9953FF;
+    background-color: #6200F0;
     color: white;
     border-radius: 5px;
     border: none;
+    font-weight: bold;
    
+}
+.links{
+    text-decoration: none;
+    color:#030640;
 }
 .NavRightContent p{
     margin-right: 50px;
@@ -35,12 +41,25 @@
 .mobilenavrightbar{
     display: none;
 }
+.laptop-logo{
+    width: 108px;
+    height: 42px;
+}
 @media screen and (max-width:700px) {
     .mobilenavrightbar{
         display: flex;
         
         
     } 
+    .laptop-logo{
+        width: 78px;
+        height: 32px;
+    }
+    
+    
+    .mobile-logo{
+        display: inline ;
+    }
     
     .NavBar{
       
@@ -76,8 +95,9 @@
         margin-bottom: 10px;
         border: none;
         padding: 8px;
-        background-color: #9953FF;
+        background-color: #6200F0;
         border-radius: 5px;
+        color: white;
     }
     .NavRightContent{
         display: none;
