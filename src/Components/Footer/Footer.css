@@ -1,4 +1,6 @@
 .Footer{
+   
+    background-image: url('../../Asset/Base.png');
     background-color: #191D6C;
     color: white;
     text-align: left;
@@ -6,6 +8,10 @@
     padding-right: 80px;
     padding-bottom: 10px;
     margin-top: 30px;
+    background-blend-mode: saturation;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   
 }
 .upperfooter{
@@ -24,6 +30,10 @@
 
 .icons{
     margin-bottom: 5px;
+    display: flex;
+   font-size: 14px;
+  
+   margin: 0px;
 }  
 
 .lowerfooter-left{
@@ -40,13 +50,15 @@
     min-height: 100%;
     max-height: 100%;
     width: 30%;
+    
    
    
 }
+
 .quicklinks{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
    
    
     width: 30%;
@@ -54,6 +66,7 @@
 .newsletter{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     
    width:  40%;
 }
@@ -63,25 +76,57 @@
     border-radius: 5px;
 }
 .newsletter button{
-    width: 30%;
+    width: 127px;
     margin-top: 10px;
-    height: 30px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #6200F0;
     border: none;
     padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
 
 }
+.newsletter input{
+    padding-left: 20px;
+    height: 50px;width: 340px;
+    font-size: 16px;
+    color:#232340;
+}
 .iconcontainer{
     background-color: blue;
-    width: 20px;
+   width: 25px;
+   height: 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
+    
     border-radius: 5px;
     margin-right: 8px;
+}
+.copy-Right{
+    font-size: 14px;
+   
+}
+.Footer h3{
+    font-size: 24px;
+    margin-bottom: 40px;
+   
+    line-height: 30%;
+    
+}
+
+
+.Footer p{
+    font-size: 18px;
+   
+   
 }
 
 @media screen  and(max-width:960px) {

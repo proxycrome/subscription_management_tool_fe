@@ -4,6 +4,8 @@ import {useHistory} from 'react-router-dom'
 import partner from '../../Asset/Partner-image.png'
 import shot from '../../Asset/Shot.png'
 import lady from '../../Asset/Pictures.jpg'
+import operate from '../../Asset/operate.jpg'
+import partnerLogo from '../../Asset/partners.png'
 
 import '../Homepage/Homepage.css'
 import Footer from '../../Components/Footer/Footer'
@@ -40,8 +42,10 @@ return(
                         <button onClick={(()=>{history.push("/signup")})}>REGISTER</button>
                         <button id="sep-button" onClick={(()=>{history.push("/signin")})}>LOGIN</button>
                         </span>
+                        <span className="partnerlogo"><img src={partnerLogo}/></span>
                 </div>
                 <div className="laptop-image"><img src={lady}/></div>
+                
                 </div>
                 <div className="Innercontent-original-mobile">
                 <div className="contents-original">
@@ -61,7 +65,7 @@ return(
               
                 </div>
                 <div className="Innercontent">
-                <div className="laptop-image"><img src={shot}/></div>
+                <div className="laptop-image"><img src={operate}/></div>
                 <div className="contents">
                     <h2>Operate on a single platform</h2>
                     <p>Managing and keeping track of multiple subscriptions could be tedious. With Flex,
@@ -100,7 +104,7 @@ return(
                 </div>
                 <div className="mobile-inner-content">
                 <h2>Operate on a single platform</h2>
-                <div className="mobile-img-div"> <img src={shot}/></div>
+                <div className="mobile-img-div"> <img src={operate}/></div>
                 <p>Managing and keeping track of multiple subscriptions could be tedious. With Flex,
                         you need not worry about that as all subscriptions are easily managed on one platform. </p>
 

@@ -225,6 +225,7 @@ function Signup({details,signupdetails,signup}){
           
           
             </div>
+            
             <div className="signup-lastname">
            
             <input type="text" name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Last name" required/>

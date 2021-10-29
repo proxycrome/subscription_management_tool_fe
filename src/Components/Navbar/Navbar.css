@@ -1,14 +1,17 @@
 .Nav{
     display: flex;
     justify-content: space-between;
+    align-items:flex-start;
     padding-left: 100px;
     padding-right: 100px;
    color:#030640;
   font-size: 18px;
+  
     
     
    
 }
+
 .NavRightContent{
     display: flex;
    
@@ -19,14 +22,18 @@
     margin-top: 10px;
     background-color: #6200F0;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
     border: none;
     font-weight: bold;
+    font-size: 18px;
    
 }
 .links{
     text-decoration: none;
     color:#030640;
+    font-size: 18px;
+    margin-top: 10px;
+   
 }
 .NavRightContent p{
     margin-right: 50px;
@@ -34,6 +41,8 @@
 .Navlogo{
     display: flex;
     align-items: center;
+    margin-top: 15px;
+  
 }
 .mobilenavrightcontent{
     display: none;
@@ -45,10 +54,64 @@
     width: 108px;
     height: 42px;
 }
+#companyLink{
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    color:#030640;
+    margin-bottom: 0px;
+    margin-right: 50px;
+}
+.total-dropdown #companyLink .linker-extra{
+    background-color: crimson;
+}
+.total-dropdown{
+  
+    text-align: left;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#companyLink p{
+    margin-right: 0px;
+}
+.flex{
+   display: flex;
+   flex-direction: column;
+   background-color: blueviolet;
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+   line-height: 0px;
+   margin-top: 5px;
+   
+}
+.total-flex{
+    background-color: aqua;
+    
+   
+}
+.test-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: red;
+}
+.total-dropdown .linker-extra{
+   margin-top: 0px; 
+  
+}
 @media screen and (max-width:700px) {
+    .Navlogo{
+        margin-top: 0px;
+    }
     .mobilenavrightbar{
         display: flex;
-        
+        justify-content: center;
+        align-items: center;
+     
         
     } 
     .laptop-logo{
@@ -70,7 +133,9 @@
     .Nav{
         padding-left: 20px;
         padding-right: 20px;
+        align-items: center;
     }
+    
     .mobilenavrightcontent{
         background-color: white;
         display: none;
