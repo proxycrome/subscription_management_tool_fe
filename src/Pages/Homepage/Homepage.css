@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    font-family: Cabin;
+    font-family: 'Cabin', sans-serif;
    
 }
 .Homebody{
@@ -12,13 +12,14 @@
  
    
 }
+
 .Bodyinner{
     margin-top: 40px;
     
 }
 .Innercontent{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     margin-top: 20px;
   
@@ -53,8 +54,10 @@ margin-bottom: 0px;
   
   
 }
-p{
+.Homebody p{
     line-height:157%;
+    font-size: 24px;
+    color: #333333;
 }
 .Innercontent-original div{
     width: 45%;
@@ -80,6 +83,7 @@ p{
 }
 .contents h2{
     margin-top: 0px;
+    margin-bottom: 24px;
 }
 .contents-original{
     display: flex;
@@ -87,13 +91,18 @@ p{
     text-align: left;
     justify-content: space-between;
     padding-top: 0px;
-    
+    width: 50%;
+   
     height: 100%;
   
    
 }
 .contents-original h2{
+    margin-bottom: 24px;
     margin-top: 0px;
+   
+    padding: 0px;
+   
 }
 .contents-operate{
     display: flex;
@@ -101,7 +110,7 @@ p{
     text-align: left;
     align-items: flex-end;
     align-self: flex-end;
-    background-color: brown;
+   
     padding-top: 0px;
     width: 30%;
    
@@ -122,9 +131,21 @@ p{
 }
 .contents p{
     width: 100%;
+    text-align: justify;
+   
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
 }
 .contents-original p{
     width: 100%;
+   text-align: justify;
+   
+   font-size: 24px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+ 
 }
 .Image{
     display: flex;
@@ -132,6 +153,11 @@ p{
 }
 .buttons{
     display: flex;
+   
+    margin-top:46px;
+    padding-top: 0px;
+    margin-bottom: 50px;
+   
 }
 .buttons-partner{
     
@@ -139,13 +165,19 @@ p{
 
     width: 150px;
     height: 56px;
-    margin-top: 10px;
+    margin-top:46px;
     background-color: #6200F0;
     color: white;
     border-radius: 5px;
     border: none;
     font-size: 16px;
+   
     
+}
+.Homebody h2{
+    font-size: 44px;
+    color: #030640;
+    font-weight: medium;
 }
 #sep-button{
     background-color: white;
@@ -156,13 +188,15 @@ p{
 .buttons button{
     width: 150px;
     height: 56px;
-    margin-top: 10px;
+  
     margin-right: 20px;
     background-color: #6200F0;
     color: white;
     border-radius: 5px;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 .work{
     display: flex;
@@ -196,9 +230,22 @@ p{
 .blog{
     margin-top: 80px ;
 }
+.blog button{
+    width: 106px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6200f0;
+    font-weight: bold;
+    border: none;
+    background-color:#ae8cdd ;
+}
 .love{
     margin-top: 80px ;
     height: 250px;
+}
+.love h2{
+    font-size: 44px;
 }
 .mobile-inner-content{
     display: none;
@@ -206,9 +253,22 @@ p{
 .Innercontent-original-mobile{
     display: none;
 }
+.partnerlogo{
+    margin-top: 0px;
+    min-width: 100%;
+    max-width: 100%;
+  
+}
+.partnerlogo img{
+   width: 100%;
+}
 @media screen and (max-width:960px){
-    p{
+    .partnerlogo{
+        display: none;
+    }
+    .Homebody p{
         line-height:180%px;
+        
     }
 
     .Innercontent-original div{
@@ -239,8 +299,7 @@ p{
     }
      
     
-    .Homepage{ 
-        
+    .Homepage{
         padding-top: 20px;
     }
     
@@ -301,15 +360,21 @@ p{
     display: flex;
     flex-direction: column;
     text-align: left;
+   
+}
+.mobile-inner-content p{
+    text-align: justify;
 }
 .mobile-inner-content button{ 
     width: 100%;
 }
 .love p{
     width: 100%;
+    text-align: center;
 }
 .blog p{
     width: 100%;
+    text-align: center;
     
 }
 .Innercontent-original{
@@ -321,6 +386,12 @@ p{
 }
 .Innercontent-original-mobile p{
     margin-bottom: 40px;
+}
+.Innercontent-original-mobile{
+    display: inline;
+}
+.Innercontent-original-mobile h2{
+    margin-top: 20px;
 }
 .Innercontent-original-mobile .laptop-image{
     margin-bottom: 40px;

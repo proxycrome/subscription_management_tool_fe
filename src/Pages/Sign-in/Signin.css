@@ -117,13 +117,12 @@ display: flex;
 
 justify-content: space-between;
 
-min-height: 100vh;
-max-height: 90vh;
-min-height: 90vh;
-margin-top: 35px;
+min-height: 100%;
+max-height: 100%;
+min-height: 100%;
 
 
-width: 90%;
+width: 100%;
 
 
 }
@@ -131,7 +130,11 @@ width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   
+    min-height: 100%;
+ max-height: 100%;
+  
+  margin: 0px;
+  padding: 0px;
  
     
 }
@@ -139,14 +142,16 @@ width: 90%;
    
     background-color: #D5BCFF;
  display: flex;
- min-height: 100vh;
- max-height: 100vh;
-   align-items: flex-start;
+ height: 100vh;
+ 
+   align-items: center;
    justify-content: center;
    padding: 0px 10px;
    padding-left: 10px;
    padding-right: 10px;
-   font-family: DMSans ;
+   padding: 0px;
+   margin: 0px;
+   font-family: 'DM Sans', sans-serif;
   
    
     
@@ -160,13 +165,14 @@ width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     
-    min-height: 80vh;
-    max-height: 80vh;
+    min-height: 100%;
+    max-height: 100%;
    
 
    width: 410px;
-  
+ 
   
    
    
@@ -181,8 +187,9 @@ width: 90%;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    
-   
+  
+   max-height: 100%;
+   min-height: 100%;
     
    
 }
@@ -332,6 +339,8 @@ width: 90%;
     background-color: rgb(15, 15, 15);
     background-color: rgba(0,0,0,0.6);
     background-blend-mode: overlay;
+    min-height: 100%;
+    max-height: 100%;
     
 }
 .textandimage-logo{
