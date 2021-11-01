@@ -17,3 +17,7 @@ export const signindetails=(value)=>({
     type:'signindetails',
    value:value
 })
+export const headercolor=(value)=>({
+    type:'headercolor',
+   value:value
+})

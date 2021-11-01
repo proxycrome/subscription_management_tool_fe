@@ -4,18 +4,29 @@ import Footer from '../../Components/Footer/Footer'
 import { LoremIpsum, Avatar } from 'react-lorem-ipsum'
 import partner from '../../Asset/Partner-image.png'
 import '../../Pages/Partners/Partners.css'
+import { connect } from 'react-redux'
+import { headercolor } from '../../redux/flex/flex.actions'
+import {useEffect} from 'react'
 
-function Partners(){
+
+function Partners({headercolor,presentcolor}){
+    useEffect(()=>{
+       headercolor({partcolor:"pink"})
+                   
+      
+    },[])
+    console.log(presentcolor.partcolor)
     return(
         <div className="Partners">
             <div>
 
-            <Navbar/>
+            <Navbar partstyle={{color:presentcolor.partcolor}}
+            aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
         <div className="partner-sections">
             <h1>Learn more about our partners</h1>
         
         <div className="header-image">
-     
+     <img src={partner}/>
         </div>
         </div>
         <div className="partner-second-section">
@@ -24,14 +35,16 @@ function Partners(){
                 <div className="design">
                 <div></div><p><LoremIpsum avgWordsPerSentence={2} /></p>
                 </div>
-                <h2><LoremIpsum avgWordsPerSentence={2} /></h2>
+                <h2>"Partner integrations made easy"</h2>
+                <p><LoremIpsum avgWordsPerSentence={2} /></p>
             </div>
             <div className="partner-right-text">
+            <LoremIpsum p={1} />
             <LoremIpsum p={1} />
             </div>
         </div>
         <div className="partner-input">
-            <h2>Ready to be our partner</h2>
+            <h2>Ready to be our partner?</h2>
             <div className="partner-input-area">
                 <div className="Partner-areas">
                 <div className="partner-input-class">
@@ -69,4 +82,20 @@ function Partners(){
     )
 
 }
-export default Partners
+const MapDispatchToProps=(dispatch)=>({
+
+    //const userinput= {[items]:value}
+     //signin:(item)=> dispatch(signin(item)),
+    
+     headercolor:(item)=>dispatch(headercolor(item))
+ 
+ })
+const mapstatetoprops=({flex:{presentcolor}})=>({
+ 
+    presentcolor
+   
+   
+
+})
+
+export default connect( mapstatetoprops,MapDispatchToProps)  (Partners)

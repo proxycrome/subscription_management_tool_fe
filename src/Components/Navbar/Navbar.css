@@ -1,25 +1,66 @@
 .Nav{
     display: flex;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items:center;
     padding-left: 100px;
     padding-right: 100px;
    color:#030640;
   font-size: 18px;
+  margin-top: 10px;
+ cursor: pointer;
+ 
+ padding-top: 0px;
+  
   
     
     
    
 }
+.Nav .dropDown .testing #partyner {
+    
+    
+    font-size: 40px;
+    
+}
+
+.dropDown{
+   
+   
+   
+    display: flex;
+    
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  
+    padding: 0px;
+}
+.dropDown div{
+    margin-top: 5px;
+   
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   
+    text-align: left;
+}
+.dropDown div p{
+  
+    margin-top: 0px;
+    line-height: 10px;
+}
 
 .NavRightContent{
     display: flex;
+   
+    align-items: center;
    
 }
 .NavRightContent button{
     width: 138px;
     height: 56px;
-    margin-top: 10px;
+    
     background-color: #6200F0;
     color: white;
     border-radius: 6px;
@@ -41,7 +82,11 @@
 .Navlogo{
     display: flex;
     align-items: center;
-    margin-top: 15px;
+   
+    padding-top: 0px;
+    line-height: 0px;
+    padding-bottom: 10px;
+   
   
 }
 .mobilenavrightcontent{
@@ -56,53 +101,76 @@
 }
 #companyLink{
     display: flex;
-   
+   align-self: center;
     justify-content: center;
     align-items: center;
     color:#030640;
     margin-bottom: 0px;
     margin-right: 50px;
+    line-height: 0px;
+    
+   
+    
 }
 .total-dropdown #companyLink .linker-extra{
     background-color: crimson;
 }
-.total-dropdown{
-  
-    text-align: left;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-   
-}
+
 
 #companyLink p{
     margin-right: 0px;
 }
-.flex{
-   display: flex;
-   flex-direction: column;
-   background-color: blueviolet;
-   margin-bottom: 0px;
-   padding-bottom: 0px;
-   line-height: 0px;
-   margin-top: 5px;
-   
-}
+
 .total-flex{
     background-color: aqua;
     
    
 }
-.test-flex{
+.mobileFlex{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: red;
+    align-items: center;
+    margin-bottom: 0px;
+    
 }
-.total-dropdown .linker-extra{
-   margin-top: 0px; 
+.mobileFlex-div{
+    display: flex;
+    flex-direction: column;
+    color:#030640;
+   
+}
+
+.mobileFlex-div div{
+    margin-bottom: 0px;
   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0px;
+    padding: 0px;
 }
+.mobileFlex-div div p{
+    
+   margin-top: 0px;
+   
+   
+}
+ .exception{
+    margin-top: 5px;
+    
+   
+}
+.mobileLinks{
+    text-decoration: none;
+    color:#030640;
+}
+.aboUt{
+    color:#030640;
+}
+#prIVacy{
+    color:#030640;
+}
+
+
 @media screen and (max-width:700px) {
     .Navlogo{
         margin-top: 0px;
