@@ -1,16 +1,17 @@
 .Nav{
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items:flex-start;
     padding-left: 100px;
     padding-right: 100px;
    color:#030640;
   font-size: 18px;
-  margin-top: 10px;
- cursor: pointer;
- 
+  cursor: pointer;
+  margin-bottom: 100px;
+  margin-top: 40px;
  padding-top: 0px;
-  
+ 
+ 
   
     
     
@@ -28,16 +29,19 @@
    
    
     display: flex;
-    
-    justify-content: flex-start;
+   
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-  
+ 
     padding: 0px;
+    position: relative;
+    
 }
 .dropDown div{
     margin-top: 5px;
-   
+    padding-left: 15px;
+    
     padding-top: 0px;
     display: flex;
     flex-direction: column;
@@ -48,25 +52,26 @@
 .dropDown div p{
   
     margin-top: 0px;
-    line-height: 10px;
+   
 }
 
 .NavRightContent{
     display: flex;
+    align-items: flex-start;
    
-    align-items: center;
    
 }
 .NavRightContent button{
     width: 138px;
     height: 56px;
-    
+   margin-top: -20px;
     background-color: #6200F0;
     color: white;
     border-radius: 6px;
     border: none;
     font-weight: bold;
     font-size: 18px;
+    position: relative;
    
 }
 .links{
@@ -81,11 +86,15 @@
 }
 .Navlogo{
     display: flex;
-    align-items: center;
-   
+    align-items: flex-start;
+  align-self: start;
     padding-top: 0px;
     line-height: 0px;
-    padding-bottom: 10px;
+    margin-top: -10px;
+   
+   
+   
+   
    
   
 }
@@ -98,6 +107,8 @@
 .laptop-logo{
     width: 108px;
     height: 42px;
+    padding: 0px;
+    margin: 0px;
 }
 #companyLink{
     display: flex;
@@ -105,9 +116,12 @@
     justify-content: center;
     align-items: center;
     color:#030640;
-    margin-bottom: 0px;
+    
     margin-right: 50px;
-    line-height: 0px;
+    
+  
+    
+    
     
    
     

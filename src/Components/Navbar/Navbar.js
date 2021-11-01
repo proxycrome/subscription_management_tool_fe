@@ -59,7 +59,7 @@ return(
             <div className="NavRightContent">
                 
               
-               <div className="dropDown">
+               <span className="dropDown">
                <p id="companyLink"  style={compstyle}><p>Company</p><FaAngleDown 
                onClick={handleextra}/> 
                </p>
@@ -67,7 +67,7 @@ return(
                <Link to="/company" style={aboutstyle}><p>About us</p></Link>
                <Link to="/about" style={privacystyle}><p>Privacy policy</p></Link>
                </div>
-               </div>
+               </span>
                
              
                <p  style={howworks}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
@@ -90,7 +90,7 @@ return(
                 <p style={howworks} onClick={(()=>{history.push("/howworks")})} className="exception">How it works</p>
                 <Link className="mobileLinks" to="/blog" id="blogColor"><p>Blogs</p></Link>
                  <p style={partstyle}  onClick={(()=>{history.push("/partners")})} >Partnership</p>
-                <button onClick={(()=>{history.push("/contact")})}>CONTACT US</button>
+                <button onClick={(()=>{history.push("/contact")})} className="contactUsbutn">CONTACT US</button>
             </div>
     </div>
 )

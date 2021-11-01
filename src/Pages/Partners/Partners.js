@@ -11,7 +11,7 @@ import {useEffect} from 'react'
 
 function Partners({headercolor,presentcolor}){
     useEffect(()=>{
-       headercolor({partcolor:"pink"})
+       headercolor({partcolor:"#9953FF"})
                    
       
     },[])

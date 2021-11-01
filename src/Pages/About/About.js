@@ -10,7 +10,7 @@ import '../About/About.css'
 function About({headercolor,presentcolor}){
 
     useEffect(()=>{
-        headercolor({ privacycolor:"pink",companycolor:"pink"})
+        headercolor({ privacycolor:"#9953FF",companycolor:"#9953FF"})
                     
        
      },[])

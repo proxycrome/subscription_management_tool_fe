@@ -39,6 +39,9 @@
     justify-content: center;
     align-items: center;
 }
+.comPany{
+    font-family: 'Cabin', sans-serif;
+}
 .image-Two{
     display: flex;
     justify-content: center;

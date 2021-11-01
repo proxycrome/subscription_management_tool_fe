@@ -6,13 +6,17 @@ import '../How-it-works/How-it-works.css'
 import { connect } from 'react-redux'
 import { headercolor } from '../../redux/flex/flex.actions'
 import {useEffect} from 'react'
+import splash from '../../Asset/splash.png'
+import splashsec from '../../Asset/splashsec.png'
+import check from '../../Asset/check.png'
+import iconDots from '../../Asset/Icon.png'
 
 
 
 function HowWorks({headercolor,presentcolor}){
     //avgWordsPerSentence
     useEffect(()=>{
-        headercolor({ howcolor:"pink"})
+        headercolor({ howcolor:"#9953FF"})
                     
        
      },[])
@@ -33,7 +37,7 @@ function HowWorks({headercolor,presentcolor}){
                     <LoremIpsum p={1} />
                         <button>WATCH VIDEO</button>
                     </div>
-                    <div className="works-image">IMAGE</div>
+                    <div className="works-image-first"><img src={splash}/></div>
                 </div>
             
            
@@ -41,10 +45,19 @@ function HowWorks({headercolor,presentcolor}){
                 </div>
             <div className="works-and-image">
                 <div className="works-outer">
-                <div className="works-image-second">IMAGE</div>
+                <div className="works-image-second"><img src={splashsec}/></div>
                     <div className="works-inner-second">
                        <h2>Our Featured Functionalities</h2>
-                    <LoremIpsum p={1} />
+                       <p>Here 're some of the features Flex has to offer</p>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                   
                         
                     </div>
                    
@@ -56,23 +69,46 @@ function HowWorks({headercolor,presentcolor}){
                 <div className="works-outer">
                     <div className="works-inner">
                     <h2>Our Featured Functionalities</h2>
-                    <LoremIpsum p={1} />
+                       <p>Here 're some of the features Flex has to offer</p>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
                        
                     </div>
-                    <div className="works-image">IMAGE</div>
+                    <div className="works-image"><img src={splashsec}/></div>
                 </div>
             </div>
             <div className="mobile-works-inner">
             <h2>Our Featured Functionalities</h2>
-                <div>IMAGE</div>
-                <LoremIpsum p={1} />
+                <div className="mobile-work-img"><img src={splashsec}/></div>
+                <p>Here 're some of the features Flex has to offer</p>
+                <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
 
-
-                </div>
+                       </div>
                 <div className="mobile-works-inner">
             <h2>Our Featured Functionalities</h2>
-                <div>IMAGE</div>
-                <LoremIpsum p={1} />
+                <div className="mobile-work-img"><img src={splashsec}/></div>
+                <p>Here 're some of the features Flex has to offer</p>
+                <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
 
 
                 </div>
@@ -82,27 +118,39 @@ function HowWorks({headercolor,presentcolor}){
                 <div className="work-intro-show">
                     <div className="works-lower-inner">
                         <span>
+                        <i className="funct-Image-div"><img src={iconDots}/></i>
                             <h2>Collaboration</h2>
                             
+                        <p>Trust will help us foster a positive and productive environment that delivers
+                                value to our users and customers.
+                            </p>
                             
                         </span>
                         <span>
+                        <i className="funct-Image-div"><img src={iconDots}/></i>
                         <h2>Collaboration</h2>
                            
-                           
-
+                        
+                        <p>Trust will help us foster a positive and productive environment that delivers
+                                value to our users and customers.
+                            </p>
                         </span>
                     </div>
                     <div className="works-lower-inner">
                     <span>
-                            <i>Image</i>
+                            <i className="funct-Image-div"><img src={iconDots}/></i>
                             <h2>Collaboration</h2>
-                            <p>kkoooo</p>
+                            <p>Trust will help us foster a positive and productive environment that delivers
+                                value to our users and customers.
+                            </p>
                             
                         </span>
                         <span>
+                        <i className="funct-Image-div"><img src={iconDots}/></i>
                         <h2>Collaboration</h2>
-                            
+                        <p>Trust will help us foster a positive and productive environment that delivers
+                                value to our users and customers.
+                            </p> 
                         </span>
                     </div>
                 </div>

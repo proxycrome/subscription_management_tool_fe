@@ -9,7 +9,7 @@
     height: 35px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
     
@@ -18,6 +18,7 @@
    
    
 }
+
 .signup-password-wrapper input{
 
     width: 100%;
@@ -90,7 +91,7 @@
 
     height: 35px;
     padding-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
@@ -109,7 +110,7 @@
     width: 370px;
     height: 35px;
     padding-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   
     border-radius: 5px;
     border: 1px solid #c4c4c4;
@@ -129,7 +130,7 @@
 
     height: 35px;
     padding-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
@@ -197,7 +198,7 @@
 width: 370px;
     height: 35px;
     padding-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
     
@@ -328,6 +329,7 @@ width: 100%;
     color: #4C0FAE;
     font-style: bold;
     margin-bottom: 30px;
+    margin-top: 30px;
    
 }
 .signup-create{
@@ -345,14 +347,14 @@ width: 100%;
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: #191D6C;
+    background-color: #6200f0;
     
    
 }
 .signup-create:hover{
     background-color: #191D6C;
     color: white;
-    background-color: #030640;
+    background-color: #6002EB;
 }
 .signup-facebook{
     width: 50%;
@@ -564,6 +566,9 @@ font-style: normal;
     
 
     font-weight: bold;
+}
+.terms-and-policy{
+    line-height: 20px;
 }
 .already-have-account-log{
     color: #9953FF;

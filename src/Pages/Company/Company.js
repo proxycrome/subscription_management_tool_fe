@@ -17,12 +17,12 @@ import image5 from '../../Asset/Image5.png'
 import '../Company/Company.css'
 function Company({headercolor,presentcolor}){
     useEffect(()=>{
-        headercolor({ companycolor:"pink",aboutcolor:"pink"})
+        headercolor({ companycolor:"#9953FF",aboutcolor:"#9953FF"})
                     
        
      },[])
     return(
-        <div className="Blog">
+        <div className="comPany">
             <div>
                <Navbar compstyle={{color:presentcolor.companycolor}} 
                aboutstyle={{color:presentcolor.aboutcolor,textDecoration:"none"}}
