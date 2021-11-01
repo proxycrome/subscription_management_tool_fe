@@ -1,16 +1,74 @@
 .company-doing{
     display: flex;
     flex-direction: column;
+   
+    max-width: 100%;
+    min-width: 100%;
+    width: 500px;
+   
+
 }
 .company-doing-content{
     display: flex;
-   width: 90%;
+    justify-content: space-between;
+   min-width: 100%;
+   max-width: 100%;
+  
+  
  
 }
+.company-about{
+    text-align: left;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.imagesDivs{
+    width: 100%;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+}
+.image-One{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.image-Three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comPany{
+    font-family: 'Cabin', sans-serif;
+}
+.image-Two{
+    display: flex;
+    justify-content: center;
+}
+.provide-left-center{
+    align-self: center;
+}
+.about-us{
+    width: 50%;
+}
 .company-doing-content div{
-   width: 40%;
-   margin-right: 10px;
+ 
+   
     border: 1px solid black;
+}
+.company-how .company-doing #marginExtra{
+    margin-bottom: 20px;
+}
+.company-how .company-doing #marginExtraP {
+    margin-right: 20px;
+}
+
+.header-Paragraph{
+    width: 80%;
+}
+#marginExtraX{
+    margin-right: 20px;
 }
 .company-doing-content p{
     width: 20%;
@@ -28,6 +86,16 @@
 }
 .learn-right{
     width: 50%;
+    background-image: url("../../Asset/Base.png");
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    color: red;
+    height: 400px;
+    padding: 30px;
+}
+.learn-right img{
+    width: 100%;
 }
 .company-provide{
     display: flex;
@@ -46,14 +114,99 @@
     display: flex;
     padding-left: 100px;
     padding-right: 100px;
-  
+   
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    
 }
 .company-how div{
     width: 50%;
 }
 .company-how-left{
+    width: 50%;
+    background-color: darkgoldenrod;
     text-align: left;
+}
+.img-about-first{
+    min-width: 100%;
+    max-width: 100%;
+}
+.img-about-first img{
+    width: 100%;
+}
+.abouty-div{
+    width: 50%;
+    height: 100%;
+}
+.abouty-div img{
+   
+        width: 100%;
+}
+.rectangle-div{
+    width: 100%;
+    background-color: blue;
+    padding: 40px 100px;
+}
+.rectangle-div img{
+    width: 100%;
+}
+.shaped-image-div{
+    width: 30%;
+}
+.shaped-image-div img{
+    width: 100%;
+   
+}
+.shaped-image-div-first{
+    width: 30%;
+    margin-right: 100px;
+}
+
+.shaped-image-div-first img{
+    width: 100%;
+ 
+}
+@media screen and (max-width:1000px) {
+    .company-provide{
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+    }
+    .company-learn{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: darkorange;
+        text-align: left;
+        
+    }
+    .company-provide div{
+        width: 100%;
+    }
+    .company-provide-left{
+        margin-right: 0px;
+    }
+    .company-how{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    .company-how div{
+        width: 100%;
+    }
+    .company-about{
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about-us{
+        width: 100%;
+    }
+    .learn-left{
+        width: 100%;
+    }
+    .learn-right{
+        width: 100%;
+    }
 }

@@ -6,11 +6,13 @@ import shot from '../../Asset/Shot.png'
 import lady from '../../Asset/Pictures.jpg'
 import operate from '../../Asset/operate.jpg'
 import partnerLogo from '../../Asset/partners.png'
+import overlay from '../../Asset/Overlay2.png'
+import { connect } from 'react-redux'
 
 import '../Homepage/Homepage.css'
 import Footer from '../../Components/Footer/Footer'
 
-function Homepage(){
+function Homepage({presentcolor}){
     const history=useHistory()
 
     useEffect(()=>{
@@ -24,7 +26,8 @@ function Homepage(){
     },[])
 return(
     <div className="Homepage">
-       <Navbar/>
+       <Navbar privacystyle={{color:presentcolor.privacycolor,textDecoration:"none"}}
+         aboutstyle={{textDecoration:"none"}}/>
         <div className="Homebody">
         
 
@@ -36,6 +39,7 @@ return(
                     <p>Flex is a subscription management platform that allows you to manage multiple
                         subsription plans. It gives you the freedom to control and keep track of your
                         expenses </p>
+                       
                         <span className="buttons">
 
                         
@@ -137,14 +141,95 @@ return(
                    
                     <p>We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
+                        
                 </div>
                 <div className="blog">
                     <button>OUR BLOG</button>
+                  
                     <h3>Don't miss out recent articles</h3>
-                    <p>We share common trends and strategies for improving your rental income and making sure 
+                    <p className="blog-top-parag">We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
+                        <div className="blog-container">
+                        <div className="blog-div-show">
+                            <div className="blog-content">
+                                <div className="blog-img-div">
+                                <img src={overlay}/>
+                                </div>
+                                <div className="below-img-blog">
+                                <h2>Growth of SaaS industry</h2>
+                                <p className="below-img-blog-p">Subscription-based saaS application and licensing makes utilizing..</p>
+                                <span className="blog-innermost">
+                                    <div className="blog-landing-profile">
+                                        <div className="blog-profile-img">
+                                        <img src={overlay}/>
+                                        </div>
+                                    <p className="blog-left">Tina Lawal</p>
+                                    </div>
+                                    <div>
+                                    <p className="blog-right">02 Dec</p>
+                                    </div>
+                                </span>
+                                
+                                </div>
+
+                            </div>
+                        
+                        
+                        </div>
+            
+                        <div className="blog-div">
+                            <div className="blog-content">
+                                <div className="blog-img-div">
+                                <img src={overlay}/>
+                                </div>
+                                <div className="below-img-blog">
+                                <h2>Growth of SaaS industry</h2>
+                                <p className="below-img-blog-p">Subscription-based saaS application and licensing makes utilizing..</p>
+                                <span className="blog-innermost">
+                                <div className="blog-landing-profile">
+                                        <div className="blog-profile-img">
+                                        <img src={overlay}/>
+                                        </div>
+                                    <p className="blog-left">Tina Lawal</p>
+                                    </div>
+                                    <div>
+                                    <p className="blog-right">02 Dec</p>
+                                    </div>
+                                </span>
+                                
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div className="blog-div">
+                            <div className="blog-content">
+                                <div className="blog-img-div">
+                                <img src={overlay}/>
+                                </div>
+                                <div className="below-img-blog">
+                                <h2>Growth of SaaS industry</h2>
+                                <p className="below-img-blog-p">Subscription-based saaS application and licensing makes utilizing..</p>
+                                <span className="blog-innermost">
+                                <div className="blog-landing-profile">
+                                        <div className="blog-profile-img">
+                                        <img src={overlay}/>
+                                        </div>
+                                    <p className="blog-left">Tina Lawal</p>
+                                    </div>
+                                    <div>
+                                    <p className="blog-right">02 Dec</p>
+                                    </div>
+                                </span>
+                                
+                                </div>
+
+                            </div>
+                        </div>
+               
                 </div>
-                 
+                <button className="seeAll">See all</button>
+                </div>
                
                 
             </div>
@@ -162,4 +247,12 @@ return(
 
 }
 
-export default Homepage
+const mapstatetoprops=({flex:{presentcolor}})=>({
+ 
+    presentcolor
+   
+   
+
+})
+
+export default connect( mapstatetoprops) (Homepage)

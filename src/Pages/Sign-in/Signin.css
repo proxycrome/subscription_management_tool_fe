@@ -4,14 +4,14 @@
     justify-content: flex-end;
     align-items: center;
     align-items: center;
-    width: 370px;
+    width: 100%;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
-   
+   margin-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
-    
+    height: 45px;
     color: black;
    
     
@@ -27,10 +27,10 @@
     justify-content: flex-end;
     margin-top: 30px;
     align-items: center;
-    width: 370px;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 20px;
     
-
+    height: 45px;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
    padding-right: 20px;
@@ -43,7 +43,7 @@
    
 }
 .password-wrapper input{
-    height: 50px;
+   
     width: 100%;
   border: none;
   outline: none;
@@ -78,7 +78,7 @@
     width: 100%;
     border: none;
     outline: none;
-    height: 50px;
+   
     color: #333333;
     
 }
@@ -198,8 +198,8 @@ width: 100%;
     background-color: #9953FF;
     border-radius: 5px;
     border: none;
-
-    margin-top: 20px;
+    cursor: pointer;
+    margin-top: 40px;
     border: none;
     height: 40px;
     background-color: #6200f0;
@@ -207,11 +207,11 @@ width: 100%;
     height: 40px;
     color: white;
    
-    background-color: #191D6C;
+    background-color: #6200F0;
    
 }
 .create:hover{
-    background-color: #030640;
+    background-color: #6002EB;
     
     color: white;
     
@@ -309,8 +309,8 @@ width: 100%;
     color: #c4c4c4;
 }
 .pols h2{
-    line-height: 8px;
-    margin-bottom: 0px;
+   
+    margin-bottom: 10px;
     font-size: 18px;
     color: black;
     text-align: left;
