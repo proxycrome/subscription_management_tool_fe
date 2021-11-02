@@ -33,7 +33,7 @@ function Partners({headercolor,presentcolor}){
             <div className="partners-text">
                 <h3>OUR PARTNERS</h3>
                 <div className="design">
-                <div></div><p><LoremIpsum avgWordsPerSentence={2} /></p>
+                <LoremIpsum avgWordsPerSentence={2} />
                 </div>
                 <h2>"Partner integrations made easy"</h2>
                 <p><LoremIpsum avgWordsPerSentence={2} /></p>

@@ -4,6 +4,8 @@
     justify-content: space-between;
     min-height: 100vh;
     font-family: 'Cabin', sans-serif;
+    background-color: #FAFAFE;
+    
    
 }
 .Homebody{
@@ -280,6 +282,10 @@ margin-bottom: 0px;
     background-color: white;
     color: #6200F0;
     border:1px solid #6200F0;
+    margin-bottom: 0px;
+}
+.buttons #sep-button{
+    margin-bottom: 0px;
 }
 
 .buttons button{
@@ -390,6 +396,13 @@ margin-bottom: 0px;
     border-radius: 100%;
 }
 @media screen and (max-width:960px){
+    .butnRegister{
+       
+    }
+    .buttons #sep-button{
+       margin-top: 20px;
+       margin-bottom: 20px;
+    }
     .seeAll{
         display: inline;
     }
@@ -413,7 +426,14 @@ margin-bottom: 0px;
     }
     .Homebody p{
         line-height:180%px;
+        margin-bottom: 30px;
+        font-size: 20px;
         
+    }
+    .Homebody h2{
+        font-size: 24px;
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
 
     .Innercontent-original div{
@@ -428,9 +448,12 @@ margin-bottom: 0px;
        
         max-width: 100%;
         max-width: 100%;
+        margin-bottom: 0px;
+        
       }
       .laptop-image img{
         width: 100%;
+       
       }
      
     .mobile-img-div{
@@ -464,6 +487,7 @@ margin-bottom: 0px;
 .Innercontent-original h2{
     text-align: left;
     width: 100%;
+    
 }
 .Innercontent-original p{
     text-align: left;
@@ -496,6 +520,10 @@ margin-bottom: 0px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 0px;
+   
+    
+    
 }
 .Innercontent{
     display: none;
@@ -505,6 +533,9 @@ margin-bottom: 0px;
     display: flex;
     flex-direction: column;
     text-align: left;
+  
+    margin-top: 0px;
+   
    
 }
 .mobile-inner-content p{
@@ -528,9 +559,13 @@ margin-bottom: 0px;
 .Innercontent-original-mobile div{
    width: 100%;
   
+   padding: 0px;
+   margin-bottom: 0px;
+   
+  
 }
 .Innercontent-original-mobile p{
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .Innercontent-original-mobile{
     display: inline;
@@ -540,6 +575,14 @@ margin-bottom: 0px;
 }
 .Innercontent-original-mobile .laptop-image{
     margin-bottom: 40px;
+}
+.Innercontent-original-mobile button{
+   
+    
+}
+.Bodyinner .Innercontent-original-mobile {
+   
+    
 }
 
 

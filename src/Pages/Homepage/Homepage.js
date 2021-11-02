@@ -59,12 +59,12 @@ return(
                         expenses </p>
                         </div>
                         <div className="laptop-image"><img src={lady}/></div>
-                        <span className="buttons">
+                        <div className="buttons">
 
                         
-                        <button onClick={(()=>{history.push("/signup")})}>REGISTER</button>
+                        <button className="butnRegister" onClick={(()=>{history.push("/signup")})}>REGISTER</button>
                         <button id="sep-button" onClick={(()=>{history.push("/signin")})}>LOGIN</button>
-                        </span>
+                        </div>
                 
               
                 </div>

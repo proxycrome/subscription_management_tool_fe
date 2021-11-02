@@ -14,7 +14,7 @@ function Navbar({headercolor,presentcolor,partstyle,blogstyle,howworks,privacyst
     console.log(presentcolor.howcolor)
     const[mobilenavcontent, setMobilenavcontent]=useState({display:"none"})
     const[fastyle,setFastyle ]=useState({display:"none"})
-    const[fabar,setFabar ]=useState({display:"inline"})
+    const[fabar,setFabar ]=useState({display:"inline",width:"24px",height:"24px"})
     const[extra,setExtra ]=useState({display:"none"})
     const[extramobile,setExtramobile ]=useState({display:"none"})
     const[part,setPart]=useState({color:presentcolor.partcolor})

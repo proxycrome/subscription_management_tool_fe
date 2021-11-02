@@ -51,6 +51,13 @@
    max-height: 10vh;
     margin-right: 5px;
 }
+.design p{
+    border-left: 5px  solid green;
+    padding-left:  5px
+    
+        
+   
+    ;}
 .header-image img{
     height: 100%;
     width: 100%;
