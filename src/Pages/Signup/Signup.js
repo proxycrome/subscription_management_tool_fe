@@ -263,7 +263,7 @@ function Signup({details,signupdetails,signup}){
                 <input type="checkbox" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
                 <p>Remember me</p>
            </span>
-           <Recaptcha
+           {/* <Recaptcha
            className="recaptcha"
             sitekey="6Lf85dwcAAAAAGRU-xn3R_77p-3DkqkSyeq9WX__"
          render="explicit"
@@ -271,7 +271,7 @@ function Signup({details,signupdetails,signup}){
             onloadCallback={Recaptchaloaded}
            verifyCallback={verifystate}
             
-            />
+            /> */}
              <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
            <div className="terms"> 
            <div>
@@ -283,15 +283,15 @@ function Signup({details,signupdetails,signup}){
             </div>
             </div>
            
-          <div className="signup-orandline">  <hr className="signup-line"/>Sign up with <hr className="signup-line"/></div>
+          <div className="signup-orandline">  <hr className="signup-line"/><p className="signupWith">Sign up with</p> <hr className="signup-line"/></div>
           <div className="google-AND-facebook">
             <button className="signup-google"><GoogleLogo className="logoGoogle"/><p> GOOGLE</p></button>
             <button className="signup-facebook"> <FacebookLogo className="logoFace"/><p> FACEBOOK</p></button>
             </div>
-            </div> 
+            
             <p className="already-have-account">Already have an account? <Link to="/signin" className="already-have-account-log">Log in</Link></p>
            
-            
+            </div>
             </div>
             </div>
         </div>

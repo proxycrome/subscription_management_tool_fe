@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import { headercolor } from '../../redux/flex/flex.actions'
 import {useEffect} from 'react'
 import splash from '../../Asset/splash.png'
+import worknew from '../../Asset/worknew.png'
 import splashsec from '../../Asset/splashsec.png'
 import check from '../../Asset/check.png'
 import iconDots from '../../Asset/Icon.png'
@@ -45,7 +46,7 @@ function HowWorks({headercolor,presentcolor}){
                 </div>
             <div className="works-and-image">
                 <div className="works-outer">
-                <div className="works-image-second"><img src={splashsec}/></div>
+                <div className="works-image-second"><img src={worknew}/></div>
                     <div className="works-inner-second">
                        <h2>Our Featured Functionalities</h2>
                        <p>Here 're some of the features Flex has to offer</p>
@@ -80,12 +81,12 @@ function HowWorks({headercolor,presentcolor}){
                        </div>
                        
                     </div>
-                    <div className="works-image"><img src={splashsec}/></div>
+                    <div className="works-image"><img src={worknew}/></div>
                 </div>
             </div>
             <div className="mobile-works-inner">
             <h2>Our Featured Functionalities</h2>
-                <div className="mobile-work-img"><img src={splashsec}/></div>
+                <div className="mobile-work-img"><img src={worknew}/></div>
                 <p>Here 're some of the features Flex has to offer</p>
                 <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
@@ -99,7 +100,7 @@ function HowWorks({headercolor,presentcolor}){
                        </div>
                 <div className="mobile-works-inner">
             <h2>Our Featured Functionalities</h2>
-                <div className="mobile-work-img"><img src={splashsec}/></div>
+                <div className="mobile-work-img"><img src={worknew}/></div>
                 <p>Here 're some of the features Flex has to offer</p>
                 <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
