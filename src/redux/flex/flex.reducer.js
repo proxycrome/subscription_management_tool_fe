@@ -5,7 +5,15 @@ const INITIAL_STATE={
     //sub:[],
     details:{},
     //signininput:{},
-    detailssignin:{}
+    detailssignin:{},
+    presentcolor:{partcolor:"",
+                    howcolor:"",
+                    privacystyle:"#030640",
+                    aboutstyle:"",
+                    dashheadercolor:"",
+                    dashinvitecolor:"",
+                    dashsubscribecolor:""
+                }
     
 }
 
@@ -36,12 +44,19 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
                   
                } 
 
+
                case 'signindetails' :
             
         
         
                 
                 Object.assign(state.detailssignin,action.value)
+                case'headercolor':
+                return{
+                    ...state,
+                   presentcolor:action.value
+                   
+                } 
 
             default:
                 return state

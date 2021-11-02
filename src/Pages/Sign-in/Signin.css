@@ -4,15 +4,16 @@
     justify-content: flex-end;
     align-items: center;
     align-items: center;
-    width: 370px;
+    width: 100%;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
-   
+   margin-bottom: 24px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
-    
+    height: 45px;
     color: black;
+    
    
     
     
@@ -27,10 +28,10 @@
     justify-content: flex-end;
     margin-top: 30px;
     align-items: center;
-    width: 370px;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 24px;
     
-
+    height: 45px;
     border: 1px solid #c4c4c4;
     color: #c4c4c4;
    padding-right: 20px;
@@ -43,10 +44,11 @@
    
 }
 .password-wrapper input{
-    height: 50px;
+   
     width: 100%;
   border: none;
   outline: none;
+  color: #333333;
     
 
     
@@ -59,11 +61,13 @@
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
 }
 .password-wrapper input:focus{
     border: none;
     outline: none;
     color: black;
+    color: #333333;
 }
 .password-wrapper input:focus{
     border: none;
@@ -75,7 +79,8 @@
     width: 100%;
     border: none;
     outline: none;
-    height: 50px;
+   
+    color: #333333;
     
 }
 .email-wrapper:hover{
@@ -86,6 +91,8 @@
     border: 1px solid #6200f0;
     outline: none;
     color: black;
+    border: 1px solid #030640;
+    color: #333333;
 }
 .email-wrapper input:hover{
     border: none;
@@ -98,6 +105,7 @@
 .password-wrapper i{
     position: absolute;
     margin-right: 0px;
+    margin-top:4px ;
     
     
  
@@ -111,13 +119,12 @@ display: flex;
 
 justify-content: space-between;
 
-min-height: 100vh;
-max-height: 90vh;
-min-height: 90vh;
-margin-top: 35px;
+min-height: 100%;
+max-height: 100%;
+min-height: 100%;
 
 
-width: 90%;
+width: 100%;
 
 
 }
@@ -125,7 +132,11 @@ width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   
+    min-height: 100%;
+ max-height: 100%;
+  
+  margin: 0px;
+  padding: 0px;
  
     
 }
@@ -133,14 +144,16 @@ width: 90%;
    
     background-color: #D5BCFF;
  display: flex;
- min-height: 100vh;
- max-height: 100vh;
-   align-items: flex-start;
+ height: 100vh;
+ 
+   align-items: center;
    justify-content: center;
    padding: 0px 10px;
    padding-left: 10px;
    padding-right: 10px;
-   font-family: DMSans ;
+   padding: 0px;
+   margin: 0px;
+   font-family: 'DM Sans', sans-serif;
   
    
     
@@ -154,13 +167,14 @@ width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     
-    min-height: 80vh;
-    max-height: 80vh;
+    min-height: 100%;
+    max-height: 100%;
    
 
    width: 410px;
-  
+ 
   
    
    
@@ -175,8 +189,9 @@ width: 90%;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    
-   
+  
+   max-height: 100%;
+   min-height: 100%;
     
    
 }
@@ -185,24 +200,28 @@ width: 90%;
     background-color: #9953FF;
     border-radius: 5px;
     border: none;
-
-    margin-top: 20px;
+    cursor: pointer;
+    margin-top: 40px;
     border: none;
-    height: 40px;
+    height: 56px;
     background-color: #6200f0;
     background-color: #9953ff;
-    height: 40px;
+    height: 56px;
     color: white;
+   
+    background-color: #6200F0;
    
 }
 .create:hover{
-    background-color: #191D6C;
+    background-color: #6002EB;
+    
     color: white;
+    
 }
 .facebook{
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,10 +229,13 @@ width: 90%;
     background-color: white;
     width: 200px;
     border-radius: 5px;
-    height: 60px;
+    height: 50px;
     border:1px solid #c4c4c4;
-    
+    color: #333333
    
+}
+.facebook:hover{
+    border-color: #6200f0;
 }
 .faceLogo{
     width: 30px;
@@ -229,7 +251,7 @@ width: 90%;
 }
 .google{
     width: 200px;
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,8 +260,12 @@ width: 90%;
     border-radius: 5px;
     border:1px solid #c4c4c4;
     background-color: white;
-    margin-bottom: 30px;
-    height: 60px;
+    margin-bottom: 80px;
+    height: 50px;
+    color: #333333
+}
+.google:hover{
+    border-color: #6200f0;
 }
 .email{
     width: 100%;
@@ -256,6 +282,9 @@ width: 90%;
     margin-right: 15px;
     height: 20px;
     width: 20px;
+    color: white;
+    border: #030640;
+    
 }
 .line{
     height: 1px;
@@ -265,31 +294,45 @@ width: 90%;
     
 }
 .line-left{
-    margin-right: 16px;
+   
     height: 1px;
     background-color: #c4c4c4;
-    width: 50%;
+    width:33.3%;
     border: none;
+    margin-left: 0px;
+    background-color: rgba(51,51,51,20%);
+    margin-right: 0px;
 }
 .line-right{
-    margin-left: 16px;
+    
+   margin-left: 0px;
     height: 1px;
     background-color: #c4c4c4;
-    width: 50%;
+    width:33.3%;
     border: none;
+    background-color: rgba(51,51,51,20%);
+}
+.loginWith{
+    width: 33.3%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
 }
 .orandline{
+   padding: 0px;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin-top: 30px;
     color: #c4c4c4;
+    color: rgba(51,51,51,20%);
 }
 .pols h2{
-    line-height: 8px;
-    margin-bottom: 0px;
+   
+    margin-bottom: 10px;
     font-size: 18px;
-    color: black;
+    color: #6200F0;
     text-align: left;
 }
 .pols{
@@ -316,6 +359,8 @@ width: 90%;
     background-color: rgb(15, 15, 15);
     background-color: rgba(0,0,0,0.6);
     background-blend-mode: overlay;
+    min-height: 100%;
+    max-height: 100%;
     
 }
 .textandimage-logo{
@@ -362,7 +407,16 @@ width: 90%;
 }
 .noAccount-signup{
     color: #9953FF;
+    color: #6200f0;
+    
 }
+.CheckDIV{
+    width: 100px;
+    background-color: aqua;
+}
+
+
+
 @media screen and (max-width:960px) {
     
     .inner-signin{

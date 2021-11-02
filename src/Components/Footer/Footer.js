@@ -1,4 +1,5 @@
 import React from 'react'
+import base from '../../Asset/Base.png'
 import '../Footer/Footer.css'
 import { FaInstagram,FaTwitter, FaLinkedin, FaFacebookF } from "react-icons/fa";
 
@@ -17,15 +18,17 @@ return(
              <p>Customer support</p>
              </span>
              <span>
-                 <p>Copyright @ 2021 Flex</p>
+                 <p className="copy-Right">Copyright @ 2021 Flex</p>
              </span>
          </div>
 
         <span className="newsletter">
+            <div>
             <h3>Newsletter</h3>
             <p>Subscribe to our weekly newsletter</p>
             <input type="email" name="email" placeholder="Enter email"/>
             <button>Submit</button>
+            </div>
         </span>
         <div className="footer-contact-us">
             <div>
