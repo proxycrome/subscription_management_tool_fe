@@ -7,14 +7,15 @@
 .second-line-dashboard{
     display: flex;
     justify-content: space-between;
-   padding: 20px 30px;
+   padding: 0px 30px;
+   
   
 }
 .inner-body-dashboard{
     background-color: powderblue;
    margin-left: 30px;
    margin-right: 30px;
-    margin-top: 20px;
+   margin-top: 20px;
 }
 .third-line-dashboard{
 display: flex;

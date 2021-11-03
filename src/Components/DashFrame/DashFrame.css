@@ -10,23 +10,24 @@
     
 }
 .dashboard-left{
-    background-color: hotpink;
+    background-color: #191D6C;
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 20px;
+    color: white;
 }
 .dashboard-inner{
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: indianred;
+   
 }
 .dashboard-right{
     width: 80%;
-    background-color: green;
+    
 }
 .dashboard-logo{
     margin-bottom: 60px;
@@ -39,7 +40,7 @@
     justify-content: flex-start;
     margin-bottom: 20px;
     padding-left: 100px;
-    background-color: teal;
+  
     width: 100%;
 }
 .dash-icon{
@@ -49,7 +50,7 @@
     justify-content: center;
 }
 .list{
-    background-color: lightblue;
+ 
   
     display: flex;
     flex-direction: column;
@@ -64,11 +65,14 @@
     display: flex;
     width: 100%;
     height: 30px;
-    background-color: blue;
+  background-color: #dfcef7;
     margin-top: 30px;
     justify-content: space-between;
-    padding: 0px 30px;
-    padding-right: 20px;
+    align-items: center;
+    padding: 0px 0px;
+   margin-bottom: 0px;
+    color: #6200f0;
+  overflow: hidden;
 
 }
 .dash-upper-left{
@@ -86,20 +90,24 @@
     
 }
 .firsts{
-    border-right: 0.5px solid black;
+   
     border-left: 0.5px solid black;
     min-height: 100%;
     max-height: 100%;
-    padding: 10px;
+    padding:6px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+   
+    
+    align-self: center;
 }
 .second{
+    align-self: center;
     border-left: 0.5px solid black;
     min-height: 100%;
     max-height: 100%;
-    padding: 10px;
+    padding: 6px 10px;
     display: flex;
     align-items: center;
     justify-content: center;

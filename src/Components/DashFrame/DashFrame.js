@@ -17,7 +17,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                     <div className="list">
                         <div onClick={(()=>{history.push("/dashboard")})} style={dashheaderstyle} className="inner-list">
                             <div className="dash-icon"><FaEye/></div>
-                            <div>Home</div>
+                            <p>Home</p>
                             </div>
                             <div onClick={(()=>{history.push("/subscription")})} style={dashsubscribestyle} className="inner-list">
                             <div className="dash-icon"><FaEye/></div>
