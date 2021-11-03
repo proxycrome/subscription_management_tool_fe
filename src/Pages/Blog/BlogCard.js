@@ -1,5 +1,6 @@
 import React from "react";
 import CardImage from '../../Asset/blogCardImage.png';
+import overlay from '../../Asset/Overlay2.png'
 import "./Blog.css";
 
 function BlogCard({ header, body, authorName, date, onClick, id }) {

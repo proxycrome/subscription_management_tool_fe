@@ -8,29 +8,27 @@ import '../Blog/Blog.css';
 function Blog(){
     return(
         <>
-            <section>
+            <div className="Blog">
                 <Navbar/>
-                <div className="Blog">
-                    <div className="heading">
-                        <h1>The news that surrounds us is collected here</h1>
-                        <p>Read, watch and absorb the content that we publish in our news blog. 
-                            Also leave comments and communicate with other users.</p>
-                    </div>
-                    <div className="blogs">
-                        {data
-                            .map((data, index) => (
-                                <BlogCard
-                                    key={index}
-                                    header={data.header}
-                                    body={data.body}
-                                    authorName={data.authorName}
-                                    date={data.date}
-                                />
-                            ))}
-                    </div>
+                <div className="heading">
+                    <h1>The news that surrounds us is collected here</h1>
+                    <p>Read, watch and absorb the content that we publish in our news blog. 
+                        Also leave comments and communicate with other users.</p>
+                </div>
+                <div className="blogs">
+                    {data
+                        .map((data, index) => (
+                            <BlogCard
+                                key={index}
+                                header={data.header}
+                                body={data.body}
+                                authorName={data.authorName}
+                                date={data.date}
+                            />
+                        ))}
                 </div>
                 <Footer/>
-            </section>
+            </div>
         </>
     )
 

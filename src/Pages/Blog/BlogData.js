@@ -38,13 +38,13 @@ const BlogData = [
     {
         header: 'Future of Learning',
         body: 'A constant ability to learn will be on the most crucial skills...',
-        authorName: 'Helen Afam',
+        authorName: 'Tina Lawal',
         date: '02 Dec'
     },
     {
         header: 'Future of Work',
         body: 'Majority of people will work in jobs that don\'t exist today...',
-        authorName: 'Helen Afam',
+        authorName: 'William Okafor',
         date: '02 Dec'
     },
 ]
