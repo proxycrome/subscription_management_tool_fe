@@ -5,12 +5,15 @@
     min-height: 100vh;
     font-family: 'Cabin', sans-serif;
     background-color: #FAFAFE;
+  
     
    
 }
 .Homebody{
   
     padding: 0 100px;
+   
+    margin-top: 130px;
  
    
 }
@@ -113,7 +116,10 @@
 }
 
 .Bodyinner{
-    margin-top: 40px;
+   
+   
+    height: 100%;
+    padding: 0px;
     
 }
 .Innercontent{
@@ -141,7 +147,7 @@ margin-bottom: 0px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 20px;
+   
    
     
    
@@ -161,7 +167,7 @@ margin-bottom: 0px;
 .Innercontent-original div{
     width: 45%;
    color: #191D6C;
-   margin-top: 80px;
+  
   
   
 }
@@ -277,6 +283,7 @@ margin-bottom: 0px;
     font-size: 44px;
     color: #030640;
     font-weight: medium;
+    
 }
 #sep-button{
     background-color: white;

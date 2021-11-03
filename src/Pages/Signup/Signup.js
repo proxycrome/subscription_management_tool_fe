@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaEye,FaEyeSlash,FaFacebookF} from "react-icons/fa"; 
+import {FaEye,FaEyeSlash,FaFacebookF,FaInfo} from "react-icons/fa"; 
 import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -19,6 +19,9 @@ function Signup({details,signupdetails,signup}){
     const[sorty,setSorty]=useState('asc')
     const[remember,setRemember]=useState(false)
     const[verified, setVerified]=useState(false)
+    const[passwordCharacter,setPasswordCharacter]=useState({display:"none"})
+    const[PasswordWrap,setPasswordWrap]=useState({marginBottom:"24px"})
+    const[passval ,setPassval]=useState("")
     const history=useHistory()
 
     
@@ -74,10 +77,15 @@ function Signup({details,signupdetails,signup}){
     const handletoggle=()=>{
 
         setPasswordshow(!passwordshow)
+        
 
     }
     const handlesubmit=(e)=>{
         e.preventDefault()
+        if((passval.length!=8) ){
+            setPasswordCharacter({display:"flex"});
+            setPasswordWrap({marginBottom:"5px"})
+        }
         console.log(details)
         //console.log(signup)
         
@@ -252,12 +260,19 @@ function Signup({details,signupdetails,signup}){
           
           
             </div>
-           <div className="signup-password-wrapper">
-            <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Password" required/>
+           <div style={PasswordWrap} className="signup-password-wrapper">
+            <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
+            ;setPasswordCharacter({display:"none"})
+            ;setPasswordWrap({marginBottom:"24px"})
+        ;setPassval(e.target.value)}}
+             onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
             <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
           
             </div>
-            
+            <div style={passwordCharacter} className="password-charac">
+            <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
+            special characters</p>
+            </div>
           
            <span className="signup-remember-me">
                 <input type="checkbox" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />

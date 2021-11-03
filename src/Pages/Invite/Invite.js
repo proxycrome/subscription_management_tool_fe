@@ -13,7 +13,7 @@ function Invite({presentcolor,headercolor}){
      },[])
 return(
     <DashFrame dashinvitestyle={{backgroundColor:presentcolor.dashinvitecolor}}>
-
+        <div>kkkk</div>
          
     </DashFrame>
 

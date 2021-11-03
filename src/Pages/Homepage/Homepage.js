@@ -32,7 +32,7 @@ return(
         
 
         <div className="Bodyinner">
-            <div >
+          
                 <div className="Innercontent-original">
                 <div className="contents-original">
                     <h2>Subscription Management Made Easy!</h2>
@@ -232,7 +232,7 @@ return(
                 </div>
                
                 
-            </div>
+           
            
         </div>
 
