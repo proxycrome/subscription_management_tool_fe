@@ -23,8 +23,31 @@ function About({headercolor,presentcolor}){
          privacystyle={{color:presentcolor.privacycolor,textDecoration:"none"}}
          aboutstyle={{textDecoration:"none"}}/>
         <div className="about-terms">
-        <h1>Terms and Conditions</h1> 
-        <LoremIpsum p={5} />
+        <p className="headerABout">Terms and Conditions</p>
+        <div className="under-Header">
+        <LoremIpsum p={1}/> 
+        <div className="topicdiv">
+            <p className="linetopic">
+                1. Introduction
+             </p>
+             <LoremIpsum p={2}/> 
+            
+            </div>
+            <div className="topicdiv">
+            <p className="linetopic">
+                2. Account Terms
+             </p>
+             <LoremIpsum p={2}/> 
+            
+            </div>
+            <div className="topicdiv">
+            <p className="linetopic">
+                3. Payment Methods & Payment Accounts
+             </p>
+             <LoremIpsum p={2}/> 
+            
+            </div> 
+            </div>
         </div>
         </div>
        

@@ -273,11 +273,15 @@ function Signup({details,signupdetails,signup}){
             <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
             special characters</p>
             </div>
+           
           
-           <span className="signup-remember-me">
-                <input type="checkbox" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
-                <p>Remember me</p>
-           </span>
+           <div className="signup-remember-me">
+            
+                <input type="checkbox" id="test-box" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
+                <label for="test-box">Remember me</label>
+               
+                {/* <p>Remember me</p> */}
+           </div>
            {/* <Recaptcha
            className="recaptcha"
             sitekey="6Lf85dwcAAAAAGRU-xn3R_77p-3DkqkSyeq9WX__"
@@ -289,12 +293,14 @@ function Signup({details,signupdetails,signup}){
             /> */}
              <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
            <div className="terms"> 
-           <div>
-           <input className="terms-checkbox" type="checkbox" required />
-           </div>
-           <div className="terms-and-policy">
+           <div className="signup-remember-me">
+           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <label for="termscheck"> </label>
+           <div  className="terms-and-policy">
            <p >By clicking you agree to our 
             <Link to="" className="Terms-and-condition"> Terms and Conditions</Link>. See <Link className="privacy">Privacy Policy</Link></p>
+            </div>
+           
             </div>
             </div>
            
