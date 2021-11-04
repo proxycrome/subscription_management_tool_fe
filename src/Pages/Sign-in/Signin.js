@@ -149,9 +149,10 @@ import '../Sign-in/Signin.css'
             </div>
             <div className="forgot-and-remember">
             
-           <span className="keep-logged-in"> <input type="checkbox" value="loggedin"
+           <span  className="keep-logged-in"> 
+           <input id="logedIn" type="checkbox" value="loggedin"
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
-                <p>Remember me</p>
+                <label for="logedIn">Remember me</label>
            </span>
            <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
            </div>

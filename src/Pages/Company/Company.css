@@ -24,7 +24,8 @@
 }
 .imagesDivs{
     width: 100%;
-    background-color: brown;
+   padding-top: 40px;
+   margin-bottom: 40px;
     display: flex;
     flex-direction: column;
 }
@@ -41,6 +42,10 @@
 }
 .comPany{
     font-family: 'Cabin', sans-serif;
+    background-color: #FAFAFE;
+}
+.comPany P{
+    line-height: 157%;
 }
 .image-Two{
     display: flex;
@@ -50,12 +55,13 @@
     align-self: center;
 }
 .about-us{
-    width: 50%;
+    width: 70%;
 }
 .company-doing-content div{
  
-   
+    background-color: rgb(89, 112, 112);
     border: 1px solid black;
+    padding: 30px 20px;
 }
 .company-how .company-doing #marginExtra{
     margin-bottom: 20px;
@@ -72,6 +78,7 @@
 }
 .company-doing-content p{
     width: 20%;
+  
 }
 .company-learn{
     display: flex;
@@ -83,16 +90,22 @@
 .learn-left{
     width: 50%;
     text-align: left;
+    font-size: 44px;
+    color: #030640;
 }
 .learn-right{
+    color: white;
+    font-size: 18px;
     width: 50%;
+   
     background-image: url("../../Asset/Base.png");
     text-align: left;
     display: flex;
     align-items: flex-end;
-    color: red;
+   background-color: rgb(141, 136, 136);
     height: 400px;
     padding: 30px;
+    background-blend-mode: darken;
 }
 .learn-right img{
     width: 100%;
@@ -114,7 +127,9 @@
     display: flex;
     padding-left: 100px;
     padding-right: 100px;
-   
+    padding:100px 100px ;
+    background-color: #191D6C;
+    background-color: #0c204c;
     justify-content: center;
     align-items: center;
     
@@ -124,7 +139,7 @@
 }
 .company-how-left{
     width: 50%;
-    background-color: darkgoldenrod;
+   
     text-align: left;
 }
 .img-about-first{
@@ -137,6 +152,7 @@
 .abouty-div{
     width: 50%;
     height: 100%;
+    margin-left: 70px;
 }
 .abouty-div img{
    
@@ -144,7 +160,7 @@
 }
 .rectangle-div{
     width: 100%;
-    background-color: blue;
+    background-color: #0c204c;
     padding: 40px 100px;
 }
 .rectangle-div img{
@@ -165,6 +181,46 @@
 .shaped-image-div-first img{
     width: 100%;
  
+}
+.company-provide h2{
+    font-size: 37px;
+    color: #030640;
+}
+.company-provide h3{
+    font-size: 24px;
+    color: #030640;
+}
+.company-provide p{
+    font-size: 18px;
+    color: #333333;
+}
+.company-how-left h2{
+    font-size: 37px;
+    color: white;
+}
+.header-Paragraph{
+    font-size: 16px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.numberAbout{
+    font-size: 36px;
+    color: white;
+}
+.textABout{
+    color: white;
+    font-size: 16px;
+}
+.about-us h2{
+    font-size: 37px;
+    color: #030640;
+}
+.about-us p{
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 60px;
+    margin-top: 30px;
 }
 @media screen and (max-width:1000px) {
     .company-provide{

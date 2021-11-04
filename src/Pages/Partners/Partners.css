@@ -52,8 +52,10 @@
     margin-right: 5px;
 }
 .design p{
-    border-left: 5px  solid green;
-    padding-left:  5px
+    border-left: 5px  solid  #6200F0;
+    padding-left:  5px;
+    font-size: 18px;
+    color: #333333;
     
         
    
@@ -71,7 +73,8 @@
     padding-left: 100px;
     padding-right: 100px;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items:center;
+   
    
     
     
@@ -87,7 +90,7 @@
     justify-content: space-between;
   
     padding: 0 50px;
-
+    
 }
 .Partner-areas div{
     width: 50%;
@@ -104,28 +107,160 @@
 }
 .Partners{
     font-family: 'Cabin', sans-serif;
+    background-color: #FAFAFE;
+   
 }
+
 .partner-right-text{
     text-align: left;
     margin-left: 70px;
     width: 50%;
+    font-size: 18px;
+    color: #333333;
 }
 .partner-input{
     display: flex;
     flex-direction: column;
    
+    margin-top: 250px;
+   
 }
 .partner-input-area{
-    border: 1px solid black;
-    width: 40%;
+   
+    width: 60%;
     margin: 10px auto;
     padding-top: 40px;
     padding-bottom: 40px;
     border-radius: 15px;
+    font-size: 16px;
+    background-color: white;
+}
+.partner-input{
+    font-size:37px ;
+    color: #030640;
 }
 .partner-extra{
     text-align: left;
     padding-left: 50px;
+    padding-right: 50px;
+   
+    width: 100%;
+}
+.partner-extra button{
+    width: 232px;
+    font-weight: bold;
+    background-color: #6200F0;
+    color: white;
+    border: none;
+    height: 56px;
+    margin-top: 27px;
+    font-size: 18px;
+}
+.firstHeader{
+    font-size: 44px;
+    color: #030640;
+    line-height: 157%;
+    font-weight: bold;
+    text-align: left;
+}
+.partners-text h4{
+    font-size: 37px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #030640;
+    
+}
+.partners-text h3{
+    font-size: 18px;
+    color: #6200F0;
+    line-height: 20%;
+    margin-bottom: 30px;
+}
+.ready{
+    font-size: 37px;
+   font-weight: bold;
+    color: #030640;
+   
+}
+.partner-input-class label{
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.partner-input-class input{
+    color: #030640;
+    padding-left: 20px;
+    height: 45px;
+    border-radius: 6px;
+    border: 1px solid #c4c4c4;
+    
+}
+.partner-input-class input:hover{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.partner-input-class input:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+::placeholder{
+    color: #c4c4c4;
+}
+.tellUs{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.textarea:hover{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.textarea:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.textarea{
+    border-radius: 6px;
+    border: 1px solid #c4c4c4;
+    min-width: 100%;
+    max-width: 100%;
+    height: 137px;
+    padding: 20px;
+    font-weight: bold;
+    color: #191d6c;
+    font-size: 16px;
+}
+.chooseFilE{
+    display: flex;
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    max-width: 80%;
+    min-width: 80%;
+    
+}
+.chooseFilE:hover{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.chooseFilE:focus{
+    border: 1px solid #6200f0;
+    outline: none;
+}
+.chooseFilE input{
+    border: none;
+}
+.chooseFilE input::placeholder{
+    color: #333333;
+    font-family: 'Cabin', sans-serif;
+}
+.chooseFilE input:focus{
+    border: none;
+}
+.chooseFilE input:hover{
+    border: none;
+}
+.chooseFilE button{
+    border: none;
+    padding:0 20px;
 }
 
 @media screen and (max-width:1000px) {
