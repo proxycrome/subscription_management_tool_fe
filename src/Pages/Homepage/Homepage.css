@@ -1,0 +1,597 @@
+.Homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: 'Cabin', sans-serif;
+    background-color: #FAFAFE;
+  
+    
+   
+}
+.Homebody{
+  
+    padding: 0 100px;
+   
+   
+ 
+   
+}
+.blog-div{
+    display: flex;
+    width: 400px;
+    border: 1px solid wheat;
+    border-radius: 12px;
+  
+    
+   
+}
+.blog-div-show{
+   
+    display: flex;
+    width: 400px;
+  
+  border: 1px solid wheat;
+  border-radius: 12px;
+  padding-bottom: 10px;
+   
+   
+}
+.blog-img-div{
+    width: 100%;
+    
+    margin: 0px;
+   
+}
+.blog-img-div img{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.blog-content{
+    display: flex;
+    flex-direction: column;
+    
+   
+    width: 100%;
+    
+    
+}
+.blog-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  
+}
+.blog-container .blog-div{
+    margin-right: 20px;
+}
+.blog-container .blog-div-show{
+    margin-right: 20px;
+}
+.below-img-blog{
+    padding: 0 20px;
+}
+.Homepage .Homebody .blog-content h2{
+    font-size: 28px;
+    text-align: left;
+    color: #030640;
+    
+  
+}
+.Homepage .Homebody .blog-content p{
+    
+    font-size: 18px;
+    margin-left: 0px;
+    width: 100%;
+    color: #333333;
+    
+}
+
+.blog-content .below-img-blog .blog-innermost{
+    display: flex;
+    
+    justify-content:space-between;
+   
+ 
+    margin-top: 20px;
+    padding-right: 0px;
+   padding: 0px;
+    align-items: center;
+   
+}
+.below-img-blog-p{
+    text-align: left;
+   
+}
+ 
+ .Homepage .Homebody .blog-innermost p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #030640;
+    margin: 0px;
+   
+}
+
+.Bodyinner{
+   
+   
+    height: 100%;
+    padding: 0px;
+    
+}
+.Innercontent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  
+    
+    
+   
+}
+.contents-original h2{
+
+margin-bottom: 0px;
+}
+.laptop-image{
+  
+    width: 50%;
+}
+.laptop-image img{
+    width: 100%;
+}
+.Innercontent-original{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+   
+   
+    
+   
+}
+.Innercontent div{
+    width: 45%;
+   color: #191D6C;
+   margin-top: 80px;
+  
+  
+}
+.Homebody p{
+    line-height:157%;
+    font-size: 24px;
+    color: #333333;
+}
+.Innercontent-original div{
+    width: 45%;
+   color: #191D6C;
+  
+  
+  
+}
+.Bodyinners div{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
+   
+    padding-top: 0px;
+    width: 50%;
+   
+}
+.contents h2{
+    margin-top: 0px;
+    margin-bottom: 24px;
+}
+.contents-original{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    padding-top: 0px;
+    width: 50%;
+   
+    height: 100%;
+  
+   
+}
+.contents-original h2{
+    margin-bottom: 24px;
+    margin-top: 0px;
+   
+    padding: 0px;
+   
+}
+.contents-operate{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-end;
+    align-self: flex-end;
+   
+    padding-top: 0px;
+    width: 30%;
+   
+    
+}
+.contents-operate h2{
+    align-self: flex-start;
+    line-height: 0px;
+    margin-bottom: 0px;
+ 
+  width: 70%;
+  padding-top: 0px;
+  margin-top: 0px;
+  
+}
+.contents-operate p{
+    width: 100%;
+}
+.contents p{
+    width: 100%;
+    text-align: justify;
+   
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+.contents-original p{
+    width: 100%;
+   text-align: justify;
+   
+   font-size: 24px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+ 
+}
+.Image{
+    display: flex;
+   justify-content: center;
+}
+.buttons{
+    display: flex;
+   
+    margin-top:46px;
+    padding-top: 0px;
+    margin-bottom: 50px;
+   
+}
+.buttons-partner{
+    
+
+
+    width: 150px;
+    height: 56px;
+    margin-top:46px;
+    background-color: #6200F0;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+   
+    
+}
+.Homebody h2{
+    font-size: 44px;
+    color: #030640;
+    font-weight: medium;
+    
+}
+#sep-button{
+    background-color: white;
+    color: #6200F0;
+    border:1px solid #6200F0;
+    margin-bottom: 0px;
+}
+.buttons #sep-button{
+    margin-bottom: 0px;
+}
+
+.buttons button{
+    width: 150px;
+    height: 56px;
+  
+    margin-right: 20px;
+    background-color: #6200F0;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.work{
+    display: flex;
+    margin-top: 20px;
+    
+}
+.workcontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    box-shadow: gainsboro 10px;
+    padding: 15px;
+    width: 30%;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    
+}
+.blog p{
+    width: 40%;
+    margin: 0px auto;
+   
+}
+.love p{
+    width: 40%;
+    margin: 0px auto;
+   
+}
+.blog{
+    margin-top: 80px ;
+}
+.blog button{
+    width: 106px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6200f0;
+    font-weight: bold;
+    border: none;
+    background-color:#ae8cdd ;
+}
+.love{
+    margin-top: 80px ;
+    min-height: 250px;
+}
+.love h2{
+    font-size: 44px;
+}
+.mobile-inner-content{
+    display: none;
+}
+.Innercontent-original-mobile{
+    display: none;
+}
+.partnerlogo{
+    margin-top: 0px;
+    min-width: 100%;
+    max-width: 100%;
+  
+}
+.partnerlogo img{
+   width: 100%;
+}
+.seeAll{
+    display: none;
+    margin-top: 20px;
+    float: right;
+    border: none;
+}
+.blog-landing-profile{
+  display: flex;
+  
+  align-items: center;
+ text-align: left;
+  width: 50%;
+ 
+ 
+}
+.blog-profile-img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+   
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    display: flex;
+}
+.blog-profile-img img{
+    width:100%;
+    height: 100%;
+    border-radius: 100%;
+}
+@media screen and (max-width:960px){
+    .butnRegister{
+       
+    }
+    .buttons #sep-button{
+       margin-top: 20px;
+       margin-bottom: 20px;
+    }
+    .seeAll{
+        display: inline;
+    }
+    .blog-div
+    {display: none;}
+    .blog-div-show{
+        text-align: left;
+        
+    }
+    .blog-container{
+        justify-content: center;
+       
+        
+    }
+    .blog-container .blog-div-show{
+        margin-right: 0px;
+    }
+   
+    .partnerlogo{
+        display: none;
+    }
+    .Homebody p{
+        line-height:180%px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        
+    }
+    .Homebody h2{
+        font-size: 24px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .Innercontent-original div{
+        margin-top: 20px;
+    }
+    .Bodyinner{
+        margin-top: 10px;
+       
+        padding-top: 0px;
+    }
+    .laptop-image{
+       
+        max-width: 100%;
+        max-width: 100%;
+        margin-bottom: 0px;
+        
+      }
+      .laptop-image img{
+        width: 100%;
+       
+      }
+     
+    .mobile-img-div{
+        max-width: 100%;
+        max-width: 100%;
+       
+       
+    }
+    .mobile-img-div img{
+        width: 100%;
+    }
+     
+    
+    .Homepage{
+        padding-top: 20px;
+    }
+    
+.Innercontent-original{       
+    display: flex;
+    flex-direction: column;
+
+}
+.Homebody{
+    padding: 0 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.Innercontent-original div{
+    width: 100%;
+}
+.Innercontent-original h2{
+    text-align: left;
+    width: 100%;
+    
+}
+.Innercontent-original p{
+    text-align: left;
+    width: 100%;
+}
+.work{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contents-original{
+    align-items: center;
+   
+}
+.workcontent{
+    width: 70%;
+    margin-top: 20px;
+    margin-right: 0px;
+}
+.buttons-partner{
+    justify-content: center;
+    font-size: 16px;
+}
+.buttons button{
+   font-size: 16px;
+    width: 100%;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+   
+    
+    
+}
+.Innercontent{
+    display: none;
+    background-color: blue;
+}
+.mobile-inner-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  
+    margin-top: 0px;
+   
+   
+}
+.mobile-inner-content p{
+    text-align: justify;
+}
+.mobile-inner-content button{ 
+    width: 100%;
+}
+.love p{
+    width: 100%;
+    text-align: center;
+}
+.blog .blog-top-parag {
+    width: 100%;
+    text-align: center;
+    
+}
+.Innercontent-original{
+    display: none;
+}
+.Innercontent-original-mobile div{
+   width: 100%;
+  
+   padding: 0px;
+   margin-bottom: 0px;
+   
+  
+}
+.Innercontent-original-mobile p{
+    margin-bottom: 30px;
+}
+.Innercontent-original-mobile{
+    display: inline;
+}
+.Innercontent-original-mobile h2{
+    margin-top: 20px;
+}
+.Innercontent-original-mobile .laptop-image{
+    margin-bottom: 40px;
+}
+.Innercontent-original-mobile button{
+   
+    
+}
+.Bodyinner .Innercontent-original-mobile {
+   
+    
+}
+
+
+
+}

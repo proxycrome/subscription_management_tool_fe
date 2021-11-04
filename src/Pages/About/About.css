@@ -1,0 +1,25 @@
+.About{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: 'Cabin', sans-serif;
+}
+.about-terms{
+    width: 72%;
+    margin: 10px auto;
+    text-align: center;
+}
+.about-terms p{
+
+   
+    text-align:left;
+}
+@media screen and (max-width:700px){
+    .about-terms h1{
+        font-size: 16px;
+    }
+    .about-terms{
+        width: 62%;
+    }
+}
