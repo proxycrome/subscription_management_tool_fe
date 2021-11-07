@@ -4,10 +4,12 @@ import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa";
 import DashFrame from '../../Components/DashFrame/DashFrame';
 import { connect } from 'react-redux'
 import {useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 import { headercolor } from '../../redux/flex/flex.actions';
 import '../Dashboard/Dashboard.css'
 
 function Dashboard({presentcolor,headercolor}){
+    const history=useHistory()
     useEffect(()=>{
         headercolor({ dashheadercolor:"purple"})
                     
@@ -15,7 +17,8 @@ function Dashboard({presentcolor,headercolor}){
      },[])
      console.log(presentcolor.dashheadercolor)
     return(
-        
+            <div className="dashtotal">
+                <div className="webDashboard">
                         <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
                            
                         <div className="inner-body-dashboard">
@@ -32,9 +35,9 @@ function Dashboard({presentcolor,headercolor}){
                             <div className="acc-summ"><p>Account summary</p></div>
                             <div className="account-line"></div>
                             </div>
-                            <p>Products</p>
+                            <p onClick={(()=>{history.push("/Product")})} className="dashproduct">Products</p>
                             </div>
-                            <button>ADD SUBSCRIPTION</button>
+                            <button onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button>
                             </div>
                             <hr className="welcome-divider"/>
                             <div className="fourth-line-dashboard-inner">
@@ -82,6 +85,46 @@ function Dashboard({presentcolor,headercolor}){
                            
                         </div>
                         </DashFrame>
+                        </div>
+                        <div className="mobile-dashboard">
+
+                      
+                            <h2>WELCOME TO FLEX</h2>
+                            <input type="search"/>
+                            <div>
+                            <div  className="inner-mobile-dashboard">
+                                <div className="view-and-button">
+                                    <h3>Overview</h3>
+                                    <button>ADD SUBSCRIPTION</button>
+                                </div>
+                                <div className="mobile-categ">
+                                    <span className="mobile-acc-line">
+                                    <p>Account summary</p>
+                                    <hr/>
+                                    </span>
+                                   
+                                    <p>Products</p>
+                                </div>
+                                <div>Card</div>
+                               
+                            </div>
+                            <div className="mobile-graph-dashboard">
+                                graph
+                            </div>
+                            <div className="mobile-second-inner">
+                                <h3>Recent subscriptions</h3>
+                                <div className="tableData">
+                                    <th className="mobile-list-table">Products</th>
+                                    <th className="mobile-list-table">Products category</th>
+                                    <th className="mobile-list-table">Expiry Date</th>
+                                    <th className="mobile-list-table">Status</th>
+                                    <th></th>
+                                    
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                         
     )
 

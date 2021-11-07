@@ -146,7 +146,7 @@ return(
                 <div className="blog">
                     <button>OUR BLOG</button>
                   
-                    <h3>Don't miss out recent articles</h3>
+                    <h2>Don't miss out recent articles</h2>
                     <p className="blog-top-parag">We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
                         <div className="blog-container">

@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
-import Recaptcha from 'react-recaptcha'
+import Recaptcha from 'react-recaptcha';
+import flexpng from '../../Asset/flexpng.png'
 import {signindetails,signin} from '../../redux/flex/flex.actions'
 import axios from 'axios'
 import '../Sign-in/Signin.css'
@@ -112,6 +113,7 @@ import '../Sign-in/Signin.css'
 
     
     return(
+        <div className="signintotal">
         <div className="signin" >
             <div className="inner-signin">
             <div className="textandimage">
@@ -171,12 +173,55 @@ import '../Sign-in/Signin.css'
             </div>
             </div>
             <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
             </div>
             </div>
             </div>
             </div>
         </div>
+        <div className="mobilesignin">
+            <div className="mobilesigninHeader">
+            <img src={flexpng} style= {{width: "78px",
+        height: "32px"}}/>
+
+        <h3>Stay connected always</h3>
+        </div>
+        <div className="signinmobile-inner">
+            <h2>WELCOME BACK!</h2>
+            <h3>Enter your details to continue...</h3>
+            <div className="signininputWrapper">
+            <input type="email" placeholder="Email address"/>
+            </div>
+            <div className="signininputWrapper" id="password-mobile-signin">
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
+            onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setPassword(e.target.value)}}/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+            <div className="forgot-and-remember">
+            
+            <span  className="keep-logged-in"> 
+            <input id="logedIn" type="checkbox" value="loggedin"
+            onChange={(()=>{setLoggedins(!loggedins )})   }/>
+                 <label for="logedIn">Remember me</label>
+            </span>
+            <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+            </div>
+            <button className="create" onClick={handlesignin}>LOG IN</button>
+          <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
+          <div className="alternateSignin">
+            <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>
+            <button className="facebook"><FacebookLogo className="faceLogo"/>FACEBOOK</button>
+            </div>
+ 
+            <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
+             
+        </div>
         
+         </div>
+      
+       </div>
     )
 }
 

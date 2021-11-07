@@ -60,8 +60,10 @@
 .company-doing-content div{
  
     background-color: rgb(89, 112, 112);
-    border: 1px solid black;
+    border: 1px solid #1A2D57;
     padding: 30px 20px;
+    border-radius: 6px;
+    background-color: #1A2D57;
 }
 .company-how .company-doing #marginExtra{
     margin-bottom: 20px;
@@ -97,7 +99,7 @@
     color: white;
     font-size: 18px;
     width: 50%;
-   
+   overflow: scroll;
     background-image: url("../../Asset/Base.png");
     text-align: left;
     display: flex;
@@ -132,6 +134,7 @@
     background-color: #0c204c;
     justify-content: center;
     align-items: center;
+   
     
 }
 .company-how div{
@@ -223,6 +226,10 @@
     margin-top: 30px;
 }
 @media screen and (max-width:1000px) {
+    .rectangle-div{
+    padding: 20px;
+}
+    
     .company-provide{
         padding-left: 20px;
         padding-right: 20px;
@@ -263,6 +270,14 @@
         width: 100%;
     }
     .learn-right{
+        width: 100%;
+    }
+    .abouty-div{
+        width: 100%;
+        margin-left: 0px;
+       margin-top: 30px;
+    }
+    .abouty-div img{
         width: 100%;
     }
 }

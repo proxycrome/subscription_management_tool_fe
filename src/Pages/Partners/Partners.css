@@ -98,6 +98,7 @@
 }
 .Partner-areas div input{
     width: 80%;
+   
 }
 .partners-text{
     display: flex;
@@ -246,7 +247,11 @@
     outline: none;
 }
 .chooseFilE input{
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
     border: none;
+   
 }
 .chooseFilE input::placeholder{
     color: #333333;
@@ -259,6 +264,8 @@
     border: none;
 }
 .chooseFilE button{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
     border: none;
     padding:0 20px;
 }
@@ -332,7 +339,7 @@
         margin-left: 0px;
     }
     .partner-input-area{
-        width: 80%;
+        width: 100%;
       
     }
     .partner-extra{
@@ -348,6 +355,27 @@
        
         min-width: 100%;
         max-width: 100%;
+       
+    }
+    .partner-input-class input{
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .chooseFilE{
+        max-width: 100%;
+    min-width: 100%;
+       
+    }
+    .chooseFilE input{
+        max-width: 50%;
+    min-width: 50%;
+    }
+    .chooseFilE button{
+        max-width: 50%;
+    min-width: 50%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
     }
     
 }

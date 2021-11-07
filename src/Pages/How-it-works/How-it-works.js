@@ -134,7 +134,7 @@ function HowWorks({headercolor,presentcolor}){
                 </div>
             <div className="works-lower">
                 <p className="work-intro">A few reasons why you should join us!!!</p>
-                <p className="work-intross">A few reasons why you should join us</p>
+                <p className="work-intross">A few reasons why you should join us!!!</p>
                 <div className="work-intro-show">
                     <div className="works-lower-inner">
                         <span>
