@@ -74,6 +74,10 @@
 .below-img-blog{
     padding: 0 20px;
 }
+.below-img-blog h2{
+   margin-top: 30px;
+   margin-bottom: 20px;
+}
 .Homepage .Homebody .blog-content h2{
     font-size: 28px;
     text-align: left;

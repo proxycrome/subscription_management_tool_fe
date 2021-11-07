@@ -1,0 +1,12 @@
+.boX{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    margin-right: 30px;
+    margin-top: 30px;
+    border: 1px solid black;
+}

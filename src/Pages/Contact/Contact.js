@@ -18,7 +18,7 @@ function Contact(){
                         answer within a few days</p>
                         <div className="content-inner">
                             <div className="content-inner-left">
-                                <div>
+                                <div className="content-inner-contact">
                                 <h3>Our Contact Information</h3>
                                 <p className="fillUp">Fill up the form and our team will get in touch and we 'll be happy to assist you</p>
                             <span className="content-inner-left-phone"><FaEye/> <p>+234800 123 5976</p></span>

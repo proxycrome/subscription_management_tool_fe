@@ -1,0 +1,48 @@
+.product-category-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.product-categ-container{
+    background-color: powderblue;
+   margin-left: 30px;
+   margin-right: 30px;
+   margin-top: 20px;
+}
+.listOfproduct{
+    display: flex;
+}
+.listOfproduct p{
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 30px;
+    padding-bottom: 10px;
+    
+}
+#entertainment{
+    border-bottom: 2px solid black;
+}
+.listAndHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 15px;
+    height: 120px;
+   
+}
+.product-category-second h3{ 
+    align-self: start;
+    text-align: left;
+padding:30px 20px;
+background-color: black;
+margin-top: 20px;
+color: white;
+}
+.product-category-second-inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+.list-specification{
+    display: flex;
+    align-items: center;
+}

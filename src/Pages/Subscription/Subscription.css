@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.subscribeUpper{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+   
+    border-bottom: 1px solid black;
+}
+.mySubscription{
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    min-width: 140px;
+    
+    padding:0px  10px;
+    margin-left: 0px;
+}
+.mysubsribe-and-button{
+    padding:20px  20px;
+    display: flex;
+    justify-content: space-between;
+}
+.subSCRiption{
+    margin: 20px;
+    background-color: chartreuse;
+}
+.pie-subdcribe{
+    width: 40%;
+}
+.card-and-activity{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: coral;
+    align-items: center;
+}
+.sub-below{
+    display: flex;
+    justify-content: space-between;
+}
+.card-in-subscribe{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border:1px solid black;
+    border-right: none;
+}
+.activity-subscribe{
+    border-radius: 6px;
+    margin: 20px;
+    background-color: crimson;
+    width: 95%;
+   
+}
+.pieInner{
+    border-radius: 6px;
+    border: 1px solid black;
+    margin: 20px;
+}

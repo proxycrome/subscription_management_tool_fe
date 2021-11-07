@@ -9,8 +9,10 @@ import { useHistory } from 'react-router-dom';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
+import {ReactComponent as SignflexLogo} from '../../Asset/LOGO FLEX.svg';
 import axios from 'axios'
 import Recaptcha from 'react-recaptcha'
+import flexpng from '../../Asset/flexpng.png'
 import '../Signup/Signup.css'
 
 function Signup({details,signupdetails,signup}){
@@ -210,7 +212,8 @@ function Signup({details,signupdetails,signup}){
    
     
     return(
-        <div className="signup" >
+        <div className="signup-total" >
+            <div className="signup" >
             <div className="inner-signup">
             <div className="signup-textandimage">
                 <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}/></div>
@@ -315,9 +318,107 @@ function Signup({details,signupdetails,signup}){
             </div>
             </div>
             </div>
+            </div>
+
+
+            <div className="signup-mobile">
+                <div className="mobile-signup-header"> 
+                <img src={flexpng} style= {{width: "78px",
+        height: "32px"}}/>
+
+        <h3>Stay connected always</h3>
         </div>
+               
+               
+                    
+                
+                <div className="mobile-signup-inner">
+                <h3>CREATE AN ACCOUNT</h3>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    
+                <select name="country" id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}}>
+                <option value="country" className="select-placeholder">Country</option>
+                    {answer.map((val,index)=>{
+                        return(
+                            <option key={index} value={val}>{val}</option>
+                        )
+                    })}
+                    
+
+                </select>
+                </div>
+                <div className="input-wrapper" id="passwordmobilewrapper">
+                   
+                    <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
+            ;setPasswordCharacter({display:"none"})
+            ;setPasswordWrap({marginBottom:"24px"})
+        ;setPassval(e.target.value)}}
+             onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+                </div>
+                <div style={passwordCharacter} className="password-charac">
+            <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
+            special characters</p>
+            </div>
+
+            <div className="signup-remember-me">
+            
+            <input type="checkbox" id="test-box" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
+            <label for="test-box">Remember me</label>
+           
+            {/* <p>Remember me</p> */}
+       </div>
+
+
+
+                <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
+
+                <div className="terms"> 
+           <div className="signup-remember-me">
+           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <label for="termscheck"> </label>
+           <div  className="terms-and-policy">
+           <p >By clicking you agree to our 
+            <Link to="" className="Terms-and-condition"> Terms and Conditions</Link>. See <Link className="privacy">Privacy Policy</Link></p>
+            </div>
+           
+            </div>
+            </div>
+
+
+                <div className="signup-orandline">  <hr className="signup-line"/><p className="signupWith">Sign up with</p> <hr className="signup-line"/></div>
+                   
+                <div className="google-AND-facebook-mobile">
+            <button className="signup-google-mobile"><GoogleLogo className="logoGoogle"/><p> GOOGLE</p></button>
+            <button className="signup-facebook-mobile"> <FacebookLogo className="logoFace"/><p> FACEBOOK</p></button>
+            </div>
+
+            <p className="already-have-account">Already have an account? <Link to="/signin" className="already-have-account-log">Log in</Link></p>
+           
+                  
+                    </div>
+              
+
+            </div>
+        </div>
+
+
+
         
     )
+
+
+   
 }
 
 
