@@ -15,6 +15,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                     <FlexLogo className="dashboard-logo" />
                     </div>
                     <div className="list">
+                       
                         <div onClick={(()=>{history.push("/dashboard")})} style={dashheaderstyle} className="inner-list">
                             <div className="dash-icon"><FaEye/></div>
                             <p>Home</p>
@@ -43,7 +44,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                             <div className="dash-icon"><FaEye/></div>
                             <div>Logout</div>
                             </div>
-
+                           
                         
                     </div>
                 </div>

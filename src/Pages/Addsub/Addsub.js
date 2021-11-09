@@ -7,6 +7,7 @@ import Upperbox from '../../Components/Upperbox/Upperbox';
 import Belowbox from '../../Components/Belowbox/Belowbox';
 import axios from 'axios';
 import '../Addsub/Addsub.css'
+import { getDefaultNormalizer } from '@testing-library/dom';
 
 function Addsub({presentcolor,headercolor}){
     useEffect(()=>{
@@ -19,13 +20,13 @@ function Addsub({presentcolor,headercolor}){
          const params={
             billersCode:1212121212,
              serviceID:"gotv",
-            //  header:{Application/JSON}
+            // headers:{"Authorization":"re@gmail.com:th96"}
         }
         // console.log(params)
         // console.log('hik')
         
     //    fetch("https://phonebook-nakov.firebaseio.com/phonebook.json",
-    //    fetch("https://sandbox.vtpass.com/api/merchant-verify?"username:sherifat16",
+    //    fetch("https://sandbox.vtpass.com/api/merchant-verify?"username:6",
     //    {method: 'POST',
     // body:JSON.stringify(params)})
     //    .then((resp) => resp.json())
@@ -33,9 +34,9 @@ function Addsub({presentcolor,headercolor}){
     //         console.log(resp)
     //     })
 
-         axios.get("https://sandbox.vtpass.com/api/merchant-verify", params)
-   .then(res=>{
-     console.log(res)})
+//          axios.post("https://sandbox.vtpass.com/api/merchant-verify", params)
+//    .then(res=>{
+//      console.log(res)})
 
      })
 

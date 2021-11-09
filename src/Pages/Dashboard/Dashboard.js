@@ -6,12 +6,15 @@ import { connect } from 'react-redux'
 import {useEffect} from 'react'
 import { useHistory } from 'react-router-dom';
 import { headercolor } from '../../redux/flex/flex.actions';
+import MobileDash from '../../Components/MobileDash/MobileDash';
+
+import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import '../Dashboard/Dashboard.css'
 
 function Dashboard({presentcolor,headercolor}){
     const history=useHistory()
     useEffect(()=>{
-        headercolor({ dashheadercolor:"purple"})
+        headercolor({ dashheadercolor:"#6200F0"})
                     
        
      },[])
@@ -24,9 +27,9 @@ function Dashboard({presentcolor,headercolor}){
                         <div className="inner-body-dashboard">
                         <div className="second-line-dashboard">
                             <h2>WELCOME TO FLEX</h2>
-                            <input type="search"/>
+                            <input type="search" placeholder="Search for products"/>
                         </div>
-                        <hr className="welcome-divider"/>
+                        {/* <hr className="welcome-dividers"/> */}
                         <div className="third-line-dashboard">
                             <div className="third-line-dashboard-upper"><h3>Overview</h3></div>
                             <div className="third-line-dashboard-inner">
@@ -37,16 +40,16 @@ function Dashboard({presentcolor,headercolor}){
                             </div>
                             <p onClick={(()=>{history.push("/Product")})} className="dashproduct">Products</p>
                             </div>
-                            <button onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button>
+                            <button className="dash-add-button" onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button>
                             </div>
-                            <hr className="welcome-divider"/>
+                            {/* <hr className="welcome-divider"/> */}
                             <div className="fourth-line-dashboard-inner">
                                 <div className="fourth-line-left">
                                     <div className="fourth-line-left-content">
-                                    <div><p>Subscription overview</p></div>
+                                    <div><p className="subOverview">Subscription overview</p></div>
                                     <div >
-                                        <button>MONTHLY</button>
-                                        <button>YEARLY</button>
+                                        <button className="first-graph-button">MONTHLY</button>
+                                        <button className="second-graph-button">YEARLY</button>
                                     </div>
                                     <div>Graph</div>
                                     </div>
@@ -71,7 +74,7 @@ function Dashboard({presentcolor,headercolor}){
                         </div>
                         <div className="inner-half-dashboard">
 
-                        <p>Recent Subscriptions</p>
+                        <p className="recent-sub-dashboard">Recent Subscriptions</p>
                         <div className="inner-half-header">
                           
                            
@@ -81,16 +84,21 @@ function Dashboard({presentcolor,headercolor}){
                                 <p>Expiry Date</p>
                                 <p>Status</p>
                                 <p></p>
+                                <p></p>
                             </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
                            
                         </div>
                         </DashFrame>
                         </div>
-                        <div className="mobile-dashboard">
-
+                        <div className="mobile-dashboard-All">
+                            <MobileDash/>
+                <div className="mobile-dashboard">
                       
                             <h2>WELCOME TO FLEX</h2>
-                            <input type="search"/>
+                            <input type="search" placeholder="Search"/>
                             <div>
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
@@ -105,7 +113,7 @@ function Dashboard({presentcolor,headercolor}){
                                    
                                     <p>Products</p>
                                 </div>
-                                <div>Card</div>
+                                <div className="mobilecard-in-Dashboard"><Mobilecard/></div>
                                
                             </div>
                             <div className="mobile-graph-dashboard">
@@ -114,13 +122,15 @@ function Dashboard({presentcolor,headercolor}){
                             <div className="mobile-second-inner">
                                 <h3>Recent subscriptions</h3>
                                 <div className="tableData">
-                                    <th className="mobile-list-table">Products</th>
-                                    <th className="mobile-list-table">Products category</th>
-                                    <th className="mobile-list-table">Expiry Date</th>
-                                    <th className="mobile-list-table">Status</th>
-                                    <th></th>
+                                    <p className="mobile-list-table">Products</p>
+                                    <p className="mobile-list-table">Products category</p>
+                                    <p className="mobile-list-table">Expiry Date</p>
+                                    <p className="mobile-list-table">Status</p>
+                                    <p></p>
                                     
                                 </div>
+                            </div>
+                            
                             </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ import '../Box/Box.css'
 function Box({icon,name}){
     return(
         <div className="boX">
-            <div><img src={icon}/></div>
+            <div>{icon}</div>
             <div>{name}</div>
         </div>
 

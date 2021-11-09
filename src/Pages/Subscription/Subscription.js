@@ -3,15 +3,19 @@ import DashFrame from '../../Components/DashFrame/DashFrame'
 import { connect } from 'react-redux'
 import {useEffect} from 'react'
 import { headercolor } from '../../redux/flex/flex.actions';
+import MobileDash from '../../Components/MobileDash/MobileDash';
+import Mobilecard from '../../Components/Mobilecard/Mobilecard'
 import '../Subscription/Subscription.css'
 
 function Subscription({presentcolor,headercolor}){
     useEffect(()=>{
-        headercolor({ dashsubscribecolor:"purple"})
+        headercolor({ dashsubscribecolor:"#6200F0"})
                     
        
      },[])
      return(
+         <div>
+         <div className="subscribewebscreen">
         <DashFrame dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
                 <div className="subSCRiption">
                     <div className="subscribeUpper">
@@ -43,20 +47,115 @@ function Subscription({presentcolor,headercolor}){
                  </div>
                     </div>
                  <div className="activity-subscribe">
-                     <div>
-                         <p></p>
-                         <p></p>
+                     <div className="activity-subscribe-header">
+                         <p>Your activity</p>
+                         <p>Last subscription:30th October 2021</p>
                      </div>
-                     <div></div>
+                     <div className="subscription-circle-and-text-div">
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                     </div>
                  </div>
                            
                         </div>
+                        </div>
+                        <hr className="sub-divider-line"/>
+                        <div className="sub-below-second">
+                            <h3>All Subscriptions</h3>
+                            <td>
+                                <th>Products</th>
+                                <th>Date Subscribed</th>
+                                <th>Expiry date</th>
+                                <th>Auto renewal</th>
+                                <th>Status</th>
+                                <th>Billing cycle</th>
+                                <th></th>
+                            </td>
                         </div>
                 </div>
                 <div></div>
 
          
         </DashFrame>
+        </div>
+        <div className="subscribemobilescreen">
+            <MobileDash/>
+            <h3 className="sub-mobile-header">Subscriptions</h3>
+            <input type="search" placeholder="Search for products"/>
+            <div className="subscribemobilescreen-inner">
+            <div className="subscribemobilescreen-second">
+                <p>My Subscriptions</p>
+                <button>ADD SUBSCRIPTION</button>
+
+            </div>
+            <div className="sub-mobile-card">
+                <Mobilecard/>
+            </div>
+            </div>
+            <div>
+                PIE
+            </div>
+            {/* <div> */}
+            <div className="activity-subscribe">
+                     <div className="activity-subscribe-header">
+                         <p>Your activity</p>
+                         <p>Last subscription:30th October 2021</p>
+                     </div>
+                     <div className="subscription-circle-and-text-div">
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text">
+                             <div className="subscription-circle">10</div>
+                             <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                     </div>
+                 </div>
+                 {/* </div> */}
+            <div></div>
+        </div>
+        </div>
 
      )
 

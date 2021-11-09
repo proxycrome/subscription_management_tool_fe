@@ -1,0 +1,24 @@
+.mobilecard-container{
+    background-color: orange;
+    border: 1px solid black;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    border-radius: 6px;
+    padding: 25px;
+}
+.second-inner-mobilecard{
+    display: flex;
+    justify-content: space-between;
+}
+.inner-second-cardmobile{
+    display: flex;
+    flex-direction: column;
+}
+.third-inner-mobilecard{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

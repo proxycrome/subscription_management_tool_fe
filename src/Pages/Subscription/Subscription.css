@@ -23,6 +23,7 @@
     padding:20px  20px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid black;
 }
 .subSCRiption{
     margin: 20px;
@@ -41,23 +42,155 @@
 .sub-below{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
+.sub-below-second{
+    margin-top: 20px;
+    background-color: white;
+}
+
 .card-in-subscribe{
     width: 100%;
     display: flex;
     justify-content: center;
     border:1px solid black;
     border-right: none;
+    padding: 40px;
+}
+.sub-below-second{
+    text-align: left;
+}
+.sub-below-second th{
+margin-right: 80px;
+
+
+
+}
+.sub-below-second td{
+    min-width: 100%;
+    max-width: 100%;
+    padding:10px 20px;
+    background-color: black;
+    margin-top: 20px;
+    display: flex;
+justify-content: center;
+color: white;
+}
+.sub-divider-line{
+    background-color: red;
+    border: 1px solid red;
 }
 .activity-subscribe{
     border-radius: 6px;
     margin: 20px;
     background-color: crimson;
     width: 95%;
+    padding: 20px;
    
 }
 .pieInner{
     border-radius: 6px;
     border: 1px solid black;
-    margin: 20px;
+    margin: 20px 0px;
+    margin-right: 10px;
+}
+.subscribewebscreen{
+    font-family: 'DM Sans', sans-serif;
+}
+.subscribemobilescreen{
+   display: none;
+}
+.activity-subscribe-header{
+    display: flex;
+    justify-content: space-between;
+}
+.subscription-circle{
+    border-radius: 100%;
+    border: 3px solid purple;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3px;
+}
+.subscription-circle-and-text-div{
+    display: flex;
+   
+    margin-top: 30px;
+   
+}
+.subscription-circle-and-text{
+    background-color: teal;
+    border: 1px solid black;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+
+}
+@media screen and (max-width:960px) {
+    .subscription-circle-and-text{
+        width: 100px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .activity-subscribe{
+
+        width: 90%;
+        margin-right: 20px;
+    }
+    .subscription-circle-and-text-div{
+        display: flex;
+        flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+
+    }
+    .subscribemobilescreen{
+        font-family: 'DM Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+        background-color: #FAFAFE;
+    }
+    .subscribemobilescreen input{
+        padding: 0 20px;
+        margin: 0 20px;
+    }
+    .sub-mobile-header{
+       padding: 0 20px;
+       text-align: left;
+    }
+    .subscribewebscreen{
+      display: none;
+    }
+    .subscribemobilescreen-second{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 20px 20px;
+        background-color: white;
+       
+        border-bottom: 1px solid black;
+    }
+    .subscribemobilescreen-inner{
+       background-color: white;
+       margin: 30px 20px;
+      
+    }
+    .subscribemobilescreen-second p{
+        border-bottom: 1px solid black;
+    }
+    .sub-mobile-card{
+        padding: 20px 20px;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    
 }

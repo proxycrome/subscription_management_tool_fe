@@ -9,7 +9,7 @@ import '../Newsub/Newsub.css'
 
 function Newsub({presentcolor,headercolor}){
     useEffect(()=>{
-        headercolor({ dashsubscribecolor:"purple"})
+        headercolor({ dashsubscribecolor:"#6200F0"})
                     
        
      },[])
