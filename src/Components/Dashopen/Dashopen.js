@@ -12,9 +12,11 @@ import logout from '../../Asset/Logout.png'
 import support from '../../Asset/Support.png'
 import payment from '../../Asset/Payment.png'
 import settings from '../../Asset/Settings.png'
-import '../DashFrame/DashFrame.css'
+import search from '../../Asset/Search.png'
+import arrow from '../../Asset/Arrowback.png'
+import '../Dashopen/Dashopen.css'
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}){
+function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}){
     const history=useHistory()
     return(
         <div className="dashboard">
@@ -59,14 +61,21 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                 </div>
                 <div className="dashboard-right">
                     <div className="dash-upper">
-                        <div className="dash-upper-left">
-                            <div className="first"><div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div></div>
-                            <div>Hi,Judith</div>
+                        <div className="dash-open-upper-left">
+                            <div className="arrow-left" onClick={history.goBack}><img src={arrow}/></div>
+                            <div className="arrow-text"><p>Back</p></div>
+                            {/* <div>Hi,Judith</div> */}
                         </div>
                         <div className="dash-upper-right">
+                        <div className="front"><div className="profile-image-dashopen"><FaUserAlt className="userpix"/></div></div>
+                        <div className="divider"></div>
+                        <div className="firsts"><img src={search}/></div>
+                        <div className="divider"></div>
                             <div className="firsts"><img src={newsfeed}/></div>
                             <div className="divider"></div>
                             <div className="second"><img src={notification}/></div>
+                           
+                            
                         </div>
                         </div>
                         <div>{children}</div>
@@ -85,4 +94,4 @@ const mapstatetoprops=({flex:{presentcolor}})=>({
 
 })
 
-export default connect (mapstatetoprops) (DashFrame)
+export default connect (mapstatetoprops) (Dashopen)

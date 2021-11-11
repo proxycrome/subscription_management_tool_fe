@@ -59,12 +59,12 @@ function Dashboard({presentcolor,headercolor}){
                                     <div>
                                         <div className="wallet">
                                             <div className="wallet-upper">
-                                                <p>Account id</p>
-                                                <p>20210801</p>
+                                                <p className="regular-weight-dash">Account Id</p>
+                                                <p className="medium-weight-dashboard">20210801</p>
                                             </div>
-                                            <div className="wallet-lower">
-                                                <div><p>E-wallet Balance</p></div>
-                                                <div><p>NGN 134,457.56</p></div>
+                                            <div className="wallets-lower">
+                                                <div><p className="medium-weight-dashboard">E-wallet Balance</p></div>
+                                                <div><p className="money-dashboard">NGN 134,457.56</p></div>
                                             </div>
                                         </div>
                                     </div>

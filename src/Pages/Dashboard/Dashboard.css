@@ -14,6 +14,9 @@
    
   
 }
+.second-line-dashboard h2{
+    color: #333333;
+}
 .inner-body-dashboard{
     background-color: white;
    margin-left: 30px;
@@ -42,6 +45,7 @@ padding: 10px 0px;
     background-color: #6200f0;
     border-radius: 6px;
     color: white;
+    border: none;
     
 }
 .third-line-dashboard-content p{
@@ -63,10 +67,11 @@ padding: 10px 0px;
     display: flex;
     justify-self: start;
     padding: 0px 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: medium;
+    color: #191D6C;
 }
 .third-line-dashboard-inner{
     display: flex;
@@ -87,42 +92,54 @@ padding: 10px 0px;
 }
 .acc-summ{
     align-self: center;
-    
+    color: rgba(3,6,64,100%);
     margin-left: 5px;
 }
 .welcome-divider{
     
    
     background-color:rgba(7,10,74 ,10%) ;
+   
 }
 .fourth-line-dashboard-inner{
     /* padding: 20px 30px; */
-    padding: 20px 0;
+    padding: 0px 0;
    
+   border-bottom: 2px solid rgba(7,10,74 ,10%);
+  
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    
 }
 .subOverview{
     font-size:16px ;
-    color: rgba(7,10,74 ,70%);
-    font-weight: medium;
+    color: rgba(7,10,74 ,80%);
+    font-weight: 500px;
+    margin-top: 20px;
 }
 .fourth-line-left-content button{
-    width: 120px;
-    height: 45px;
+    width: 101px;
+    height: 30px;
     margin-top: 20px;
     margin-bottom: 40px;
+    border-radius: 4px;
     border: none;
+    
 }
 .first-graph-button{
     background-color: #E2CEFE;
     color: rgba(7,10,74 ,70%);
     margin-right: 15px;
+    text-align: center;
+    ;
 }
 .second-graph-button{
     background-color: rgba(7,10,74 ,10%);
     color: rgba(7,10,74 ,70%);
+    text-align: center;
+   
+    
+    
 }
 .fourth-line-left{
     background-color: white;
@@ -136,32 +153,60 @@ padding: 10px 0px;
     padding-left: 30px;
     padding-right: 23px;
     padding-bottom: 30px;
-   
+ 
     border-top:rgba(7,10,74 ,10%) ;
     border-bottom:rgba(7,10,74 ,10%) ;
+   
 }
 .wallet{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 441px;
+    width: 391px;
     height:221px;
     background-color: #FF8E2E;
     border-radius: 20px;
-    padding: 30px;
+    padding: 24px;
     margin-bottom: 60px;
+    background-color: rgba(254,118,1,100%);
+    background-color: rgba(255,118,0,80%);
+    background: linear-gradient(rgba(254,118,1,100%),rgba(255,118,0,80%));
+   
+    border-color: rgba(251,251,255,5%);
+    color: white;
 }
 .wallet-upper{
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
+    font-weight: normal;
    
 }
 .wallet-lower{
-    background-color: #FF8E2E;
+  
     display:flex ;
     flex-direction: column;
     align-items: flex-start;
+    font-size: 18px;
    
+}
+.wallets-lower{
+  
+    display:flex ;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+   
+}
+.regular-weight-dash{
+    font-weight: regular;
+}
+.medium-weight-dashboard{
+    font-weight:500px;
+}
+.money-dashboard{
+    font-size: 30px;
+    font-weight: bold;
 }
 .fourth-line-right button{
     width: 168px;
@@ -171,6 +216,8 @@ padding: 10px 0px;
     background-color: #6200f0;
     color: white;
     border-radius: 6px;
+    border: none;
+    font-size: 16px;
 }
 .fourth-line-right{
     display: flex;
@@ -179,8 +226,12 @@ padding: 10px 0px;
    background-color: white;
    padding-right: 30px;
     width: 50%;
-    border: 2px solid rgba(7,10,74 ,10%) ;
+    /* border: 2px solid rgba(7,10,74 ,10%) ; */
+    margin: 0px;
     border-right: none;
+    border: none;
+    border-left: 2px solid rgba(7,10,74 ,10%) ;
+    
 
     
 }
@@ -195,6 +246,11 @@ padding: 10px 0px;
     min-height: 100%;
     max-height: 100%;
     width: 100%;
+    border-radius: 4px;
+    border: none;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+   
+   
     
 }
 .inner-half-dashboard{
@@ -245,6 +301,10 @@ padding: 10px 0px;
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid rgba(7,10,74 ,10%);
+}
+.second-line-dashboard h2{
+    color: #333333;
+   
 }
 
 @media screen and (max-width:960px){

@@ -5,13 +5,14 @@ import {useEffect} from 'react'
 import { headercolor } from '../../redux/flex/flex.actions';
 import Upperbox from '../../Components/Upperbox/Upperbox';
 import Belowbox from '../../Components/Belowbox/Belowbox';
+import Dashopen from '../../Components/Dashopen/Dashopen';
 import axios from 'axios';
 import '../Addsub/Addsub.css'
 import { getDefaultNormalizer } from '@testing-library/dom';
 
 function Addsub({presentcolor,headercolor}){
     useEffect(()=>{
-        headercolor({ dashsubscribecolor:"purple"})
+        headercolor({ dashsubscribecolor:"#6200f0"})
                     
        
      },[])
@@ -42,16 +43,16 @@ function Addsub({presentcolor,headercolor}){
 
      
 return(
-    <DashFrame dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
+    <Dashopen dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
         <div>
-            <div>
+            <div className="addsubb">
                 <Upperbox/>
                 <Belowbox firstbutn={"DISCARD"} secondbutn={"RENEW"} choice={""} cycle={""}
                 firstclick={add}/>
             </div>
         </div>
          
-    </DashFrame>
+    </Dashopen>
 
 )
 

@@ -6,28 +6,39 @@
 
 .fourth-line-product-categ{
     padding: 20px 30px;
-   
+    padding-top: 40px;
     flex-direction: column;
     display: flex;
     justify-content: flex-start;
-    margin-top: 10px;
+   
     text-align: left;
+    border: none;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+   min-height: 330px;
+   border-radius: 10px;
+   margin-top: 20px;
+  
+  
    
 }
 .fourth-line-product-categ h2{
     color: #030640;
-    font-weight: medium;
-    font-size: 18px;
+    font-weight: 100px;
+    font-weight: 500px;
+    font-size: 16px;
+    
 }
 .fifth-line-product-categ h2{
     color: #030640;
-    font-weight: medium;
-    font-size: 18px;
+    font-weight: 500px;
+    font-size: 16px;
+   
 }
 .fifth-line-product-categ{
    
    
     padding: 20px 30px;
+    padding-top: 40px;
    
     flex-direction: column;
     display: flex;
@@ -35,9 +46,19 @@
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: left;
+  
+    border: none;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+   border-radius: 10px;
 }
 .productCat{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+   
+   
    
 }
 .contentBox{
@@ -67,6 +88,8 @@
     background-color: #6200f0;
     border-radius: 6px;
     color: white;
+    border: none;
+    font-size: 16px;
 }
 .inner-body-product{
     background-color: white;
@@ -106,8 +129,9 @@ padding: 10px 0px;
     padding: 0px 30px;
     margin-top: 30px;
     margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: medium;
+    font-size: 20px;
+    font-weight: 500px;
+    color: #191D6c;
    
 }
 .third-line-product-inner{
@@ -125,7 +149,7 @@ padding: 10px 0px;
   align-items: center;
   justify-content: center;
   text-align: center;
- 
+  color: rgba(7,10,74 ,100%);
   width: 50%;
   margin-left: 25px;
    
@@ -133,7 +157,7 @@ padding: 10px 0px;
 }
 .acc-summ-product{
   margin-top: 0;
-  color: rgba(7,10,74 ,70%);
+  color: rgba(7,10,74 ,50%);
     margin-left: 5px;
     height: 100%;
     align-self: flex-start;
@@ -221,6 +245,9 @@ padding: 10px 0px;
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid rgba(7,10,74 ,10%);
+}
+.productscreenAll{
+    background-color: #FAFAFE;
 }
 @media screen and (max-width:960px) {
     .webproductScreen{

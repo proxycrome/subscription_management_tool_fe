@@ -6,36 +6,77 @@
 
 .Upperleft{
     width: 50%;
-    border: 1px solid black;
+    border: 1px solid rgba(7,10,74 ,10%);
     display: flex;
     justify-content: flex-start;
-   background-color: palevioletred;
+   background-color: white;
     align-items: center;
-    padding-left: 25px;
+    padding-left: 30px;
    
+}
+.accountId-upperbox{
+    font-size: 13px;
+    color: rgba(51,51,51,50%);
+
+}
+.upperleftCOntent h3{
+    font-size: 16px;
+    font-weight: 500px;
+    color: #333333;
+    margin: 10px 0;
+}
+ 
+.upperleftCOntent h2{
+    font-size: 14px;
+    font-weight: 500px;
+    color: #191D6C;
+    margin-bottom: 10px;
 }
 .upperleftCOntent{
-    background-color: orchid;
-    
+    background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
     text-align: left;
+ 
    
+    height: 188px; 
     width: 400px;
-    height: 250px;
 }
 .Upperright{
-    width: 50%;
-    border: 1px solid black;
+    max-width: 50%;
+    min-width: 50%;
+    border: 1px solid rgba(7,10,74 ,10%);
     display: flex;
     align-items: center;
     justify-content: center;
+   
+    border-left: none;
+   
+   
 }
 .upperboX{
     display: flex;
-    background-color: chocolate;
+    background-color: white;
     justify-content: space-between;
    margin-top: 30px;
-    min-height: 40vh;
-    width: 100%;
+    min-height: 285px;
+    /* max-width: 100%;
+    min-width: 100%; */
+    border: none;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+    margin: 30px;
+    margin-top: 33px;
+    margin-bottom: 0px;
+    /* margin-left: 30px;  */
+    /* margin-right: 70px; */
+ 
+}
+.customer-info-line{
+    background-color:  rgba(7,10,74 ,10%) ;
+    border: 1px solid rgba(7,10,74 ,10%) ;
+    width: 214px;
+    margin-bottom: 10px;
 }
 .cardImage{
     display: flex;
@@ -44,15 +85,28 @@
     padding: 20px;
     width: 391px;
     height: 221px;
-    background-color: orange;
+    color: white;
+    background: linear-gradient(rgba(254,118,1,100%),rgba(255,118,0,80%));
+   
+    border-color: rgba(251,251,255,5%);
+   
     justify-content: space-between;
+}
+.medium-weight-dashboard-upp{
+    font-weight:500px;
+}
+.money-dashboard-upp{
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .cardImage-acc{
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
 }
 .cardImage-balance{
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,7 +115,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 10px;
+   
 }
 .upperleft-and-icon p{
     margin-left: 10px;
+    font-size: 14px;
+    color: #333333;
 }

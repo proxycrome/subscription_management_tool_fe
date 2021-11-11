@@ -1,22 +1,57 @@
 import React from 'react'
 import DashFrame from '../../Components/DashFrame/DashFrame'
+import Dashopen from '../../Components/Dashopen/Dashopen'
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa";
 import { headercolor } from '../../redux/flex/flex.actions';
 import Belowbox from '../../Components/Belowbox/Belowbox';
+import Gotv from '../../Asset/GOTV.png';
+import Dstv from '../../Asset/Dstv.png';
+import Startimes from '../../Asset/Startimes.png';
+import Boxoffice from '../../Asset/BoxOffice.png';
+import Netflix from '../../Asset/Netflix.png';
+import Showmax from '../../Asset/Showmax.png';
+import Upperbox from '../../Components/Upperbox/Upperbox'
 import '../Newsub/Newsub.css'
 
-function Newsub({presentcolor,headercolor}){
+function Newsub({presentcolor,headercolor,date,match}){
+    const[image,setImage]=useState({val:""})
     useEffect(()=>{
         headercolor({ dashsubscribecolor:"#6200F0"})
                     
+        console.log(match.params.name)
+        const names=match.params.name
+     if(names=="Gotv"){
+        setImage({val:Gotv})
+    }
+    if(names=="Netflix"){
+        setImage({val:Netflix})
+    }
+    if(names=="Showmax"){
+        setImage({val:Showmax})
+    }
+    if(names=="Boxoffice"){
+        setImage({val:Boxoffice})
+    }
+    if(names=="Dstv"){
+        setImage({val:Dstv})
+    }
+    if(names=="Startimes"){
+        setImage({val:Startimes})
+    }  
+     
+    
        
      },[])
+     
+     
+   
+    
 return(
-    <DashFrame dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
-        <div>
-        <div className="upperboX">
+    <Dashopen dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
+        <div className="newsubContainer">
+        {/* <div className="upperboX">
             <div className="Upperleft">
                 
                <div className="upperleftCOntent">
@@ -43,12 +78,15 @@ return(
                 </div>
                 <button>FUND WALLET</button>
             </div>
-        </div>
-    <Belowbox firstbutn={"ADD TO LIST"} secondbutn={"SUBSCRIBE"}/>
+        </div> */}
+        <Upperbox/>
+        
+        {/* {`${props.match.url}/15`} */}
+    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} secondbutn={"SUBSCRIBE"}/>
 
         </div>
          
-    </DashFrame>
+    </Dashopen>
 
 )
 

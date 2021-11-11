@@ -8,7 +8,7 @@ import '../Belowbox/Belowbox.css'
 import { FaEye } from 'react-icons/fa';
 
 function Belowbox({presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,
-firstclick,secondclick}){
+firstclick,secondclick,icon}){
     useEffect(()=>{
         headercolor({ dashinvitecolor:"purple"})
                     
@@ -22,15 +22,16 @@ return(
                     <h3>Product Category</h3>
                     <h3>ENTERTAINMENT</h3>
                 </div>
+                <div className="belowbox-inner-all">
                 <div className="belowbox-inner">
-                    <Smallbox/>
+                    <Smallbox icon={icon}/>
                     <div className="below-categ-div">
                         
                         <div className="below-category-options">
                             <p>Packages</p>
                             <div className="selected-div-below">
           
-                <select name="choice" className="select-placeholder-below" id="selectlist-below" >
+                <select name="choice" className="select-placeholder-below" id="selectlists-below" >
                 <option value="country" >{choice}</option>
                     {/* {answer.map((val,index)=>{
                         return(
@@ -72,11 +73,13 @@ return(
                         </div>
                         </div>
                     </div>
-                </div>
+                    </div>
                 <div className="below-butn">
-                    <button onClick={firstclick}>{firstbutn}</button>
-                    <button onClick={secondclick}>{secondbutn}</button>
+                    <button className="first-belowbutton" onClick={firstclick}>{firstbutn}</button>
+                    <button className="second-belowbutton" onClick={secondclick}>{secondbutn}</button>
                 </div>
+                </div>
+               
             </div>
 
         </div>

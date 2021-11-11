@@ -1,6 +1,6 @@
 .mobilecard-container{
     background-color: orange;
-    border: 1px solid black;
+    /* border: 1px solid rgba(7,10,74 ,10%); */
     width: 300px;
     display: flex;
     flex-direction: column;

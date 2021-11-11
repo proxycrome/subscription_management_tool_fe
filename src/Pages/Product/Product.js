@@ -6,15 +6,21 @@ import { headercolor } from '../../redux/flex/flex.actions';
 import { useHistory } from 'react-router-dom';
 import Box from '../../Components/Box/Box';
 import MobileDash from '../../Components/MobileDash/MobileDash'
-import {ReactComponent as Netflix} from '../../Asset/Netflix.svg';
-import{ReactComponent as GotvLogo} from '../../Asset/GOTV.svg'
-import {ReactComponent as AdobeLogo} from '../../Asset/Adobe.svg';
-import {ReactComponent as IkedcLogo} from '../../Asset/Ikedc.svg';
-
-import {ReactComponent as UdemyLogo} from '../../Asset/LOGO FLEX.svg';
-import {ReactComponent as YoutubeLogo} from '../../Asset/Youtube.svg';
-import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
-import {ReactComponent as InsuranceLogo} from '../../Asset/Insurance icon.svg';
+import Netflix from '../../Asset/Netflix.png';
+import  AdobeLogo from '../../Asset/Adobe.png';
+import  Utilities from '../../Asset/Utilities icon.png';
+import  Showmax from '../../Asset/Showmax.png';
+import  Playstation from '../../Asset/Playstation.png';
+import UdemyLogo from '../../Asset/Udemy.png';
+import Microsoft from '../../Asset/Microsoft.png';
+import Canva from '../../Asset/Canva.png';
+import Education from '../../Asset/education.png';
+import Entertainment from '../../Asset/Entertainment.png';
+import YoutubeLogo from '../../Asset/Youtube.png';
+import Productivity from '../../Asset/Productivity icon.png';
+import InsuranceLogo from '../../Asset/Insurance icon.png';
+import Ikedc from '../../Asset/Ikedc.png';
+import Gotv from '../../Asset/GOTV.png';
 import flexpng from '../../Asset/flexpng.png'
 import '../Product/Product.css'
 
@@ -56,36 +62,33 @@ return(
                             <div className="fourth-line-product-categ">
                                <h2>PRODUCT CATEGORY</h2>
                                <div className="productCat">
-                                  <Box icon={<GoogleLogo/>}/>
-                                  <Box icon={<UdemyLogo/>}/>
-                                  <Box icon={<InsuranceLogo/>}/>
-                                  <Box/>
-                                  <Box/>
+                                  <Box icon={Entertainment} name="Entertainment"/>
+                                  <Box icon={Utilities} name="Utilities"/>
+                                  <Box icon={Productivity} name="Productivity"/>
+                                  <Box icon={Education} name="Education"/>
+                                  <Box icon={InsuranceLogo} name="Insurance"/>
                                </div>
-                               <p><GoogleLogo/></p>
+                            
                             </div>
                             <div className="fifth-line-product-categ">
-                               <h2>RECCOMMENDED FOR YOU</h2>
+                               <h2>RECOMMENDED FOR YOU</h2>
                            
                                <div className="productCat">
-                               <Box  className="contentBox" />
-                                  <Box  icon={`$<AdobeLogo/>`} name="adobe" />
+                               <Box icon={Gotv}  className="contentBox" />
+                                  <Box  icon={Netflix} />
                                  
-                                  <Box />
-                                  <Box icon={<GotvLogo/>} name="gotv" />
-                                  <Box icon={"nnnnn"}  />
-                                  <GotvLogo/>
-                                  <adobeLogo/>
-                                  <YoutubeLogo/>
-                                  <YoutubeLogo/>
-                                  <Netflix/>
+                                  <Box icon={YoutubeLogo} />
+                                  <Box icon={UdemyLogo}  />
+                                  <Box icon={AdobeLogo}  />
+                                  
                                </div>
                                <div className="productCat">
-                               <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
+                                  
+                               <Box icon={Playstation}/>
+                                  <Box icon={Microsoft}/>
+                                  <Box icon={Canva}/>
+                                  <Box icon={Ikedc}/>
+                                  <Box icon={Showmax}/>
                                </div>
                                </div>
                         </div>
@@ -110,11 +113,11 @@ return(
         <div className="fourth-line-product-categ">
                                <h2>PRODUCT CATEGORY</h2>
                                <div className="productCat">
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
+                               <Box icon={Entertainment} name="Entertainment"/>
+                                  <Box icon={Utilities} name="Utilities"/>
+                                  <Box icon={Productivity} name="Productivity"/>
+                                  <Box icon={Education} name="Education"/>
+                                  <Box icon={InsuranceLogo} name="Insurance"/>
                                </div>
                             </div>
                             </div>
@@ -122,19 +125,20 @@ return(
                             <div className="fifth-line-product-categ">
                                <h2>RECCOMMENDED FOR YOU</h2>
                                <div className="productCat">
-                               <Box className="contentBox"/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
+                               <Box icon={Gotv}  className="contentBox" />
+                                  <Box  icon={Netflix} />
+                                 
+                                  <Box icon={YoutubeLogo} />
+                                  <Box icon={UdemyLogo}  />
+                                  <Box icon={AdobeLogo}  />
 
-                               </div>
-                               <div className="productCat">
-                               <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
-                                  <Box/>
+                               {/* </div>
+                               <div className="productCat"> */}
+                               <Box icon={Playstation}/>
+                                  <Box icon={Microsoft}/>
+                                  <Box icon={Canva}/>
+                                  <Box icon={Ikedc}/>
+                                  <Box icon={Showmax}/>
                                </div>
                                </div>
 
