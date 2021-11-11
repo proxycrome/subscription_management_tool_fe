@@ -25,10 +25,11 @@ function HowWorks({headercolor,presentcolor}){
     return (
     <div className="HowWorks">
 
-        <div>
+       
             <Navbar howworks={{color:presentcolor.howcolor}}
             aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
-            <h2 className="work-header">We Focus on <i className="sep-H2">Structured</i> and Sustainable Subscription Management.</h2>
+             <div className="howworks-innerS">
+            <h2 className="work-header">We Focus on <span className="sep-H2">Structured</span> and Sustainable Subscription Management.</h2>
             <hr className="work-header-line"/>
             <div className="works-and-image-original">
                 <div className="works-outer">
