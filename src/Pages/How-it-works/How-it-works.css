@@ -114,6 +114,7 @@
     font-size: 16px;
     background-color: #6200F0;
     border-radius: 6px;
+    color: white;
 }
 .works-image{
     width: 45%;
@@ -200,6 +201,9 @@
     width: 40%;
     margin-top: 40px;
     
+}
+.howworks-inner{
+    background-color: white;
 }
 .work-header-line-div{
     width: 40%;
