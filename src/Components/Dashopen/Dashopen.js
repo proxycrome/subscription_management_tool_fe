@@ -16,7 +16,7 @@ import search from '../../Asset/Search.png'
 import arrow from '../../Asset/Arrowback.png'
 import '../Dashopen/Dashopen.css'
 
-function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}){
+function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,paymentstyle}){
     const history=useHistory()
     return(
         <div className="dashboard">
@@ -35,8 +35,8 @@ function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle})
                             <div className="dash-icon"><img src={subscription}/></div>
                             <div >Subscription</div>
                             </div>
-                            <div className="inner-list">
-                            <div className="dash-icon"><img src={payment}/></div>
+                            <div className="inner-list" style={paymentstyle}>
+                            <div className="dash-icon" ><img src={payment}/></div>
                             <div>Payments</div>
                             </div>
                             <div className="inner-list">

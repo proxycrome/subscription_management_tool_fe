@@ -156,7 +156,7 @@ import '../Sign-in/Signin.css'
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
                 <label for="logedIn">Remember me</label>
            </span>
-           <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+           <Link className="forgot" to="/Resetpassword"><p className="forgot">Forgot password?</p></Link>
            </div>
 
           

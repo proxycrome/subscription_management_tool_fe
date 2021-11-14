@@ -13,11 +13,19 @@ export const signupdetails=(value)=>({
     type:'signupdetails',
    value:value
 })
+export const passwordreset=(value)=>({
+    type:'passwordreset',
+   value:value
+})
 export const signindetails=(value)=>({
     type:'signindetails',
    value:value
 })
 export const headercolor=(value)=>({
     type:'headercolor',
+   value:value
+})
+export const cancelicon=(value)=>({
+    type:'cancelicon',
    value:value
 })

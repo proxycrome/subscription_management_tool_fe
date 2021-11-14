@@ -3,6 +3,7 @@ import DashFrame from '../../Components/DashFrame/DashFrame'
 import Dashopen from '../../Components/Dashopen/Dashopen'
 import { connect } from 'react-redux'
 import {useEffect,useState} from 'react'
+import { useHistory } from 'react-router-dom'
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa";
 import { headercolor } from '../../redux/flex/flex.actions';
 import Belowbox from '../../Components/Belowbox/Belowbox';
@@ -16,6 +17,7 @@ import Upperbox from '../../Components/Upperbox/Upperbox'
 import '../Newsub/Newsub.css'
 
 function Newsub({presentcolor,headercolor,date,match}){
+    const history=useHistory()
     const[image,setImage]=useState({val:""})
     useEffect(()=>{
         headercolor({ dashsubscribecolor:"#6200F0"})
@@ -44,6 +46,10 @@ function Newsub({presentcolor,headercolor,date,match}){
     
        
      },[])
+     function subscribe(){
+
+        history.push("/Payoption")
+     }
      
      
    
@@ -82,7 +88,7 @@ return(
         <Upperbox/>
         
         {/* {`${props.match.url}/15`} */}
-    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} secondbutn={"SUBSCRIBE"}/>
+    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} secondbutn={"SUBSCRIBE"} secondclick={subscribe}/>
 
         </div>
          

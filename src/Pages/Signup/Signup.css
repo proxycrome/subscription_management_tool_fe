@@ -23,6 +23,9 @@
     margin-bottom: 10px;
    
 }
+.infoDivs{
+    margin-right: 5px;
+}
 .infoDiv{
     color: red;
     border: 1px solid red;
@@ -38,6 +41,7 @@
 .infoDiv i{
     width: 24px;
     height: 24px;
+    margin: 0;
     align-self: center;
 }
 
@@ -47,6 +51,7 @@
     border: none;
     padding-right: 0px;
     color: #333333;
+    
    
    
     
@@ -100,6 +105,7 @@
     width: 100%;
     border: none;
     color: #333333;
+    
     
 
 }
@@ -169,7 +175,7 @@
     color: #c4c4c4;
     color: #333333;
     border: none;
-    
+    outline: none;
     font-size: 14px;
 }
 .signup-firstname:hover{
@@ -209,11 +215,13 @@
     border: none;
     outline: none;
     color: #333333;
+    
 }
 .signup-lastname input{
     width: 100%;
     border: none;
     color: #333333;
+    outline: none;
     
 }
 .select-div{
@@ -686,24 +694,25 @@ margin-right: 15px;
         cursor: pointer;
         margin-right: 5px;
         margin-left:0px;
-        height: 16px;
-        width:14px;
+        height: 12px;
+        width:10px;
         border-radius: 3px;
       
       } 
       .signup-remember-me input:checked + label:before{
           background-color: #6200f0;
+         
       }
       .signup-remember-me input:checked + label:after {
         
         content: '';
         display: block;
         position: absolute;
-        top: 0px;
+        top: 2px;
         bottom: 2px;
         left: 8px;
         width: 1px;
-        height: 16px;
+        height: 12px;
         border: solid #0079bf;
         border: 1px solid white;
         border-width: 0 2px 2px 0;
@@ -713,6 +722,19 @@ margin-right: 15px;
 
       .signup-mobile{
           display: none;
+      }
+      .passwordcond{
+          font-size: 13px;
+          text-align: left;
+          color: rgba(51,51,51,70%);
+      }
+       input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active{
+          transition: background-color 5000s ease-in-out 0s;
+
+          -webkit-box-shadow: 0 0 0px 1000px #fff inset;
       }
 
 
