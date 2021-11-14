@@ -11,6 +11,13 @@ import home from '../../Asset/Home.png'
 import logout from '../../Asset/Logout.png'
 import support from '../../Asset/Support.png'
 import payment from '../../Asset/Payment.png'
+import {ReactComponent as Home} from  '../../Asset/homesvg.svg'
+import {ReactComponent as Sub} from  '../../Asset/Subsvg.svg'
+import {ReactComponent as Paymentsvg} from  '../../Asset/Paymentsvg.svg'
+import {ReactComponent as Settingssvg} from  '../../Asset/Settingssvg.svg'
+import {ReactComponent as Invitesvg} from  '../../Asset/Invitesvg.svg'
+import {ReactComponent as Supportsvg} from  '../../Asset/Supportsvg.svg'
+import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import settings from '../../Asset/Settings.png'
 import '../DashFrame/DashFrame.css'
 
@@ -26,31 +33,31 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                     <div className="list">
                        
                         <div onClick={(()=>{history.push("/dashboard")})} style={dashheaderstyle} className="inner-list">
-                            <div className="dash-icon"><img src={home}/></div>
+                            <div className="dash-icon"><Home/></div>
                             <p>Home</p>
                             </div>
                             <div onClick={(()=>{history.push("/subscription")})} style={dashsubscribestyle} className="inner-list">
-                            <div className="dash-icon"><img src={subscription}/></div>
+                            <div className="dash-icon"><Sub/></div>
                             <div >Subscription</div>
                             </div>
                             <div className="inner-list">
-                            <div className="dash-icon"><img src={payment}/></div>
+                            <div className="dash-icon"><Paymentsvg/></div>
                             <div>Payments</div>
                             </div>
                             <div className="inner-list">
-                            <div className="dash-icon"><img src={settings}/></div>
+                            <div className="dash-icon"><Settingssvg/></div>
                             <div>Settings</div>
                             </div>
                             <div className="inner-list">
-                            <div className="dash-icon"><img src={support}/></div>
+                            <div className="dash-icon"><Supportsvg/></div>
                             <div>Support</div>
                             </div>
                             <div onClick={(()=>{history.push("/invite")})} style={dashinvitestyle}  className="inner-list">
-                            <div className="dash-icon"><img src={invite}/></div>
+                            <div className="dash-icon"><Invitesvg/></div>
                             <div>Invite a friend</div>
                             </div>
                             <div className="inner-list">
-                            <div className="dash-icon"><img src={logout}/></div>
+                            <div className="dash-icon"><Logoutsvg/></div>
                             <div>Logout</div>
                             </div>
                            

@@ -406,10 +406,16 @@ margin-bottom: 0px;
     height: 100%;
     border-radius: 100%;
 }
+.customer-love-img{
+    width: 100%;
+}
+.customer-love-img img{
+    width: 100%;
+}
 @media screen and (max-width:960px){
-    .butnRegister{
+    /* .butnRegister{
        
-    }
+    } */
     .buttons #sep-button{
        margin-top: 20px;
        margin-bottom: 20px;

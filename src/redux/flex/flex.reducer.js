@@ -6,14 +6,18 @@ const INITIAL_STATE={
     details:{},
     //signininput:{},
     detailssignin:{},
+    forgotpassword:{},
+    cancelicon:{display:"flex"},
     presentcolor:{partcolor:"",
                     howcolor:"",
                     privacystyle:"#030640",
                     aboutstyle:"",
                     dashheadercolor:"",
                     dashinvitecolor:"",
-                    dashsubscribecolor:""
-                }
+                    dashsubscribecolor:"",
+                    paymentcolor:""
+                },
+
     
 }
 
@@ -26,6 +30,13 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
             signupInput:action.value
            
         }
+        case'cancelicon':
+        return{
+            ...state,
+            cancelicon:action.value
+           
+        }
+       
        
 
          case 'signupdetails' :
@@ -34,6 +45,13 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
         
                 
                Object.assign(state.details,action.value)
+              
+               case 'passwordreset' :
+            
+        
+        
+                
+               Object.assign(state.forgotpassword,action.value)
               
        
                 

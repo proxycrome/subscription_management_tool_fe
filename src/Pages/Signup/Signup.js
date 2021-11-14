@@ -12,11 +12,14 @@ import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {ReactComponent as SignflexLogo} from '../../Asset/LOGO FLEX.svg';
 import axios from 'axios'
 import Recaptcha from 'react-recaptcha'
+import {ReactComponent as Info} from '../../Asset/info.svg'
 import flexpng from '../../Asset/flexpng.png'
 import '../Signup/Signup.css'
 
 function Signup({details,signupdetails,signup}){
-    
+    const[countrystyle,setCountrystyle]=useState({color:'#c4c4c4'})
+    const[firststyle,setFirststyle]=useState({backgroundColor:'white'})
+    const[secondstyle,setSecondstyle]=useState({backgroundColor:'white'})
     const[countries,setCountries]=useState([])
     const[sorty,setSorty]=useState('asc')
     const[remember,setRemember]=useState(false)
@@ -232,20 +235,21 @@ function Signup({details,signupdetails,signup}){
             <h3>CREATE AN ACCOUNT</h3>
 
             <div className="signup-firstname">
-            <input type="text" name="firstName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="First name" required/>
+            <input type="text" style={firststyle} name="firstName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setFirststyle({backgroundColor:"white"})}} placeholder="First name" required/>
           
           
             </div>
             
             <div className="signup-lastname">
            
-            <input type="text" name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Last name" required/>
+            <input type="text" style={secondstyle} name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setSecondstyle({backgroundColor:"white"})}} placeholder="Last name" required/>
           
           
             </div>
+            
             <div className="select-div">
           
-                <select name="country" id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}}>
+                <select name="country" id="selectlist" style={countrystyle} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setCountrystyle({color:"black"})}}>
                 <option value="country" className="select-placeholder">Country</option>
                     {answer.map((val,index)=>{
                         return(
@@ -273,7 +277,7 @@ function Signup({details,signupdetails,signup}){
           
             </div>
             <div style={passwordCharacter} className="password-charac">
-            <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
+            <div className="infoDivs"><Info/></div><p className="passwordcond">Password should not be less than 8 characters and must include caps,numbers and 
             special characters</p>
             </div>
            

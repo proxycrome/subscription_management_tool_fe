@@ -2,7 +2,7 @@ import React from 'react'
 import DashFrame from '../../Components/DashFrame/DashFrame'
 import { connect } from 'react-redux'
 import {useEffect} from 'react'
-
+import PieChart from '../../Components/Pie/Pie'
 import { headercolor } from '../../redux/flex/flex.actions';
 import MobileDash from '../../Components/MobileDash/MobileDash';
 import Mobilecard from '../../Components/Mobilecard/Mobilecard'
@@ -32,7 +32,7 @@ function Subscription({presentcolor,headercolor}){
                         <div className="sub-below">
                         <div className="pie-subdcribe">
                             <div className="pieInner">
-                            PIE
+                            <PieChart/>
                             </div>
                         </div>
                         <div className="card-and-activity">

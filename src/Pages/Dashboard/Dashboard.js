@@ -1,12 +1,15 @@
 import React from 'react'
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
+import LineChart from '../../Components/Linegraph/Linegraph';
+import { Line } from 'react-chartjs-2';
 import DashFrame from '../../Components/DashFrame/DashFrame';
 import { connect } from 'react-redux'
 import {useEffect} from 'react'
 import { useHistory } from 'react-router-dom';
 import { headercolor } from '../../redux/flex/flex.actions';
 import MobileDash from '../../Components/MobileDash/MobileDash';
+
 
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import '../Dashboard/Dashboard.css'
@@ -51,7 +54,7 @@ function Dashboard({presentcolor,headercolor}){
                                         <button className="first-graph-button">MONTHLY</button>
                                         <button className="second-graph-button">YEARLY</button>
                                     </div>
-                                    <div>Graph</div>
+                                    <div className="linechart"><LineChart/></div>
                                     </div>
                                 </div>
                                 <div className="fourth-line-right">
