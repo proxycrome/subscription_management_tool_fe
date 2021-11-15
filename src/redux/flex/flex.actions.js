@@ -29,3 +29,19 @@ export const cancelicon=(value)=>({
     type:'cancelicon',
    value:value
 })
+export const setnewemail=(value)=>({
+    type:'setnewemail',
+   value:value
+})
+export const addarray=(value)=>({
+    type:'addarray',
+   value:value
+})
+export const addsubs=(value)=>({
+    type:'addsubs',
+   value:value
+})
+export const customerdetails=(value)=>({
+    type:'customerdetails',
+   value:value
+})

@@ -7,7 +7,9 @@ import call from '../../Asset/Call Icon.png'
 import Mail from '../../Asset/Mail icon.png'
 import '../Upperbox/Upperbox.css'
 
-function Upperbox({icon,name}){
+function Upperbox({customer,presentcolor}){
+    console.log(presentcolor)
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     return(
         <div className="upperboX">
             <div className="Upperleft">
@@ -15,9 +17,9 @@ function Upperbox({icon,name}){
                    <h2>CUSTOMER INFORMATION</h2>
                    <hr className="customer-info-line"/>
                    <p className="accountId-upperbox">Account ID:20210801</p>
-                   <h3>Customer Name:Judith Newman</h3>
+                   <h3>Customer Name:{customerDetail.firstname} {customerDetail.lastname}</h3>
                    <div className="upperleft-and-icon"><img src={call}/><p>08032321123</p></div>
-                   <div className="upperleft-and-icon"><img src={Mail}/><p>Judithnewman@gmail.com</p></div>
+                   <div className="upperleft-and-icon"><img src={Mail}/><p>{customerDetail.email}</p></div>
                </div>
             </div>
             <div className="Upperright">
@@ -37,5 +39,22 @@ function Upperbox({icon,name}){
 
     )
 }
+const MapDispatchToProps=(dispatch)=>({
 
-export default Upperbox
+    //const userinput= {[items]:value}
+     //signin:(item)=> dispatch(signin(item)),
+    
+    //  headercolor:(item)=>dispatch(headercolor(item))
+ 
+ })
+const mapstatetoprops=({flex:{presentcolor,customer}})=>({
+ 
+    presentcolor,
+    customer
+   
+   
+
+})
+
+
+export default connect(mapstatetoprops,MapDispatchToProps) (Upperbox)

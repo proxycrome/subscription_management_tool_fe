@@ -8,6 +8,10 @@ import { headercolor } from '../../redux/flex/flex.actions';
 import {ReactComponent as Rectangle} from '../../Asset/Rectangle-option.svg'
 import {ReactComponent as Paycard} from '../../Asset/PayCard.svg'
 import {ReactComponent as Paywallet} from '../../Asset/Paywallet.svg'
+import {ReactComponent as Flutterwave} from '../../Asset/Flutterwave.svg'
+import {ReactComponent as Flutterwaves} from '../../Asset/Flutterwavess.svg'
+import Icon from '../../Components/Image/Image'
+import {ReactComponent as Paystack} from '../../Asset/paystack.svg'
 import '../Paymentcard/Paymentcard.css'
 
 function Paymentcard({presentcolor,headercolor}){
@@ -25,19 +29,21 @@ return(
                 <h3>PAYMENT METHOD </h3>
                 </div>
                 <div className="payment-inner-content">
-                    <p>Please select your preffered payment option</p>
-                    <div className="image-and-option-payment">
+                   
+                    <div className="image-and-option-card-payment">
                         <div><Rectangle/></div>
-                       x
-                        <div className="payment-option-buttons">
-                            <button><Paycard className="payment-option-icon"/>PAY WITH CARD</button>
-                            <button><Paywallet className="payment-option-icon"/>PAY WITH E-WALLET</button>
+                        <div className="payment-INNER-right">
+                          
+                        <p>Please select your preffered payment platform</p>
+                        <div className="payment-option-card-buttons">
+                            <button><Flutterwave className="payment-option-card-icon"/></button>
+                            <button></button>
                         </div>
-                        
+                        </div>
                     </div>
                     <div className="payment-select-buttons">
                             <button className="cancel-payment">CANCEL</button>
-                            <button className="proceed-payment">PROCEED</button>
+                            <button className="proceed-payment">CONTINUE</button>
                         </div>
                </div>
                 </div>

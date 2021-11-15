@@ -28,7 +28,7 @@ return(
                     <p>Please select your preffered payment option</p>
                     <div className="image-and-option-payment">
                         <div><Rectangle/></div>
-                       x
+                     
                         <div className="payment-option-buttons">
                             <button onClick={(()=>{history.push("/paymentcard")})}><Paycard className="payment-option-icon"/>PAY WITH CARD</button>
                             <button><Paywallet className="payment-option-icon"/>PAY WITH E-WALLET</button>

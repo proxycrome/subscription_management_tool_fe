@@ -2,20 +2,23 @@ import React from 'react'
 import Resetpassframe from '../../Components/Resetpassframe/Resetpassframe'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { setnewemail } from '../../redux/flex/flex.actions'
+import { connect } from 'react-redux'
 import '../Resetpassword/Resetpassword.css'
 
-function Resetpassword(){
+function Resetpassword({setnewemail,newemail}){
     const history=useHistory()
+    console.log(newemail.email)
     return(
       
             <Resetpassframe>
                 <div>
                   <div className="Resetpassword">
            <h1>REQUEST PASSWORD RESET</h1>
-           <p className="Resetpassword-parag">Please provide ypur registered email address.</p>
+           <p className="Resetpassword-parag">Please provide your registered email address.</p>
           
            <div className="reset-email-div">
-           <input type="email" placeholder="Email address"/>
+           <input type="email" placeholder="Email address" name="email"  onChange={((e)=>{setnewemail({[e.target.name]:e.target.value})})}/>
                </div>
                {/* <div className="email-wrapper">
             <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setEmail(e.target.value)}}/>
@@ -32,5 +35,20 @@ function Resetpassword(){
 
 
 }
+const MapDispatchToProps=(dispatch)=>({
 
-export default Resetpassword
+  //const userinput= {[items]:value}
+   //signin:(item)=> dispatch(signin(item)),
+  
+   setnewemail:(item)=>dispatch(setnewemail(item))
+
+})
+const mapstatetoprops=({flex:{newemail}})=>({
+
+  newemail
+ 
+ 
+
+})
+
+export default connect(mapstatetoprops,MapDispatchToProps) (Resetpassword)

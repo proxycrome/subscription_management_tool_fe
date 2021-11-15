@@ -46,7 +46,15 @@ padding: 10px 0px;
     border-radius: 6px;
     color: white;
     border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500px;
+    justify-content: center;
     
+}
+.dash-add-button p{
+    margin-left: 5px;
 }
 .third-line-dashboard-content p{
     /* margin-right: 40px; */

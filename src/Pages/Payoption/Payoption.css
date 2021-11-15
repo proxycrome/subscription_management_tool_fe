@@ -35,6 +35,7 @@
 }
 .image-and-option-payment{
     display: flex;
+    align-items: center;
     justify-content: center;
     padding-right: 124px;
     padding-left: 118.3px;
@@ -49,6 +50,11 @@
 }
 .payment-option-icon{
     margin-right: 16px;
+}
+.payment-option-buttons button:hover{
+    border: 1px solid#6200f0;
+    font-weight: 500px;
+    cursor: pointer;
 }
 .payment-option-buttons button{
     margin-bottom: 40px;

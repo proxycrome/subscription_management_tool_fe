@@ -9,6 +9,7 @@ import MobileDash from '../../Components/MobileDash/MobileDash'
 import {ReactComponent as UdemyLogo} from '../../Asset/Udemy.svg';
 import {ReactComponent as YoutubeLogo} from '../../Asset/Youtube.svg';
 import {ReactComponent as IkedcLogo} from '../../Asset/Ikedc.svg';
+import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
 import Netflix from '../../Asset/Netflix.png';
 import  Showmax from '../../Asset/Showmax.png';
 import Gotv from '../../Asset/GOTV.png';
@@ -55,7 +56,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Gotv")})}>ADD </button>
+                            history.push("/newsub/Gotv")})}><PlusLogo/><p>ADD</p> </button>
                     </div>
                 </div>
                 <div className="product-category-second-list">
@@ -66,7 +67,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Dstv")})}>ADD </button>
+                            history.push("/newsub/Dstv")})}><PlusLogo/><p>ADD</p> </button>
                     </div>
                 </div>
                 <div className="product-category-second-list">
@@ -77,7 +78,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Netflix")})}>ADD </button>
+                            history.push("/newsub/Netflix")})}><PlusLogo/><p>ADD</p> </button>
                     </div>
                 </div>
                 <div className="product-category-second-list">
@@ -88,7 +89,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Showmax")})}>ADD </button>
+                            history.push("/newsub/Showmax")})}><PlusLogo/><p>ADD</p> </button>
                     </div>
                 </div>
                 <div className="product-category-second-list">
@@ -99,7 +100,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Startimes")})}>ADD </button>
+                            history.push("/newsub/Startimes")})}><PlusLogo/><p>ADD</p></button>
                     </div>
                 </div>
                 <div className="product-category-second-list">
@@ -110,7 +111,7 @@ return(
                         </div>
                         <button className="productADD" onClick={(()=>{
                             
-                            history.push("/newsub/Boxoffice")})}>ADD </button>
+                            history.push("/newsub/Boxoffice")})}><PlusLogo/><p>ADD</p> </button>
                     </div>
                 </div>
             </div>
