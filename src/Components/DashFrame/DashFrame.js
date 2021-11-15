@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook,FaUserAlt} from "react-icons/fa"; 
-import { useHistory } from 'react-router-dom';
+import { useHistory, } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {useEffect} from 'react'
 import notification from '../../Asset/Notification.png'
 import newsfeed from '../../Asset/Newsfeed.png'
 import invite from '../../Asset/Invite.png'
@@ -21,8 +22,16 @@ import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import settings from '../../Asset/Settings.png'
 import '../DashFrame/DashFrame.css'
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}){
+function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,paymentstyle,customer}){
     const history=useHistory()
+  
+    const[customerDetail,setCustomerDetail]=useState("")
+    useEffect(()=>{
+      let customerDetails=JSON.parse(localStorage.getItem('customerDetail'))
+     setCustomerDetail(customerDetails)
+        let customers=customer
+        console.log(customerDetail.firstname)
+},[])
     return(
         <div className="dashboard">
             <div className="dashboard-inner">
@@ -40,7 +49,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                             <div className="dash-icon"><Sub/></div>
                             <div >Subscription</div>
                             </div>
-                            <div className="inner-list">
+                            <div className="inner-list" style={paymentstyle}>
                             <div className="dash-icon"><Paymentsvg/></div>
                             <div>Payments</div>
                             </div>
@@ -68,7 +77,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                     <div className="dash-upper">
                         <div className="dash-upper-left">
                             <div className="first"><div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div></div>
-                            <div>Hi,Judith</div>
+                            <div>Hi,{customerDetail.firstname}</div>
                         </div>
                         <div className="dash-upper-right">
                             <div className="firsts"><img src={newsfeed}/></div>
@@ -84,9 +93,10 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
     )
 
 }
-const mapstatetoprops=({flex:{presentcolor}})=>({
+const mapstatetoprops=({flex:{presentcolor,customer}})=>({
  
-    presentcolor
+    presentcolor,
+    customer
    
    
 

@@ -3,6 +3,7 @@ import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
 import LineChart from '../../Components/Linegraph/Linegraph';
 import { Line } from 'react-chartjs-2';
+import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
 import DashFrame from '../../Components/DashFrame/DashFrame';
 import { connect } from 'react-redux'
 import {useEffect} from 'react'
@@ -14,7 +15,7 @@ import MobileDash from '../../Components/MobileDash/MobileDash';
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import '../Dashboard/Dashboard.css'
 
-function Dashboard({presentcolor,headercolor}){
+function Dashboard({presentcolor,headercolor,}){
     const history=useHistory()
     useEffect(()=>{
         headercolor({ dashheadercolor:"#6200F0"})
@@ -34,6 +35,7 @@ function Dashboard({presentcolor,headercolor}){
                         </div>
                         {/* <hr className="welcome-dividers"/> */}
                         <div className="third-line-dashboard">
+                          
                             <div className="third-line-dashboard-upper"><h3>Overview</h3></div>
                             <div className="third-line-dashboard-inner">
                                 <div className="third-line-dashboard-content">
@@ -43,7 +45,7 @@ function Dashboard({presentcolor,headercolor}){
                             </div>
                             <p onClick={(()=>{history.push("/Product")})} className="dashproduct">Products</p>
                             </div>
-                            <button className="dash-add-button" onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button>
+                            <button className="dash-add-button" onClick={(()=>{history.push("/productcategory")})}> <PlusLogo/> <p> ADD SUBSCRIPTION</p></button>
                             </div>
                             {/* <hr className="welcome-divider"/> */}
                             <div className="fourth-line-dashboard-inner">

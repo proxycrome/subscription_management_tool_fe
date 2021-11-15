@@ -1,4 +1,4 @@
-
+import {addItemToArray} from './flex.utils'
 
 const INITIAL_STATE={
     //signupInput:{},
@@ -8,6 +8,13 @@ const INITIAL_STATE={
     detailssignin:{},
     forgotpassword:{},
     cancelicon:{display:"flex"},
+    newemail:"",
+    // subarray:[{Amount:"5000",package:"tre"}],
+    subarray:[],
+    subscription:{},
+    // addsub:{},
+    customer:{},
+     
     presentcolor:{partcolor:"",
                     howcolor:"",
                     privacystyle:"#030640",
@@ -17,6 +24,7 @@ const INITIAL_STATE={
                     dashsubscribecolor:"",
                     paymentcolor:""
                 },
+
 
     
 }
@@ -36,15 +44,45 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
             cancelicon:action.value
            
         }
-       
-       
+        case'setnewemail':
+        return{
+            ...state,
+            newemail:action.value
+           
+        }
+        case'addarray':
+  
 
+         return{
+           ...state,
+        //    subarray:[...state.subarray, action.value],
+        subarray:state.subarray.concat(action.value)
+        // subarray:addItemToArray(state.subarray, action.value)
+     }
+     
+        case 'addsubs' :
+            
+        
+        
+                
+            Object.assign(state.subscription,action.value)
+       
+       
+        // ...state,
+        //    // cartitem:[...state.cartitem, action.payload]
+        //    cartitem:addItemToCart(state.cartitem, action.payload)
          case 'signupdetails' :
             
         
         
                 
                Object.assign(state.details,action.value)
+               case 'customerdetails' :
+            
+        
+        
+                
+                Object.assign(state.customer,action.value)
               
                case 'passwordreset' :
             

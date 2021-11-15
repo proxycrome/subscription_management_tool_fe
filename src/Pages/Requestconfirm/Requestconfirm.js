@@ -1,15 +1,17 @@
 import React from 'react'
 import Resetpassframecancel from '../../Components/Resetpassframecancel/Resetpassframecancel'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import '../Requestconfirm/Requestconfirm.css'
 
-function Requestconfirm(){
+function Requestconfirm({newemail}){
+   
     return(
       
             <Resetpassframecancel>
                   <div className="Requestconfirm">
            <h1>REQUEST CONFIRMATION</h1>
-           <p className="Requestconfirm-parag">A link has been sent to your email: judithnewman@gmail.com .</p>
+           <p className="Requestconfirm-parag">A link has been sent to your email: {newemail.email} .</p>
            <button>CHECK MAIL</button>
            
               
@@ -21,5 +23,12 @@ function Requestconfirm(){
 
 
 }
+const mapstatetoprops=({flex:{newemail}})=>({
 
-export default Requestconfirm
+    newemail
+   
+   
+  
+  })
+
+export default connect(mapstatetoprops) (Requestconfirm)

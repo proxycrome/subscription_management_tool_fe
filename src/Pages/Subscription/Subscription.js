@@ -9,7 +9,8 @@ import Mobilecard from '../../Components/Mobilecard/Mobilecard'
 import '../Subscription/Subscription.css'
 import { useHistory } from 'react-router-dom';
 
-function Subscription({presentcolor,headercolor}){
+function Subscription({presentcolor,headercolor,subarray}){
+    console.log(subarray)
     const history =useHistory()
     useEffect(()=>{
         headercolor({ dashsubscribecolor:"#6200F0"})
@@ -93,6 +94,14 @@ function Subscription({presentcolor,headercolor}){
                                 <th>Billing cycle</th>
                                 <th></th>
                             </td>
+                          {subarray.map((val,index)=>{
+                              return(
+                                <tr>{val.Amount}</tr>
+
+                              )
+
+                          })}
+                            
                         </div>
                 </div>
                 <div></div>
@@ -168,9 +177,10 @@ const MapDispatchToProps=(dispatch)=>({
      headercolor:(item)=>dispatch(headercolor(item))
  
  })
-const mapstatetoprops=({flex:{presentcolor}})=>({
+const mapstatetoprops=({flex:{presentcolor,subarray}})=>({
  
-    presentcolor
+    presentcolor,
+    subarray
    
    
 

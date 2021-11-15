@@ -350,7 +350,8 @@ width: 100%;
     
 }
 .header-parag{
-    color: black;
+    color: rgba(3,6,64,70%);
+    
 }
 .textandimage{
     display: flex;
@@ -442,6 +443,9 @@ width: 100%;
   
    
    
+}
+.remem-p{
+    color: rgba(51,51,51,100%);
 }
  .keep-logged-in input{
     /* width: 20px;

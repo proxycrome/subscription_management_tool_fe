@@ -9,13 +9,14 @@ import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import Recaptcha from 'react-recaptcha';
 import flexpng from '../../Asset/flexpng.png'
-import {signindetails,signin} from '../../redux/flex/flex.actions'
+import setAuthHeader from '../../Components/Utility/Utility'
+import {signindetails,signin,customerdetails} from '../../redux/flex/flex.actions'
 import axios from 'axios'
 import '../Sign-in/Signin.css'
 
 
     
-     function Signin({detailssignin,signindetails}){
+     function Signin({detailssignin,signindetails,customerdetails,customer}){
     const[passwordshow, setPasswordshow]=useState(false)
     const[password,setPassword]=useState("")
     const[email,setEmail]=useState("")
@@ -72,6 +73,7 @@ import '../Sign-in/Signin.css'
     .then(res=>{
       console.log(res)
       console.log(res.data.data.token)
+      console.log(res.data.data.firstName)
       let token=res.data.data.token
        newToken=token.split(" ")[1]
       console.log(newToken)
@@ -79,11 +81,25 @@ import '../Sign-in/Signin.css'
           //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
           if(loggedins===true){
               if((JSON.parse(localStorage.getItem('userToken')))!=null){
-            localStorage.setItem('usertoken', JSON.stringify(newToken));
+            localStorage.setItem('userToken', JSON.stringify(newToken));
         }
-        else{localStorage.setItem('usertoken', JSON.stringify(newToken));}
+        else{localStorage.setItem('userToken', JSON.stringify(newToken));}
           }
-       
+          //token
+
+          if((JSON.parse(localStorage.getItem('bearertoken')))!=null){
+            localStorage.setItem('bearertoken', JSON.stringify(token));
+        }
+        //customer-details
+      
+        if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
+            localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));
+        }
+        else{localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));}
+        
+        setAuthHeader()
+          customerdetails({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName})
+          console.log(customer)
           history.push("/Dashboard")
       }
       else{
@@ -154,7 +170,7 @@ import '../Sign-in/Signin.css'
            <span  className="keep-logged-in"> 
            <input id="logedIn" type="checkbox" value="loggedin"
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
-                <label for="logedIn">Remember me</label>
+                <label for="logedIn" className="remem-p">Remember me</label>
            </span>
            <Link className="forgot" to="/Resetpassword"><p className="forgot">Forgot password?</p></Link>
            </div>
@@ -230,13 +246,15 @@ const MapDispatchToProps=(dispatch)=>({
     //const userinput= {[items]:value}
      signin:(item)=> dispatch(signin(item)),
     
-     signindetails:(item)=>dispatch(signindetails(item))
+     signindetails:(item)=>dispatch(signindetails(item)),
+     customerdetails:(item)=>dispatch(customerdetails(item))
  
  })
- const mapstatetoprops=({flex:{signininput,detailssignin}})=>({
+ const mapstatetoprops=({flex:{signininput,detailssignin,customer}})=>({
  
     signininput,
      detailssignin,
+     customer
     
     
  
