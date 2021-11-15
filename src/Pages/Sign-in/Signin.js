@@ -84,12 +84,15 @@ import '../Sign-in/Signin.css'
             localStorage.setItem('userToken', JSON.stringify(newToken));
         }
         else{localStorage.setItem('userToken', JSON.stringify(newToken));}
-          }
+         
           //token
 
           if((JSON.parse(localStorage.getItem('bearertoken')))!=null){
             localStorage.setItem('bearertoken', JSON.stringify(token));
         }
+        else{localStorage.setItem('bearertoken', JSON.stringify(token));}
+    }
+
         //customer-details
       
         if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
