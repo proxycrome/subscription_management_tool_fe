@@ -70,6 +70,7 @@ import '../Sign-in/Signin.css'
     axios.post("https://subscription-management-tool.herokuapp.com/login",params)
     .then(res=>{
       console.log(res)
+      localStorage.setItem('user', JSON.stringify(res.data.data));
       console.log(res.data.data.token)
       let token=res.data.data.token
        newToken=token.split(" ")[1]

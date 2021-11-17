@@ -6,7 +6,7 @@ import { headercolor } from '../../redux/flex/flex.actions';
 
 function Subscription({presentcolor,headercolor}){
     useEffect(()=>{
-        headercolor({ dashsubscribecolor:"purple"})
+        headercolor({ dashsubscribecolor:"#6200f0"})
                     
        
      },[])

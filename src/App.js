@@ -12,6 +12,10 @@ import Company from './Pages/Company/Company';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Blog from  './Pages/Blog/Blog'
+import Profile from './Pages/Settings/Profile/Profile';
+import Notifications from './Pages/Settings/Notifications/Notifications'
+import Application from './Pages/Settings/Application/Application';
+import Payments from './Pages/Settings/Payments/Payments';
 import './App.css';
 
 function App() {
@@ -32,6 +36,10 @@ function App() {
      <Route exact path="/signup" component={Signup}/>
      <Route exact path="/signin" component={Signin}/>
      <Route exact path="/subscription" component={Subscription}/>
+     <Route exact path="/settings/profile/:id" component={Profile}/>
+     <Route exact path="/settings/notifications" component={Notifications}/>
+     <Route exact path="/settings/application" component={Application}/>
+     <Route exact path="/settings/payments" component={Payments}/>
     </Switch>
     </div>
   );

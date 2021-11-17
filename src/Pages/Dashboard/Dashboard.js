@@ -9,7 +9,7 @@ import '../Dashboard/Dashboard.css'
 
 function Dashboard({presentcolor,headercolor}){
     useEffect(()=>{
-        headercolor({ dashheadercolor:"purple"})
+        headercolor({ dashheadercolor:"#6200f0"})
                     
        
      },[])

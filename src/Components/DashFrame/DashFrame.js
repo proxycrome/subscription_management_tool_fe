@@ -5,8 +5,10 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../DashFrame/DashFrame.css'
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}){
-    const history=useHistory()
+function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle}){
+    const history = useHistory()
+    const user = localStorage.getItem('user');
+    const userStr = JSON.parse(user)
     return(
         <div className="dashboard">
             <div className="dashboard-inner">
@@ -27,7 +29,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle}
                             <div className="dash-icon"><FaEye/></div>
                             <div>Payments</div>
                             </div>
-                            <div className="inner-list">
+                            <div onClick={(() => {history.push(`/settings/profile/${userStr.id}`)})} style={dashSettingsStyle} className="inner-list">
                             <div className="dash-icon"><FaEye/></div>
                             <div>Settings</div>
                             </div>
