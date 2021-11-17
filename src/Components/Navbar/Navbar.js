@@ -60,12 +60,13 @@ return(
                 
               
                <span className="dropDown">
-               <p id="companyLink"  style={compstyle}><p>Company</p><FaAngleDown 
+               <span id="companyLink"  style={compstyle}><p>Company</p><FaAngleDown 
                onClick={handleextra}/> 
-               </p>
+               </span>
               <div style={extra}>
-               <Link to="/company" style={aboutstyle}><p>About us</p></Link>
-               <Link to="/about" style={privacystyle}><p>Privacy policy</p></Link>
+              <p onClick={(()=>(history.push("/company")))} style={aboutstyle}>About us</p>
+               <p style={privacystyle} onClick={(()=>(history.push("/privacystyle")))}>Privacy policy</p>
+               {/* <Link to="/about" style={privacystyle}></Link> */}
                </div>
                </span>
                
@@ -80,8 +81,8 @@ return(
         </div>
         <div style={mobilenavcontent} className="mobilenavrightcontent">
                 <div className="mobileFlex-div">
-                <p className="mobileFlex" style={compstyle}><p>Company</p><FaAngleDown 
-               onClick={handleextramobile}/></p> 
+                <span className="mobileFlex" style={compstyle}><p className="companyNavBar">Company</p><FaAngleDown 
+               onClick={handleextramobile} className="arrowNavBar"/></span> 
                <div style={extramobile}>
                <Link to="/company" className="aboUt" style={aboutstyle}><p>About us</p></Link>
                <Link className="exception" id="prIVacy" to="/about" style={privacystyle}><p>Privacy policy</p></Link>

@@ -25,17 +25,17 @@ function HowWorks({headercolor,presentcolor}){
     return (
     <div className="HowWorks">
 
-        <div>
+       
             <Navbar howworks={{color:presentcolor.howcolor}}
             aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
-            <h2 className="work-header">We Focus on Structured and Sustainable Subscription Management.</h2>
-            <div className="work-header-line-div">
+             <div className="howworks-innerS">
+            <h2 className="work-header">We Focus on <span className="sep-H2">Structured</span> and Sustainable Subscription Management.</h2>
             <hr className="work-header-line"/>
-            </div>
             <div className="works-and-image-original">
                 <div className="works-outer">
                     <div className="works-inner">
-                    <LoremIpsum p={1} />
+                        <h2> <LoremIpsum avgWordsPerSentence={2} /></h2>
+                    <p className="work-inner-p"><LoremIpsum p={1} /></p>
                         <button>WATCH VIDEO</button>
                     </div>
                     <div className="works-image-first"><img src={splash}/></div>
@@ -68,6 +68,26 @@ function HowWorks({headercolor,presentcolor}){
             </div>
             <div className="works-and-image">
                 <div className="works-outer">
+              
+                    <div className="works-inner-second">
+                       <h2>Our Featured Functionalities</h2>
+                       <p>Here 're some of the features Flex has to offer</p>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                       <div className="functionality-inner">
+                           <div className="function-check-div"><img src={check}/></div>
+                           <p>Making tools $ Discounts and promos</p>
+                       </div>
+                   
+                        
+                    </div>
+                    <div className="works-image-second"><img src={worknew}/></div>
+                </div>
+                </div>
+            {/* <div className="works-and-image">
+                <div className="works-outer">
                     <div className="works-inner">
                     <h2>Our Featured Functionalities</h2>
                        <p>Here 're some of the features Flex has to offer</p>
@@ -83,7 +103,7 @@ function HowWorks({headercolor,presentcolor}){
                     </div>
                     <div className="works-image"><img src={worknew}/></div>
                 </div>
-            </div>
+            </div> */}
             <div className="mobile-works-inner">
             <h2>Our Featured Functionalities</h2>
                 <div className="mobile-work-img"><img src={worknew}/></div>
@@ -114,8 +134,8 @@ function HowWorks({headercolor,presentcolor}){
 
                 </div>
             <div className="works-lower">
-                <p className="work-intro">A few reasons why you should join us</p>
-                <p className="work-intross">A few reasons why you should join us</p>
+                <p className="work-intro">A few reasons why you should join us!!!</p>
+                <p className="work-intross">A few reasons why you should join us!!!</p>
                 <div className="work-intro-show">
                     <div className="works-lower-inner">
                         <span>

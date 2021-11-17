@@ -7,14 +7,16 @@ import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
-import Recaptcha from 'react-recaptcha'
-import {signindetails,signin} from '../../redux/flex/flex.actions'
+import Recaptcha from 'react-recaptcha';
+import flexpng from '../../Asset/flexpng.png'
+import setAuthHeader from '../../Components/Utility/Utility'
+import {signindetails,signin,customerdetails} from '../../redux/flex/flex.actions'
 import axios from 'axios'
 import '../Sign-in/Signin.css'
 
 
     
-     function Signin({detailssignin,signindetails}){
+     function Signin({detailssignin,signindetails,customerdetails,customer}){
     const[passwordshow, setPasswordshow]=useState(false)
     const[password,setPassword]=useState("")
     const[email,setEmail]=useState("")
@@ -72,6 +74,7 @@ import '../Sign-in/Signin.css'
       console.log(res)
       localStorage.setItem('user', JSON.stringify(res.data.data));
       console.log(res.data.data.token)
+      console.log(res.data.data.firstName)
       let token=res.data.data.token
        newToken=token.split(" ")[1]
       console.log(newToken)
@@ -79,11 +82,25 @@ import '../Sign-in/Signin.css'
           //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
           if(loggedins===true){
               if((JSON.parse(localStorage.getItem('userToken')))!=null){
-            localStorage.setItem('usertoken', JSON.stringify(newToken));
+            localStorage.setItem('userToken', JSON.stringify(newToken));
         }
-        else{localStorage.setItem('usertoken', JSON.stringify(newToken));}
+        else{localStorage.setItem('userToken', JSON.stringify(newToken));}
           }
-       
+          //token
+
+          if((JSON.parse(localStorage.getItem('bearertoken')))!=null){
+            localStorage.setItem('bearertoken', JSON.stringify(token));
+        }
+        //customer-details
+      
+        if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
+            localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));
+        }
+        else{localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));}
+        
+        setAuthHeader()
+          customerdetails({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName})
+          console.log(customer)
           history.push("/Dashboard")
       }
       else{
@@ -113,6 +130,7 @@ import '../Sign-in/Signin.css'
 
     
     return(
+        <div className="signintotal">
         <div className="signin" >
             <div className="inner-signin">
             <div className="textandimage">
@@ -150,11 +168,12 @@ import '../Sign-in/Signin.css'
             </div>
             <div className="forgot-and-remember">
             
-           <span className="keep-logged-in"> <input type="checkbox" value="loggedin"
+           <span  className="keep-logged-in"> 
+           <input id="logedIn" type="checkbox" value="loggedin"
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
-                <p>Remember me</p>
+                <label for="logedIn" className="remem-p">Remember me</label>
            </span>
-           <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+           <Link className="forgot" to="/Resetpassword"><p className="forgot">Forgot password?</p></Link>
            </div>
 
           
@@ -171,12 +190,55 @@ import '../Sign-in/Signin.css'
             </div>
             </div>
             <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
             </div>
             </div>
             </div>
             </div>
         </div>
+        <div className="mobilesignin">
+            <div className="mobilesigninHeader">
+            <img src={flexpng} style= {{width: "78px",
+        height: "32px"}}/>
+
+        <h3>Stay connected always</h3>
+        </div>
+        <div className="signinmobile-inner">
+            <h2>WELCOME BACK!</h2>
+            <h3>Enter your details to continue...</h3>
+            <div className="signininputWrapper">
+            <input type="email" placeholder="Email address"/>
+            </div>
+            <div className="signininputWrapper" id="password-mobile-signin">
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
+            onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setPassword(e.target.value)}}/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+            <div className="forgot-and-remember">
+            
+            <span  className="keep-logged-in"> 
+            <input id="logedIn" type="checkbox" value="loggedin"
+            onChange={(()=>{setLoggedins(!loggedins )})   }/>
+                 <label for="logedIn">Remember me</label>
+            </span>
+            <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+            </div>
+            <button className="create" onClick={handlesignin}>LOG IN</button>
+          <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
+          <div className="alternateSignin">
+            <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>
+            <button className="facebook"><FacebookLogo className="faceLogo"/>FACEBOOK</button>
+            </div>
+ 
+            <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
+             
+        </div>
         
+         </div>
+      
+       </div>
     )
 }
 
@@ -185,13 +247,15 @@ const MapDispatchToProps=(dispatch)=>({
     //const userinput= {[items]:value}
      signin:(item)=> dispatch(signin(item)),
     
-     signindetails:(item)=>dispatch(signindetails(item))
+     signindetails:(item)=>dispatch(signindetails(item)),
+     customerdetails:(item)=>dispatch(customerdetails(item))
  
  })
- const mapstatetoprops=({flex:{signininput,detailssignin}})=>({
+ const mapstatetoprops=({flex:{signininput,detailssignin,customer}})=>({
  
     signininput,
      detailssignin,
+     customer
     
     
  

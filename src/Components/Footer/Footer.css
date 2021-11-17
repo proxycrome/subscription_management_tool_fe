@@ -1,6 +1,6 @@
 .Footer{
    
-    background-image: url('../../Asset/Base.png');
+    /* background-image: url('../../Asset/Base.png'); */
     background-color: #191D6C;
     color: white;
     text-align: left;
@@ -100,7 +100,7 @@
     color:#232340;
 }
 .iconcontainer{
-    background-color: blue;
+    background-color: #1A2D57;
    width: 25px;
    height: 25px;
     

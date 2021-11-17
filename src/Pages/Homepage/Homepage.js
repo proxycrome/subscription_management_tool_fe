@@ -7,6 +7,7 @@ import lady from '../../Asset/Pictures.jpg'
 import operate from '../../Asset/operate.jpg'
 import partnerLogo from '../../Asset/partners.png'
 import overlay from '../../Asset/Overlay2.png'
+import  CustomersImage from '../../Asset/Customers.png'
 import { connect } from 'react-redux'
 
 import '../Homepage/Homepage.css'
@@ -137,7 +138,7 @@ return(
 
                     <h2>Love from customers</h2>
                    
-                   
+                   <div className="customer-love-img"><img src={CustomersImage}/></div>
                    
                     <p>We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
@@ -146,7 +147,7 @@ return(
                 <div className="blog">
                     <button>OUR BLOG</button>
                   
-                    <h3>Don't miss out recent articles</h3>
+                    <h2>Don't miss out recent articles</h2>
                     <p className="blog-top-parag">We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
                         <div className="blog-container">

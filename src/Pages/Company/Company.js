@@ -29,37 +29,47 @@ function Company({headercolor,presentcolor}){
                privacystyle={{textDecoration:"none"}}/>
                 <div>
                     <div className="company-learn">
-                        <p className="learn-left">Learn more about us at Flex</p>
-                        <div className="learn-right"> <LoremIpsum p={1} /></div>
+                        <h2 className="learn-left">Learn more about us at Flex</h2>
+                        <div className="learn-right">  <LoremIpsum avgWordsPerSentence={5} /></div>
                     </div>
                     <div className="company-provide">
                         <div className="company-provide-left">
                         <h2>We provide a complete software platform for managing subscription services</h2>
                             <div className="img-about-first"><img src={about}/></div>
-                            <p>Check out how Flex has been performing over the past decade</p>
+                            {/* <p>Check out how Flex has been performing over the past decade</p> */}
                         </div>
                         <div className="provide-left-center">
                         <h3>Learn more about us at Flex</h3>
                         <LoremIpsum p={1} />
+                       
                        
                         </div>
                     </div>
                     <div className="company-how">
                         <div className="company-how-left">
                         <h2>How we 're doing</h2>
-                        <p className="header-Paragraph"><LoremIpsum avgWordsPerSentence={1} /></p>
+                        <div className="header-Paragraph"><LoremIpsum avgWordsPerSentence={1} /></div>
                         <div className="company-doing">
                             <div className="company-doing-content" id="marginExtra">
                               
-                                <div id="marginExtraP">  <p>10 Years of Experience</p></div>
+                                <div id="marginExtraP"> 
+                                <p className="numberAbout">10</p>
+                                 <p className="textABout"> Years of Experience</p>
+                                 </div>
                            
-                                <div>  <p>10 Years of Experience</p></div>
+                                <div>  
+                                <p className="numberAbout">10</p>
+                                    <p className="textABout"> Years of Experience</p></div>
                         </div>
                         <div className="company-doing-content" id="marginExtraSecond">
                               
-                                <div id="marginExtraX">  <p>10 Years of Experience</p></div>
+                                <div id="marginExtraX"> 
+                                <p className="numberAbout">10</p>
+                                 <p className="textABout"> Years of Experience</p></div>
                            
-                                <div>  <p>10 Years of Experience</p></div>
+                                <div> 
+                                <p className="numberAbout">10</p>
+                                 <p className="textABout"> Years of Experience</p></div>
                         </div>
                         </div>
                        
@@ -69,10 +79,10 @@ function Company({headercolor,presentcolor}){
                     <div className="company-about">
                         <div className="about-us">
                         <h2>About Us</h2>
-                        <p>
+                        <div>
                         <LoremIpsum avgWordsPerSentence={4} />
-                        <LoremIpsum avgWordsPerSentence={1} />
-                        </p>
+                       
+                        </div>
                         </div>
                         <div className="imagesDivs">
                            <div className="image-One">

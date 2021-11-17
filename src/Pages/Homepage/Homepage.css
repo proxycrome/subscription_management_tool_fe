@@ -74,6 +74,10 @@
 .below-img-blog{
     padding: 0 20px;
 }
+.below-img-blog h2{
+   margin-top: 30px;
+   margin-bottom: 20px;
+}
 .Homepage .Homebody .blog-content h2{
     font-size: 28px;
     text-align: left;
@@ -402,10 +406,16 @@ margin-bottom: 0px;
     height: 100%;
     border-radius: 100%;
 }
+.customer-love-img{
+    width: 100%;
+}
+.customer-love-img img{
+    width: 100%;
+}
 @media screen and (max-width:960px){
-    .butnRegister{
+    /* .butnRegister{
        
-    }
+    } */
     .buttons #sep-button{
        margin-top: 20px;
        margin-bottom: 20px;
