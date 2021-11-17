@@ -2,7 +2,7 @@ import React from 'react'
 import DashFrame from '../../Components/DashFrame/DashFrame'
 import Dashopen from '../../Components/Dashopen/Dashopen'
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { headercolor } from '../../redux/flex/flex.actions';
 import {ReactComponent as Rectangle} from '../../Asset/Rectangle-option.svg'
@@ -11,18 +11,30 @@ import {ReactComponent as Paywallet} from '../../Asset/Paywallet.svg'
 import {ReactComponent as Flutterwave} from '../../Asset/Flutterwave.svg'
 import {ReactComponent as Flutterwaves} from '../../Asset/Flutterwavess.svg'
 import Icon from '../../Components/Image/Image'
+import Flutterwavepng from '../../Asset/Flutterwave.png'
+import paystack from '../../Asset/paystack.png'
 import {ReactComponent as Paystack} from '../../Asset/paystack.svg'
+import Flutterwavelink from '../../Components/Flutterwave/Flutterwave'
 import '../Paymentcard/Paymentcard.css'
 
 function Paymentcard({presentcolor,headercolor}){
     const history=useHistory()
+    const[click,setClick]=useState(false)
+    const[butnborder,setButnborder]=useState({})
+    const[chosen,setChosen]=useState("")
+    const[butnbordersecond,setButnbordersecond]=useState({})
     useEffect(()=>{
-        headercolor({ paymentcolor:"#6200f0"})
+        headercolor({ dashheadercolor:"#6200f0"})
                     
        
      },[])
+     function Continue(){
+         if(chosen=="flutter"){
+           alert('flutter')
+         }
+     }
 return(
-    <DashFrame paymentstyle={{backgroundColor:presentcolor.paymentcolor}}>
+    <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
         <div className="paymentoption">
             <div>
                 <div className="header-payment">
@@ -36,15 +48,34 @@ return(
                           
                         <p>Please select your preffered payment platform</p>
                         <div className="payment-option-card-buttons">
-                            <button><Flutterwave className="payment-option-card-icon"/></button>
-                            <button></button>
+                            <button style={butnborder} className="payment-option-card-icon"onClick={(()=>{
+                        if(click==false){
+                            setButnborder({border:"1px solid #6200f0"})
+                            setClick(true) 
+                            setChosen("flutter")
+                            
+                            }})}>
+                                <img src={Flutterwavepng }/>
+                                </button>
+                            <button style={butnbordersecond} onClick={(()=>{
+                        if(click==false){
+                            setButnbordersecond({border:"1px solid #6200f0"})
+                            setClick(true) 
+                            setChosen("paystack")
+                            
+                            }})}>
+                                <img src={paystack}/>
+                                </button>
                         </div>
                         </div>
                     </div>
-                    <div className="payment-select-buttons">
-                            <button className="cancel-payment">CANCEL</button>
-                            <button className="proceed-payment">CONTINUE</button>
+                    <div className="payment-select-cards-buttons">
+                            <button onClick={history.goBack} className="cancel-payment">CANCEL</button>
+                            <button className="proceed-payment" style={chosen!="" ? {display:"none"}:{display:"inline-block"}} onClick={Continue}>CONTINUE</button>
+                            <div className="flutterbutn" style={chosen=="" ? {display:"none"}:{display:"inline-block"}}><Flutterwavelink id="flutterbutn"  className="flutterbutn" /></div>
                         </div>
+                        
+                       
                </div>
                 </div>
         </div>

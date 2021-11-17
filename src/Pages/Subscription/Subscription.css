@@ -37,6 +37,10 @@
     margin-left: 0px;
     font-size: 16px;
     color: #030640;
+    color: rgba(7,10,74 ,100%);
+}
+.subhistory{
+     color: rgba(7,10,74 ,50%);
 }
 .mysubsribe-and-button{
     padding:20px  20px;
@@ -54,6 +58,7 @@
     border-radius: 6px;
     color: white;
     border: none;
+  
 }
 .subSCRiption{
     margin: 20px;
@@ -99,6 +104,16 @@
     padding: 35px;
     height: 308px;
 }
+.subSCRIPTION-pluslogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500px;
+}
+.subSCRIPTION-pluslogo p{
+    margin-left: 10px;
+}
 .sub-below-second{
     text-align: left;
     
@@ -139,6 +154,20 @@ display: flex;
     margin-bottom: 40px;
     font-weight: normal;
 
+}
+.sub-and-history p{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+.sub-and-history{
+    display: flex;
+    align-items: flex-start;
+    min-width: 400px;
+    max-width: 600px;
+    justify-content: flex-start;
+    /* background-color: #E40C0C; */
 }
 .sub-divider-line{
     background-color: rgba(7,10,74 ,10%);

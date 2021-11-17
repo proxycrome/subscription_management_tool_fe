@@ -6,23 +6,60 @@ import { Line } from 'react-chartjs-2';
 import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
 import DashFrame from '../../Components/DashFrame/DashFrame';
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
+import Bin from '../../Asset/dustbin.png'
 import { useHistory } from 'react-router-dom';
 import { headercolor } from '../../redux/flex/flex.actions';
+import Smallestbox from '../../Components/Smallestbox/Smallestbox'
+import Dstiv from '../../Asset/Dstv.png'
+import Gotiv from '../../Asset/GOTV.png'
 import MobileDash from '../../Components/MobileDash/MobileDash';
 
 
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
+import axios from 'axios';
 import '../Dashboard/Dashboard.css'
 
-function Dashboard({presentcolor,headercolor,}){
+function Dashboard({presentcolor,headercolor,subarray}){
+    const[image,setImage]=useState({val:""})
     const history=useHistory()
     useEffect(()=>{
         headercolor({ dashheadercolor:"#6200F0"})
-                    
+          let token = JSON.parse(localStorage.getItem('bearertoken'));
+          axios.defaults.headers.common['Authorization'] = token; 
+          
+          
+          if(pname=="GOTv"){
+            setImage({val:Gotiv})
+       }
+       if(pname=="DStv"){
+          setImage({val:Dstiv})
+      }
        
      },[])
+
+     let pname=""
+     let cat=""
+     let stat
+     let expire=""
+     let product=subarray.map((val)=>{
+         pname=val.Package.split(" ")[0]
+         cat=val.productcategory
+         stat=val.Status
+         expire=val.expiryDate
+         return val.Package
+     })
+     console.log(pname)
+     console.log(image.val)
+     
+     console.log(cat)
      console.log(presentcolor.dashheadercolor)
+     function Inactive(){
+         history.push("/Addsub/pname")
+     }
+     function Active(){
+        alert("active")
+    }
     return(
             <div className="dashtotal">
                 <div className="webDashboard">
@@ -61,7 +98,7 @@ function Dashboard({presentcolor,headercolor,}){
                                 </div>
                                 <div className="fourth-line-right">
                                     <button>FUND WALLET</button>
-                                    <div>
+                                    <div className="WALLET-div" >
                                         <div className="wallet">
                                             <div className="wallet-upper">
                                                 <p className="regular-weight-dash">Account Id</p>
@@ -84,17 +121,25 @@ function Dashboard({presentcolor,headercolor,}){
                           
                            
                            
-                                <p>Products</p>
-                                <p>Product category</p>
-                                <p>Expiry Date</p>
-                                <p>Status</p>
-                                <p></p>
-                                <p></p>
+                                <th>Products</th>
+                                <th>Product category</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th></th>
+                                {/* <th></th> */}
                             </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
                            
+                            <div  className="catresult">
+                                <tr className="Product-and-Pname" style={stat=="" ? {display:"none"}:{display:"flex"}}><Smallestbox icon={image.val}/><p>{pname}</p></tr>
+                            <tr><p style={{color:"rgba(51,51,51,50%"}}>{cat}</p></tr>
+                            <tr>{expire}</tr>
+                            <tr style={stat=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{stat}</tr>
+                            <tr className="editprof" 
+                            ><p onClick={(()=>{stat=="Inactive"?Inactive():Active()}) } style={pname=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+                            <div className="binDiv" style={pname=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+                            </tr>
+                            
+                           </div>
                         </div>
                         </DashFrame>
                         </div>
@@ -127,11 +172,11 @@ function Dashboard({presentcolor,headercolor,}){
                             <div className="mobile-second-inner">
                                 <h3>Recent subscriptions</h3>
                                 <div className="tableData">
-                                    <p className="mobile-list-table">Products</p>
-                                    <p className="mobile-list-table">Products category</p>
-                                    <p className="mobile-list-table">Expiry Date</p>
-                                    <p className="mobile-list-table">Status</p>
-                                    <p></p>
+                                    <th className="mobile-list-table">Products</th>
+                                    <th className="mobile-list-table">Products category</th>
+                                    <th className="mobile-list-table">Expiry Date</th>
+                                    <th className="mobile-list-table">Status</th>
+                                    <th></th>
                                     
                                 </div>
                             </div>
@@ -152,9 +197,10 @@ const MapDispatchToProps=(dispatch)=>({
      headercolor:(item)=>dispatch(headercolor(item))
  
  })
-const mapstatetoprops=({flex:{presentcolor}})=>({
+const mapstatetoprops=({flex:{presentcolor,subarray}})=>({
  
-    presentcolor
+    presentcolor,
+    subarray
    
    
 

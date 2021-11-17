@@ -23,6 +23,7 @@
    margin-right: 30px;
    margin-top: 20px;
   
+  
 }
 .third-line-dashboard{
 display: flex;
@@ -53,6 +54,23 @@ padding: 10px 0px;
     justify-content: center;
     
 }
+.catresult{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-start;
+    /* background-color: #6200f0; */
+    padding-left: 51.2px;
+
+}
+.catresult tr{
+    /* margin-right: 200px; */
+    width: 19%;
+  font-size: 16px;
+  color: rgba(7,10,74,70%);
+    margin-right: 5px;
+    text-align: left;
+}
 .dash-add-button p{
     margin-left: 5px;
 }
@@ -68,7 +86,7 @@ padding: 10px 0px;
 }
 .dashproduct{
     width: 50%;
-    color: rgba(7,10,74 ,70%);
+    color: rgba(7,10,74 ,50%);
    
 }
 .third-line-dashboard-upper{
@@ -101,6 +119,7 @@ padding: 10px 0px;
 .acc-summ{
     align-self: center;
     color: rgba(3,6,64,100%);
+    color: rgba(7,10,74 ,100%);
     margin-left: 5px;
 }
 .welcome-divider{
@@ -171,6 +190,7 @@ padding: 10px 0px;
     flex-direction: column;
     justify-content: space-between;
     width: 391px;
+    min-width: 200px;
     height:221px;
     background-color: #FF8E2E;
     border-radius: 20px;
@@ -268,6 +288,7 @@ padding: 10px 0px;
     align-items: flex-start;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 40px;
     
 }
 .recent-sub-dashboard{
@@ -278,10 +299,17 @@ padding: 10px 0px;
     font-weight: bold;
     margin-left: 51.2px;
 }
+.editprof{
+    display: flex;
+}
+.editprof p{
+    margin-right: 34px;
+}
+
 .inner-half-header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
    width: 100%;
     background-color: black;
     height: 67.4px;
@@ -290,6 +318,27 @@ padding: 10px 0px;
     padding-left: 51.2px;
     margin-bottom: 40px;
 
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+   width: 100%;
+    background-color: #030640;
+    height: 67.4px;
+    color: white;
+    font-size: 16px;
+    padding-left: 51.2px;
+    margin-bottom: 40px;
+    font-weight: normal;
+
+}
+.inner-half-header th{
+   /* margin-right: 200px; */
+   width: 19%;
+   text-align: left;
+    font-weight:normal ;
+    
+    margin-right: 5px;
 }
 .mobile-dashboard{
     display: none;
@@ -325,6 +374,25 @@ padding: 10px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.Product-and-Pname{
+    display: flex;
+   
+}
+.Product-and-Pname p{
+    color: #333;
+}
+.binDiv{
+    width: 14px;
+    height: 17.8px;
+}
+.catresult{
+    margin-bottom: 20.3px;
+}
+.WALLET-div{
+   
+   max-width: 100%;
+   /* overflow: auto; */
 }
 
 @media screen and (max-width:960px){

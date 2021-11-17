@@ -36,7 +36,7 @@ function App() {
      <Route exact path="/dashboard" component={Dashboard}/>
      <Route exact path="/Passwordreset" component={Passwordreset}/>
      <Route exact path="/about" component={About}/>
-     <Route exact path="/addsub" component={Addsub}/>
+     <Route exact path="/addsub/:name" component={Addsub}/>
      <Route exact path="/blog" component={Blog}/>
      <Route exact path="/company" component={Company}/>
      <Route exact path="/contact" component={Contact}/>

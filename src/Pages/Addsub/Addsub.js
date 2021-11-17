@@ -47,8 +47,8 @@ return(
         <div>
             <div className="addsubb">
                 <Upperbox/>
-                <Belowbox firstbutn={"DISCARD"} secondbutn={"RENEW"} choice={""} cycle={""}
-                firstclick={add}/>
+                <Belowbox firstbutn={"DISCARD"} secondbutn={"SUBSCRIBE"} choice={""} cycle={""}
+                firstclick={add} product={[{amount:"10"}]}/>
             </div>
         </div>
          

@@ -26,15 +26,17 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
     const[packageFiles,setPackageFiles]=useState([])
     useEffect(()=>{
         // setSubscriptionval(subscription)
+        // let token = JSON.parse(localStorage.getItem('bearertoken'));
+        // axios.defaults.headers.common['Authorization'] = token;
 
         axios.get("https://subscription-management-tool.herokuapp.com/users/category")
     .then(res=>{
       console.log(res)
       console.log(res.data.data[0])
-      if((JSON.parse(localStorage.getItem('packages')))==null){
+    //   if((JSON.parse(localStorage.getItem('packages')))==null){
         localStorage.setItem('packages', JSON.stringify(res.data.data));
       
-    }
+    // }
 })
     // else{localStorage.setItem('bearertoken', JSON.stringify(token));}
     
@@ -42,7 +44,7 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
         // https://subscription-management-tool.herokuapp.com/users/subscription
    
     let packagestore=JSON.parse(localStorage.getItem('packages'))
-        headercolor({ dashsubscribecolor:"#6200F0"})
+        headercolor({ dashheadercolor:"#6200F0"})
                     
         console.log(match.params.name)
         const names=match.params.name
@@ -91,17 +93,18 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
      }
      function Addlist(){
 
-        addarray({Amount:subscription.Amount,Package:subscription.Package})
+        addarray({Amount:subscription.amount,Package:subscription.productName,Renewal:subscription.Renewal,
+        Billincycle:subscription.billingCycle,Status:"Inactive",productcategory:"Entertainment",subDat:"",expiryDate:""})
         console.log(subscription)
         console.log(subarray)
-
+            history.push("/dashboard")
      }
      
      
    
     
 return(
-    <Dashopen dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
+    <Dashopen dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
         <div className="newsubContainer">
         {/* <div className="upperboX">
             <div className="Upperleft">

@@ -6,6 +6,7 @@ import PieChart from '../../Components/Pie/Pie'
 import { headercolor } from '../../redux/flex/flex.actions';
 import MobileDash from '../../Components/MobileDash/MobileDash';
 import Mobilecard from '../../Components/Mobilecard/Mobilecard'
+import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
 import '../Subscription/Subscription.css'
 import { useHistory } from 'react-router-dom';
 
@@ -23,12 +24,18 @@ function Subscription({presentcolor,headercolor,subarray}){
         <DashFrame dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
                 <div className="subSCRiption">
                     <div className="subscribeUpper">
+                        <div>
                         <h3>Subscription</h3>
+                       
+                        </div>
                         <input type="search"  placeholder="Search for products"/>
                     </div>
                     <div className="mysubsribe-and-button" >
+                        <div className="sub-and-history">
                         <p className="mySubscription">My Subscription</p>
-                        <button onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button>
+                        <p className="subhistory">Subscription History</p>
+                        </div>
+                        <button onClick={(()=>{history.push("/productcategory")})} className="subSCRIPTION-pluslogo"><PlusLogo/><p>ADD SUBSCRIPTION</p></button>
                         </div>
                         <div className="sub-below">
                         <div className="pie-subdcribe">
@@ -96,7 +103,7 @@ function Subscription({presentcolor,headercolor,subarray}){
                             </td>
                           {subarray.map((val,index)=>{
                               return(
-                                <tr>{val.Amount}</tr>
+                                <tr>{val.amount}</tr>
 
                               )
 

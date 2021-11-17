@@ -1,5 +1,6 @@
 import React from 'react'
-import {FaEye,FaEyeSlash,FaFacebookF,FaInfo} from "react-icons/fa"; 
+// import {FaEye,FaEyeSlash,FaFacebookF,FaInfo} from "react-icons/fa"; 
+import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -15,6 +16,7 @@ import axios from 'axios'
 
 
 function Resetpassframe({children}){
+    const history=useHistory()
     return(
         <div className="signintotal">
 <div className="signin" >
@@ -35,7 +37,7 @@ function Resetpassframe({children}){
                
             </div>
             <div className="cancel-and-contents">
-                <div className="cancel-confirm-icon"><FaEye/></div>
+                <div className="cancel-confirm-icon" onClick={history.goBack}><Cancel/></div>
             <div className="input-section-reset">
                 {children}
             </div>

@@ -292,8 +292,10 @@ margin-bottom: 0px;
 #sep-button{
     background-color: white;
     color: #6200F0;
+    font-weight: 500px;
     border:1px solid #6200F0;
     margin-bottom: 0px;
+   
 }
 .buttons #sep-button{
     margin-bottom: 0px;
@@ -308,8 +310,8 @@ margin-bottom: 0px;
     color: white;
     border-radius: 5px;
     border: none;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500px;
     margin-bottom: 0px;
 }
 .work{
