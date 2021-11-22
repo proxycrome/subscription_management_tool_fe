@@ -18,7 +18,8 @@ function Upperbox({customer,presentcolor}){
                    <hr className="customer-info-line"/>
                    <p className="accountId-upperbox">Account ID:20210801</p>
                    <h3>Customer Name:{customerDetail.firstname} {customerDetail.lastname}</h3>
-                   <div className="upperleft-and-icon"><img src={call}/><p>08032321123</p></div>
+                   <div className="upperleft-and-icon" 
+                   style={customerDetail.phoneNumber?  {display:"flex"}:{display:"none"}}><img src={call}/><p>08032321123</p></div>
                    <div className="upperleft-and-icon"><img src={Mail}/><p>{customerDetail.email}</p></div>
                </div>
             </div>

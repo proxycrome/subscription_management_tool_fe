@@ -94,10 +94,15 @@ function Signup({details,signupdetails,signup}){
     const handlesubmit=(e)=>{
         e.preventDefault()
       
-        if((passval.length!=8) ){
+        if((passval.length <8) ){
             setPasswordCharacter({display:"flex"});
             setPasswordWrap({marginBottom:"5px"})
         }
+        var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+if(passval.match(decimal))
+{
+    alert('good')
+
         console.log(details)
         //console.log(signup)
         
@@ -166,6 +171,12 @@ function Signup({details,signupdetails,signup}){
   .catch((err)=>{
    console.log(err)
 })
+        }
+    
+    else{
+        setPasswordCharacter({display:"flex"});
+        setPasswordWrap({marginBottom:"5px"})
+    }
 
     }
 
@@ -314,7 +325,7 @@ function Signup({details,signupdetails,signup}){
             
             /> */}
              <button className="signup-create" style={butnstyle} onClick={handlesubmit}>{loading ? (<p style={logtext}>CREATE ACCOUNT</p>) : (<div className="spinner-signin"> <Loader
-            type="Oval" width={30} color="#000000"/></div>)}</button>
+            type="Oval" width={20} color="#000000"/></div>)}</button>
            <div className="terms"> 
            <div className="signup-remember-me">
            <input id="termscheck" className="terms-checkbox" type="checkbox" required />

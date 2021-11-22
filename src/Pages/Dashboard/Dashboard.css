@@ -305,6 +305,11 @@ padding: 10px 0px;
 .editprof p{
     margin-right: 34px;
 }
+.main-loading-spinner{
+    align-self: center;
+    margin-top: 10%;
+    color:#030640
+}
 
 .inner-half-header{
     display: flex;

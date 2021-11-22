@@ -12,6 +12,7 @@ const INITIAL_STATE={
     // subarray:[{Amount:"5000",package:"tre"}],
     subarray:[],
     subscription:{},
+    editarray:[],
     // addsub:{},
     customer:{},
      
@@ -59,6 +60,15 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
         subarray:state.subarray.concat(action.value)
         // subarray:addItemToArray(state.subarray, action.value)
      }
+     case'editarray':
+  
+
+     return{
+       ...state,
+    //    subarray:[...state.subarray, action.value],
+    editarray:state.editarray.concat(action.value)
+    // subarray:addItemToArray(state.subarray, action.value)
+ }
      
         case 'addsubs' :
             

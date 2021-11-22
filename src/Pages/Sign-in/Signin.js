@@ -42,7 +42,7 @@ import '../Sign-in/Signin.css'
     }
 
 
-    })
+    },[])
 
     let newToken;
     
@@ -187,7 +187,7 @@ import '../Sign-in/Signin.css'
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
                 <label for="logedIn" className="remem-p">Remember me</label>
            </span>
-           <Link className="forgot" to="/Resetpassword"><p className="forgot">Forgot password?</p></Link>
+           <Link className="forgot" to="/passwordReset"><p className="forgot">Forgot password?</p></Link>
            </div>
 
           
@@ -197,7 +197,7 @@ import '../Sign-in/Signin.css'
 
 
             <button className="create" style={butnstyle} onClick={handlesignin}>{loading ? (<p style={logtext}>LOG IN</p>) : (<div className="spinner-signin"> <Loader
-            type="Oval" width={30} color="#000000"/></div>)}</button>
+            type="Oval" width={20} color="#000000"/></div>)}</button>
           <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
           <div className="alternateSignin">
             <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>

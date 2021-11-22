@@ -4,18 +4,27 @@ import { useHistory } from 'react-router-dom';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 
 export default function App() {
+  let customerDetail = JSON.parse(localStorage.getItem('customerDetail'));
+  let customerInfo = JSON.parse(localStorage.getItem('userObject'));
+  
+  let email=customerDetail.email
+  let phone=""
+  let first=customerDetail.firstname
+  let last=customerDetail.lastname
+  let customerName=first +" "+ last
+ 
     const history=useHistory()
    const config = {
     // public_key: 'FLWPUBK-**************************-X',
     public_key:'FLWPUBK_TEST-ab1fabc93f0a6002ce24acf71270d3c4-X',
     tx_ref: Date.now(),
-    amount: 100,
+    amount: customerInfo.amount,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
-      email: 'user@gmail.com',
-      phonenumber: '07064586146',
-      name: 'joel ugwumadu',
+      email: email,
+      phonenumber:phone,
+      name: customerName,
     },
     customizations: {
       title: 'Flex',
@@ -30,6 +39,7 @@ export default function App() {
     text: 'PAY WITH FLUTTERWAVE!',
     callback: (response) => {
        console.log(response);
+       localStorage.setItem('clientRes', JSON.stringify(response))
       closePaymentModal() // this will close the modal programmatically
       history.push("/Paymentsuccess")
     },

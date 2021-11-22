@@ -10,13 +10,16 @@ import { subarray } from '../../redux/flex/flex.actions';
 import { addarray } from '../../redux/flex/flex.actions';
 import { FaEye } from 'react-icons/fa';
 
-function Belowbox({presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,
+function Belowbox({presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,noclick,
 firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
     // const{subval,setSubval}=useState({})
     // const[subscriptionval,setSubscriptionval]=useState({})
 
     const[autorenewal,setAutorenewal]=useState("Disabled")
     const[amount,setAmount]=useState("0.00")
+    const[valChosen,setValChosen]=useState("")
+    const[billingCycle,setBillingCycle]=useState("")
+    const[selectpack,setSelectpack]=useState("")
     let selectindex;
     let result=product.filter((val,index)=>{
         if(selectindex==index){
@@ -31,12 +34,16 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
             console.log(firstclick)       
        
      },[])
+     let cont=""
      let amt;
+     let chosen=""
      addsubs({Renewal:autorenewal})
      function Changevalue(e){
-        let chosen=e.target.value
+        chosen=e.target.value
         console.log(chosen)
         let chosenindex;
+        setValChosen(chosen)
+        setSelectpack(e.target.value)
       let chosenResult=  product.filter((value,indx)=>{
         if(value.productName==chosen){
          
@@ -56,7 +63,7 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
      }
      function Changecycle(e){
         addsubs({billingCycle:e.target.value})
-
+        setBillingCycle(e.target.value)
      }
 return(
     
@@ -80,6 +87,8 @@ return(
                    {product.map((vals,index)=>{
                       selectindex=index
                        console.log(product)
+                       console.log(vals.productName)
+                    //    cont= 
                         return(
                             <option key={index} value={vals.productName}>{vals.productName}</option>
                         )
@@ -92,7 +101,7 @@ return(
                         </div>
                         <div className="below-category-options">
                         <p>Amount</p>
-                        <p>#{amount}</p>
+                        <p>NGN{amount}</p>
                         {/* {  result=product.filter((vals,index)=>{
                       
                        selectindex==index
@@ -127,13 +136,13 @@ return(
                         <p>Auto Renewal</p>
                         <div className="below-enable">
                             <p>{autorenewal}</p>
-                            <label class="switch">
+                            <label className="switch">
   <input type="checkbox" onClick={(()=>{if(autorenewal=="Disabled"){setAutorenewal("Enabled")}
   else{setAutorenewal("Disabled")}
 //   let option=autorenewal
 //   console.log(option)
     //   setAutorenewal("Enabled");
-    // addsubs({Renewal:autorenewal});console.log(autorenewal)
+    addsubs({Renew:autorenewal});console.log(autorenewal)
 })
   
   }/>
@@ -145,8 +154,18 @@ return(
                     </div>
                    
                 <div className="below-butn">
-                    <button className="first-belowbutton" onClick={firstclick}>{firstbutn}</button>
-                    <button className="second-belowbutton" onClick={secondclick}>{secondbutn}</button>
+                    <button className="first-belowbutton" onClick={(()=>{
+                        if((selectpack!="")&&(billingCycle!="")){
+                            firstclick()
+                        }
+                    })} >{firstbutn}</button>
+                    {/* <button className="second-belowbutton" onClick={(()=>{choice=="" ? noclick(): secondclick()})} >{secondbutn}</button> */}
+                    <button className="second-belowbutton" onClick={(()=>{
+                        if((billingCycle!="")&&(valChosen!="")){
+                           secondclick()
+                        }
+                        
+                        })} >{secondbutn}</button>
                 </div>
                 </div>
                

@@ -14,6 +14,7 @@ import Startimes from '../../Asset/Startimes.png';
 import Boxoffice from '../../Asset/BoxOffice.png';
 import Netflix from '../../Asset/Netflix.png';
 import Showmax from '../../Asset/Showmax.png';
+import Playstation from '../../Asset/Playstation.png'
 import Upperbox from '../../Components/Upperbox/Upperbox'
 import axios from 'axios'
 import '../Newsub/Newsub.css'
@@ -24,80 +25,193 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
     const[subscriptionval,setSubscriptionval]=useState({})
     const[image,setImage]=useState({val:""})
     const[packageFiles,setPackageFiles]=useState([])
+    const[packagestore,setPackagestore]=useState([])
+    const [named,setNamed]=useState("")
+    const[imgLink,setImgLink]=useState("")
+    let imgLinks=""
     useEffect(()=>{
         // setSubscriptionval(subscription)
-        // let token = JSON.parse(localStorage.getItem('bearertoken'));
-        // axios.defaults.headers.common['Authorization'] = token;
+        // let packagestorage=[]
+        const  names=match.params.name
+        setNamed(match.params.name)
+        let token = JSON.parse(localStorage.getItem('bearertoken'));
+        axios.defaults.headers.common['Authorization'] = token;
+        
 
         axios.get("https://subscription-management-tool.herokuapp.com/users/category")
     .then(res=>{
       console.log(res)
       console.log(res.data.data[0])
+      localStorage.setItem('packages', JSON.stringify(res.data.data));
+    //   let pack=res.data.data;
+    //   console.log(pack)
+      //const names=match.params.name
+    //   if(names=="Gotv"){
+    //      setImage({val:Gotv})
+    //     let packageFileorigin=pack[1].products
+    //        console.log(packageFile)
+    //       packageFileorigin.map((val,index)=>{
+    //           packageFile.push(val)
+    //           setPackageFiles(packageFile)
+    //          console.log(packageFile)
+    //       })
+ 
+    //  }
     //   if((JSON.parse(localStorage.getItem('packages')))==null){
-        localStorage.setItem('packages', JSON.stringify(res.data.data));
-      
+                    //localStorage.setItem('packages', JSON.stringify(res.data.data));
+    //   let  packagestore=res.data.data
+        // setPackagestore(packagestorage)
+                   // let packagestorage=JSON.parse(localStorage.getItem('packages'))
+                   // setPackagestore(packagestorage)
+                   // console.log(packagestorage) 
+               
+       
     // }
-})
+//})
     // else{localStorage.setItem('bearertoken', JSON.stringify(token));}
     
     // })
         // https://subscription-management-tool.herokuapp.com/users/subscription
    
-    let packagestore=JSON.parse(localStorage.getItem('packages'))
+    // let packagestore=JSON.parse(localStorage.getItem('packages'))
+    
         headercolor({ dashheadercolor:"#6200F0"})
+        //console.log(packagestore)          
+        console.log(match.params.name)
+        // const names=match.params.name
+        let packagestore=JSON.parse(localStorage.getItem('packages'))
+        headercolor({ dashheadercolor:"#6200F0"})
+        console.log(packagestore)
                     
         console.log(match.params.name)
-        const names=match.params.name
+        
      if(names=="Gotv"){
         setImage({val:Gotv})
-       let packageFileorigin=packagestore[1].products
+       let packageFileorigin=res.data.data[1].products
           console.log(packageFile)
          packageFileorigin.map((val,index)=>{
              packageFile.push(val)
-             setPackageFiles(packageFile)
+            //  setPackageFiles(packageFile)
+             imgLinks=("https://profnike.github.io/gotvLink/GOTV.png")
+             setImgLink(imgLinks)
+         console.log(imgLink)
             console.log(packageFile)
          })
-
+         setPackageFiles(packageFile)
+       
+         console.log(packageFiles)
+         console.log(imgLinks)
+         
     }
-    if(names=="Netflix"){
+     if(names=="Netflix"){
         setImage({val:Netflix})
-    }
-    if(names=="Showmax"){
+        let packageFileorigin=res.data.data[3].products
+        console.log(packageFile)
+       packageFileorigin.map((val,index)=>{
+           packageFile.push(val)
+          //  setPackageFiles(packageFile)
+           imgLinks=("https://profnike.github.io/NetflixImg/Netflix.png")
+           setImgLink(imgLinks)
+       console.log(imgLink)
+          console.log(packageFile)
+       })
+       setPackageFiles(packageFile)
+     
+       console.log(packageFiles)
+       console.log(imgLinks)
+     }
+     if(names=="Showmax"){
         setImage({val:Showmax})
-    }
-    if(names=="Boxoffice"){
-        setImage({val:Boxoffice})
-    }
+    let packageFileorigin=res.data.data[2].products
+    console.log(packageFile)
+   packageFileorigin.map((val,index)=>{
+       packageFile.push(val)
+      //  setPackageFiles(packageFile)
+       imgLinks=("https://profnike.github.io/showmaxImg/Showmax.png")
+       setImgLink(imgLinks)
+   console.log(imgLink)
+      console.log(packageFile)
+   })
+   setPackageFiles(packageFile)
+ 
+   console.log(packageFiles)
+   console.log(imgLinks)
+     }
+     if(names=="Playstation"){
+       setImage({val:Playstation})
+       let packageFileorigin=res.data.data[4].products
+    console.log(packageFile)
+   packageFileorigin.map((val,index)=>{
+       packageFile.push(val)
+      //  setPackageFiles(packageFile)
+       imgLinks=("https://profnike.github.io/playstationImg/Playstation.png")
+       setImgLink(imgLinks)
+   console.log(imgLink)
+      console.log(packageFile)
+   })
+   setPackageFiles(packageFile)
+ 
+   console.log(packageFiles)
+   console.log(imgLinks)
+   }
     if(names=="Dstv"){
         setImage({val:Dstv})
         let packageFileorigin=packagestore[0].products
           console.log(packageFile)
          packageFileorigin.map((val,index)=>{
              packageFile.push(val)
-             setPackageFiles(packageFile)
+             imgLinks=("https://profnike.github.io/dstvImg/Dstv.png")
+             setImgLink(imgLinks)
+             console.log(imgLink)
+            
             console.log(packageFile)
          })
+         setPackageFiles(packageFile)
     }
-    if(names=="Startimes"){
-        setImage({val:Startimes})
-    }  
      
-   
+})
+        
        
      },[])
      let token=JSON.parse(localStorage.getItem('bearertoken'))
      console.log(token)
      function subscribe(){
-
+        localStorage.setItem('userObject', JSON.stringify({amount:subscription.amount,product:subscription.productName,subCategory:named,autoRenew:subscription.Renewal,
+            billingCycle:subscription.billingCycle,subscriptionStatus:"Inactive",category:"Entertainment",dateSubscribed:"-",dateExpired:"-",productImg:imgLink}));
+            let Hidyval = JSON.parse(localStorage.getItem('clientIds'));
+            localStorage.setItem('checkObject', JSON.stringify({Hidy:""}))
+            localStorage.setItem('testObject', JSON.stringify({amount:subscription.amount,product:subscription.productName,subCategory:named,autoRenew:subscription.Renewal,
+                billingCycle:subscription.billingCycle,category:"Entertainment",productImg:imgLink}));
         history.push("/Payoption")
      }
      function Addlist(){
 
-        addarray({Amount:subscription.amount,Package:subscription.productName,Renewal:subscription.Renewal,
-        Billincycle:subscription.billingCycle,Status:"Inactive",productcategory:"Entertainment",subDat:"",expiryDate:""})
+        addarray({amount:subscription.amount,product:subscription.productName,subCategory:named,autoRenew:subscription.Renewal,
+        billingCycle:subscription.billingCycle,subscriptionStatus:"Inactive",category:"Entertainment",dateSubscribed:"-",dateExpired:"-",
+    productImg:imgLink})
+    var today = new Date();
+    localStorage.setItem('date', JSON.stringify(today))
+        localStorage.setItem('userObject', JSON.stringify({amount:subscription.amount,product:subscription.productName,subCategory:named,autoRenew:subscription.Renewal,
+            billingCycle:subscription.billingCycle,subscriptionStatus:"Inactive",category:"Entertainment",dateSubscribed:"-",dateExpired:"-",productImg:imgLink}));
+        
+            // let userObject = JSON.parse(localStorage.getItem('userObject'));  
+            let userObject={amount:subscription.amount,product:subscription.productName,subCategory:named,autoRenew:subscription.Renewal,
+                billingCycle:subscription.billingCycle,subscriptionStatus:"Inactive",category:"Entertainment",dateSubscribed:"-",dateExpired:"-",productImg:imgLink};
+            
+       
+    console.log(userObject)
         console.log(subscription)
         console.log(subarray)
-            history.push("/dashboard")
+        axios.post("https://subscription-management-tool.herokuapp.com/users/subscription",userObject)
+    .then(res=>{
+      
+      console.log(res)
+    })
+    .catch((err)=>{
+        console.log(err)
+     })
+            history.push("/subscription")
+       
      }
      
      
@@ -137,7 +251,8 @@ return(
         <Upperbox/>
         
         {/* {`${props.match.url}/15`} */}
-    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} firstclick={Addlist} product={packageFiles} secondbutn={"SUBSCRIBE"} secondclick={subscribe}/>
+    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} noclick={(()=>{alert("none")})}
+     firstclick={Addlist} product={packageFiles} secondbutn={"SUBSCRIBE"} secondclick={subscribe}/>
 
         </div>
          

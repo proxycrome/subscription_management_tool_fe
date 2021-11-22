@@ -67,7 +67,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                             </div>
                             <div className="inner-list">
                             <div className="dash-icon"><Logoutsvg/></div>
-                            <div>Logout</div>
+                            <div onClick={(()=>{history.push("/logout")})}>Logout</div>
                             </div>
                            
                         

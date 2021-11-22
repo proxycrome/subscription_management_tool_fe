@@ -83,7 +83,7 @@ return(
                 <div className="contents">
                     <h2>Take your subscription plan to another level</h2>
                     <p>We provide our esteemed users with so much flexibility with our payment platforms. No need
-                        to worry about security because we have gott you covered </p>
+                        to worry about security because we have got you covered. </p>
                         
                 </div>
                 <div className="laptop-image"><img src={shot}/></div>
@@ -91,12 +91,12 @@ return(
                 
                
                 
-                <div className="Innercontent">
+                <div className="Innercontent" id="pat-div">
                 <div className="laptop-image"> <img src={partner}/></div>
                 <div className="contents">
                     <h2>Our Partners</h2>
                     <p>We build trust and confidence with our partners by being one of the first brands to create a well secured payment
-                        platform with some of the best companies recognized globally </p>
+                        platform with some of the best companies recognized globally. </p>
                         
                        
 
@@ -137,17 +137,18 @@ return(
                 <div className="love">
 
                     <h2>Love from customers</h2>
+                    <p>Learn why over 1000 people trust Flex to power their complex billing
+                        and financial operations.
+                    </p>
                    
                    <div className="customer-love-img"><img src={CustomersImage}/></div>
                    
-                    <p>We share common trends and strategies for improving your rental income and making sure 
-                        you stay in high demand</p>
                         
                 </div>
                 <div className="blog">
                     <button>OUR BLOG</button>
                   
-                    <h2>Don't miss out recent articles</h2>
+                    <h2 className="blog-header">Don't miss our recent articles</h2>
                     <p className="blog-top-parag">We share common trends and strategies for improving your rental income and making sure 
                         you stay in high demand</p>
                         <div className="blog-container">

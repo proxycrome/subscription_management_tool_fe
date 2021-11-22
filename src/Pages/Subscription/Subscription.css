@@ -126,6 +126,10 @@
 margin-right: 80px;
 font-weight: normal;
 font-size: 14px;
+width: 15%;
+   text-align: left;
+   margin-right: 5px;
+  
 
 
 
@@ -142,9 +146,11 @@ color: white;
 height: 68px;
 
 
+
 display: flex;
     align-items: center;
     justify-content: space-between;
+    /* margin-right: 200px; */
    width: 100%;
     background-color: #030640;
     height: 67.4px;
@@ -154,6 +160,30 @@ display: flex;
     margin-bottom: 40px;
     font-weight: normal;
 
+}
+.catresult-sub{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-start;
+    /* background-color: #6200f0; */
+    padding-left: 32px;
+    margin-bottom: 24px;
+
+}
+.editprof-sub p{
+    margin-right: 3px;
+    display: flex;
+    color: sandybrown;
+}
+.catresult-sub tr{
+    /* margin-right: 200px; */
+    width: 13.6%;
+  font-size: 16px;
+  color: rgba(7,10,74,70%);
+    margin-right: 5px;
+    text-align: left;
+    
 }
 .sub-and-history p{
     width: 40%;
