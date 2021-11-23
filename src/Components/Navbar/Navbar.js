@@ -60,10 +60,10 @@ return(
                 
               
                <span className="dropDown">
-               <span id="companyLink"  style={compstyle}><p>Company</p><FaAngleDown 
+               <span id="companyLink" className="HwOrks"  style={compstyle}><p>Company</p><FaAngleDown 
                onClick={handleextra}/> 
                </span>
-              <div style={extra}>
+              <div id="ext" style={extra}>
               <p onClick={(()=>(history.push("/company")))} style={aboutstyle}>About us</p>
                <p style={privacystyle} onClick={(()=>(history.push("/privacystyle")))}>Privacy policy</p>
                {/* <Link to="/about" style={privacystyle}></Link> */}
@@ -71,10 +71,10 @@ return(
                </span>
                
              
-               <p  style={howworks}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
-               <p  style={blogstyle} onClick={(()=>{history.push("/blog");})} >Blog</p>
+               <p className="HwOrks"  style={howworks} onHover={{color:"#6200f0"}}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
+               <p className="HwOrks" style={blogstyle} onClick={(()=>{history.push("/blog");})} >Blog</p>
                <div className="testing">
-               <p  id="partyner"style={partstyle} onClick={(()=>{history.push("/partners");})} >Partnerships</p>
+               <p className="HwOrks" id="partyner"style={partstyle} onClick={(()=>{history.push("/partners");})} >Partnerships</p>
                </div>
                 <button onClick={(()=>{history.push("/contact")})}>CONTACT US</button>
             </div>

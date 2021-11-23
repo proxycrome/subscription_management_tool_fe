@@ -5,13 +5,18 @@ import {useEffect} from 'react'
 import { headercolor } from '../../redux/flex/flex.actions';
 import {ReactComponent as Hug} from '../../Asset/hug.svg'
 import '../LogoutReal/LogoutReal.css'
+import { useHistory } from 'react-router-dom';
 
 function LogoutReal(){
-    // useEffect(()=>{
-    //     headercolor({ dashinvitecolor:"purple"})
+    const history=useHistory()
+    useEffect(()=>{
+        setTimeout(()=>{
+            history.push("/")
+        },3000)
+      
                     
        
-    //  },[])
+     },[])
 return(
     
         <div className="logout-real">

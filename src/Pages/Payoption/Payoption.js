@@ -2,7 +2,7 @@ import React from 'react'
 import DashFrame from '../../Components/DashFrame/DashFrame'
 import Dashopen from '../../Components/Dashopen/Dashopen'
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { headercolor } from '../../redux/flex/flex.actions';
 import {ReactComponent as Rectangle} from '../../Asset/Rectangle-option.svg'
@@ -12,13 +12,17 @@ import '../Payoption/Payoption.css'
 
 function Payoption({presentcolor,headercolor}){
     const history=useHistory()
+    const[click,setClick]=useState(false)
+    const[butnborder,setButnborder]=useState({})
+    const[chosen,setChosen]=useState("")
+    const[butnbordersecond,setButnbordersecond]=useState({})
     useEffect(()=>{
-        headercolor({ paymentcolor:"#6200f0"})
+        headercolor({ dashheadercolor:"#6200f0"})
                     
        
      },[])
 return(
-    <DashFrame paymentstyle={{backgroundColor:presentcolor.paymentcolor}}>
+    <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
         <div className="paymentoption">
             <div>
                 <div className="header-payment">
@@ -30,14 +34,24 @@ return(
                         <div><Rectangle/></div>
                      
                         <div className="payment-option-buttons">
-                            <button onClick={(()=>{history.push("/paymentcard")})}><Paycard className="payment-option-icon"/>PAY WITH CARD</button>
-                            <button><Paywallet className="payment-option-icon"/>PAY WITH E-WALLET</button>
+                            <button style={butnborder} onClick={(()=>{
+                        if(click==false){setClick(true)
+                        ;setButnborder({border:"1px solid #6200f0"})
+                        setChosen("card")
+                        }})}><Paycard className="payment-option-icon"/>PAY WITH CARD</button>
+                            <button style={butnbordersecond} onClick={(()=>{
+                        if(click==false){
+                            setButnbordersecond({border:"1px solid #6200f0x"})
+                            setClick(true) 
+                            setChosen("wallet")
+                            
+                            }})}><Paywallet className="payment-option-icon"/>PAY WITH E-WALLET</button>
                         </div>
                         
                     </div>
                     <div className="payment-select-buttons">
-                            <button className="cancel-payment">CANCEL</button>
-                            <button  className="proceed-payment">PROCEED</button>
+                            <button onClick={history.goBack} className="cancel-payment">CANCEL</button>
+                            <button onClick={(()=>{if(chosen=="card"){history.push("/paymentcard")}})} className="proceed-payment">PROCEED</button>
                         </div>
                </div>
                 </div>

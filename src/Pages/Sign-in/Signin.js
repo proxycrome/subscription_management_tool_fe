@@ -1,8 +1,9 @@
 import React from 'react'
-import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
+import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook, FaRegIdBadge} from "react-icons/fa"; 
 import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
@@ -22,6 +23,9 @@ import '../Sign-in/Signin.css'
     const[email,setEmail]=useState("")
     const[verified, setVerified]=useState(false)
     const[loggedins, setLoggedins]=useState(false)
+    const[loading, setLoading]=useState(true)
+    const[logtext,setLogtext]=useState({})
+    const[butnstyle,setButnstyle]=useState({})
     const history=useHistory()
 
 
@@ -38,7 +42,7 @@ import '../Sign-in/Signin.css'
     }
 
 
-    })
+    },[])
 
     let newToken;
     
@@ -52,6 +56,8 @@ import '../Sign-in/Signin.css'
     }
     const handlesignin=(e)=>{
         e.preventDefault()
+        
+        // setLoading(false)
         if(verified===true){
            // alert("true")
            
@@ -68,9 +74,15 @@ import '../Sign-in/Signin.css'
       
    }
    console.log(params)
+   if((email!="")&&(password!="")){
+    setButnstyle({backgroundColor:"grey"})
+    // setLogtext({color:"rgba(3,64,6,20%)"})
+    setLogtext({color:"black"})
+    setLoading(false)
 
     axios.post("https://subscription-management-tool.herokuapp.com/login",params)
     .then(res=>{
+      
       console.log(res)
       localStorage.setItem('user', JSON.stringify(res.data.data));
       console.log(res.data.data.token)
@@ -85,12 +97,15 @@ import '../Sign-in/Signin.css'
             localStorage.setItem('userToken', JSON.stringify(newToken));
         }
         else{localStorage.setItem('userToken', JSON.stringify(newToken));}
-          }
+    }
           //token
+          localStorage.setItem('bearertoken', JSON.stringify(token));
+        //   if((JSON.parse(localStorage.getItem('bearertoken')))!=null){
+        //     localStorage.setItem('bearertoken', JSON.stringify(token));
+        // }
+        // else{localStorage.setItem('bearertoken', JSON.stringify(token));}
+  
 
-          if((JSON.parse(localStorage.getItem('bearertoken')))!=null){
-            localStorage.setItem('bearertoken', JSON.stringify(token));
-        }
         //customer-details
       
         if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
@@ -115,7 +130,7 @@ import '../Sign-in/Signin.css'
     .catch((err)=>{
      console.log(err)
   })
-}
+}}
     //const keeploggedin=(e)=>{
 
         //console.log(e.target.checked)
@@ -173,7 +188,7 @@ import '../Sign-in/Signin.css'
            onChange={(()=>{setLoggedins(!loggedins )})   }/>
                 <label for="logedIn" className="remem-p">Remember me</label>
            </span>
-           <Link className="forgot" to="/Resetpassword"><p className="forgot">Forgot password?</p></Link>
+           <Link className="forgot" to="/passwordReset"><p className="forgot">Forgot password?</p></Link>
            </div>
 
           
@@ -182,7 +197,8 @@ import '../Sign-in/Signin.css'
 
 
 
-            <button className="create" onClick={handlesignin}>LOG IN</button>
+            <button className="create" style={butnstyle} onClick={handlesignin}>{loading ? (<p style={logtext}>LOG IN</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
           <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
           <div className="alternateSignin">
             <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>

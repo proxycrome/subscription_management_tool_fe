@@ -218,7 +218,9 @@ width: 100%;
     background-color: #9953ff;
     height: 56px;
     color: white;
-   
+   display: flex;
+   align-items: center;
+   justify-content: center;
     background-color: #6200F0;
    
 }
@@ -443,6 +445,14 @@ width: 100%;
   
    
    
+}
+.spinner-signin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spinner-signin p{
+    margin-right: 30px;
 }
 .remem-p{
     color: rgba(51,51,51,100%);

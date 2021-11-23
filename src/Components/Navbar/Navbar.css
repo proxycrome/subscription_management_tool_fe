@@ -81,10 +81,17 @@
     color: white;
     border-radius: 6px;
     border: none;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500px;
+    font-size: 16px;
     position: relative;
+    
    
+}
+.NavRightContent button:hover{
+    background-color: #5205C1;
+}
+.HwOrks:hover{
+    color: #6200f0;
 }
 .links{
     text-decoration: none;
@@ -92,6 +99,13 @@
     font-size: 18px;
     margin-top: 10px;
    
+}
+#ext p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#ext p:hover{
+    color: #6200f0;
 }
 .NavRightContent p{
     margin-right: 50px;
@@ -139,6 +153,9 @@
     
    
     
+}
+#companyLink:hover{
+    color: #6200f0;
 }
 .total-dropdown #companyLink .linker-extra{
     background-color: crimson;

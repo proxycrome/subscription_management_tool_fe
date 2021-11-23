@@ -4,24 +4,392 @@ import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa";
 import LineChart from '../../Components/Linegraph/Linegraph';
 import { Line } from 'react-chartjs-2';
 import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
+import Loader from "react-loader-spinner";
 import DashFrame from '../../Components/DashFrame/DashFrame';
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
+import Bin from '../../Asset/dustbin.png'
 import { useHistory } from 'react-router-dom';
 import { headercolor } from '../../redux/flex/flex.actions';
+import Smallestbox from '../../Components/Smallestbox/Smallestbox'
+import Dstiv from '../../Asset/Dstv.png'
+import Gotiv from '../../Asset/GOTV.png'
 import MobileDash from '../../Components/MobileDash/MobileDash';
 
 
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
+import axios from 'axios';
 import '../Dashboard/Dashboard.css'
 
-function Dashboard({presentcolor,headercolor,}){
+function Dashboard({presentcolor,headercolor,subarray}){
+    const[image,setImage]=useState({val:""})
+    const[arr,setArr]=useState([])
     const history=useHistory()
-    
+
+    const[valname,setValname]=useState("")
+    const[contentReal,setContentReal]=useState("")
+    const[idSub,setIdSub]=useState([])
+    const[itemId,setItemId]=useState("")
+    const[namearr,setNamearr]=useState([])
+    const[idReal,setIdReal]=useState("")
+    const[loading, setLoading]=useState(false)
+    const[itemColor,setItemColor]=useState({color:""})
+    const[checkarr,setCheckarr]=useState([])
+    let itemArray=[]
+    let userDisplay=[]
+    let pname=""
+     let cat=""
+     let cats=""
+     let stat
+     let expire=""
+     let itemAmt=""
+     let itemStatus=""
+     let catg=""
+     //let contens=""
+     let itemExp=""
+     let itemImg=""
+     let product=""
+     let descr=""
+     let innercont=""
+    let content=""
+    let catId=""
+    let arry=[]
+    let arrs=[]
+    let conty;
+    //window.location.reload()
+    let contentd=""
     useEffect(()=>{
-        headercolor({ dashheadercolor:"#6200F0"})                   
-     },[])
-     console.log(presentcolor.dashheadercolor)
+        headercolor({ dashheadercolor:"#6200F0"})
+          let token = JSON.parse(localStorage.getItem('bearertoken'));
+          axios.defaults.headers.common['Authorization'] = token; 
+       //location.reload()
+    //    
+
+        //   let token = JSON.parse(localStorage.getItem('bearertoken'));
+        //   axios.defaults.headers.common['Authorization'] = token;
+ 
+          axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
+      .then(res=>{
+          
+        console.log(res.data.data)
+        itemArray=res.data.data
+        localStorage.setItem('userDisplay', JSON.stringify(itemArray))
+        userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+     setArr(itemArray)
+        console.log(itemArray)
+        //arrs=itemArray
+        
+   
+        //setLoading(true)
+       //setArr(itemArray)
+       //setCheckarr(itemArray)
+       //arry=checkarr.slice(checkarr)
+      //console.log(arry)
+      
+        //console.log(itemArray)
+        //contens=itemArray.map((val)=>{
+         itemArray.map((val)=>{
+            catId=val._id
+            cats=val.subCategory
+            catg=val.category
+            itemAmt=val.amount
+            itemImg=val.productImg
+            itemExp=val.dateExpired
+            itemStatus=val.subscriptionStatus
+            console.log(cats +"" + catg+""+itemImg)
+            setItemId(catId)
+            console.log(itemStatus)
+
+        //     let contents=arr.map((val,index)=>{
+        //         console.log(userDisplay)
+        //     cats=val.subCategory
+        //     catg=val.category
+        //     itemAmt=val.amount
+        //     itemImg=val.productImg
+        //     itemExp=val.dateExpired
+        //     itemStatus=val.subscriptionStatus
+        //     console.log(cats +"" + catg+""+itemImg)
+        //     let colours={} 
+        //     if(itemStatus=="Active"){
+        //         colours={coloritem:"#17AD37"}
+        //     }
+        //     if(itemStatus=="Inactive"){
+        //         colours={coloritem:"rgba(3,6,64,30%"}
+        //     }
+        //     if(itemStatus=="Expired"){
+        //         setItemColor({color:"#E40C0C"})
+        //     }
+        
+        // //    return <div  className="catresult">
+        // //     <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+        // //     //   icon={ switch(val.product.split(" ")[0]){ 
+        // //     //       case 'GOTv':
+        // //     //           return{
+        
+        // //     //           }
+        
+        
+        // //     //       }}/><p>{pname}</p></tr>
+        // //      icon={itemImg}/><p>{cats}</p></tr> 
+        // // <tr><p style={{color:"rgba(51,51,51,50%"}}>{catg}</p></tr>
+        // // <tr>{val.dateExpired}</tr>
+        // // <tr style={{color:colours.coloritem}} >{itemStatus}</tr>
+        // // <tr className="editprof" 
+        // // // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        // // ><p onClick={()=>{if(itemStatus=="Inactive"){Inactive(val,index)}
+        // // if(itemStatus=="Active") { Active(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        
+        // // <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+        // // </tr>
+        
+        // // </div>
+        
+        // })
+        //return <div>"hi"</div>
+        
+         //console.log(arrs)
+      
+        })
+        //setArr(arrs)
+      })
+      //console.log(itemArray)
+      //console.log(content)
+     
+          
+          
+    //       if(pname=="GOTv"){
+    //         setImage({val:Gotiv})
+    //    }
+    //    if(pname=="DStv"){
+    //       setImage({val:Dstiv})
+    //   }
+    // if(itemStatus=="Active"){
+    //     setItemColor({color:"#17AD37"})
+    // } 
+    // if(itemStatus=="Inctive"){
+    //     setItemColor({color:"rgba(3,6,64,30%"})
+    // }  
+    // if(itemStatus=="Expired"){
+    //     setItemColor({color:"#E40C0C"})
+    // }
+    userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+    setNamearr(userDisplay)
+},[]) 
+    userDisplay = JSON.parse(localStorage.getItem('userDisplay'));  
+    console.log(userDisplay)
+//     if(arr==null){
+//         return( <div className="main-loading-spinner">
+//             <Loader type="Oval" width={40} color="#030640" />
+//             </div>
+//         )
+//     }
+//     if(arr!=null){
+//         alert('hi')
+//      contentd=userDisplay.map((val,index)=>{
+//          console.log(userDisplay)
+//      cats=val.subCategory
+//      catg=val.category
+//      itemAmt=val.amount
+//      itemImg=val.productImg
+//      itemExp=val.dateExpired
+//      itemStatus=val.subscriptionStatus
+//      console.log(cats +"" + catg+""+itemImg)
+//      let colours={} 
+//      if(itemStatus=="Active"){
+//          colours={coloritem:"#17AD37"}
+//      }
+//      if(itemStatus=="Inactive"){
+//          colours={coloritem:"rgba(3,6,64,30%"}
+//      }
+//      if(itemStatus=="Expired"){
+//          setItemColor({color:"#E40C0C"})
+//      }
+//     } )
+// }
+    //setArr(itemArray)
+      //setValname(pname)
+      //console.log(userDisplay)
+      //setArr(userDisplay)
+      //setContentReal(content)
+      //setNamearr(userDisplay)
+   
+
+     let clientItem=""
+     console.log(contentReal)
+     console.log(namearr)
+     console.log(arry)
+     console.log(itemArray)
+     //setIdReal(clientItem)
+     console.log(clientItem)
+
+     
+
+    //   product=subarray.map((val)=>{
+    //      pname=val.Package.split(" ")[0]
+    //      cat=val.productcategory
+    //      stat=val.Status
+    //      expire=val.expiryDate
+    //      return val.Package
+    //  })
+    //  console.log(pname)
+    //  console.log(image.val)
+     
+    //  console.log(cat)
+    //  console.log(presentcolor.dashheadercolor)
+    // imgArray=["Gotv","Dstv"]
+    // imgArray.map((val)=>{
+    //     if(val==pname){
+    //         s
+    //     }
+
+    // // })
+     function Inactive(val,index){
+      
+         console.log(val)
+         console.log(index)
+        //  if(val.subCategory=="Gotv")
+        //  { setProductId("")}
+        namearr.map((item,indx)=>{
+            console.log(indx)
+        if(indx==index){
+            console.log(item._id)
+            clientItem=item._id
+            localStorage.setItem('clientIds', JSON.stringify(item._id))
+            history.push(`/Addsub/${val.subCategory}`)
+           
+        }
+        
+    })
+        
+     }
+     function Active(val,index){
+       
+        //console.log(indx)
+        namearr.map((item,indx)=>{
+        if(indx==index){
+            console.log(item._id)
+            clientItem=item._id
+            localStorage.setItem('clientIds', JSON.stringify(item._id))
+            localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:val.productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
+            history.push("/Autochange")
+           
+        }
+     })
+        //setItemColor({color:"#17A3D7"})
+        //console.log(val.productImg)
+        //localStorage.setItem('clientIds', JSON.stringify(item._id))
+        //localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
+    }
+    function Expired(val,index){
+    
+        namearr.map((item,indx)=>{
+        if(indx==index){
+            console.log(item._id)
+            clientItem=item._id
+            localStorage.setItem('clientIds', JSON.stringify(item._id))
+            localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:val.productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
+            history.push(`/Renew/${val.subCategory}`)
+           
+        }
+     })
+        //setItemColor({color:"#17A3D7"})
+        //console.log(val.productImg)
+        //localStorage.setItem('clientIds', JSON.stringify(item._id))
+        //localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
+    }
+    function handledelete(val){
+      
+        console.log(val)
+        namearr.map((item,indx)=>{
+            console.log(item.subscriptionStatus)
+            if(item.subscriptionStatus!=="Active"){
+             
+            if(indx==val){
+            console.log(item._id)
+            clientItem=item._id
+
+            let stat=item.subscriptionStatus
+           console.log(item.subscriptionStatus)
+           clientItem=item._id
+           history.push(`/delete/${clientItem+" "+stat}`)
+            // history.push(`/delete/${clientItem}`)
+        }
+    }
+         })
+
+    }
+    //let sinc=arr.map((val)=>{
+       // return(
+          //  <div>
+                //"hello"
+           // </div>
+       // )
+
+    //})
+  //if(arr==null){
+      // return( <div className="main-loading-spinner">
+         //  <Loader type="Oval" width={40} color="#030640" />
+           //</div>
+       //)
+   //}
+
+      //console.log(arr)
+//     contentd=arr.map((val,index)=>{
+//         console.log(userDisplay)
+//     cats=val.subCategory
+//     catg=val.category
+//     itemAmt=val.amount
+//     itemImg=val.productImg
+//     itemExp=val.dateExpired
+//     itemStatus=val.subscriptionStatus
+//     console.log(cats +"" + catg+""+itemImg)
+//     let colours={} 
+//     if(itemStatus=="Active"){
+//         colours={coloritem:"#17AD37"}
+//     }
+//     if(itemStatus=="Inactive"){
+//         colours={coloritem:"rgba(3,6,64,30%"}
+//     }
+//     if(itemStatus=="Expired"){
+//         setItemColor({color:"#E40C0C"})
+//     }
+
+//    return <div  className="catresult">
+//     <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+//     //   icon={ switch(val.product.split(" ")[0]){ 
+//     //       case 'GOTv':
+//     //           return{
+
+//     //           }
+
+
+//     //       }}/><p>{pname}</p></tr>
+//      icon={itemImg}/><p>{cats}</p></tr> 
+// <tr><p style={{color:"rgba(51,51,51,50%"}}>{catg}</p></tr>
+// <tr>{val.dateExpired}</tr>
+// <tr style={{color:colours.coloritem}} >{itemStatus}</tr>
+// <tr className="editprof" 
+// // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+// ><p onClick={()=>{if(itemStatus=="Inactive"){Inactive(val,index)}
+// if(itemStatus=="Active") { Active(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+
+// <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+// </tr>
+
+// </div>
+
+// })
+
+console.log(contentd)
+
+      
+
+    
+    //useEffect(()=>{
+      //  headercolor({ dashheadercolor:"#6200F0"})                   
+     //},[])
+     //console.log(presentcolor.dashheadercolor)
+
 
     return(
             <div className="dashtotal">
@@ -61,7 +429,7 @@ function Dashboard({presentcolor,headercolor,}){
                                 </div>
                                 <div className="fourth-line-right">
                                     <button>FUND WALLET</button>
-                                    <div>
+                                    <div className="WALLET-div" >
                                         <div className="wallet">
                                             <div className="wallet-upper">
                                                 <p className="regular-weight-dash">Account Id</p>
@@ -84,17 +452,164 @@ function Dashboard({presentcolor,headercolor,}){
                           
                            
                            
-                                <p>Products</p>
-                                <p>Product category</p>
-                                <p>Expiry Date</p>
-                                <p>Status</p>
-                                <p></p>
-                                <p></p>
+                                <th>Products</th>
+                                <th>Product category</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th></th>
+                                {/* <th></th> */}
                             </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
                            
+                            {/* {product=subarray.map((val,index)=>{
+                 pname=val.product.split(" ")[0]
+                
+                 console.log(pname)
+                 console.log(arr)
+                cat=val.category
+                descr=val.product
+                stat=val.subscriptionStatus
+                expire=val.dateExpired
+               return <div  className="catresult">
+                <tr className="Product-and-Pname" style={pname=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+                //   icon={ switch(val.product.split(" ")[0]){ 
+                //       case 'GOTv':
+                //           return{
+
+                //           }
+
+
+                //       }}/><p>{pname}</p></tr>
+                 icon={val.product.split(" ")[0]=="GOTv"? `${Gotiv }`: `${Dstiv}`}/><p>{pname}</p></tr> 
+            <tr><p style={{color:"rgba(51,51,51,50%"}}>{cat}</p></tr>
+            <tr>{expire}</tr>
+           <tr style={stat=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{stat}</tr>
+            <tr className="editprof" 
+            ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()} } style={pname=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+            <div className="binDiv" style={pname=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+            </tr>
+            
+           </div>
+       
+            })} */}
+           
+           {/* {arr===null?
+               (<Loader
+            type="Oval" width={20} color="#000000"/>):(contentid)
+        } */}
+           
+
+           
+{/* 
+           {content=arr.map((val,index)=>{
+                console.log(userDisplay)
+            cats=val.subCategory
+            catg=val.category
+            itemAmt=val.amount
+            itemImg=val.productImg
+            itemExp=val.dateExpired
+            itemStatus=val.subscriptionStatus
+            console.log(cats +"" + catg+""+itemImg)
+            let colours={} 
+            if(itemStatus=="Active"){
+                colours={coloritem:"#17AD37"}
+            }
+            if(itemStatus=="Inactive"){
+                colours={coloritem:"rgba(3,6,64,30%"}
+            }
+            if(itemStatus=="Expired"){
+                setItemColor({color:"#E40C0C"})
+            }
+
+           return <div  className="catresult" key={index}>
+            <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+            //   icon={ switch(val.product.split(" ")[0]){ 
+            //       case 'GOTv':
+            //           return{
+
+            //           }
+
+
+            //       }}/><p>{pname}</p></tr>
+             icon={itemImg}/><p>{cats}</p></tr> 
+        <tr><p style={{color:"rgba(51,51,51,50%"}}>{catg}</p></tr>
+        <tr>{val.dateExpired}</tr>
+       <tr style={{color:colours.coloritem}} >{itemStatus}</tr>
+        <tr className="editprof" 
+        // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        ><p onClick={()=>{if(itemStatus=="Inactive"){Inactive(val,index)}
+        if(itemStatus=="Active") { Active(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        
+        <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+        </tr>
+        
+       </div>
+
+        })
+    
+   }         */}
+
+
+  
+
+   {content=arr.map((val,index)=>{
+            cats=val.subCategory
+            catg=val.category
+            itemAmt=val.amount
+            itemImg=val.productImg
+            itemExp=val.dateExpired
+            itemStatus=val.subscriptionStatus
+            let colours={}
+             console.log(cats +"" + catg+""+itemImg)
+            if(itemStatus=="Active"){
+                colours={coloritem:"#17AD37"}
+            }
+            if(itemStatus=="Inactive"){
+                colours={coloritem:"rgba(3,6,64,30%"}
+            }
+            if(itemStatus=="Expired"){
+                colours={coloritem:"#E40C0C"}
+            }
+
+           return <div  className="catresult">
+               <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+              icon={itemImg}/><p>{cats}</p></tr> 
+             
+            
+       
+        <tr>{val.category}</tr>
+       {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
+      <tr>{val.dateExpired}</tr>
+       <tr style={{color:colours.coloritem}}  >{itemStatus}</tr>
+       {/* <tr>{val.billingCycle}</tr> */}
+       
+       <tr className="editprof" 
+        // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        ><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactive(val,index)}
+        if(val.subscriptionStatus=="Active") { Active(val,index) }
+        if(val.subscriptionStatus=="Expired") { Expired(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        
+        <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+        </tr>
+        
+       </div>
+
+        })
+    }
+
+   {/* //content */}
+                            
+                            
+                            {/* <div  className="catresult">
+                                <tr className="Product-and-Pname" style={pname=="" ? {display:"none"}:{display:"flex"}}><Smallestbox icon={image.val}/><p>{pname}</p></tr>
+                            <tr><p style={{color:"rgba(51,51,51,50%"}}>{cat}</p></tr>
+                            <tr>{expire}</tr>
+                            <tr style={stat=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{stat}</tr>
+                            <tr className="editprof" 
+                            ><p onClick={(()=>{stat=="Inactive"?Inactive():Active()}) } style={pname=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+                            <div className="binDiv" style={pname=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+                            </tr>
+                            
+                           </div> */}
                         </div>
                         </DashFrame>
                         </div>
@@ -127,11 +642,11 @@ function Dashboard({presentcolor,headercolor,}){
                             <div className="mobile-second-inner">
                                 <h3>Recent subscriptions</h3>
                                 <div className="tableData">
-                                    <p className="mobile-list-table">Products</p>
-                                    <p className="mobile-list-table">Products category</p>
-                                    <p className="mobile-list-table">Expiry Date</p>
-                                    <p className="mobile-list-table">Status</p>
-                                    <p></p>
+                                    <th className="mobile-list-table">Products</th>
+                                    <th className="mobile-list-table">Products category</th>
+                                    <th className="mobile-list-table">Expiry Date</th>
+                                    <th className="mobile-list-table">Status</th>
+                                    <th></th>
                                     
                                 </div>
                             </div>
@@ -152,9 +667,10 @@ const MapDispatchToProps=(dispatch)=>({
      headercolor:(item)=>dispatch(headercolor(item))
  
  })
-const mapstatetoprops=({flex:{presentcolor}})=>({
+const mapstatetoprops=({flex:{presentcolor,subarray}})=>({
  
-    presentcolor
+    presentcolor,
+    subarray
    
    
 

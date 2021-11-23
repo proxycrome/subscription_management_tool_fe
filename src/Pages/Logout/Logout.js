@@ -23,7 +23,7 @@ return(
                <h3>Are you sure you want to leave Flex ?</h3>
                <div className="LOGOUT-BUTTON">
                    <button onClick={history.goBack} className="logout-first-button">DISCARD</button>
-                   <button onClick={(()=>{history.push("/logoutReal")})} className="logout-second-button">PROCEED</button>
+                   <button onClick={(()=>{history.push("/signin")})} className="logout-second-button">PROCEED</button>
                </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../redux/flex/flex.actions';
 import { signupdetails } from '../../redux/flex/flex.actions';
 import { useHistory } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
@@ -17,9 +18,11 @@ import flexpng from '../../Asset/flexpng.png'
 import '../Signup/Signup.css'
 
 function Signup({details,signupdetails,signup}){
+    const[logtext,setLogtext]=useState({})
+    const[butnstyle,setButnstyle]=useState({})
     const[countrystyle,setCountrystyle]=useState({color:'#c4c4c4'})
-    const[firststyle,setFirststyle]=useState({backgroundColor:'white'})
-    const[secondstyle,setSecondstyle]=useState({backgroundColor:'white'})
+    const[first,setFirst]=useState("")
+    const[second,setSecond]=useState("")
     const[countries,setCountries]=useState([])
     const[sorty,setSorty]=useState('asc')
     const[remember,setRemember]=useState(false)
@@ -27,6 +30,9 @@ function Signup({details,signupdetails,signup}){
     const[passwordCharacter,setPasswordCharacter]=useState({display:"none"})
     const[PasswordWrap,setPasswordWrap]=useState({marginBottom:"24px"})
     const[passval ,setPassval]=useState("")
+    const[emailval,setEmailval]=useState("")
+    const[countryval,setCountryval]=useState("")
+    const[loading, setLoading]=useState(true)
     const history=useHistory()
 
     
@@ -87,10 +93,16 @@ function Signup({details,signupdetails,signup}){
     }
     const handlesubmit=(e)=>{
         e.preventDefault()
-        if((passval.length!=8) ){
+      
+        if((passval.length <8) ){
             setPasswordCharacter({display:"flex"});
             setPasswordWrap({marginBottom:"5px"})
         }
+        var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+if(passval.match(decimal))
+{
+    alert('good')
+
         console.log(details)
         //console.log(signup)
         
@@ -114,9 +126,16 @@ function Signup({details,signupdetails,signup}){
           // console.log(err)
        //})
 
+        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")){
+
+            setButnstyle({backgroundColor:"grey"})
+            // setLogtext({color:"rgba(3,64,6,20%)"})
+            setLogtext({color:"black"})
+            setLoading(false)
 
        axios.post("https://subscription-management-tool.herokuapp.com/register",params)
   .then(res=>{
+    
     console.log(res)
     if(((details.email)&&(details.password))!==""){
         if(remember===true){
@@ -152,8 +171,14 @@ function Signup({details,signupdetails,signup}){
   .catch((err)=>{
    console.log(err)
 })
+        }
+    
+    else{
+        setPasswordCharacter({display:"flex"});
+        setPasswordWrap({marginBottom:"5px"})
+    }
 
-
+    }
 
 
 
@@ -235,22 +260,22 @@ function Signup({details,signupdetails,signup}){
             <h3>CREATE AN ACCOUNT</h3>
 
             <div className="signup-firstname">
-            <input type="text" style={firststyle} name="firstName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setFirststyle({backgroundColor:"white"})}} placeholder="First name" required/>
+            <input type="text"  name="firstName" value={first} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setFirst(e.target.value)}} placeholder="First name" required/>
           
           
             </div>
             
             <div className="signup-lastname">
            
-            <input type="text" style={secondstyle} name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setSecondstyle({backgroundColor:"white"})}} placeholder="Last name" required/>
+            <input type="text"  name="lastName" value={second} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setSecond(e.target.value)}} placeholder="Last name" required/>
           
           
             </div>
             
             <div className="select-div">
           
-                <select name="country" id="selectlist" style={countrystyle} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setCountrystyle({color:"black"})}}>
-                <option value="country" className="select-placeholder">Country</option>
+                <select name="country" id="selectlist" style={countrystyle} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setCountrystyle({color:"black"});setCountryval(e.target.value)}}>
+                <option value="countryval" className="select-placeholder">Country</option>
                     {answer.map((val,index)=>{
                         return(
                             <option key={index} value={val}>{val}</option>
@@ -263,7 +288,7 @@ function Signup({details,signupdetails,signup}){
                 </div>
             
             <div className="signup-email-wrapper">
-            <input type="email" name="email" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Email" required/>
+            <input type="email" name="email" value={emailval} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setEmailval(e.target.value)}} placeholder="Email" required/>
           
           
             </div>
@@ -271,6 +296,7 @@ function Signup({details,signupdetails,signup}){
             <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
             ;setPasswordCharacter({display:"none"})
             ;setPasswordWrap({marginBottom:"24px"})
+            // ;setPassval(e.target.value)
         ;setPassval(e.target.value)}}
              onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
             <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
@@ -298,7 +324,8 @@ function Signup({details,signupdetails,signup}){
            verifyCallback={verifystate}
             
             /> */}
-             <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
+             <button className="signup-create" style={butnstyle} onClick={handlesubmit}>{loading ? (<p style={logtext}>CREATE ACCOUNT</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
            <div className="terms"> 
            <div className="signup-remember-me">
            <input id="termscheck" className="terms-checkbox" type="checkbox" required />

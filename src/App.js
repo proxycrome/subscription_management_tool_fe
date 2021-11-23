@@ -3,7 +3,7 @@ import Homepage from './Pages/Homepage/Homepage';
 import Subscription from './Pages/Subscription/Subscription';
 import Signup from './Pages/Signup/Signup';
 import Signin from './Pages/Sign-in/Signin';
-import Resetpassword from './Pages/Resetpassword/Resetpassword'
+// import Resetpassword from './Pages/Passwordreset/Passwordreset'
 import Productcategory from './Pages/Productcategory/Productcategory';
 import Product from './Pages/Product/Product';
 import Partners from './Pages/Partners/Partners';
@@ -16,19 +16,27 @@ import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Addsub from  './Pages/Addsub/Addsub';
 import Blog from  './Pages/Blog/Blog'
+
+import Delete from './Pages/Delete/Delete'
+
 import Profile from './Pages/Settings/Profile/Profile';
 import Notifications from './Pages/Settings/Notifications/Notifications'
 import Application from './Pages/Settings/Application/Application';
 import Payments from './Pages/Settings/Payments/Payments';
-import Passwordreset from './Pages/Passwordreset/Passwordreset'
+//import Passwordreset from './Pages/Passwordreset/Passwordreset'
+
 import Signincontinue from './Pages/Sigincontinue/Signincontinue'
 import Logout from './Pages/Logout/Logout';
 import LogoutReal from './Pages/LogoutReal/LogoutReal';
 import Requestconfirm from './Pages/Requestconfirm/Requestconfirm'
+import Renew from './Pages/Renew/Renew';
 import Payoption from './Pages/Payoption/Payoption';
 import Paymentcard from './Pages/Paymentcard/Paymentcard';
 import Paymentsuccess from './Pages/Paymentsuccess/Paymentsuccess';
+import Passwordreset from './Pages/Passwordreset/Passwordreset';
+import Resetpassword from './Pages/Resetpassword/Resetpassword';
 import Passwordconfirmation from './Pages/Passwordconfirmation/Passwordconfirmation'
+import Autochange from './Pages/Autochange/Autochange';
 import './App.css';
 
 function App() {
@@ -38,12 +46,14 @@ function App() {
     
      <Route exact path="/" component={Homepage}/>
      <Route exact path="/dashboard" component={Dashboard}/>
-     <Route exact path="/Passwordreset" component={Passwordreset}/>
+     <Route exact path="/resetpassword/:token" component={Resetpassword}/>
      <Route exact path="/about" component={About}/>
-     <Route exact path="/addsub" component={Addsub}/>
+     <Route exact path="/autochange" component={Autochange}/>
+     <Route exact path="/addsub/:name" component={Addsub}/>
      <Route exact path="/blog" component={Blog}/>
      <Route exact path="/company" component={Company}/>
      <Route exact path="/contact" component={Contact}/>
+     <Route exact path="/delete/:name" component={Delete}/>
      <Route exact path="/HowWorks" component={HowWorks}/>
      <Route exact path="/invite" component={Invite}/>
      <Route exact path="/Newsub/:name" component={Newsub}/>
@@ -55,7 +65,8 @@ function App() {
      <Route exact path="/product" component={Product}/>
      <Route exact path="/productcategory" component={Productcategory}/>
      <Route exact path="/Requestconfirm" component={Requestconfirm}/>
-     <Route exact path="/Resetpassword" component={Resetpassword}/>
+     <Route exact path="/Passwordreset" component={Passwordreset}/>
+     <Route exact path="/Renew/:name" component={Renew}/>
      <Route exact path="/signup" component={Signup}/>
      <Route exact path="/logout" component={Logout}/>
      <Route exact path="/logoutReal" component={LogoutReal}/>
