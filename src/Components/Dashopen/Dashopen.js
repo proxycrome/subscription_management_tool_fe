@@ -53,7 +53,7 @@ function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,p
                             </div>
                             <div className="inner-list">
                             <div className="dash-icon"><img src={logout}/></div>
-                            <div>Logout</div>
+                            <div onClick={(()=>{history.push("/logout")})}>Logout</div>
                             </div>
                            
                         

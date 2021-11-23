@@ -37,6 +37,10 @@ export const addarray=(value)=>({
     type:'addarray',
    value:value
 })
+export const editarray=(value)=>({
+    type:'editarray',
+   value:value
+})
 export const addsubs=(value)=>({
     type:'addsubs',
    value:value

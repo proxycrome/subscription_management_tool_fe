@@ -68,12 +68,12 @@
     background-color: white;
     border: 1px solid rgba(3,6,64,0.2);
 }
-.paymentoption .payment-select-buttons{
+.paymentoption .payment-inner-content .payment-select-buttons{
     display: flex;
     
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
     margin-top: 90.6px;
    

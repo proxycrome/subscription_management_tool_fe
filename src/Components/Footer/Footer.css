@@ -12,6 +12,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: DM SANS;
     
     
   
@@ -56,6 +57,9 @@
    
    
 }
+.footer-contact-us p{
+    margin-bottom: 14px;
+}
 
 .quicklinks{
     display: flex;
@@ -64,6 +68,9 @@
    
    
     width: 30%;
+}
+.quicklinks P{
+    margin-bottom: 14px;
 }
 .newsletter{
     display: flex;
@@ -76,6 +83,9 @@
     width: 60%;
     height: 30px;
     border-radius: 5px;
+}
+.newsletter p{
+    margin-bottom: 14px;
 }
 .newsletter button{
     width: 127px;
@@ -114,6 +124,7 @@
 }
 .copy-Right{
     font-size: 14px;
+    margin-top: 40px;
    
 }
 .Footer h3{
