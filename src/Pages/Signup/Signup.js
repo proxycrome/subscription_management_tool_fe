@@ -33,6 +33,7 @@ function Signup({details,signupdetails,signup}){
     const[emailval,setEmailval]=useState("")
     const[countryval,setCountryval]=useState("")
     const[loading, setLoading]=useState(true)
+    const[popup,setPopup]=useState({display:"none"})
     const history=useHistory()
 
     
@@ -101,7 +102,7 @@ function Signup({details,signupdetails,signup}){
         var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 if(passval.match(decimal))
 {
-    alert('good')
+  
 
         console.log(details)
         //console.log(signup)
@@ -156,9 +157,11 @@ if(passval.match(decimal))
 
     if(res.data.status==='success'){
         //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
-        
-     
-        history.push("/signin")
+        //setTimeout(()=>{
+            setPopup({display:"flex"})
+       
+        setTimeout(function(){history.push("/signin")},3000);
+       //history.push("/signin")
     }
 
 
@@ -241,7 +244,13 @@ if(passval.match(decimal))
     
     return(
         <div className="signup-total" >
+            
             <div className="signup" >
+            <div className="cover-check" style={popup}>
+                    <div className="check-text">
+                        <p>Account created successfully.</p>
+                    </div>
+                </div>
             <div className="inner-signup">
             <div className="signup-textandimage">
                 <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}/></div>

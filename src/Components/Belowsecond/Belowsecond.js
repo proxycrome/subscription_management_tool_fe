@@ -4,13 +4,13 @@ import { connect } from 'react-redux'
 import {useEffect,useState} from 'react'
 import { headercolor } from '../../redux/flex/flex.actions';
 import Smallbox from '../Smallbox/Smallbox';
-import '../Belowbox/Belowbox.css'
+import '../Belowsecond/Belowsecond.css'
 import { addsubs } from '../../redux/flex/flex.actions';
 import { subarray } from '../../redux/flex/flex.actions';
 import { addarray } from '../../redux/flex/flex.actions';
 import { FaEye } from 'react-icons/fa';
 
-function Belowbox({presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,noclick,
+function Belowsecond({presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,noclick,
 firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
     // const{subval,setSubval}=useState({})
     // const[subscriptionval,setSubscriptionval]=useState({})
@@ -155,9 +155,9 @@ return(
                    
                 <div className="below-butn">
                     <button className="first-belowbutton" onClick={(()=>{
-                        if((selectpack!="")&&(billingCycle!="")){
+                        
                             firstclick()
-                        }
+                      
                     })} >{firstbutn}</button>
                     {/* <button className="second-belowbutton" onClick={(()=>{choice=="" ? noclick(): secondclick()})} >{secondbutn}</button> */}
                     <button className="second-belowbutton" onClick={(()=>{
@@ -200,4 +200,4 @@ const mapstatetoprops=({flex:{presentcolor,subscription,subarray}})=>({
 
 })
 
-export default connect(mapstatetoprops,MapDispatchToProps) (Belowbox)
+export default connect(mapstatetoprops,MapDispatchToProps) (Belowsecond)

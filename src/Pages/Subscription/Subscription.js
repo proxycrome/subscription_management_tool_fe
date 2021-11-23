@@ -34,6 +34,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[namearr,setNamearr]=useState([])
     const[idReal,setIdReal]=useState("")
     const[dateval,setDateval]=useState("")
+    const[searchDatar,setSearchDatar]=useState("")
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -170,10 +171,11 @@ function Subscription({presentcolor,headercolor,subarray}){
     console.log(dates)
     if(dates!=null){
     setDated(dates.split("T")[0])
-    userDisplay = JSON.parse(localStorage.getItem('userDisplay')); 
-    setNamearr(userDisplay) 
+     
+   
 }
-       
+userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+setNamearr(userDisplay) 
      },[])
      console.log(arr) 
      function Inactivey(val,index){
@@ -196,14 +198,14 @@ function Subscription({presentcolor,headercolor,subarray}){
     }
     
     function Active(val,index){
-      
-       //console.log(indx)
+     
+      console.log(namearr)
        namearr.map((item,indx)=>{
        if(indx==index){
            console.log(item._id)
            clientItem=item._id
            localStorage.setItem('clientIds', JSON.stringify(item._id))
-           localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:val.productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
+          localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:val.productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
            history.push("/Autochange")
           
        }
@@ -237,10 +239,13 @@ function Subscription({presentcolor,headercolor,subarray}){
 
            if(indx==index){
            console.log(item._id)
+           if(item.subscriptionStatus!=="Active"){
            let stat=item.subscriptionStatus
            console.log(item.subscriptionStatus)
+
            clientItem=item._id
            history.push(`/delete/${clientItem+" "+stat}`)
+        }
        }
         })
 
@@ -258,7 +263,8 @@ function Subscription({presentcolor,headercolor,subarray}){
                         <h3>Subscription</h3>
                        
                         </div>
-                        <input type="search"  placeholder="Search for products"/>
+                        <input type="search"  placeholder="Search for products"
+                        onChange={((e)=>{setSearchDatar(e.target.value)})}/>
                     </div>
                     <div className="mysubsribe-and-button" >
                         <div className="sub-and-history">
@@ -322,16 +328,31 @@ function Subscription({presentcolor,headercolor,subarray}){
                         <hr className="sub-divider-line"/>
                         <div className="sub-below-second">
                             <h3 className="allSub">All Subscriptions</h3>
-                            <td>
-                                <th>Products</th>
-                                <th>Date Subscribed</th>
-                                <th>Expiry date</th>
-                                <th>Auto renewal</th>
-                                <th>Status</th>
-                                <th>Billing cycle</th>
-                                <th></th>
-                            </td>
-                            {content=arr.map((val,index)=>{
+                            <span className="teedee">
+                                <span className="teehaych">Products</span>
+                                <span className="teehaych">Date Subscribed</span>
+                                <span className="teehaych">Expiry date</span>
+                                <span className="teehaych">Auto renewal</span>
+                                <span className="teehaych">Status</span>
+                                <span className="teehaych">Billing cycle</span>
+                                <span className="teehaych"></span>
+                            </span>
+                            {arr.filter((val,index)=>
+    {   
+        console.log(val)
+       if(searchDatar===""){
+        console.log(val)
+            return val}
+        else if((((val.subCategory).toUpperCase())).includes((searchDatar).toUpperCase())){
+            
+            return val
+        }
+       
+    }
+)
+                            
+                            
+                            .map((val,index)=>{
             cats=val.subCategory
             catg=val.category
             itemAmt=val.amount
@@ -350,23 +371,23 @@ function Subscription({presentcolor,headercolor,subarray}){
                 colours={coloritem:"#E40C0C"}
             }
 
-           return <div  className="catresult-sub">
-            <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>
+           return <div  className="catresult-sub" key={index}>
+            <span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>
              
                  
 
 
            
-            <p>{cats}</p></tr> 
-            <tr>{val.dateSubscribed}</tr>
-        <tr><p style={{color:"rgba(51,51,51,50%"}}>{val.dateExpired}</p></tr>
+            <p>{cats}</p></span> 
+            <span>{val.dateSubscribed}</span>
+        <span><p style={{color:"rgba(51,51,51,50%"}}>{val.dateExpired}</p></span>
        
-        <tr>{val.autoRenew}</tr>
+        <span>{val.autoRenew}</span>
        {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
-       <tr style={{color:colours.coloritem}}  >{itemStatus}</tr>
-       <tr>{val.billingCycle}</tr>
+       <span style={{color:colours.coloritem}}  >{itemStatus}</span>
+       <span>{val.billingCycle}</span>
        
-        <tr className="editprof" 
+        <span className="editprof" 
         // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
         ><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactivey(val,index)}
         // if(itemStatus=="Active") { Active(val,index) }}
@@ -375,7 +396,7 @@ function Subscription({presentcolor,headercolor,subarray}){
         }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
         
         <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
-        </tr>
+        </span>
         
        </div>
 

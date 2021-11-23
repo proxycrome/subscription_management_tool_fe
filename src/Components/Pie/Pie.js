@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import {ReactComponent as Calendar} from '../../Asset/Calender Icon.svg'
+import { useEffect } from 'react';
 import axios from 'axios'
 import Subscription from '../../Pages/Subscription/Subscription';
  import '../../Components/Pie/Pie.css'
@@ -14,6 +15,8 @@ let amtArr=[]
 let itemArray=[]
 //const PieChart = () =>{
   //const[pieArr,setPieArr]=useState([])
+  
+  
   let token = JSON.parse(localStorage.getItem('bearertoken'));
         axios.defaults.headers.common['Authorization'] = token; 
   axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
@@ -45,6 +48,7 @@ newamt=itemArray.map((val,index)=>{
 console.log(newval)
 }
 )
+
 console.log()
 console.log(newval)
 let pieVal
@@ -100,6 +104,8 @@ const data = {
 };
 
  const PieChart = ({month}) => (
+
+
   <>
   
     <div className='header'>
