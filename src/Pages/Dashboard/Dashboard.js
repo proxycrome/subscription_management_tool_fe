@@ -25,6 +25,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[image,setImage]=useState({val:""})
     const[arr,setArr]=useState([])
     const history=useHistory()
+
     const[valname,setValname]=useState("")
     const[contentReal,setContentReal]=useState("")
     const[idSub,setIdSub]=useState([])
@@ -383,6 +384,14 @@ function Dashboard({presentcolor,headercolor,subarray}){
 console.log(contentd)
 
       
+
+    
+    //useEffect(()=>{
+      //  headercolor({ dashheadercolor:"#6200F0"})                   
+     //},[])
+     //console.log(presentcolor.dashheadercolor)
+
+
     return(
             <div className="dashtotal">
                 
