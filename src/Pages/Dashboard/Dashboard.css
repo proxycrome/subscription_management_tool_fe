@@ -63,13 +63,17 @@ padding: 10px 0px;
     padding-left: 51.2px;
 
 }
-.catresult tr{
+.catresult span{
     /* margin-right: 200px; */
     width: 19%;
   font-size: 16px;
   color: rgba(7,10,74,70%);
     margin-right: 5px;
     text-align: left;
+   
+}
+.excIcon{
+    width: 100%;
 }
 .dash-add-button p{
     margin-left: 5px;
@@ -337,7 +341,7 @@ padding: 10px 0px;
     font-weight: normal;
 
 }
-.inner-half-header th{
+.inner-half-header span{
    /* margin-right: 200px; */
    width: 19%;
    text-align: left;
@@ -351,6 +355,7 @@ padding: 10px 0px;
 .dashtotal{
     
     min-height: 100vh;
+    width: 100%;
 }
 
 .mobile-dashboard-All{

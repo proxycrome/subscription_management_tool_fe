@@ -5,7 +5,7 @@ import {useEffect,useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { headercolor } from '../../redux/flex/flex.actions';
 import Upperbox from '../../Components/Upperbox/Upperbox';
-import Belowbox from '../../Components/Belowbox/Belowbox';
+import Belowsecond from '../../Components/Belowsecond/Belowsecond'
 import Dashopen from '../../Components/Dashopen/Dashopen';
 import axios from 'axios';
 import Gotv from '../../Asset/GOTV.png';
@@ -213,7 +213,7 @@ return(
         <div>
             <div className="addsubb">
                 <Upperbox/>
-                <Belowbox icon={image.val} firstbutn={"DISCARD"} secondbutn={"SUBSCRIBE"} choice={""} cycle={""}
+                <Belowsecond icon={image.val} firstbutn={"DISCARD"} secondbutn={"SUBSCRIBE"} choice={""} cycle={""}
                 firstclick={history.goBack} product={packageFiles} secondclick={sub}/>
             </div>
         </div>

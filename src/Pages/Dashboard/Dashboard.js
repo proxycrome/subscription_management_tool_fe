@@ -35,6 +35,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[loading, setLoading]=useState(false)
     const[itemColor,setItemColor]=useState({color:""})
     const[checkarr,setCheckarr]=useState([])
+    const[searchDatar,setSearchDatar]=useState("")
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -393,13 +394,15 @@ console.log(contentd)
 
     return(
             <div className="dashtotal">
+                
                 <div className="webDashboard">
                         <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
                            
                         <div className="inner-body-dashboard">
                         <div className="second-line-dashboard">
                             <h2>WELCOME TO FLEX</h2>
-                            <input type="search" placeholder="Search for products"/>
+                            <input type="search" placeholder="Search for products"
+                            onChange={((e)=>{setSearchDatar(e.target.value)})}/>
                         </div>
                         {/* <hr className="welcome-dividers"/> */}
                         <div className="third-line-dashboard">
@@ -452,12 +455,12 @@ console.log(contentd)
                           
                            
                            
-                                <th>Products</th>
-                                <th>Product category</th>
-                                <th>Expiry Date</th>
-                                <th>Status</th>
-                                <th></th>
-                                {/* <th></th> */}
+                                <span>Products</span>
+                                <span>Product category</span>
+                                <span>Expiry Date</span>
+                                <span>Status</span>
+                                <span></span>
+                               
                             </div>
                            
                             {/* {product=subarray.map((val,index)=>{
@@ -551,7 +554,22 @@ console.log(contentd)
 
   
 
-   {content=arr.map((val,index)=>{
+   {arr.filter((val,index)=>
+    {   
+        console.log(val)
+       if(searchDatar===""){
+        console.log(val)
+            return val}
+        else if((((val.subCategory).toUpperCase())).includes((searchDatar).toUpperCase())){
+            
+            return val
+        }
+       
+    }
+)
+   
+   
+   .map((val,index)=>{
             cats=val.subCategory
             catg=val.category
             itemAmt=val.amount
@@ -570,26 +588,26 @@ console.log(contentd)
                 colours={coloritem:"#E40C0C"}
             }
 
-           return <div  className="catresult">
-               <tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
-              icon={itemImg}/><p>{cats}</p></tr> 
+           return <div  className="catresult" key={index}>
+               <span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+              className="excIcon"icon={itemImg}/><p>{cats}</p></span> 
              
             
        
-        <tr>{val.category}</tr>
+        <span>{val.category}</span>
        {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
-      <tr>{val.dateExpired}</tr>
-       <tr style={{color:colours.coloritem}}  >{itemStatus}</tr>
+      <span>{val.dateExpired}</span>
+       <span style={{color:colours.coloritem}}  >{itemStatus}</span>
        {/* <tr>{val.billingCycle}</tr> */}
        
-       <tr className="editprof" 
+       <span className="editprof" 
         // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
         ><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactive(val,index)}
         if(val.subscriptionStatus=="Active") { Active(val,index) }
         if(val.subscriptionStatus=="Expired") { Expired(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
         
         <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
-        </tr>
+        </span>
         
        </div>
 
@@ -642,11 +660,11 @@ console.log(contentd)
                             <div className="mobile-second-inner">
                                 <h3>Recent subscriptions</h3>
                                 <div className="tableData">
-                                    <th className="mobile-list-table">Products</th>
-                                    <th className="mobile-list-table">Products category</th>
-                                    <th className="mobile-list-table">Expiry Date</th>
-                                    <th className="mobile-list-table">Status</th>
-                                    <th></th>
+                                    <span className="mobile-list-table">Products</span>
+                                    <span className="mobile-list-table">Products category</span>
+                                    <span className="mobile-list-table">Expiry Date</span>
+                                    <span className="mobile-list-table">Status</span>
+                                    <span></span>
                                     
                                 </div>
                             </div>

@@ -134,7 +134,7 @@ return(
                 
             }
 return( 
-    <div className="product-category-second-list">
+    <div className="product-category-second-list" key={index}>
         <div className="product-category-second-inner">
             <div className="list-specification">
                
