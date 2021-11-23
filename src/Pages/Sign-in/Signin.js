@@ -84,6 +84,7 @@ import '../Sign-in/Signin.css'
     .then(res=>{
       
       console.log(res)
+      localStorage.setItem('user', JSON.stringify(res.data.data));
       console.log(res.data.data.token)
       console.log(res.data.data.firstName)
       let token=res.data.data.token

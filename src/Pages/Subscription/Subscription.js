@@ -18,6 +18,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     console.log(subarray)
     const[dated,setDated]=useState("")
     const history =useHistory()
+
     const[expiredval,setExpiredval]=useState(0)
     const[activ,setActiv]=useState(0)
     const[inactiv,setInactiv]=useState(0)
@@ -61,6 +62,9 @@ function Subscription({presentcolor,headercolor,subarray}){
    let expiredsub=0
    let dates;
    let ans=""
+
+    
+
     useEffect(()=>{
         headercolor({ dashsubscribecolor:"#6200F0"})
         //month

@@ -20,10 +20,12 @@ import {ReactComponent as Invitesvg} from  '../../Asset/Invitesvg.svg'
 import {ReactComponent as Supportsvg} from  '../../Asset/Supportsvg.svg'
 import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import settings from '../../Asset/Settings.png'
-import '../DashFrame/DashFrame.css'
+import '../DashFrame/DashFrame.css';
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,paymentstyle,customer}){
-    const history=useHistory()
+function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle, paymentstyle, customer}){
+    const history = useHistory()
+    const user = localStorage.getItem('user');
+    const userStr = JSON.parse(user)
   
     const[customerDetail,setCustomerDetail]=useState("")
     useEffect(()=>{
@@ -31,7 +33,8 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
      setCustomerDetail(customerDetails)
         let customers=customer
         console.log(customerDetail.firstname)
-},[])
+    },[])
+
     return(
         <div className="dashboard">
             <div className="dashboard-inner">
@@ -53,10 +56,12 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                             <div className="dash-icon"><Paymentsvg/></div>
                             <div>Payments</div>
                             </div>
-                            <div className="inner-list">
+
+                            <div onClick={(() => {history.push(`/settings/profile/${userStr.id}`)})} style={dashSettingsStyle} className="inner-list">
                             <div className="dash-icon"><Settingssvg/></div>
                             <div>Settings</div>
                             </div>
+
                             <div className="inner-list">
                             <div className="dash-icon"><Supportsvg/></div>
                             <div>Support</div>
@@ -84,12 +89,13 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                             <div className="divider"></div>
                             <div className="second"><img src={notification}/></div>
                         </div>
-                        </div>
+                    </div>
                         <div>{children}</div>
                         
-                        </div>
+                </div>
             </div>
         </div>
+
     )
 
 }

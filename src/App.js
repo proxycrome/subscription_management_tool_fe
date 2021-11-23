@@ -16,7 +16,15 @@ import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Addsub from  './Pages/Addsub/Addsub';
 import Blog from  './Pages/Blog/Blog'
+
 import Delete from './Pages/Delete/Delete'
+
+import Profile from './Pages/Settings/Profile/Profile';
+import Notifications from './Pages/Settings/Notifications/Notifications'
+import Application from './Pages/Settings/Application/Application';
+import Payments from './Pages/Settings/Payments/Payments';
+import Passwordreset from './Pages/Passwordreset/Passwordreset'
+
 import Signincontinue from './Pages/Sigincontinue/Signincontinue'
 import Logout from './Pages/Logout/Logout';
 import LogoutReal from './Pages/LogoutReal/LogoutReal';
@@ -65,6 +73,10 @@ function App() {
      <Route exact path="/signin" component={Signin}/>
      <Route exact path="/signincontinue" component={Signincontinue}/>
      <Route exact path="/subscription" component={Subscription}/>
+     <Route exact path="/settings/profile/:id" component={Profile}/>
+     <Route exact path="/settings/notifications" component={Notifications}/>
+     <Route exact path="/settings/application" component={Application}/>
+     <Route exact path="/settings/payments" component={Payments}/>
     </Switch>
     </div>
   );
