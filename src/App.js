@@ -23,7 +23,7 @@ import Profile from './Pages/Settings/Profile/Profile';
 import Notifications from './Pages/Settings/Notifications/Notifications'
 import Application from './Pages/Settings/Application/Application';
 import Payments from './Pages/Settings/Payments/Payments';
-import Passwordreset from './Pages/Passwordreset/Passwordreset'
+//import Passwordreset from './Pages/Passwordreset/Passwordreset'
 
 import Signincontinue from './Pages/Sigincontinue/Signincontinue'
 import Logout from './Pages/Logout/Logout';
