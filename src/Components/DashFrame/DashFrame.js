@@ -22,7 +22,7 @@ import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import settings from '../../Asset/Settings.png'
 import '../DashFrame/DashFrame.css';
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle, paymentstyle, customer}){
+function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle,dashSupportStyle, paymentstyle, customer}){
     const history = useHistory()
     const user = localStorage.getItem('user');
     const userStr = JSON.parse(user)
@@ -62,7 +62,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                             <div>Settings</div>
                             </div>
 
-                            <div className="inner-list">
+                            <div onClick={() => {history.push('/support/faq')}} style={dashSupportStyle} className="inner-list">
                             <div className="dash-icon"><Supportsvg/></div>
                             <div>Support</div>
                             </div>

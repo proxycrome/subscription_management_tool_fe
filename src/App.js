@@ -29,6 +29,7 @@ import Payoption from './Pages/Payoption/Payoption';
 import Paymentcard from './Pages/Paymentcard/Paymentcard';
 import Paymentsuccess from './Pages/Paymentsuccess/Paymentsuccess';
 import Passwordconfirmation from './Pages/Passwordconfirmation/Passwordconfirmation'
+import Frequent from './Pages/Support/Frequent/Frequent'
 import './App.css';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
      <Route exact path="/settings/notifications" component={Notifications}/>
      <Route exact path="/settings/application" component={Application}/>
      <Route exact path="/settings/payments" component={Payments}/>
+     <Route exact path="/support/faq" component={Frequent}/>
     </Switch>
     </div>
   );

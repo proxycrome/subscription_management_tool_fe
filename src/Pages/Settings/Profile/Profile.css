@@ -6,7 +6,8 @@
 .header h3{
     text-align: left;
     font-weight: 500;
-    padding: 20px
+    padding: 20px;
+    color: #191d6c;
 }
 
 .welcome-divider{
