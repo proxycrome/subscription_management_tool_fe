@@ -9,22 +9,23 @@ function Contact(){
     return(
         <div className="contact">
 
-            <div>
-               <Navbar/>
+<Navbar/>
+            <div className="contACTContainer">
+              
                 <div>
-                    <h2>We are here to help</h2>
+                    <h2 className="contactHEader">We are here to help</h2>
                     <p className="header-text">Contact us if you have any questions about our company or products. We will try to provide an 
                         answer within a few days</p>
                         <div className="content-inner">
                             <div className="content-inner-left">
-                                <div>
+                                <div className="content-inner-contact">
                                 <h3>Our Contact Information</h3>
-                                <p >Fill up the form and our team will get in touch and we 'll be happy to assist you</p>
+                                <p className="fillUp">Fill up the form and our team will get in touch and we 'll be happy to assist you</p>
                             <span className="content-inner-left-phone"><FaEye/> <p>+234800 123 5976</p></span>
                             <span className="content-inner-left-mail"> <FaEye/> <p>support@flex.com</p></span>
                             </div>
                             <div className="contact-icons">
-                                <FaTwitter/><FaFacebookF/><FaInstagram/>
+                                <FaTwitter className="contactICONS"/><FaFacebookF className="contactICONS"/><FaInstagram className="contactICONS"/>
                             </div>
                             </div>
                             <div className="content-inner-right">

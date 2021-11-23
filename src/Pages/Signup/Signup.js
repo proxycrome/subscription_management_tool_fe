@@ -6,15 +6,23 @@ import { connect } from 'react-redux';
 import { signup } from '../../redux/flex/flex.actions';
 import { signupdetails } from '../../redux/flex/flex.actions';
 import { useHistory } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
+import {ReactComponent as SignflexLogo} from '../../Asset/LOGO FLEX.svg';
 import axios from 'axios'
 import Recaptcha from 'react-recaptcha'
+import {ReactComponent as Info} from '../../Asset/info.svg'
+import flexpng from '../../Asset/flexpng.png'
 import '../Signup/Signup.css'
 
 function Signup({details,signupdetails,signup}){
-    
+    const[logtext,setLogtext]=useState({})
+    const[butnstyle,setButnstyle]=useState({})
+    const[countrystyle,setCountrystyle]=useState({color:'#c4c4c4'})
+    const[first,setFirst]=useState("")
+    const[second,setSecond]=useState("")
     const[countries,setCountries]=useState([])
     const[sorty,setSorty]=useState('asc')
     const[remember,setRemember]=useState(false)
@@ -22,6 +30,10 @@ function Signup({details,signupdetails,signup}){
     const[passwordCharacter,setPasswordCharacter]=useState({display:"none"})
     const[PasswordWrap,setPasswordWrap]=useState({marginBottom:"24px"})
     const[passval ,setPassval]=useState("")
+    const[emailval,setEmailval]=useState("")
+    const[countryval,setCountryval]=useState("")
+    const[loading, setLoading]=useState(true)
+    const[popup,setPopup]=useState({display:"none"})
     const history=useHistory()
 
     
@@ -82,10 +94,16 @@ function Signup({details,signupdetails,signup}){
     }
     const handlesubmit=(e)=>{
         e.preventDefault()
-        if((passval.length!=8) ){
+      
+        if((passval.length <8) ){
             setPasswordCharacter({display:"flex"});
             setPasswordWrap({marginBottom:"5px"})
         }
+        var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+if(passval.match(decimal))
+{
+  
+
         console.log(details)
         //console.log(signup)
         
@@ -109,9 +127,16 @@ function Signup({details,signupdetails,signup}){
           // console.log(err)
        //})
 
+        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")){
+
+            setButnstyle({backgroundColor:"grey"})
+            // setLogtext({color:"rgba(3,64,6,20%)"})
+            setLogtext({color:"black"})
+            setLoading(false)
 
        axios.post("https://subscription-management-tool.herokuapp.com/register",params)
   .then(res=>{
+    
     console.log(res)
     if(((details.email)&&(details.password))!==""){
         if(remember===true){
@@ -132,9 +157,11 @@ function Signup({details,signupdetails,signup}){
 
     if(res.data.status==='success'){
         //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
-        
-     
-        history.push("/signin")
+        //setTimeout(()=>{
+            setPopup({display:"flex"})
+       
+        setTimeout(function(){history.push("/signin")},3000);
+       //history.push("/signin")
     }
 
 
@@ -147,8 +174,14 @@ function Signup({details,signupdetails,signup}){
   .catch((err)=>{
    console.log(err)
 })
+        }
+    
+    else{
+        setPasswordCharacter({display:"flex"});
+        setPasswordWrap({marginBottom:"5px"})
+    }
 
-
+    }
 
 
 
@@ -210,7 +243,14 @@ function Signup({details,signupdetails,signup}){
    
     
     return(
-        <div className="signup" >
+        <div className="signup-total" >
+            
+            <div className="signup" >
+            <div className="cover-check" style={popup}>
+                    <div className="check-text">
+                        <p>Account created successfully.</p>
+                    </div>
+                </div>
             <div className="inner-signup">
             <div className="signup-textandimage">
                 <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}/></div>
@@ -229,21 +269,22 @@ function Signup({details,signupdetails,signup}){
             <h3>CREATE AN ACCOUNT</h3>
 
             <div className="signup-firstname">
-            <input type="text" name="firstName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="First name" required/>
+            <input type="text"  name="firstName" value={first} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setFirst(e.target.value)}} placeholder="First name" required/>
           
           
             </div>
             
             <div className="signup-lastname">
            
-            <input type="text" name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Last name" required/>
+            <input type="text"  name="lastName" value={second} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setSecond(e.target.value)}} placeholder="Last name" required/>
           
           
             </div>
+            
             <div className="select-div">
           
-                <select name="country" id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}}>
-                <option value="country" className="select-placeholder">Country</option>
+                <select name="country" id="selectlist" style={countrystyle} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setCountrystyle({color:"black"});setCountryval(e.target.value)}}>
+                <option value="countryval" className="select-placeholder">Country</option>
                     {answer.map((val,index)=>{
                         return(
                             <option key={index} value={val}>{val}</option>
@@ -256,7 +297,7 @@ function Signup({details,signupdetails,signup}){
                 </div>
             
             <div className="signup-email-wrapper">
-            <input type="email" name="email" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}} placeholder="Email" required/>
+            <input type="email" name="email" value={emailval} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setEmailval(e.target.value)}} placeholder="Email" required/>
           
           
             </div>
@@ -264,20 +305,25 @@ function Signup({details,signupdetails,signup}){
             <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
             ;setPasswordCharacter({display:"none"})
             ;setPasswordWrap({marginBottom:"24px"})
+            // ;setPassval(e.target.value)
         ;setPassval(e.target.value)}}
              onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
             <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
           
             </div>
             <div style={passwordCharacter} className="password-charac">
-            <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
+            <div className="infoDivs"><Info/></div><p className="passwordcond">Password should not be less than 8 characters and must include caps,numbers and 
             special characters</p>
             </div>
+           
           
-           <span className="signup-remember-me">
-                <input type="checkbox" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
-                <p>Remember me</p>
-           </span>
+           <div className="signup-remember-me">
+            
+                <input type="checkbox" id="test-box" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
+                <label for="test-box">Remember me</label>
+               
+                {/* <p>Remember me</p> */}
+           </div>
            {/* <Recaptcha
            className="recaptcha"
             sitekey="6Lf85dwcAAAAAGRU-xn3R_77p-3DkqkSyeq9WX__"
@@ -287,14 +333,17 @@ function Signup({details,signupdetails,signup}){
            verifyCallback={verifystate}
             
             /> */}
-             <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
+             <button className="signup-create" style={butnstyle} onClick={handlesubmit}>{loading ? (<p style={logtext}>CREATE ACCOUNT</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
            <div className="terms"> 
-           <div>
-           <input className="terms-checkbox" type="checkbox" required />
-           </div>
-           <div className="terms-and-policy">
+           <div className="signup-remember-me">
+           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <label for="termscheck"> </label>
+           <div  className="terms-and-policy">
            <p >By clicking you agree to our 
             <Link to="" className="Terms-and-condition"> Terms and Conditions</Link>. See <Link className="privacy">Privacy Policy</Link></p>
+            </div>
+           
             </div>
             </div>
            
@@ -309,9 +358,107 @@ function Signup({details,signupdetails,signup}){
             </div>
             </div>
             </div>
+            </div>
+
+
+            <div className="signup-mobile">
+                <div className="mobile-signup-header"> 
+                <img src={flexpng} style= {{width: "78px",
+        height: "32px"}}/>
+
+        <h3>Stay connected always</h3>
         </div>
+               
+               
+                    
+                
+                <div className="mobile-signup-inner">
+                <h3>CREATE AN ACCOUNT</h3>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    <input type="text"/>
+                </div>
+                <div className="input-wrapper">
+                    
+                <select name="country" id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}}>
+                <option value="country" className="select-placeholder">Country</option>
+                    {answer.map((val,index)=>{
+                        return(
+                            <option key={index} value={val}>{val}</option>
+                        )
+                    })}
+                    
+
+                </select>
+                </div>
+                <div className="input-wrapper" id="passwordmobilewrapper">
+                   
+                    <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
+            ;setPasswordCharacter({display:"none"})
+            ;setPasswordWrap({marginBottom:"24px"})
+        ;setPassval(e.target.value)}}
+             onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+                </div>
+                <div style={passwordCharacter} className="password-charac">
+            <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
+            special characters</p>
+            </div>
+
+            <div className="signup-remember-me">
+            
+            <input type="checkbox" id="test-box" className="remember-checkbox" onChange={(()=>{setRemember(!remember)})}  />
+            <label for="test-box">Remember me</label>
+           
+            {/* <p>Remember me</p> */}
+       </div>
+
+
+
+                <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
+
+                <div className="terms"> 
+           <div className="signup-remember-me">
+           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <label for="termscheck"> </label>
+           <div  className="terms-and-policy">
+           <p >By clicking you agree to our 
+            <Link to="" className="Terms-and-condition"> Terms and Conditions</Link>. See <Link className="privacy">Privacy Policy</Link></p>
+            </div>
+           
+            </div>
+            </div>
+
+
+                <div className="signup-orandline">  <hr className="signup-line"/><p className="signupWith">Sign up with</p> <hr className="signup-line"/></div>
+                   
+                <div className="google-AND-facebook-mobile">
+            <button className="signup-google-mobile"><GoogleLogo className="logoGoogle"/><p> GOOGLE</p></button>
+            <button className="signup-facebook-mobile"> <FacebookLogo className="logoFace"/><p> FACEBOOK</p></button>
+            </div>
+
+            <p className="already-have-account">Already have an account? <Link to="/signin" className="already-have-account-log">Log in</Link></p>
+           
+                  
+                    </div>
+              
+
+            </div>
+        </div>
+
+
+
         
     )
+
+
+   
 }
 
 

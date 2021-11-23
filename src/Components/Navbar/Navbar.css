@@ -9,7 +9,12 @@
   cursor: pointer;
   margin-bottom: 100px;
 
+  padding-top: 40px;
+  background-color: #FAFAFE;
+
+
   
+
  
 
   /* margin-top: 40px; */
@@ -63,6 +68,7 @@
 .NavRightContent{
     display: flex;
     align-items: flex-start;
+    
    
    
    
@@ -75,10 +81,17 @@
     color: white;
     border-radius: 6px;
     border: none;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500px;
+    font-size: 16px;
     position: relative;
+    
    
+}
+.NavRightContent button:hover{
+    background-color: #5205C1;
+}
+.HwOrks:hover{
+    color: #6200f0;
 }
 .links{
     text-decoration: none;
@@ -86,6 +99,13 @@
     font-size: 18px;
     margin-top: 10px;
    
+}
+#ext p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#ext p:hover{
+    color: #6200f0;
 }
 .NavRightContent p{
     margin-right: 50px;
@@ -106,6 +126,7 @@
   
 }
 .mobilenavrightcontent{
+    
     display: none;
 }
 .mobilenavrightbar{
@@ -133,6 +154,9 @@
    
     
 }
+#companyLink:hover{
+    color: #6200f0;
+}
 .total-dropdown #companyLink .linker-extra{
     background-color: crimson;
 }
@@ -151,6 +175,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 0px;
+  
+    
+}
+.arrowNavBar{
+    margin-top: 18px;
+    align-self: center;
     
 }
 .mobileFlex-div{
@@ -244,12 +274,18 @@
         flex-direction: column;
        
         margin-top: 18px;
+        background-color: #FAFAFE;
+        line-height: 180%;
+    
        
        
     }
+    .mobilenavrightcontent p{
+        margin-top: 18px;
+    }
     .mobilenavrightcontent button{
-        width: 100px;
-        
+        min-width: 100px;
+        margin-top: 18px;
         margin-bottom: 10px;
         border: none;
         padding: 8px;
@@ -259,6 +295,9 @@
     }
     .NavRightContent{
         display: none;
+    }
+    .companyNavBar{
+        margin-right: 20px;
     }
     
 }

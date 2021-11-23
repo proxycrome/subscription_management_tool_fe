@@ -60,28 +60,29 @@ return(
                 
               
                <span className="dropDown">
-               <p id="companyLink"  style={compstyle}><p>Company</p><FaAngleDown 
+               <span id="companyLink" className="HwOrks"  style={compstyle}><p>Company</p><FaAngleDown 
                onClick={handleextra}/> 
-               </p>
-              <div style={extra}>
-               <Link to="/company" style={aboutstyle}><p>About us</p></Link>
-               <Link to="/about" style={privacystyle}><p>Privacy policy</p></Link>
+               </span>
+              <div id="ext" style={extra}>
+              <p onClick={(()=>(history.push("/company")))} style={aboutstyle}>About us</p>
+               <p style={privacystyle} onClick={(()=>(history.push("/privacystyle")))}>Privacy policy</p>
+               {/* <Link to="/about" style={privacystyle}></Link> */}
                </div>
                </span>
                
              
-               <p  style={howworks}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
-               <p  style={blogstyle} onClick={(()=>{history.push("/blog");})} >Blog</p>
+               <p className="HwOrks"  style={howworks} onHover={{color:"#6200f0"}}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
+               <p className="HwOrks" style={blogstyle} onClick={(()=>{history.push("/blog");})} >Blog</p>
                <div className="testing">
-               <p  id="partyner"style={partstyle} onClick={(()=>{history.push("/partners");})} >Partnerships</p>
+               <p className="HwOrks" id="partyner"style={partstyle} onClick={(()=>{history.push("/partners");})} >Partnerships</p>
                </div>
                 <button onClick={(()=>{history.push("/contact")})}>CONTACT US</button>
             </div>
         </div>
         <div style={mobilenavcontent} className="mobilenavrightcontent">
                 <div className="mobileFlex-div">
-                <p className="mobileFlex" style={compstyle}><p>Company</p><FaAngleDown 
-               onClick={handleextramobile}/></p> 
+                <span className="mobileFlex" style={compstyle}><p className="companyNavBar">Company</p><FaAngleDown 
+               onClick={handleextramobile} className="arrowNavBar"/></span> 
                <div style={extramobile}>
                <Link to="/company" className="aboUt" style={aboutstyle}><p>About us</p></Link>
                <Link className="exception" id="prIVacy" to="/about" style={privacystyle}><p>Privacy policy</p></Link>

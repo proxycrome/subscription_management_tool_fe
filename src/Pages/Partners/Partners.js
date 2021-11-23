@@ -18,12 +18,13 @@ function Partners({headercolor,presentcolor}){
     console.log(presentcolor.partcolor)
     return(
         <div className="Partners">
-            <div>
-
             <Navbar partstyle={{color:presentcolor.partcolor}}
             aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
+            <div className="partner-Inner">
+
+            
         <div className="partner-sections">
-            <h1>Learn more about our partners</h1>
+            <h2 className="firstHeader">Learn more about our partners</h2>
         
         <div className="header-image">
      <img src={partner}/>
@@ -35,40 +36,43 @@ function Partners({headercolor,presentcolor}){
                 <div className="design">
                 <LoremIpsum avgWordsPerSentence={2} />
                 </div>
-                <h2>"Partner integrations made easy"</h2>
-                <p><LoremIpsum avgWordsPerSentence={2} /></p>
+                {/* <h2>"Partner integrations made easy"</h2> */}
+               <h4><LoremIpsum className="Lorem" avgWordsPerSentence={1} /></h4>
             </div>
             <div className="partner-right-text">
-            <LoremIpsum p={1} />
-            <LoremIpsum p={1} />
+            <LoremIpsum p={1.5} />
+           
             </div>
         </div>
         <div className="partner-input">
-            <h2>Ready to be our partner?</h2>
+            <p className="ready">Ready to be our partner?</p>
             <div className="partner-input-area">
                 <div className="Partner-areas">
                 <div className="partner-input-class">
                     <label>Full name </label>
-                <input type="text" name="fullName"/>
+                <input type="text" name="fullName" placeholder="Enter full name"/>
                 </div>
                 <div className="partner-input-class">
-                    <label>Full name </label>
-                <input type="text" name="fullName"/>
+                    <label>Contact email*  </label>
+                <input type="text" name="subject" placeholder="you@example.com"/>
                 </div>
                 </div>
                 <div className="Partner-areas">
                 <div className="partner-input-class">
-                    <label>Full name </label>
-                <input type="text" name="fullName"/>
+                    <label>Subject*</label>
+                <input type="text" name="subject" placeholder="Enter subject here"/>
                 </div>
                 <div className="partner-input-class">
-                    <label>Full name </label>
-                <input type="text" name="fullName"/>
+                    <label>Resume* </label>
+                    <div className="chooseFilE">
+                <input type="up" name="fullName" placeholder="Choose file "/>
+                <button>Choosefile.pdf</button>
+                </div>
                 </div>
                 </div>
                 <div className="partner-extra">
-            <p>Tell us a bit about you*</p>
-            <textarea className="textarea"/>
+            <p className="tellUs">Tell us a bit about you*</p>
+            <textarea className="textarea" placeholder="Let us know"/>
             <p>By submitting this form you agree to our terms and conditions and our Privacy Policy</p>
             <button>APPLY NOW</button>
             </div>

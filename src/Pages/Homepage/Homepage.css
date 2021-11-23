@@ -5,6 +5,7 @@
     min-height: 100vh;
     font-family: 'Cabin', sans-serif;
     background-color: #FAFAFE;
+    font-family: DM SANS;
   
     
    
@@ -74,6 +75,10 @@
 .below-img-blog{
     padding: 0 20px;
 }
+.below-img-blog h2{
+   margin-top: 30px;
+   margin-bottom: 20px;
+}
 .Homepage .Homebody .blog-content h2{
     font-size: 28px;
     text-align: left;
@@ -126,11 +131,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 200px;
+   
+    
   
     
     
    
+}
+#pat-div{
+    margin-bottom: 220px;
 }
 .contents-original h2{
 
@@ -155,7 +165,7 @@ margin-bottom: 0px;
 .Innercontent div{
     width: 45%;
    color: #191D6C;
-   margin-top: 80px;
+   /* margin-top: 80px; */
   
   
 }
@@ -288,8 +298,14 @@ margin-bottom: 0px;
 #sep-button{
     background-color: white;
     color: #6200F0;
+    font-weight: 500px;
     border:1px solid #6200F0;
     margin-bottom: 0px;
+   
+}
+#sep-button:hover{
+    border:3px solid #5205C1;
+   
 }
 .buttons #sep-button{
     margin-bottom: 0px;
@@ -304,9 +320,12 @@ margin-bottom: 0px;
     color: white;
     border-radius: 5px;
     border: none;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500px;
     margin-bottom: 0px;
+}
+.buttons button:hover{
+    background-color: #5205C1;
 }
 .work{
     display: flex;
@@ -340,6 +359,10 @@ margin-bottom: 0px;
 .blog{
     margin-top: 80px ;
 }
+.blog-header{
+    margin-bottom: 10px;
+    margin-top: 16px;
+}
 .blog button{
     width: 106px;
     height: 32px;
@@ -347,12 +370,19 @@ margin-bottom: 0px;
     font-size: 14px;
     color: #6200f0;
     font-weight: bold;
+    color: white;
     border: none;
     background-color:#ae8cdd ;
 }
 .love{
     margin-top: 80px ;
     min-height: 250px;
+}
+.love p{
+    font-size: 24px;
+    margin-top: 26px;
+    width: 60%;
+    line-height: 34px;
 }
 .love h2{
     font-size: 44px;
@@ -402,10 +432,16 @@ margin-bottom: 0px;
     height: 100%;
     border-radius: 100%;
 }
+.customer-love-img{
+    width: 100%;
+}
+.customer-love-img img{
+    width: 100%;
+}
 @media screen and (max-width:960px){
-    .butnRegister{
+    /* .butnRegister{
        
-    }
+    } */
     .buttons #sep-button{
        margin-top: 20px;
        margin-bottom: 20px;
@@ -583,14 +619,7 @@ margin-bottom: 0px;
 .Innercontent-original-mobile .laptop-image{
     margin-bottom: 40px;
 }
-.Innercontent-original-mobile button{
-   
-    
-}
-.Bodyinner .Innercontent-original-mobile {
-   
-    
-}
+
 
 
 
