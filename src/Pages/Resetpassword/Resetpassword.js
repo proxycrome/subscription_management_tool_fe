@@ -27,9 +27,9 @@ function Resetpassword({forgotpassword,passwordreset,match}){
     const history=useHistory()
     console.log(forgotpassword)
     let newToken;
-    // let toks=match.params.token
-    const {token} = useParams();
-    let toks = token;
+    let toks=match.params.token
+    // const {token} = useParams();
+    // let toks = token;
 
    
    
