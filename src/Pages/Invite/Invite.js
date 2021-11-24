@@ -21,7 +21,7 @@ return(
                 </div>
                 <form>
                     <div className="inner-section" style={{flexDirection: "column"}}>   
-                        <h4>Tell your friends about us...</h4>
+                        <h4 className="tell">Tell your friends about us...</h4>
                         <label className="phone-label">Enter email or phone number of contact</label>
                         <input type="text" placeholder="Email or Phone number" className="input-fld"/>
                         <label className="message-label">Message</label>

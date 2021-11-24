@@ -27,9 +27,9 @@ function Resetpassword({forgotpassword,passwordreset,match}){
     const history=useHistory()
     console.log(forgotpassword)
     let newToken;
-    // let toks=match.params.token
-    const {token} = useParams();
-    let toks = token;
+    let toks=match.params.token
+    // const {token} = useParams();
+    // let toks = token;
 
    
    
@@ -50,7 +50,7 @@ function Resetpassword({forgotpassword,passwordreset,match}){
  
     // }
     const params={
-             password:password,  
+             newPassword:password,  
              resetLink:toks
       
    }
@@ -73,7 +73,7 @@ if(passval.match(decimal))
 axios.put("https://subscription-management-tool.herokuapp.com/resetpassword",params)
 .then(res=>{
   
-  console.log(res)
+  console.log(res.data)
   //if(((details.email)&&(details.password))!==""){
 //       if(remember===true){
   
