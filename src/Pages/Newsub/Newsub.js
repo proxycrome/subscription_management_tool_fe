@@ -16,8 +16,10 @@ import Netflix from '../../Asset/Netflix.png';
 import Showmax from '../../Asset/Showmax.png';
 import Playstation from '../../Asset/Playstation.png'
 import Upperbox from '../../Components/Upperbox/Upperbox'
+// import MobileDash from '../../Components/MobileDash/MobileDash'
 import axios from 'axios'
 import '../Newsub/Newsub.css'
+import MobileDash from '../../Components/MobileDash/MobileDash'
 
 function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addarray}){
     let packageFile=[]
@@ -218,6 +220,8 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
    
     
 return(
+    <div>
+    <div className="newsub-web">
     <Dashopen dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
         <div className="newsubContainer">
         {/* <div className="upperboX">
@@ -257,7 +261,51 @@ return(
         </div>
          
     </Dashopen>
+    </div>
+    <div className="newsub-mobile">
+        <MobileDash>
 
+        <div className="newsubContainer">
+        {/* <div className="upperboX">
+            <div className="Upperleft">
+                
+               <div className="upperleftCOntent">
+                   <h2>CUSTOMER INFORMATION</h2>
+                   <hr/>
+                   <p>Account ID:20210801</p>
+                   <h3>Customer Name:Judith Newman</h3>
+                   <div className="upperleft-and-icon"><FaEye/><p>08032321123</p></div>
+                   <div className="upperleft-and-icon"><FaEye/><p>Judithnewman@gmail.com</p></div>
+               </div>
+            </div>
+            <div className="Upperright-newsub">
+           
+                <div className="cardImage">
+                   
+                  <div className="cardImage-acc">
+                      <p>Account Id</p>
+                      <p>20210801</p>
+                  </div>
+                    <div className="cardImage-balance">
+                        <p>E-wallet Balance</p>
+                        <p>NGN 134,457.56</p>
+                    </div>
+                </div>
+                <button>FUND WALLET</button>
+            </div>
+        </div> */}
+        <Upperbox/>
+        
+        {/* {`${props.match.url}/15`} */}
+    <Belowbox icon={image.val} firstbutn={"ADD TO LIST"} noclick={(()=>{alert("none")})}
+     firstclick={Addlist} product={packageFiles} secondbutn={"SUBSCRIBE"} secondclick={subscribe}/>
+
+        </div>
+         
+        </MobileDash>
+
+    </div>
+    </div>
 )
 
 

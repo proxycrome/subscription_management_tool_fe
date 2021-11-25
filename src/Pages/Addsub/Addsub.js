@@ -14,6 +14,7 @@ import Netflix from '../../Asset/Netflix.png';
 import Showmax from '../../Asset/Showmax.png';
 import Playstation from '../../Asset/Playstation.png'
 import { editarray } from '../../redux/flex/flex.actions'
+import MobileDash from '../../Components/MobileDash/MobileDash'
 import '../Addsub/Addsub.css'
 import { getDefaultNormalizer } from '@testing-library/dom';
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom'
@@ -209,6 +210,8 @@ function Addsub({presentcolor,headercolor,match,subscription,editarray}){
 
      
 return(
+    <div>
+        <div className="add-sub-web">
     <Dashopen dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
         <div>
             <div className="addsubb">
@@ -219,7 +222,21 @@ return(
         </div>
          
     </Dashopen>
+    </div>
+    <div className="add-sub-mobile">
+        <MobileDash>
+        <div>
+            <div className="addsubb">
+                <Upperbox/>
+                <Belowsecond icon={image.val} firstbutn={"DISCARD"} secondbutn={"SUBSCRIBE"} choice={""} cycle={""}
+                firstclick={history.goBack} product={packageFiles} secondclick={sub}/>
+            </div>
+        </div>
+         
 
+        </MobileDash>
+    </div>
+    </div>
 )
 
 

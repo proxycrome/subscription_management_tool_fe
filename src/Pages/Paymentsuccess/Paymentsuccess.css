@@ -1,8 +1,8 @@
 .paymentsuccess{
     background-color: #fbfbff;
     height: 100vh;
-    padding: 160px;
-    padding: 100px;
+    /* padding: 160px;
+    padding: 100px; */
     /* min-height: 1024px; */
 }
 .paymentsuccess h3{
@@ -22,6 +22,8 @@
     background-color: white;
     /* min-height: 721px; */
     display: flex;
+    width: 80%;
+    height: 80%;
     height: 100%;
     flex-direction: column;
     justify-content: center;

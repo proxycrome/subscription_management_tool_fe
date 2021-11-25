@@ -32,7 +32,7 @@ function Upperbox({customer,presentcolor}){
                   </div>
                     <div className="cardImage-balance">
                         <p className="medium-weight-dashboard">E-wallet Balance</p>
-                        <p className="money-dashboard-upp">NGN 134,457.56</p>
+                        <p className="money-dashboard-upp">NGN 0.00</p>
                     </div>
                 </div>
             </div>
