@@ -400,7 +400,7 @@ console.log(contentd)
                            
                         <div className="inner-body-dashboard">
                         <div className="second-line-dashboard">
-                            <h2>WELCOME TO FLEX</h2>
+                            <h2 className="mobile-hash">WELCOME TO FLEX</h2>
                             <input type="search" placeholder="Search for products"
                             onChange={((e)=>{setSearchDatar(e.target.value)})}/>
                         </div>
@@ -631,12 +631,14 @@ console.log(contentd)
                         </div>
                         </DashFrame>
                         </div>
+                       
                         <div className="mobile-dashboard-All">
-                            <MobileDash/>
+                        <MobileDash dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
+                           
                 <div className="mobile-dashboard">
                       
                             <h2>WELCOME TO FLEX</h2>
-                            <input type="search" placeholder="Search"/>
+                            <input type="search" placeholder="Search for products"/>
                             <div>
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
@@ -649,15 +651,210 @@ console.log(contentd)
                                     <hr/>
                                     </span>
                                    
-                                    <p>Products</p>
+                                    <p className="p-Mobiles">Products</p>
                                 </div>
                                 <div className="mobilecard-in-Dashboard"><Mobilecard/></div>
                                
                             </div>
                             <div className="mobile-graph-dashboard">
-                                graph
+                            <div className="fourth-line-left-content">
+                                    <div><p className="subOverview">Subscription overview</p></div>
+                                    <div >
+                                        <button className="first-graph-button">MONTHLY</button>
+                                        <button className="second-graph-button">YEARLY</button>
+                                    </div>
+                                    <div className="linechart"><LineChart className="linestyle"/></div>
+                                    </div>
                             </div>
-                            <div className="mobile-second-inner">
+                            </div>
+                            <div className="inner-half-dashboard">
+
+<p className="recent-sub-dashboard">Recent Subscriptions</p>
+<div className="inner-half-header">
+  
+   
+   
+        <span>Products</span>
+        <span>Product category</span>
+        <span>Expiry Date</span>
+        <span>Status</span>
+        <span></span>
+       
+    </div>
+   
+    {/* {product=subarray.map((val,index)=>{
+pname=val.product.split(" ")[0]
+
+console.log(pname)
+console.log(arr)
+cat=val.category
+descr=val.product
+stat=val.subscriptionStatus
+expire=val.dateExpired
+return <div  className="catresult">
+<tr className="Product-and-Pname" style={pname=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+//   icon={ switch(val.product.split(" ")[0]){ 
+//       case 'GOTv':
+//           return{
+
+//           }
+
+
+//       }}/><p>{pname}</p></tr>
+icon={val.product.split(" ")[0]=="GOTv"? `${Gotiv }`: `${Dstiv}`}/><p>{pname}</p></tr> 
+<tr><p style={{color:"rgba(51,51,51,50%"}}>{cat}</p></tr>
+<tr>{expire}</tr>
+<tr style={stat=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{stat}</tr>
+<tr className="editprof" 
+><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()} } style={pname=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+<div className="binDiv" style={pname=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+</tr>
+
+</div>
+
+})} */}
+
+{/* {arr===null?
+(<Loader
+type="Oval" width={20} color="#000000"/>):(contentid)
+} */}
+
+
+
+{/* 
+{content=arr.map((val,index)=>{
+console.log(userDisplay)
+cats=val.subCategory
+catg=val.category
+itemAmt=val.amount
+itemImg=val.productImg
+itemExp=val.dateExpired
+itemStatus=val.subscriptionStatus
+console.log(cats +"" + catg+""+itemImg)
+let colours={} 
+if(itemStatus=="Active"){
+colours={coloritem:"#17AD37"}
+}
+if(itemStatus=="Inactive"){
+colours={coloritem:"rgba(3,6,64,30%"}
+}
+if(itemStatus=="Expired"){
+setItemColor({color:"#E40C0C"})
+}
+
+return <div  className="catresult" key={index}>
+<tr className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+//   icon={ switch(val.product.split(" ")[0]){ 
+//       case 'GOTv':
+//           return{
+
+//           }
+
+
+//       }}/><p>{pname}</p></tr>
+icon={itemImg}/><p>{cats}</p></tr> 
+<tr><p style={{color:"rgba(51,51,51,50%"}}>{catg}</p></tr>
+<tr>{val.dateExpired}</tr>
+<tr style={{color:colours.coloritem}} >{itemStatus}</tr>
+<tr className="editprof" 
+// ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+><p onClick={()=>{if(itemStatus=="Inactive"){Inactive(val,index)}
+if(itemStatus=="Active") { Active(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+
+<div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+</tr>
+
+</div>
+
+})
+
+}         */}
+
+
+
+
+{arr.filter((val,index)=>
+{   
+console.log(val)
+if(searchDatar===""){
+console.log(val)
+return val}
+else if((((val.subCategory).toUpperCase())).includes((searchDatar).toUpperCase())){
+
+return val
+}
+
+}
+)
+
+
+.map((val,index)=>{
+cats=val.subCategory
+catg=val.category
+itemAmt=val.amount
+itemImg=val.productImg
+itemExp=val.dateExpired
+itemStatus=val.subscriptionStatus
+let colours={}
+console.log(cats +"" + catg+""+itemImg)
+if(itemStatus=="Active"){
+colours={coloritem:"#17AD37"}
+}
+if(itemStatus=="Inactive"){
+colours={coloritem:"rgba(3,6,64,30%"}
+}
+if(itemStatus=="Expired"){
+colours={coloritem:"#E40C0C"}
+}
+
+return <div  className="catresult" key={index}>
+<span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
+className="excIcon"icon={itemImg}/><p>{cats}</p></span> 
+
+
+
+<span>{val.category}</span>
+{/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
+<span>{val.dateExpired}</span>
+<span style={{color:colours.coloritem}}  >{itemStatus}</span>
+{/* <tr>{val.billingCycle}</tr> */}
+
+<span className="editprof" 
+// ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactive(val,index)}
+if(val.subscriptionStatus=="Active") { Active(val,index) }
+if(val.subscriptionStatus=="Expired") { Expired(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+
+<div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+</span>
+
+</div>
+
+})
+}
+
+{/* //content */}
+    
+    
+    {/* <div  className="catresult">
+        <tr className="Product-and-Pname" style={pname=="" ? {display:"none"}:{display:"flex"}}><Smallestbox icon={image.val}/><p>{pname}</p></tr>
+    <tr><p style={{color:"rgba(51,51,51,50%"}}>{cat}</p></tr>
+    <tr>{expire}</tr>
+    <tr style={stat=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{stat}</tr>
+    <tr className="editprof" 
+    ><p onClick={(()=>{stat=="Inactive"?Inactive():Active()}) } style={pname=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+    <div className="binDiv" style={pname=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+    </tr>
+    
+   </div> */}
+</div>
+
+
+
+
+
+
+                            {/* <div className="mobile-second-inner">
                                 <h3>Recent subscriptions</h3>
                                 <div className="tableData">
                                     <span className="mobile-list-table">Products</span>
@@ -667,11 +864,13 @@ console.log(contentd)
                                     <span></span>
                                     
                                 </div>
-                            </div>
+                            </div> */}
                             
+                           
                             </div>
-                            </div>
+                            </MobileDash>
                         </div>
+                       
                         </div>
                         
     )

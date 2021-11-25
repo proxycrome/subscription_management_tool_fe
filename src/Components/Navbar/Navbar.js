@@ -65,7 +65,7 @@ return(
                </span>
               <div id="ext" style={extra}>
               <p onClick={(()=>(history.push("/company")))} style={aboutstyle}>About us</p>
-               <p style={privacystyle} onClick={(()=>(history.push("/privacystyle")))}>Privacy policy</p>
+               <p style={privacystyle} onClick={(()=>(history.push("/about")))}>Privacy policy</p>
                {/* <Link to="/about" style={privacystyle}></Link> */}
                </div>
                </span>

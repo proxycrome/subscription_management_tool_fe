@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
-import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook,FaUserAlt} from "react-icons/fa"; 
+import {FaUserAlt} from "react-icons/fa"; 
 import { useHistory, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {useEffect} from 'react'

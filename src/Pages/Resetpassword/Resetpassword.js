@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import {signindetails,signin} from '../../redux/flex/flex.actions'
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
+import flexpng from '../../Asset/flexpng.png'
 import { useState,useEffect } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'
@@ -147,7 +148,8 @@ else{
 }
 }
     return(
-      
+      <div className="reset-pass-all">
+          <div className="web-reset-pass">
             <Resetpassframe>
                   <div className="passwordreset">
            <h1>RESET PASSWORD</h1>
@@ -191,6 +193,60 @@ else{
             </div>
             <p className="remember-passreset-pass">Remember your password <Link to="/signin" className="link-rem-passreset">Sign in</Link></p>
             </Resetpassframe>
+            </div>
+<div className="mobilesignin">
+<div className="mobilesigninHeader">
+<img src={flexpng} style= {{width: "78px",
+height: "32px"}}/>
+
+<h3>Stay connected always</h3>
+</div>
+<div className="signinmobile-inner">
+<div className="passwordreset">
+           <h1>RESET PASSWORD</h1>
+          
+         
+           <div className="input-and-label-forgot">
+           <label>New Password</label>
+           {/* <div className="forgotpass-input-div">
+           <input type="email" placeholder="Password"/>
+           </div> */}
+            <div className="password-wrapper-reset" style={PasswordWrap}>
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
+            onChange={(e)=>{passwordreset({[e.target.name]:e.target.value});
+            ;setPassval(e.target.value);setPassword(e.target.value);setPasswordCharacter({display:"none"}); ;setPasswordWrap({marginBottom:"24px"})}}
+            onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})}
+            />
+            
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+            <div style={passwordCharacter} className="password-charac">
+            <div className="infoDivs"><Info/></div><p className="passwordcond">Password should not be less than 8 characters and must include caps,numbers and 
+            special characters</p>
+            </div>
+               </div>
+               <div className="input-and-label-forgot">
+                   <label>Confirm Password</label>
+                   {/* <div className="forgotpass-input-div">
+           <input type="email" placeholder="Password"/>
+           </div> */}
+            <div className="password-wrapper-reset" id="secondpass-reset">
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={passwordsecond}
+            onChange={(e)=>{setPasswordsecond(e.target.value)}}/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+               </div>
+               <button onClick={submit}>{loading ? (<p style={logtext}>SUBMIT</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
+           
+            </div>
+            <p className="remember-passreset-pass">Remember your password <Link to="/signin" className="link-rem-passreset">Sign in</Link></p>
+          
+</div>
+</div>
+</div>
        
     )
 

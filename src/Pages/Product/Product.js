@@ -21,6 +21,7 @@ import Productivity from '../../Asset/Productivity icon.png';
 import InsuranceLogo from '../../Asset/Insurance icon.png';
 import Ikedc from '../../Asset/Ikedc.png';
 import Gotv from '../../Asset/GOTV.png';
+import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
 import flexpng from '../../Asset/flexpng.png'
 import '../Product/Product.css'
 
@@ -56,7 +57,7 @@ return(
                             <div className="account-line-product"></div>
                             </div>
                             </div>
-                            <button onClick={(()=>{history.push("/productcategory")})} className="addsub-product">ADD SUBSCRIPTION</button>
+                            <button onClick={(()=>{history.push("/productcategory")})} className="addsub-product"><PlusLogo/><p>ADD SUBSCRIPTION</p></button>
                             </div>
                           
                             <div className="fourth-line-product-categ">
@@ -103,15 +104,15 @@ return(
         <div className="firstareaproductmobilescreen">
            <div className="overview-and-button-Mobile">
               <h3>Overview</h3>
-              <button>ADD SUBSCRIPTION</button></div>
+              <button onClick={(()=>{history.push("/productcategory")})}>ADD SUBSCRIPTION</button></div>
            <div className="acc-and-product-Mobile">
-              <p>Account summary</p>
+              <p className="acc-mobile-summ" onClick={(()=>{history.push("/Dashboard")})}>Account summary</p>
               
               <p className="product-line-product-mobile">Products</p>
            </div>
       
         <div className="fourth-line-product-categ">
-                               <h2>PRODUCT CATEGORY</h2>
+                               <h2 className="product-catg-mob">PRODUCT CATEGORY</h2>
                                <div className="productCat">
                                <Box icon={Entertainment} name="Entertainment"/>
                                   <Box icon={Utilities} name="Utilities"/>

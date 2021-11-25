@@ -95,6 +95,7 @@ margin-left: 70px;
 }
 .below-butn button{
     margin-right: 20px;
+    /* margin-left: 15px; */
     height: 56px;
     width: 215px;
     font-size: 16px;
@@ -111,6 +112,7 @@ margin-left: 70px;
     border:1px solid #030640;
     border-radius: 4px;
     background-color:#f2f2ff;
+   border: 1px solid rgba(3,6,63,20%);
 }
 .select-placeholder-below{
     background-color:#f2f2ff;
@@ -163,6 +165,7 @@ background-color: white;
     opacity: 0;
     width: 0;
     height: 0;
+    background-color: white;
   }
   
   /* The slider */
@@ -174,6 +177,7 @@ background-color: white;
     right: 0;
     bottom: 0;
     background-color: #ccc;
+    background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -186,12 +190,15 @@ background-color: white;
     left: 2px;
     bottom: 1.5px;
     background-color: white;
-    /* -webkit-transition: .4s; */
-    /* transition: .4s; */
+   
+    -webkit-transition: .4s;
+    transition: .4s;
   }
   
   input:checked + .slider {
     background-color: #333;
+    background-color: #6200f0;
+    
   }
   
   input:focus + .slider {
@@ -199,9 +206,9 @@ background-color: white;
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(8px);
-    -ms-transform: translateX(8px);
-    transform: translateX(8px);
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
   }
   
   /* Rounded sliders */
@@ -211,4 +218,32 @@ background-color: white;
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  @media screen and (max-width:960px) {
+    .selected-div-below{
+        width: 150px;
+        height: 40px;
+    }
+    .belowbox-Header{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .belowbox-inner{
+       margin-left: 0;
+       
+       flex-direction: column;
+       align-items: center;
+       padding-left: 0;
+       padding-right: 0;
+    }
+    .belowbox-inner-all{
+      
+        margin: 0px;
+       
+    }
+    .below-butn button{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
   }

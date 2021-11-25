@@ -90,3 +90,23 @@
   align-self: start;
     
 }
+@media screen and (max-width:960px) {
+    .web-view-paycard-div{
+        display: none;
+    }
+    .payment-option-cad-mobile button{
+        width: 100%;
+        border: none;
+    }
+   
+    #cancel-Except{
+        background-color: white;
+        border: 1px solid #6200f0;
+        color: black;
+    }
+    .cance-proceed-mobile button{
+        background-color: #6200f0;
+        color: white;
+    }
+    
+}

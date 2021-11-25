@@ -6,7 +6,7 @@
    padding-right: 100px;
    margin-top: 60px;
    min-height: 300px;
-   margin-bottom: 40px;
+   margin-bottom: 100px;
    
  
    
@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
   
-  
+  margin-top: 0px;
     position: relative;
     overflow: hidden;
    
@@ -73,8 +73,8 @@
     padding-left: 100px;
     padding-right: 100px;
     justify-content: space-between;
-    align-items:center;
-   
+    align-items:flex-start;
+  
    
     
     
@@ -107,7 +107,7 @@
     width: 50%;
 }
 .Partners{
-    font-family: 'Cabin', sans-serif;
+    font-family: DM SANS;
     background-color: #FAFAFE;
    
 }
@@ -118,6 +118,7 @@
     width: 50%;
     font-size: 18px;
     color: #333333;
+    margin-top: 35px;
 }
 .partner-input{
     display: flex;
@@ -154,6 +155,7 @@
     color: white;
     border: none;
     height: 56px;
+    border-radius: 6px;
     margin-top: 27px;
     font-size: 18px;
 }
@@ -163,11 +165,13 @@
     line-height: 157%;
     font-weight: bold;
     text-align: left;
+    width: 40%;
 }
 .partners-text h4{
     font-size: 37px;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 50px;
+   
     color: #030640;
     
 }
@@ -175,7 +179,8 @@
     font-size: 18px;
     color: #6200F0;
     line-height: 20%;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+   
 }
 .ready{
     font-size: 37px;
@@ -229,6 +234,7 @@
     font-weight: bold;
     color: #191d6c;
     font-size: 16px;
+    font-family: DM SANS;
 }
 .chooseFilE{
     display: flex;
