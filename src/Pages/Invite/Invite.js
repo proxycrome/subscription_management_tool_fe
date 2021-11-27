@@ -30,7 +30,7 @@ return(
                         </div>
                         <button type="submit" className="invite-button">SEND INVITE</button>
                         <label className="copy-label">Or Copy Link</label>
-                        <input type="text" placeholder="https://by.ly?exgO9fdjhjgh" className="input-fld"/>
+                        <input type="text" placeholder="https://bit.ly?exgO9fdjhjgh" className="input-fld"/>
                     </div>
                 </form>
             </div>
