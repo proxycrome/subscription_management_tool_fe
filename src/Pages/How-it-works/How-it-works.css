@@ -48,7 +48,8 @@
     
 }
 .works-lower-inner span{
-    border: 1px solid black;
+    border: none;
+    box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
     max-height: 263px;
     min-height: 263px;
     width: 180px;
@@ -90,6 +91,8 @@
     justify-content: center;
    background-color: white;
     border-radius: 6px;
+    padding-left: 28px;
+    word-break: break-all;
     
 }
 .works-lower-inner span h2{
@@ -224,8 +227,8 @@
     width: 100%;
 }
 .funct-Image-div{
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 30px;
 }
 .funct-Image-div img{

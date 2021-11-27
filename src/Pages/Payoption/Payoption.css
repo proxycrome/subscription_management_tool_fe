@@ -48,6 +48,7 @@
     margin-left: 146.6px;
     /* margin-bottom: 50.6px; */
 }
+
 .payment-option-icon{
     margin-right: 16px;
 }
@@ -94,9 +95,182 @@
     border: none;
     color: white;
 }
+.pay-mobile-views{
+    display: none;
+}
 .paymentoption .cancel-payment{
     margin-right: 40px;
     color: #6200f0;
     background-color: white;
     border: 1px solid #6200f0;
+}
+
+@media screen and (max-width:960px){
+    .recTangle-div{
+        width: 215px;
+        height: 187px;
+        margin: 55px auto;
+        align-self: center;
+        margin-bottom: 57px;
+    }
+    .recTangle-div img{
+        width: 100%;
+        
+    }
+    .payment-option-cad-mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 68px;
+    }
+    .payment-option-cad-mobile button{
+        margin-bottom: 30px;
+        height: 56px;
+    }
+    .cance-proceed-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .cance-proceed-mobile button{
+        width: 118px;
+        height: 48px;
+        margin-right: 16px;
+        border-radius: 6px;
+    }
+    .mobile-option-payMent{
+        margin-top: 30px;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-bottom: 30px;
+    }
+    .heading-payment{
+        text-align: left;
+        padding-left: 20px;
+        font-size: 14px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #030640;
+        border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: white;
+    }
+    .parag-option{
+        font-size: 14px;
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: rgba(51,51,51,0.7);
+     
+    }
+    .payment-inner-content p{
+        font-size: 14px;
+        width: 100%;
+       
+        margin-bottom: 50px;
+    }
+    .web-pay-option{
+        display: none;
+    }
+    .pay-mobile-views{
+        display: inline;
+        background-color: aqua;
+       
+        padding: 0;
+    }
+    .total-pay-option{
+        background-color: blue;
+    }
+    .rect-options{
+        width: 100%;
+    }
+    .pay-mobile-view{
+       padding-left: 16px;
+       padding-right: 16px;
+    }
+    .payment-inner-content{
+       padding-top: 20px;
+      
+    }
+    .rect-divs{
+        width: 60%;
+    }
+    .header-payment{
+        margin-top: 30px;
+       height: 50px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+       
+    }
+    .image-and-option-payments{
+        width: 215px;
+        height: 187px;
+        margin-top: 50px;
+    }
+    .second-cancel-button{
+        background-color: white;
+        border: 1px solid #6200f0;
+        color: #6200f0;
+    }
+    .web-pay-option{
+        display: none;
+    }
+    .image-and-option-payment{
+        flex-direction: column;
+    }
+    .payment-option-buttons button{
+        width: 250px;
+       
+        margin-left: 0;
+      margin-bottom: 30px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-size: 14px;
+    }
+    .payment-option-buttons{
+        min-width: 100%;
+        max-width: 100%;
+       
+       margin-top: 50px;
+        margin-left: 0;
+    }
+    .payment-inner-content{
+      
+        padding-left: 20px;
+        
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+    }
+    .header-payment h3{
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    .image-and-option-payment{
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+        margin: 0 auto;
+        min-width: 100%;
+        max-width: 100%;
+     
+    }
+    .payment-select-buttons{
+        
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+    }
+     .payment-inner-content .payment-select-buttons button{
+        width: 118px;
+        height: 40px;
+        font-size: 12px;
+        margin-right: 10px;
+       
+    }
+
+
 }

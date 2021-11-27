@@ -35,13 +35,13 @@ axios.defaults.headers.common['Authorization'] = token;
 
 //   let token = JSON.parse(localStorage.getItem('bearertoken'));
 //   axios.defaults.headers.common['Authorization'] = token;
-
+let userDisplay=[]
 axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
 .then(res=>{
 console.log(res.data.data)
 itemArray=res.data.data
 console.log(itemArray)
-
+userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
 newval=itemArray.map((val,index)=>{
   grapharr.push(val)
   if(val.dateSubscribed.split("-")[1]==11){
@@ -81,7 +81,7 @@ localStorage.setItem('newsoct', JSON.stringify(newsoct))
 let newerval=JSON.parse(localStorage.getItem('newval'));
 let neweroct=JSON.parse(localStorage.getItem('newsoct'));
 console.log(neweroct)
-console.log(newval)
+console.log(newerval)
 //data
 const data = {
   
@@ -95,8 +95,11 @@ const data = {
       fill: false,
     //   backgroundColor: 'rgb(255, 99, 132)',
     backgroundColor: '#A6CEE3',
+    
     borderColor: '#A6CEE3',
-    width:"1000px"
+    width:"1000px",
+    
+    // height:"100%"
     //   borderColor: 'rgba(255, 99, 132, 0.2)',
     },
   ],
@@ -125,7 +128,7 @@ const LineChart = () => (
         </a>
       </div> */}
     </div>
-    <Line data={data} options={options}  />
+    <Line data={data} options={options} style={{minHeight:"150px",maxHeight:"150px"} }/>
   
   
   </>

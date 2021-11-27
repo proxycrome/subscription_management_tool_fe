@@ -16,7 +16,7 @@ let itemArray=[]
 //const PieChart = () =>{
   //const[pieArr,setPieArr]=useState([])
   
-  
+  let userDisplay=[]
   let token = JSON.parse(localStorage.getItem('bearertoken'));
         axios.defaults.headers.common['Authorization'] = token; 
   axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
@@ -24,8 +24,9 @@ let itemArray=[]
 console.log(res.data.data)
 itemArray=res.data.data
 console.log(itemArray)
-
-newval=itemArray.map((val,index)=>{
+userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+newval=userDisplay.map((val,index)=>{
+  console.log(val)
   if(val.subscriptionStatus!=="Inactive"){
 newArr.push(val.subCategory)
 //setPieArr(newArr)
@@ -34,9 +35,10 @@ console.log(newArr)
 return newArr
 }
 })
-newamt=itemArray.map((val,index)=>{
+newamt=userDisplay.map((val,index)=>{
   if(val.subscriptionStatus!=="Inactive"){
   amtArr.push(val.amount)
+  console.log(val.amount)
   //setPieArr(newArr)
   localStorage.setItem('amtArr', JSON.stringify(amtArr))
   console.log(amtArr)
@@ -50,10 +52,11 @@ console.log(newval)
 )
 
 console.log()
-console.log(newval)
-let pieVal
-let pieamt
+console.log(amtArr)
+let pieVal;
+let pieamt;
 let pieamtData=JSON.parse(localStorage.getItem('amtArr'));
+console.log(pieamtData)
 let pieData=JSON.parse(localStorage.getItem('piearr'));
 console.log(pieData)
 if(pieData===null){
@@ -65,6 +68,7 @@ if(pieamtData==null){
   pieamt=[1]
   }
   else{pieamt=pieamtData
+    console.log(pieamt)
   }
 
 const data = {
@@ -109,8 +113,8 @@ const data = {
   <>
   
     <div className='header'>
-      <h1 className='title' style={{textAlign:"left",marginLeft:"30px",marginBottom:"20px"}}>Pie Chart</h1>
-      <span className="subscriptionPie" style={{display:"flex",marginLeft:"30px"}}> <p style={{marginRight:"30px"}}>Monthly Subscription</p> <Calendar /><p className="calendar">{month}</p></span>
+      {/* <h1 className='title' style={{textAlign:"left",marginLeft:"30px",marginBottom:"20px"}}>Pie Chart</h1>
+      <span className="subscriptionPie" style={{display:"flex",marginLeft:"30px"}}> <p style={{marginRight:"30px"}}>Monthly Subscription</p> <Calendar /><p className="calendar">{month}</p></span> */}
       {/* <div className='links'>
         <a
           className='btn btn-gh'

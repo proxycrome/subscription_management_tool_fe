@@ -6,3 +6,18 @@
     padding-right: 30px;
     margin-bottom: 30px;
 }
+.add-sub-mobile{
+    display: none;
+}
+@media screen and (max-width:960px) {
+    .add-sub-web{
+        display: none;
+    }.add-sub-mobile{
+        display: flex;
+    }
+    .addsubb{
+        
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

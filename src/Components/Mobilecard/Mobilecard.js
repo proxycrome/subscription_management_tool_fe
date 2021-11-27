@@ -13,14 +13,14 @@ function Mobilecard(){
         <div className="mobilecard-container">
                 <div className="second-inner-mobilecard">
                 <div className="inner-second-cardmobile">
-                    <p>Account ID</p>
-                    <p>20210801 </p>
+                    <p className="smallfont">Account ID</p>
+                    <p className="bigfont">20210801 </p>
                 </div>
                 <button>FUND WALLET</button>
                 </div>
                 <div className="third-inner-mobilecard">
-                    <p>E-wallet Balance</p>
-                    <p>NGN 134,457.56    </p>
+                    <p className="smallfont">E-wallet Balance</p>
+                    <p className="bigfont">NGN 134,457.56    </p>
                     </div>
                 </div>
                
