@@ -7,12 +7,25 @@
     /* min-height: 60vh; */
   align-items: flex-start;
     margin: 50px auto;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
+    
   
 }
 .contact{
-    font-family: 'Cabin', sans-serif;
+    background-color: #FAFAFE;
+   margin-top: 0;
+   font-family: 'DM Sans', sans-serif;
 }
+.upper-contain-contact{
+    background-color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+   padding-top: 50px;
+   padding-bottom: 0;
+   margin-bottom: 200px;
+   
+}
+
 .content-inner-left h3{
     margin-top: 30px;
     margin-bottom: 20px;
@@ -34,6 +47,7 @@
     margin: 10px auto;
     color: #030640;
     font-size: 18px;
+    line-height: 30px;
 }
 
 .content-inner-left{
@@ -86,8 +100,11 @@
  
    
 }
+
 .content-inner-right button{
     align-self: flex-start;
+    border-radius: 6px;
+  
 }
 .content-inner-right input:hover{
     border: 1px solid #6200f0;
@@ -121,9 +138,11 @@
 }
 .input-label label{
     margin-bottom: 10px;
+    font-weight: bold;
 }
 .input-label input{
     width: 100%;
+    font-size: 16px;
     
 }
 .input-content-right{
@@ -134,9 +153,10 @@
 }
 .contACTContainer{
     min-height: 100vh;
-   
+   background-color: #FAFAFE;
     display: flex;
     flex-direction: column;
+   
 }
 .contACTContainer button{
     margin-top: 20px;
@@ -171,6 +191,7 @@
     }
     .header-text{
         width: 100%;
+        line-height: 25px;
         
      
     }
@@ -194,8 +215,11 @@
         max-width: 100%;
         border: none;
         border-radius: 0px;
+        min-height: 400px;
+        height: 50%;
        
     }
+   
     .contact-icons{
         align-self: center;
     }
@@ -213,7 +237,70 @@
     }
     .content-inner-right button{
         margin-left: 20px;
+        margin-bottom: 0px;
     }
+    .upper-contain-contact{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 30px;
+        padding-bottom: 0;
+     margin-bottom: 100px;
+       padding-bottom: 0px;
+       
+      
+        
+    }
+    .contactHEader{
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 24px;
+        margin-top: 0;
+    }
+    .header-text{
+      
+       padding-left: 16px;
+        padding-right: 16px;
+        font-size: 16px;
+        margin-bottom: 0;
+
+    }
+    .content-inner{
+        margin-top: 30px;
+        
+    }
+    .content-inner-contact h3{
+        font-size: 24px;
+    }
+    .fillUp{
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .content-inner-left-phone{
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .content-inner-right{
+        margin-top: 30px;
+        margin-bottom:0px;
+       
+        padding-bottom: 0;
+    }
+    .mobile-contact-text{
+        margin-bottom: 20px;
+    }
+    .input-label input{
+        font-size: 14px;
+    }
+    .input-label label{
+        font-size: 16px;
+    }
+    .content-inner-right button{
+        margin-left: 0px;
+      width: 85%;
+      align-self: center;
+    }
+    
+    
 
     
 }

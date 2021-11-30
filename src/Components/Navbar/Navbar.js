@@ -10,7 +10,7 @@ import { headercolor } from '../../redux/flex/flex.actions'
 import { connect } from 'react-redux'
 
 
-function Navbar({headercolor,presentcolor,partstyle,blogstyle,howworks,privacystyle,compstyle,aboutstyle}){
+function Navbar({headercolor,presentcolor,partstyle,blogstyle,howlinestyle,partnerlinestyle,bloglinestyle,howworks,privacystyle,linestyle,compstyle,aboutstyle}){
     console.log(presentcolor.howcolor)
     const[mobilenavcontent, setMobilenavcontent]=useState({display:"none"})
     const[fastyle,setFastyle ]=useState({display:"none"})
@@ -31,6 +31,7 @@ function Navbar({headercolor,presentcolor,partstyle,blogstyle,howworks,privacyst
     else{  setExtra({display:"none"})}
 
    }
+   
    const handleextramobile=()=>{
 
     if(extramobile.display==="none"){
@@ -57,24 +58,40 @@ return(
             </div>
             
             <div className="NavRightContent">
+            
+
                 
               
                <span className="dropDown">
+                   <span>
                <span id="companyLink" className="HwOrks"  style={compstyle}><p>Company</p><FaAngleDown 
-               onClick={handleextra}/> 
+               onClick={ handleextra  }/> 
+                
                </span>
+               <div style={linestyle}></div>
+               </span>
+              
               <div id="ext" style={extra}>
               <p onClick={(()=>(history.push("/company")))} style={aboutstyle}>About us</p>
                <p style={privacystyle} onClick={(()=>(history.push("/about")))}>Privacy policy</p>
                {/* <Link to="/about" style={privacystyle}></Link> */}
                </div>
+               
                </span>
                
-             
+             <div>
                <p className="HwOrks"  style={howworks} onHover={{color:"#6200f0"}}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
+               <div style={howlinestyle}></div>
+               </div>
+               <div>
                <p className="HwOrks" style={blogstyle} onClick={(()=>{history.push("/blog");})} >Blog</p>
+               <div style={bloglinestyle}></div>
+               </div>
                <div className="testing">
+                   <div>
                <p className="HwOrks" id="partyner"style={partstyle} onClick={(()=>{history.push("/partners");})} >Partnerships</p>
+               <div style={partnerlinestyle}></div>
+               </div>
                </div>
                 <button onClick={(()=>{history.push("/contact")})}>CONTACT US</button>
             </div>

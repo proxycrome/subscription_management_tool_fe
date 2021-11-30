@@ -241,9 +241,9 @@
     width: 100%;
     color: #503f3f;
     color: #c4c4c4;
-    
+    padding: 0;
     border: none;
-   
+  
     
    
    
@@ -342,7 +342,7 @@ max-width: 100%;
     align-items: flex-start;
     width: 410px;
     
-    
+   
     
   
    
@@ -390,14 +390,20 @@ max-width: 100%;
     justify-content: center;
     color: white;
     background-color: #6200f0;
+   
     
    
 }
+
 .signup-create:hover{
+    background-color: #5205C1;
+  
+}
+/* .signup-create:hover{
     background-color: #191D6C;
     color: white;
     background-color: #6002EB;
-}
+} */
 .signup-facebook{
     width: 50%;
    height: 50px;
@@ -658,20 +664,61 @@ margin-right: 15px;
    
    
 }
+.cancel-confirm-signup{
+    align-self: flex-end;
+    cursor: pointer;
+    /* margin-bottom: 50px; */
+}
+.check-text p{
+    margin-bottom: 80px;
+    font-weight: 500px;
+   
+}
 .check-text{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 450px;
     height: 200px;
+    padding: 20px;
     font-size: 20px;
     background-color: white;
+    z-index: 100000000000;
     border: none;
+    box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+    color: #333;
     
     opacity: 100%;
     border-radius: 10px;
    position: absolute;
    box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+}
+.check-issue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+    height: 200px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: white;
+    font-weight: 500px;
+    border: none;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+   color: #333;
+    /* background-color: #c4c4c4; */
+    z-index: 100000000000;
+    border: none;
+    align-self: flex-start;
+   margin-top: 40px;
+    border-radius: 10px;
+   position: absolute;
+   box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
+}
+.check-issue p{
+    margin-bottom: 80px;
 }
 .cover-check{
     display: flex;
@@ -683,10 +730,16 @@ margin-right: 15px;
     /* min-height: 100vh;
    max-height: 120vh; */
     z-index: 10000000;
-    min-height: 120vh;
+    min-height: 100%;
+    min-height: 100%;
     margin: 0px;
-   
     position: absolute;
+   margin-left: 0;
+    position: absolute;
+}
+.signup-total{
+    position: relative;
+    min-height: 100vh;
 }
 
  .signup-remember-me input{
@@ -777,6 +830,31 @@ margin-right: 15px;
      
 
 @media screen and (max-width:800px) {
+    .check-text{
+        width: 85%;
+        height: 150px;
+        margin-top: 0;
+        align-self: center;
+    }
+    #selectlist{
+       
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 14px;
+        
+        
+    }
+    .check-issue{
+        max-width: 85%;
+        margin: 20px auto;
+        align-self: center;
+        height: 150px;
+    }
+    .check-issue p{
+        margin-bottom: 50px;
+    }
+    
     .inner-signup{
         display: flex;
         flex-direction: column;
@@ -798,7 +876,11 @@ margin-right: 15px;
     }
     .mobile-signup-inner h3{
         color: #6200f0;
+        margin-bottom: 30px;
+        font-size: 16px;
+        text-align: left;
     }
+    
     .signup-web{
         display: none;
     }
@@ -806,14 +888,41 @@ margin-right: 15px;
         padding: 20px;
         display: none;
     }
+    .signup-create{
+        height: 45px;
+        font-size: 14px;
+    }
     .signmobile-logo{
         
         display: flex;
         background-color: white;
     }
+    .signup-remember-me label{
+        font-size: 12px;
+    }
+    .terms-and-policy{
+        font-size: 12px;
+    }
+    .signupWith{
+        font-size: 14px;
+        width: 40%;
+      
+    }
+    .signup-line{
+        width: 30%;
+    }
+    .signup-orandline{
+        margin-bottom: 30px;
+        
+    }
+    .already-have-account-log{
+        font-size: 12px;
+        margin-top: 0;
+    }
     .signup-mobile{
         font-family: 'DM Sans', sans-serif;
-        padding: 15px 10px;
+        padding: 0px 0px;
+        padding-bottom: 45px;
         display: flex;
         flex-direction: column;
         background-image: url("../../Asset/image-20-1@1x.png");
@@ -821,41 +930,51 @@ margin-right: 15px;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
+      
     }
     .mobile-signup-header{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
+    margin-top: 12px;
+    
        
     }
     .mobile-signup-header h3{
         color: #c19bff;
+        margin-top: 40px;
+        margin-bottom: 28px;
     }
     .mobile-signup-inner input{
         border: none;
         outline: none;
+        padding: 0px;
+        padding-left: 5px;
+        font-size: 14px;
     }
     .input-wrapper{
         display: flex;
         align-items: center;
         justify-content: flex-start;
         padding: 0 20PX;
+        padding-left: 15px;
         width: 100%;
         height: 35px;
         border: 1px solid #c4c4c4;
         margin-bottom: 15px;
         border-radius: 6px;
+       
     }
     #passwordmobilewrapper input{
         padding-right: 0px;
        
-        width: 50%;
+        width: 95%;
        text-align: left;
        display: flex;
        align-items: center;
        justify-self: start;
-       padding-left: 0px;
+       padding-left: 5px;
      
      
     }
@@ -905,7 +1024,7 @@ margin-right: 15px;
     .signup-facebook-mobile{
         width: 50%;
         font-size: 12px;
-        padding: 0px;
+        padding: 3px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -916,6 +1035,7 @@ margin-right: 15px;
     border-radius: 5px;
     background-color: #fff;
     color: #333333;
+   
     
     
     }
@@ -931,9 +1051,15 @@ margin-right: 15px;
         .google-AND-facebook-mobile{
             width: 100%;
             display: flex;
+         
         }
         .signup-facebook-mobile:hover{
             border-color: #6200f0;
+        }
+        .already-have-account{
+            font-size: 12px;
+            margin-top: 33px;
+            margin-bottom: 30px;
         }
         
 }

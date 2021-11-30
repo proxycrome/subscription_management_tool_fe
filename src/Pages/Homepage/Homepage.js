@@ -9,7 +9,12 @@ import partnerLogo from '../../Asset/partners.png'
 import overlay from '../../Asset/Overlay2.png'
 import  CustomersImage from '../../Asset/Customers.png'
 import { connect } from 'react-redux'
-
+import spons from '../../Asset/Spons.png'
+import fan from '../../Asset/Fan.png'
+import think from '../../Asset/Think.png'
+import fanAvatar from '../../Asset/fanAvatar.png'
+import overAvatar from '../../Asset/overAvatar.png'
+import Avatar from '../../Asset/Avatar.png'
 import '../Homepage/Homepage.css'
 import Footer from '../../Components/Footer/Footer'
 
@@ -36,7 +41,7 @@ return(
           
                 <div className="Innercontent-original">
                 <div className="contents-original">
-                    <h2>Subscription Management Made Easy!</h2>
+                    <h2 className="content-orig-h">Subscription Management Made Easy!</h2>
                     <p>Flex is a subscription management platform that allows you to manage multiple
                         subsription plans. It gives you the freedom to control and keep track of your
                         expenses </p>
@@ -60,8 +65,11 @@ return(
                         expenses </p>
                         </div>
                         <div className="laptop-image"><img src={lady}/></div>
+                        <div className="spons-div">
+                        <img src={spons} alt="sponsors"/>
+                        </div>
                         <div className="buttons">
-
+                       
                         
                         <button className="butnRegister" onClick={(()=>{history.push("/signup")})}>REGISTER</button>
                         <button id="sep-button" onClick={(()=>{history.push("/signin")})}>LOGIN</button>
@@ -155,15 +163,15 @@ return(
                         <div className="blog-div-show">
                             <div className="blog-content">
                                 <div className="blog-img-div">
-                                <img src={overlay}/>
+                                <img src={think}/>
                                 </div>
                                 <div className="below-img-blog">
-                                <h2>Growth of SaaS industry</h2>
-                                <p className="below-img-blog-p">Subscription-based saaS application and licensing makes utilizing..</p>
+                                <h2>Runaway Saas spend...</h2>
+                                <p className="below-img-blog-p">Just the management and insight alone got us a long way...</p>
                                 <span className="blog-innermost">
                                     <div className="blog-landing-profile">
                                         <div className="blog-profile-img">
-                                        <img src={overlay}/>
+                                        <img src={Avatar}/>
                                         </div>
                                     <p className="blog-left">Tina Lawal</p>
                                     </div>
@@ -190,7 +198,7 @@ return(
                                 <span className="blog-innermost">
                                 <div className="blog-landing-profile">
                                         <div className="blog-profile-img">
-                                        <img src={overlay}/>
+                                        <img src={overAvatar}/>
                                         </div>
                                     <p className="blog-left">Tina Lawal</p>
                                     </div>
@@ -207,15 +215,15 @@ return(
                         <div className="blog-div">
                             <div className="blog-content">
                                 <div className="blog-img-div">
-                                <img src={overlay}/>
+                                <img src={fan}/>
                                 </div>
                                 <div className="below-img-blog">
-                                <h2>Growth of SaaS industry</h2>
-                                <p className="below-img-blog-p">Subscription-based saaS application and licensing makes utilizing..</p>
+                                <h2>Future of Learning</h2>
+                                <p className="below-img-blog-p">A constant ability to learn will be on the most crucial skills.</p>
                                 <span className="blog-innermost">
                                 <div className="blog-landing-profile">
                                         <div className="blog-profile-img">
-                                        <img src={overlay}/>
+                                        <img src={fanAvatar}/>
                                         </div>
                                     <p className="blog-left">Tina Lawal</p>
                                     </div>

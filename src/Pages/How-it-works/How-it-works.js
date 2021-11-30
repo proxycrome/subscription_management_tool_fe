@@ -26,7 +26,8 @@ function HowWorks({headercolor,presentcolor}){
     <div className="HowWorks">
 
        
-            <Navbar howworks={{color:presentcolor.howcolor}}
+            <Navbar howworks={{color:presentcolor.howcolor,paddingBottom:"0",marginBottom:"0",}}
+             howlinestyle={{marginTop:"6px",paddingTop:"0",borderTop:"1px solid #6200f0",alignSelf:"start",width:"16px"}}
             aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
              <div className="howworks-innerS">
             <h2 className="work-header">We Focus on <span className="sep-H2">Structured</span> and Sustainable Subscription Management.</h2>
@@ -34,11 +35,15 @@ function HowWorks({headercolor,presentcolor}){
             <div className="works-and-image-original">
                 <div className="works-outer">
                     <div className="works-inner">
-                        <h2> <LoremIpsum avgWordsPerSentence={2} /></h2>
-                    <p className="work-inner-p"><LoremIpsum p={1} /></p>
+                        <h2>"A Platform you can trust to give you seamless and stress-free experience all
+                             day everyday.” </h2>
+                    <p className="work-inner-p">You want to know how flex works? We’ve got you.
+Take a quick tour around Flex and see how it works. Sign up to get started!</p>
+                    <div className="works-image-first" id="extra-img"><img src={splash}/></div>
                         <button>WATCH VIDEO</button>
                     </div>
-                    <div className="works-image-first"><img src={splash}/></div>
+                    {/* <button >WATCH VIDEO</button> */}
+                    <div className="works-image-first" id="extra-img-web"><img src={splash}/></div>
                 </div>
             
            
@@ -49,14 +54,15 @@ function HowWorks({headercolor,presentcolor}){
                 <div className="works-image-second"><img src={worknew}/></div>
                     <div className="works-inner-second">
                        <h2>Our Featured Functionalities</h2>
-                       <p>Here 're some of the features Flex has to offer</p>
+                       <p>Here 're some of the features Flex has to offer.</p>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Making tools & Discounts and promos.</p>
                        </div>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Flexible charging
+                                        schemes.</p>
                        </div>
                    
                         
@@ -71,14 +77,15 @@ function HowWorks({headercolor,presentcolor}){
               
                     <div className="works-inner-second">
                        <h2>Our Featured Functionalities</h2>
-                       <p>Here 're some of the features Flex has to offer</p>
+                       <p>Here 're some of the features Flex has to offer.</p>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Managing telecommunication services.</p>
                        </div>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Managing subscription
+                                    services.</p>
                        </div>
                    
                         
@@ -110,11 +117,12 @@ function HowWorks({headercolor,presentcolor}){
                 <p>Here 're some of the features Flex has to offer</p>
                 <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Making tools & Discounts and promos.</p>
                        </div>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Flexible charging
+            schemes.</p>
                        </div>
 
                        </div>
@@ -124,11 +132,12 @@ function HowWorks({headercolor,presentcolor}){
                 <p>Here 're some of the features Flex has to offer</p>
                 <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Managing telecommunication services.</p>
                        </div>
                        <div className="functionality-inner">
                            <div className="function-check-div"><img src={check}/></div>
-                           <p>Making tools $ Discounts and promos</p>
+                           <p>Managing subscription
+                    services.</p>
                        </div>
 
 
@@ -142,25 +151,25 @@ function HowWorks({headercolor,presentcolor}){
                         <i className="funct-Image-div"><img src={iconDots}/></i>
                             <h2>Collaboration</h2>
                             
-                        <p>Trust will help us foster a positive and productive environment that delivers
-                                value to our users and customers.
+                        <p>Collaboration is the process of two or more people or organizations working 
+                            together to complete a task or achieve a goal. 
                             </p>
                             
                         </span>
                         <span>
                         <i className="funct-Image-div"><img src={iconDots}/></i>
-                        <h2>Collaboration</h2>
+                        <h2>Transparency</h2>
                            
                         
-                        <p>Trust will help us foster a positive and productive environment that delivers
-                                value to our users and customers.
+                        <p>Transparency, as used in science is operating in such a way that it is easy for
+                             others to see what actions are performed.
                             </p>
                         </span>
                     </div>
                     <div className="works-lower-inner">
                     <span>
                             <i className="funct-Image-div"><img src={iconDots}/></i>
-                            <h2>Collaboration</h2>
+                            <h2>Trust</h2>
                             <p>Trust will help us foster a positive and productive environment that delivers
                                 value to our users and customers.
                             </p>
@@ -168,9 +177,9 @@ function HowWorks({headercolor,presentcolor}){
                         </span>
                         <span>
                         <i className="funct-Image-div"><img src={iconDots}/></i>
-                        <h2>Collaboration</h2>
-                        <p>Trust will help us foster a positive and productive environment that delivers
-                                value to our users and customers.
+                        <h2>Integrity</h2>
+                        <p>Integrity is the practice of showing a consistent and uncompromising 
+                            adherence to strong moral and ethical principles.
                             </p> 
                         </span>
                     </div>

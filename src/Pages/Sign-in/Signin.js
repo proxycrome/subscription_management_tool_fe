@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
+import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import Recaptcha from 'react-recaptcha';
 import flexpng from '../../Asset/flexpng.png'
 import setAuthHeader from '../../Components/Utility/Utility'
@@ -18,6 +19,8 @@ import '../Sign-in/Signin.css'
 
     
      function Signin({detailssignin,signindetails,customerdetails,customer}){
+         const[errMess,setErrMess]=useState("")
+         const[errPop,setErrPop]=useState({display:"none"})
     const[passwordshow, setPasswordshow]=useState(false)
     const[password,setPassword]=useState("")
     const[email,setEmail]=useState("")
@@ -32,12 +35,12 @@ import '../Sign-in/Signin.css'
 
     useEffect(()=>{
         let remeberEmail=JSON.parse(localStorage.getItem('userEmail'))
-        let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
-    if((remeberEmail && rememberPassword)!==null){
+        // let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
+    if((remeberEmail )!==null){
         setEmail(remeberEmail)
-      setPassword(rememberPassword)
+    //   setPassword(rememberPassword)
       signindetails({email:email})
-      signindetails({password:password})
+    //   signindetails({password:password})
 
     }
 
@@ -67,8 +70,10 @@ import '../Sign-in/Signin.css'
         //history.push("/Dashboard")
    
     const params={
-        password:detailssignin.password,
-  email:detailssignin.email,
+//         password:detailssignin.password,
+//   email:detailssignin.email,
+        password:password,
+        email:email
    
       
       
@@ -128,7 +133,13 @@ import '../Sign-in/Signin.css'
    
     
     .catch((err)=>{
-     console.log(err)
+     console.log(err.response.data.message)
+     
+   setErrPop({display:"flex"})
+   setErrMess(err.response.data.message)
+   setButnstyle({backgroundColor:"#6200f0"})
+   setLogtext({color:"white"})
+   setLoading(true)
   })
 }}
     //const keeploggedin=(e)=>{
@@ -147,6 +158,10 @@ import '../Sign-in/Signin.css'
     return(
         <div className="signintotal">
         <div className="signin" >
+        <div style={errPop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setErrPop({display:"none"}) }) } ><Cancel/></div>
+                <p>{errMess}</p>
+            </div>
             <div className="inner-signin">
             <div className="textandimage">
                 <div className="textandimage-logo">
@@ -213,6 +228,10 @@ import '../Sign-in/Signin.css'
             </div>
         </div>
         <div className="mobilesignin">
+        <div style={errPop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setErrPop({display:"none"}) }) } ><Cancel/></div>
+                <p>{errMess}</p>
+            </div>
             <div className="mobilesigninHeader">
             <img src={flexpng} style= {{width: "78px",
         height: "32px"}}/>
@@ -223,7 +242,7 @@ import '../Sign-in/Signin.css'
             <h2>WELCOME BACK!</h2>
             <h3>Enter your details to continue...</h3>
             <div className="signininputWrapper">
-            <input type="email" placeholder="Email address"/>
+            <input type="email" placeholder="Email address" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setEmail(e.target.value)}}/>
             </div>
             <div className="signininputWrapper" id="password-mobile-signin">
             <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
@@ -240,7 +259,9 @@ import '../Sign-in/Signin.css'
             </span>
             <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
             </div>
-            <button className="create" onClick={handlesignin}>LOG IN</button>
+          
+            <button className="create" style={butnstyle} onClick={handlesignin}>{loading ? (<p style={logtext}>LOG IN</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
           <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
           <div className="alternateSignin">
             <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>

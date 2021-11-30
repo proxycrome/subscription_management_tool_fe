@@ -67,11 +67,21 @@
     }
     .Requestconfirm h1{
         margin-top: 0px;
+        font-size: 16px;
     }
     .mobile-reset-request{
         display: flex;
     }
     .web-reset-request{
         display: none;
+    }
+    .Requestconfirm-parag{
+        font-size: 14px;
+    }
+    .remember-request-pass{
+        font-size: 12px;
+    }
+    .Requestconfirm button{
+        font-size: 14px;
     }
 }

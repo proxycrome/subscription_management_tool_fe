@@ -51,6 +51,9 @@
    box-shadow: 0px 3px 10px  rgb(0 0 0/ 10%);
    border-radius: 10px;
 }
+.productscreenAll{
+    font-family: 'DM Sans', sans-serif;
+}
 .productCat{
     display: flex;
     justify-content: space-between;
@@ -96,6 +99,9 @@
     align-items: center;
     justify-content: center;
     font-size: 16px;
+}
+.addsub-product:hover{
+    background-color: #5205C1;
 }
 .inner-body-product{
     background-color: white;
@@ -253,6 +259,13 @@ padding: 10px 0px;
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid rgba(7,10,74 ,10%);
+}
+.second-line-product input:hover{
+    border: 2px solid #6200f0;
+}
+.second-line-product input:focus{
+    border: 2px solid #6200f0;
+    outline: #6200f0;
 }
 .productscreenAll{
     background-color: #FAFAFE;

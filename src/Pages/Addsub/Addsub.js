@@ -14,6 +14,7 @@ import Netflix from '../../Asset/Netflix.png';
 import Showmax from '../../Asset/Showmax.png';
 import Playstation from '../../Asset/Playstation.png'
 import { editarray } from '../../redux/flex/flex.actions'
+import MobileDashopen from '../../Components/MobileDashopen/MobileDashopen'
 import MobileDash from '../../Components/MobileDash/MobileDash'
 import '../Addsub/Addsub.css'
 import { getDefaultNormalizer } from '@testing-library/dom';
@@ -224,7 +225,7 @@ return(
     </Dashopen>
     </div>
     <div className="add-sub-mobile">
-        <MobileDash>
+        <MobileDashopen>
         <div>
             <div className="addsubb">
                 <Upperbox/>
@@ -234,7 +235,7 @@ return(
         </div>
          
 
-        </MobileDash>
+        </MobileDashopen>
     </div>
     </div>
 )
