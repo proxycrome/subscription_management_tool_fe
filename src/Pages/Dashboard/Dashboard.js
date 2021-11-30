@@ -38,6 +38,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[searchDatar,setSearchDatar]=useState("")
     const[oct,setOct]=useState("")
     const[nov,setNov]=useState("")
+    const[lastDate,setLastDate]=useState("-")
     let janAmt=0
 let febAmt=0
 let marAmt=0
@@ -132,6 +133,9 @@ let newoct=0
                     novAmt+=val.amount}
                     setNov(novAmt)
 
+                    setLastDate(val.dateSubscribed)
+                    console.log(lastDate)
+                    console.log(val.dateSubscribed)
         //     let contents=arr.map((val,index)=>{
         //         console.log(userDisplay)
         //     cats=val.subCategory
