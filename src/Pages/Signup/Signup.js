@@ -180,6 +180,9 @@ function Signup({details,signupdetails,signup}){
         //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
         //setTimeout(()=>{
             setPopup({display:"flex"})
+            setButnstyle({backgroundColor:"#6200f0"})
+   setLogtext({color:"white"})
+   setLoading(true)
        //console.log(res.data.message)
        // setTimeout(function(){history.push("/signin")},3000);
        //history.push("/signin")
