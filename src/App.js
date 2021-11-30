@@ -21,6 +21,7 @@ import Profile from './Pages/Settings/Profile/Profile';
 import Notifications from './Pages/Settings/Notifications/Notifications'
 import Application from './Pages/Settings/Application/Application';
 import Payments from './Pages/Settings/Payments/Payments';
+import payment from './Pages/Payment/payment';
 //import Passwordreset from './Pages/Passwordreset/Passwordreset'
 
 import Signincontinue from './Pages/Sigincontinue/Signincontinue'
@@ -78,6 +79,7 @@ function App() {
      <Route exact path="/settings/application" component={Application}/>
      <Route exact path="/settings/payments" component={Payments}/>
      <Route exact path="/support/faq" component={Frequent}/>
+     <Route exact path="/payment/funding-history" component={payment}/>
     </Switch>
     </div>
   );
