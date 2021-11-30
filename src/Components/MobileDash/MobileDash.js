@@ -34,7 +34,7 @@ function MobileDash({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle
       let customerDetails=JSON.parse(localStorage.getItem('customerDetail'))
      setCustomerDetail(customerDetails)
         //let customers=customer
-        console.log(customerDetail.firstname)
+        console.log(customerDetail.firstName)
     },[])
 return(
     <div className="top-mobile-dash-nav">
@@ -98,7 +98,7 @@ return(
        </div>
        <div className="mobile-dash-lower">
        <div className="profile-avatar"><FaUserAlt/></div>
-       <p>Hi,{ customerDetail.firstname}</p>
+       <p>Hi,{ customerDetail.firstName}</p>
        </div>
        <div style={rightNav}>
            {children}

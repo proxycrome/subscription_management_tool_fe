@@ -710,7 +710,7 @@ console.log(contentd)
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
                                     <h3>Overview</h3>
-                                    <button> <img src={plusCircle} alt="add"/>ADD SUBSCRIPTION</button>
+                                    <button onClick={(()=>{history.push("/addsub")})}> <img src={plusCircle} alt="add"/><p>ADD SUBSCRIPTION</p></button>
                                 </div>
                                 <div className="mobile-categ">
                                     <span className="mobile-acc-line">
@@ -730,7 +730,7 @@ console.log(contentd)
                                         <button className="first-graph-button">MONTHLY</button>
                                         <button className="second-graph-button">YEARLY</button>
                                     </div>
-                                    <div className="linechart"><LineChart className="linestyle"/></div>
+                                    <div className="linechart"> <Line data={data} options={options} style={{minHeight:"150px",maxHeight:"150px"} }/></div>
                                     </div>
                             </div>
                             </div>
