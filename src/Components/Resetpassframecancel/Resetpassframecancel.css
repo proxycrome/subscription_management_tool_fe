@@ -36,5 +36,6 @@
     align-self: flex-end;
     margin-right: 40px;
     margin-top: 60px;
+    cursor: pointer;
 }
 

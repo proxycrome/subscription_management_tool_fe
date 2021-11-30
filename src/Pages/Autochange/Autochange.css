@@ -1,0 +1,13 @@
+.mobile-Autochange{
+    display: none;
+}
+@media screen and (max-width:960px) {
+    .web-Autochange{
+        display: none;
+    }
+    .mobile-Autochange{
+        background-color: royalblue;
+        display: flex;
+    }
+    
+}

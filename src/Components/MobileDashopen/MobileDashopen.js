@@ -15,14 +15,15 @@ import {ReactComponent as Invitesvg} from  '../../Asset/Invitesvg.svg'
 import {ReactComponent as Supportsvg} from  '../../Asset/Supportsvg.svg'
 import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import {ReactComponent as Close} from '../../Asset/Closesvg.svg'
+import arrow from '../../Asset/Arrowback.png'
 
 import {useEffect,useState} from 'react'
 
 
-import '../MobileDash/MobileDash.css'
+import '../MobileDashopen/MobileDashopen.css'
 
 
-function MobileDash({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle, paymentstyle, customer}){
+function MobileDashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle, paymentstyle, customer}){
     const[customerDetail,setCustomerDetail]=useState("")
     const[leftNav,setLeftNav]=useState({display:"none"})
     const[rightNav,setRightNav]=useState({})
@@ -96,9 +97,9 @@ return(
            <div><img src={notification} alt="notification"/></div>
        </div>
        </div>
-       <div className="mobile-dash-lower">
-       <div className="profile-avatar"><FaUserAlt/></div>
-       <p>Hi,{ customerDetail.firstname}</p>
+       <div className="mobile-dash-lower-dash">
+      
+       <img src={arrow} alt="back-arrow" onClick={history.goBack}/> <p>Back</p>
        </div>
        <div style={rightNav}>
            {children}
@@ -119,4 +120,4 @@ const mapstatetoprops=({flex:{presentcolor,customer}})=>({
    
 
 })
-export default connect (mapstatetoprops) (MobileDash)
+export default connect (mapstatetoprops) (MobileDashopen)

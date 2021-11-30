@@ -2,17 +2,21 @@ import React, { useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook, FaTwitter, FaInstagram} from "react-icons/fa"; 
+import mail from "../../Asset/MailImg.png"
+import phone from '../../Asset/PhoneImg.png'
 import '../Contact/Contact.css'
 
 function Contact(){
 
     return(
+        <div>
+      
         <div className="contact">
+        <Navbar aboutstyle={{textDecoration:"none"}}  privacystyle={{textDecoration:"none"}}/>
 
-<Navbar/>
             <div className="contACTContainer">
               
-                <div>
+                <div className="upper-contain-contact">
                     <h2 className="contactHEader">We are here to help</h2>
                     <p className="header-text">Contact us if you have any questions about our company or products. We will try to provide an 
                         answer within a few days</p>
@@ -21,8 +25,8 @@ function Contact(){
                                 <div className="content-inner-contact">
                                 <h3>Our Contact Information</h3>
                                 <p className="fillUp">Fill up the form and our team will get in touch and we 'll be happy to assist you</p>
-                            <span className="content-inner-left-phone"><FaEye/> <p>+234800 123 5976</p></span>
-                            <span className="content-inner-left-mail"> <FaEye/> <p>support@flex.com</p></span>
+                            <span className="content-inner-left-phone"><img src={phone} alt="phoneImg"/> <p>+234800 123 5976</p></span>
+                            <span className="content-inner-left-mail"> <img src={mail} alt="mailImage"/> <p>support@flex.com</p></span>
                             </div>
                             <div className="contact-icons">
                                 <FaTwitter className="contactICONS"/><FaFacebookF className="contactICONS"/><FaInstagram className="contactICONS"/>
@@ -35,28 +39,28 @@ function Contact(){
                                         <label>
                                             Full name*
                                         </label>
-                                        <input type="text"/>
+                                        <input type="text" placeholder="Enter your full name"/>
 
                                     </div>
                                     <div className="input-label">
                                         <label>
-                                            Full name*
+                                            Email*
                                         </label>
-                                        <input type="text"/>
+                                        <input type="text" placeholder="you@example.com"/>
 
                                     </div>
                                     <div className="input-label">
                                         <label>
-                                            Full name*
+                                            Subject*
                                         </label>
-                                        <input type="text"/>
+                                        <input type="text" placeholder="Enter subject here"/>
 
                                     </div>
                                     <div className="input-label">
                                         <label>
-                                            Full name*
+                                            Message*
                                         </label>
-                                        <input type="text"/>
+                                        <input type="text" placeholder="How can we help you ?"/>
 
                                     </div>
                                 
@@ -69,6 +73,7 @@ function Contact(){
                 
             </div>
             <Footer/>
+        </div>
         </div>
     )
 

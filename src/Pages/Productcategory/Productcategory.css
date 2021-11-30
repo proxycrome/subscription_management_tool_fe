@@ -138,6 +138,9 @@ border-top-right-radius: 10px;
         /* align-self: flex-start; */
         color: rgba(51,51,51,0.5);
     }
+    .productcategory-All{
+        font-family: 'DM Sans', sans-serif;
+    }
     .product-category-inner input:hover{
         border: 1px solid #6200f0;
     }

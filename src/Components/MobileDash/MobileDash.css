@@ -45,6 +45,7 @@
 }
 .top-mobile-dash-nav{
     display: flex;
+    font-family: 'DM Sans', sans-serif;
 }
 .mobileDashtotal{
   width: 100vw;

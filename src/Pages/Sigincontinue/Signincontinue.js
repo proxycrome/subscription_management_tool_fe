@@ -9,12 +9,16 @@ import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import { useHistory } from 'react-router-dom';
 import {signindetails,signin,customerdetails} from '../../redux/flex/flex.actions'
 import { connect } from 'react-redux';
+import flexpng from '../../Asset/flexpng.png'
+import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import axios from 'axios'
 import Loader from "react-loader-spinner";
 import setAuthHeader from '../../Components/Utility/Utility';
 import '../Sigincontinue/Signincontinue.css'
 
 function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
+    const[errMess,setErrMess]=useState("")
+    const[errPop,setErrPop]=useState({display:"none"})
     const[passwordshow, setPasswordshow]=useState(false)
     const[password,setPassword]=useState("")
    
@@ -28,12 +32,12 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
     const history=useHistory()
     useEffect(()=>{
         let remeberEmail=JSON.parse(localStorage.getItem('userEmail'))
-        let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
-    if((remeberEmail && rememberPassword)!==null){
+        // let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
+    if((remeberEmail )!==null){
         setEmail(remeberEmail)
-      setPassword(rememberPassword)
+    //   setPassword(rememberPassword)
       signindetails({email:email})
-      signindetails({password:password})
+    //   signindetails({password:password})
 
     }
 
@@ -58,7 +62,7 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
    
     const params={
         password:detailssignin.password,
-  email:detailssignin.email,
+  email:email,
    
       
       
@@ -117,7 +121,12 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
    
     
     .catch((err)=>{
-     console.log(err)
+     console.log(err.response.data)
+     setErrPop({display:"flex"})
+     setErrMess(err.response.data.message)
+     setButnstyle({backgroundColor:"#6200f0"})
+     setLogtext({color:"white"})
+     setLoading(true)
   })
 }
 
@@ -153,9 +162,14 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
  // })
 }
     return(
-      
+      <div>
+        <div className="web-frame-continue">
             <Resetpassframe>
                   <div className="Signincontinue">
+                  <div style={errPop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setErrPop({display:"none"}) }) } ><Cancel/></div>
+                <p>{errMess}</p>
+            </div>
            <h1>SIGN IN TO CONTINUE</h1>
            <p className="Signincontinue-parag">Please sign in with your new password.</p>
            {/* <button>SUBMIT</button>
@@ -165,7 +179,7 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
               
            <p>Remember your password <Link>Sign in</Link></p> */}
            <div className="email-wrapper">
-            <input type="email" name="email" placeholder="Email address" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setEmail(e.target.value);
+            <input type="email" name="email" placeholder="Email address" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});console.log(e.target.value);setEmail(e.target.value);
         }}
       />
           
@@ -208,6 +222,77 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
            
             </div>
             </Resetpassframe>
+            </div>
+
+<div className="mobilesignin">
+<div style={errPop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setErrPop({display:"none"}) }) } ><Cancel/></div>
+                <p>{errMess}</p>
+            </div>
+            <div className="mobilesigninHeader">
+            <img src={flexpng} style= {{width: "78px",
+        height: "32px"}}/>
+
+        <h3>Stay connected always</h3>
+        </div>
+        <div className="signinmobile-inner">
+        <div className="Signincontinue">
+           <h1>SIGN IN TO CONTINUE</h1>
+           <p className="Signincontinue-parag">Please sign in with your new password.</p>
+           {/* <button>SUBMIT</button>
+           <div>
+           <input type="email" placeholder="Email address"/>
+               </div>
+              
+           <p>Remember your password <Link>Sign in</Link></p> */}
+           <div className="email-wrapper">
+            <input type="email" name="email" placeholder="Email address" value={email} onChange={(e)=>{signindetails({[e.target.name]:e.target.value});console.log(email);setEmail(e.target.value);
+        }}
+      />
+          
+          
+            </div>
+           <div className="password-wrapper" >
+            <input type={passwordshow ? "text": "password"} name="password" placeholder="Password" value={password}
+            onChange={(e)=>{signindetails({[e.target.name]:e.target.value});setPassword(e.target.value)}}
+             />
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}
+             /><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+            
+            <div className="forgot-and-remember">
+            
+           <span  className="keep-logged-in"> 
+           <input id="logedIn" type="checkbox" value="loggedin"
+           onChange={(()=>{setLoggedins(!loggedins )})   }/>
+                <label for="logedIn">Remember me</label>
+           </span>
+           <Link className="forgot"><p className="forgot">Forgot password?</p></Link>
+           </div>
+
+          
+
+
+
+
+
+            <button className="create" style={butnstyle} onClick={handlesignin}>{loading ? (<p style={logtext}>LOG IN</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
+          <div className="orandline">  <hr className="line-left"/><p className="loginWith">Log in with</p> <hr className="line-right"/></div>
+          <div className="alternateSignin">
+            <button className="google"><GoogleLogo className="googleLogo" />GOOGLE</button>
+            <button className="facebook"><FacebookLogo className="faceLogo"/>FACEBOOK</button>
+            
+            </div>
+            <p className="noAccount">Don't have an account? <Link to="/signup" className="noAccount-signup">Sign up</Link></p>
+           
+            </div>
+       
+        </div>
+        
+         </div>
+         </div>
        
     )
 

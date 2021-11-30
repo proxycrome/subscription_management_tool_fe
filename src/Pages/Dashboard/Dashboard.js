@@ -15,7 +15,7 @@ import Smallestbox from '../../Components/Smallestbox/Smallestbox'
 import Dstiv from '../../Asset/Dstv.png'
 import Gotiv from '../../Asset/GOTV.png'
 import MobileDash from '../../Components/MobileDash/MobileDash';
-
+import plusCircle from '../../Asset/plus-circle.png'
 
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import axios from 'axios';
@@ -36,6 +36,26 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[itemColor,setItemColor]=useState({color:""})
     const[checkarr,setCheckarr]=useState([])
     const[searchDatar,setSearchDatar]=useState("")
+    const[oct,setOct]=useState("")
+    const[nov,setNov]=useState("")
+    let janAmt=0
+let febAmt=0
+let marAmt=0
+let aprAmt=0
+let mayAmt=0
+let junAmt=0
+let julAmt=0
+let augAmt=0
+let sepAmt=0
+let octAmt=0
+let novAmt=0
+let decAmt=0
+let grapharr=[]
+
+let news=0
+let newsoct=0
+let newoct=0
+
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -78,6 +98,9 @@ function Dashboard({presentcolor,headercolor,subarray}){
         userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
      setArr(itemArray)
         console.log(itemArray)
+        
+
+           
         //arrs=itemArray
         
    
@@ -100,6 +123,14 @@ function Dashboard({presentcolor,headercolor,subarray}){
             console.log(cats +"" + catg+""+itemImg)
             setItemId(catId)
             console.log(itemStatus)
+
+            //linegraph
+            if(val.dateSubscribed.split("-")[1]==10){
+                octAmt+=val.amount}
+                setOct(octAmt)
+                if(val.dateSubscribed.split("-")[1]==11){
+                    novAmt+=val.amount}
+                    setNov(novAmt)
 
         //     let contents=arr.map((val,index)=>{
         //         console.log(userDisplay)
@@ -176,8 +207,40 @@ function Dashboard({presentcolor,headercolor,subarray}){
     userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
     setNamearr(userDisplay)
 },[]) 
+const data = {
+  
+    labels: ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+   //labels: [],
+   datasets: [
+     {
+       label: 'Subscription',
+       data: [janAmt, febAmt, marAmt, aprAmt, mayAmt, junAmt,julAmt,augAmt,sepAmt,oct,nov,decAmt],
+      lineTension:0.5,
+       fill: false,
+     //   backgroundColor: 'rgb(255, 99, 132)',
+     backgroundColor: '#A6CEE3',
+     
+     borderColor: '#A6CEE3',
+     width:"1000px",
+     
+     // height:"100%"
+     //   borderColor: 'rgba(255, 99, 132, 0.2)',
+     },
+   ],
+ };
+ 
+ const options = {
+   scales: {
+     y: {
+       beginAtZero: true
+     }
+   }
+ };
+ 
     userDisplay = JSON.parse(localStorage.getItem('userDisplay'));  
     console.log(userDisplay)
+    console.log(oct)
+    console.log(nov)
 //     if(arr==null){
 //         return( <div className="main-loading-spinner">
 //             <Loader type="Oval" width={40} color="#030640" />
@@ -427,7 +490,7 @@ console.log(contentd)
                                         <button className="first-graph-button">MONTHLY</button>
                                         <button className="second-graph-button">YEARLY</button>
                                     </div>
-                                    <div className="linechart"><LineChart/></div>
+                                    <div className="linechart"> <Line data={data} options={options} style={{minHeight:"150px",maxHeight:"150px"} }/></div>
                                     </div>
                                 </div>
                                 <div className="fourth-line-right">
@@ -440,7 +503,7 @@ console.log(contentd)
                                             </div>
                                             <div className="wallets-lower">
                                                 <div><p className="medium-weight-dashboard">E-wallet Balance</p></div>
-                                                <div><p className="money-dashboard">NGN 134,457.56</p></div>
+                                                <div><p className="money-dashboard">NGN 0.00</p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -643,7 +706,7 @@ console.log(contentd)
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
                                     <h3>Overview</h3>
-                                    <button>ADD SUBSCRIPTION</button>
+                                    <button> <img src={plusCircle} alt="add"/>ADD SUBSCRIPTION</button>
                                 </div>
                                 <div className="mobile-categ">
                                     <span className="mobile-acc-line">
