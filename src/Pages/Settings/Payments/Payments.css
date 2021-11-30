@@ -1,0 +1,185 @@
+.inner-settings-section{
+    /* background-color: aqua; */
+    margin: 20px 30px 0 30px;
+}
+
+.header h3{
+    text-align: left;
+    font-weight: 500;
+    padding: 20px
+}
+
+.welcome-divider{
+    border-color: rgba(7,10,74,0.1);
+}
+
+.sub-header{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.sub-header a {
+    text-decoration: none;
+    text-align: left;
+    padding: 20px 42px 5px 42px;
+}
+
+.inner-section{
+    width: 1016px;
+    height: 762px;
+    margin: 12.5px 0 10px 0;
+    display: flex;
+    padding: 50px 30px 66px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.payments-settings{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.payment-options{
+    width: 420px;
+    height: 350px;
+    margin: 2px 88px 114px 0;
+    padding: 22px 153px 168px 30px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+}
+
+.card-payment{
+    display: flex;
+    margin-top: 30px;
+    height: 50px;
+}
+
+.card-payment input{
+    width: 32px;
+    height: 32px;
+}
+
+.card-payment label{
+    margin: 5px 0 0 10px;
+    color: rgba(51, 51, 51, 0.7);
+    font-weight: normal;
+}
+
+.e-wallet{
+    display: flex;
+    width: 350px;
+    height: 50px;
+}
+
+.e-wallet input{
+    width: 32px;
+    height: 32px;
+}
+
+.e-wallet label{
+    margin: 5px 0 0 10px;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.options{
+    display: flex;
+    width: 350px;
+}
+
+.options input{
+    width: 32px;
+    height: 32px;
+}
+
+.options label{
+    margin: 5px 0 0 10px;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.change-pin{
+    width: 420px;
+    height: 350px;
+    margin: 2px 88px 114px 0;
+    padding: 22px 153px 168px 30px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+}
+
+.change-pin p{
+    width: 350px;
+    height: 52px;
+    margin: 16px 0 0 0;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.old-pin{
+    width: 350px;
+    display: flex;
+}
+
+.old-pin label{
+    width: 100px;
+    color: rgba(51, 51, 51, 0.7);
+    margin-top: 10px;
+}
+
+.old-pin input{
+    width: 200px;
+    height: 46px;
+    border-radius: 4px;
+    border: solid 1px rgba(3, 6, 64, 0.2);
+    background-color: #fff;
+}
+.new-pin{
+    width: 350px;
+    display: flex;
+    margin: 24px 0 0;
+}
+
+.new-pin label{
+    width: 100px;
+    color: rgba(51, 51, 51, 0.7);
+    margin-top: 10px;
+}
+
+.new-pin input{
+    width: 200px;
+    height: 46px;
+    border-radius: 4px;
+    border: solid 1px rgba(3, 6, 64, 0.2);
+    background-color: #fff;
+}
+
+.confirm-pin{
+    width: 350px;
+    display: flex;
+    margin: 24px 0 0;
+}
+
+.confirm-pin label{
+    width: 100px;
+    color: rgba(51, 51, 51, 0.7);
+    margin-top: 10px;
+}
+
+.confirm-pin input{
+    width: 200px;
+    height: 46px;
+    border-radius: 4px;
+    border: solid 1px rgba(3, 6, 64, 0.2);
+    background-color: #fff;
+}
+
+.payment-options h4, .change-pin h4{
+    color: #191d6c;
+}

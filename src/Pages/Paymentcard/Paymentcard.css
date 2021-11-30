@@ -1,0 +1,121 @@
+.payment-INNER-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 146.6px;
+}
+.payment-option-card-buttons{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    
+   
+    align-self: start;
+    /* margin-bottom: 50.6px; */
+}
+.total-payMENT-CARD{
+    font-family: 'DM Sans', sans-serif;
+}
+.image-and-option-card-payment{
+    display: flex;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 124px;
+    padding-left: 118.3px;
+}
+.payment-option-card-icon{
+    margin-right: 16px;
+    height: 100%;
+}
+
+.payment-option-card-buttons button{
+    margin-right: 20px;
+    margin-bottom: 40px;
+    width: 248px;
+    height: 60px;
+    display: flex;
+  font-size: 16px;
+  color: #333333;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+   
+    border-radius: 4px;
+    border: 1px solid rgba(3,6,64,0.2);
+}
+.payment-option-card-buttons button:hover{
+    border: 1px solid #6200f0;
+}
+.cancel-payment:hover{
+    border: 3px solid #5205C1;
+}
+.paymentoption .payment-inner-content .payment-select-cards-buttons{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+   width: 48%;
+    margin: 0 auto;
+    
+    margin-top: 90.6px;
+   
+   
+}
+.payment-select-cards-buttons button{
+    width: 215px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500px;
+    border-radius: 6px;
+    margin: 0 auto;
+  color: white;
+  background-color: #6200f0;
+    margin-bottom: 160px;
+    border: none;
+}
+.proceed-payment:hover{
+    background-color: #5205C1;
+}
+.payment-select-cards-buttons .flutterbutn{
+    margin-right: 20px;
+    margin-bottom: 40px;
+    /* width: 248px; */
+    height: 60px;
+    /* display: flex; */
+  font-size: 16px;
+  color: #333333;
+ 
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 4px;
+  
+    border: 1px solid rgba(3,6,64,0.2);
+    border: none;
+    margin: 0 auto;
+    padding: 0px;
+  align-self: start;
+    
+}
+@media screen and (max-width:960px) {
+    .web-view-paycard-div{
+        display: none;
+    }
+    .payment-option-cad-mobile button{
+        width: 100%;
+        border: none;
+    }
+   
+    #cancel-Except{
+        background-color: white;
+        border: 1px solid #6200f0;
+        color: black;
+    }
+    .cance-proceed-mobile button{
+        background-color: #6200f0;
+        color: white;
+    }
+    
+}

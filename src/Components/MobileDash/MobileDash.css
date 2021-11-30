@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mobile-dash-logo{
+    width: 78px;
+    height: 32px;
+    margin-left: 20px;
+}
+.mobile-dash-logo img{
+    width: 100%;
+}
+.mobile-dash-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4e6ff;
+    margin-left: 0px;
+    margin-top: 30px;
+   padding: 0px 19px;
+    height: 44px;
+}
+.mobile-dash-header-left{
+    display: flex;
+    align-items: center;
+}
+.mobile-dash-header-right{
+    display: flex;
+    align-items: center;
+}
+.mobile-dash-header-right div{
+    margin-left: 20px;
+}
+.mobileDashtotal{
+    display: flex;
+    flex-direction: column;
+    background-color: #e4e6ff;
+   background-color: #fafafe;
+   background-color: #fbfbff;
+  
+  
+   
+}
+.top-mobile-dash-nav{
+    display: flex;
+    font-family: 'DM Sans', sans-serif;
+}
+.mobileDashtotal{
+  width: 100vw;
+    /* position: absolute; */
+   /* height: 100%; */
+  
+}
+.rightnavbar{
+    
+    min-height: 100%;
+    position: absolute;
+    min-width: 100%;
+    display: none;
+    justify-content: flex-end;
+    padding-top: 40px;
+    color: black;
+    float: right;
+    text-align: right;
+}
+#left-bar-logo{
+    margin: 40px auto;
+    margin-bottom: 0px;
+    
+}
+.logo-and-p{
+  
+    width: 100%;
+}
+/* .mobile-dash-logo img{
+    width: 100%;
+}
+.mobile-dash-logo{
+    width: 50px;
+} */
+.left-nav{
+    display: flex;
+    justify-self: center;
+    width: 65%;
+    z-index: 10000000;
+    background-color: #030640;
+   min-height: 100%;
+    position: fixed;
+    padding-bottom: 30px;
+    color: white;
+}
+.closeIcon-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    background-color: white;
+    width: 24px;
+    height: 24px;
+}
+.rightnavbar div{
+  
+    text-align: right;
+}
+.mobile-dash-lower{
+    margin-top: 23px;
+    font-size: 16px;
+    color: #6200f0;
+    align-self: start;
+    display: flex;
+    align-items: center;
+    margin-left: 36px;
+}
+.mobile-dash-lower p{
+    margin-left: 5px;
+}
+.profile-avatar{
+    width: 26.7px;
+    height: 26.7px;
+    border-radius: 100%;
+    border: 1.5px solid #070a4a;
+   color: #E4E6FF;
+   color: #aaaccf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

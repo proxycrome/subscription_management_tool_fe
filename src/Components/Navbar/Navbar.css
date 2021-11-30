@@ -1,0 +1,317 @@
+.NavBar{
+    font-family: 'DM Sans', sans-serif;
+}
+
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding-left: 100px;
+    padding-right: 100px;
+   color:#030640;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 100px;
+
+  padding-top: 40px;
+  background-color: #FAFAFE;
+
+
+  
+
+ 
+
+  /* margin-top: 40px; */
+ padding-top: 40px;
+
+ 
+ 
+  
+    
+    
+   
+}
+.Nav .dropDown .testing #partyner {
+    
+    
+    font-size: 40px;
+    
+}
+
+.dropDown{
+   
+   
+   
+    display: flex;
+   
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+   
+    padding: 0px;
+    position: relative;
+    
+}
+.dropDown div{
+    margin-top: 5px;
+    padding-left: 15px;
+    
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   
+    text-align: left;
+}
+.dropDown div p{
+  
+    margin-top: 0px;
+   
+}
+
+.NavRightContent{
+    display: flex;
+    align-items: flex-start;
+    
+   
+   
+   
+}
+.NavRightContent button{
+    width: 138px;
+    height: 56px;
+   margin-top: -20px;
+    background-color: #6200F0;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500px;
+    font-size: 16px;
+    position: relative;
+    
+   
+}
+.NavRightContent button:hover{
+    background-color: #5205C1;
+}
+.HwOrks:hover{
+    color: #6200f0;
+}
+.links{
+    text-decoration: none;
+    color:#030640;
+    font-size: 18px;
+    margin-top: 10px;
+   
+}
+#ext p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#ext p:hover{
+    color: #6200f0;
+}
+.NavRightContent p{
+    margin-right: 50px;
+}
+.Navlogo{
+    display: flex;
+    align-items: flex-start;
+  align-self: start;
+    padding-top: 0px;
+    line-height: 0px;
+    margin-top: -10px;
+    
+   
+   
+   
+   
+   
+  
+}
+.mobilenavrightcontent{
+    
+    display: none;
+}
+.mobilenavrightbar{
+    display: none;
+}
+.laptop-logo{
+    width: 108px;
+    height: 42px;
+    padding: 0px;
+    margin: 0px;
+}
+#companyLink{
+    display: flex;
+   align-self: center;
+    justify-content: center;
+    align-items: center;
+    color:#030640;
+    
+    margin-right: 50px;
+    
+  
+    
+    
+    
+   
+    
+}
+#companyLink:hover{
+    color: #6200f0;
+}
+.total-dropdown #companyLink .linker-extra{
+    background-color: crimson;
+}
+
+
+#companyLink p{
+    margin-right: 0px;
+}
+
+.total-flex{
+    background-color: aqua;
+    
+   
+}
+.mobileFlex{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+  
+    
+}
+.arrowNavBar{
+    margin-top: 18px;
+    align-self: center;
+    
+}
+.mobileFlex-div{
+    display: flex;
+    flex-direction: column;
+    color:#030640;
+   
+}
+
+.mobileFlex-div div{
+    margin-bottom: 0px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0px;
+    padding: 0px;
+}
+.mobileFlex-div div p{
+    
+   margin-top: 0px;
+   
+   
+}
+ .exception{
+    margin-top: 5px;
+    
+   
+}
+.mobileLinks{
+    text-decoration: none;
+    color:#030640;
+}
+.aboUt{
+    color:#030640;
+}
+#prIVacy{
+    color:#030640;
+}
+
+
+@media screen and (max-width:1060px) {
+    .Nav{
+    margin-bottom: 30px;
+    
+    padding-top: 20px;
+    }
+    
+    .Navlogo{
+        margin-top: 0px;
+    }
+    .mobilenavrightbar{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        
+        
+     
+        
+    } 
+    
+    .laptop-logo{
+        width: 78px;
+        height: 32px;
+        margin-bottom: 10px;
+    }
+    
+    
+    .mobile-logo{
+        display: inline ;
+    }
+    
+    .NavBar{
+      
+       display: flex;
+       flex-direction: column;
+       
+    }
+    .Nav{
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+       
+    }
+    
+    .mobilenavrightcontent{
+        background-color: white;
+       
+        display: none;
+        justify-content: center;
+        transition:1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: top 1s ease;
+       
+        width: 150px;
+        text-align: left;
+        padding-left: 20px;
+       
+      
+        flex-direction: column;
+       
+        /* margin-top: 18px; */
+        background-color: #FAFAFE;
+      
+        line-height: 180%;
+       
+    
+       
+       
+    }
+    .mobilenavrightcontent p{
+        margin-top: 18px;
+    }
+    .mobilenavrightcontent button{
+        min-width: 100px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+        border: none;
+        padding: 8px;
+        background-color: #6200F0;
+        border-radius: 5px;
+        color: white;
+    }
+    .NavRightContent{
+        display: none;
+    }
+    .companyNavBar{
+        margin-right: 20px;
+    }
+    
+}

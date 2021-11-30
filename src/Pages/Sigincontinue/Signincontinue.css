@@ -1,0 +1,55 @@
+.Signincontinue{
+   
+    margin-top:50px;
+    width: 410px;
+}
+.Signincontinue h1{
+    font-size: 20px;
+    font-weight: bold;
+  color: #4c0fae;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.Signincontinue-parag{
+    font-size: 16px;
+    color: rgba(51,51,51,70%);
+    margin-bottom: 40px;
+   text-align: left;
+}
+@media screen and (max-width:960px) {
+  .mobilesignin{
+    display: flex;
+  }
+  .web-frame-continue{
+    display: none;
+  }
+  .email-wrapper{
+    max-width: 100%;
+    min-width: 100%;
+    
+  }
+  .password-wrapper{
+    max-width: 100%;
+    min-width: 100%;
+    
+  }
+  .Signincontinue{
+   
+    width: 100%;
+    margin-top: 0;
+  }
+  .Signincontinue h1{
+    font-size: 16px;
+  }
+  .Signincontinue-parag{
+    font-size: 14px;
+  }
+  .noAccount{
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .alternateSignin{
+   
+    margin-bottom: 45px;
+  }
+}

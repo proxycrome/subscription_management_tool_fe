@@ -1,0 +1,427 @@
+.company-doing{
+    display: flex;
+    flex-direction: column;
+   
+    max-width: 100%;
+    min-width: 100%;
+    width: 500px;
+   
+
+}
+.company-doing-content{
+    display: flex;
+    justify-content: space-between;
+   min-width: 100%;
+   max-width: 100%;
+  
+  
+ 
+}
+.company-about{
+    text-align: left;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.imagesDivs{
+    width: 100%;
+   padding-top: 40px;
+   margin-bottom: 49px;
+  
+    display: flex;
+    flex-direction: column;
+}
+.image-One{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    margin-bottom: 190px;
+   
+}
+.image-Three{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comPany{
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FAFAFE;
+}
+.comPany P{
+    line-height: 157%;
+}
+.image-Two{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 190px;
+}
+.provide-left-center{
+    align-self: center;
+}
+.about-us{
+    width: 70%;
+}
+.company-doing-content div{
+ 
+    background-color: rgb(89, 112, 112);
+    border: 1px solid #1A2D57;
+    padding: 30px 20px;
+    border-radius: 6px;
+    background-color: #1A2D57;
+}
+.company-how .company-doing #marginExtra{
+    margin-bottom: 20px;
+}
+.company-how .company-doing #marginExtraP {
+    margin-right: 20px;
+}
+
+.header-Paragraph{
+    width: 80%;
+}
+#marginExtraX{
+    margin-right: 20px;
+}
+.company-doing-content p{
+    width: 20%;
+  
+}
+.company-learn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.learn-left{
+    width: 90%;
+    text-align: left;
+    font-size: 44px;
+    color: #030640;
+   
+}
+.line-under-learn-left{
+    width: 50%;
+    margin-top: 10px;
+    border: 1px dashed #6200f0;
+    letter-spacing: 14px;
+}
+.provide-left-center{
+    margin-top: 380px;
+   
+}
+.provide-left-center h3{
+    margin-bottom: 30px;
+}
+.learn-right{
+    color: white;
+    font-size: 18px;
+    width: 50%;
+   overflow-y: auto;
+    background-image: url("../../Asset/Base.png");
+    text-align: left;
+    display: flex;
+    
+    align-items: flex-end;
+   background-color: rgb(141, 136, 136);
+    height: 400px;
+    padding: 30px;
+    background-blend-mode: darken;
+}
+.learn-right img{
+    width: 100%;
+}
+.company-provide{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+    align-items: center;
+}
+.company-provide div{
+    width: 50%;
+}
+.company-provide-left{
+    margin-right: 70px;
+    
+}
+.company-provide-left h2{
+    margin-top: 160px;
+    margin-bottom: 50px;
+}
+.company-how{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding:100px 100px ;
+    background-color: #191D6C;
+    background-color: #0c204c;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+   
+    
+}
+.company-how div{
+    width: 50%;
+}
+.company-how-left{
+    width: 50%;
+   
+    text-align: left;
+}
+.img-about-first{
+    min-width: 100%;
+    max-width: 100%;
+}
+.img-about-first img{
+    width: 100%;
+}
+.abouty-div{
+    width: 50%;
+    height: 100%;
+    margin-left: 70px;
+}
+.abouty-div img{
+   
+        width: 100%;
+}
+.rectangle-div{
+    width: 100%;
+    background-color: #0c204c;
+    padding: 40px 100px;
+    margin-top: 220px;
+    margin-bottom: 180px;
+}
+.rectangle-div img{
+    width: 100%;
+}
+.shaped-image-div{
+    width: 25%;
+}
+.shaped-image-div img{
+    width: 100%;
+   
+}
+.shaped-image-div-first{
+    width: 25%;
+    margin-right: 100px;
+}
+
+.shaped-image-div-first img{
+    width: 100%;
+ 
+}
+.company-provide h2{
+    font-size: 37px;
+    color: #030640;
+}
+.company-provide h3{
+    font-size: 24px;
+    color: #030640;
+}
+.company-provide p{
+    font-size: 18px;
+    color: #333333;
+}
+.company-how-left h2{
+    font-size: 37px;
+    color: white;
+}
+.header-Paragraph{
+    font-size: 16px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.numberAbout{
+    font-size: 36px;
+    color: white;
+}
+.textABout{
+    color: white;
+    font-size: 16px;
+}
+.about-us h2{
+    font-size: 37px;
+    color: #030640;
+}
+.about-us p{
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+#mobile-abouty-div{
+    display: none;
+}
+@media screen and (max-width:1000px) {
+    #mobile-abouty-div{
+        display: flex;
+    }
+    #web-abouty-div{
+        display: none;
+    }
+    .rectangle-div{
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+    
+    .company-provide{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 0;
+      
+        flex-direction: column;
+    }
+    .company-learn{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+     
+        text-align: left;
+        
+    }
+    .company-provide div{
+        width: 100%;
+        padding-top: 0;
+       
+    }
+    .provide-left-center h3{
+        margin-bottom: 30px;
+    }
+    .provide-left-center p{
+        font-size: 16px;
+    }
+    .provide-left-center {
+        margin-top: 30px;
+        margin-bottom: 0;
+      
+    }
+    .company-provide-left h2{
+        margin-top: 60px;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .company-provide-left{
+        margin-right: 0px;
+    }
+    .company-how{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 30px;
+        padding-top: 30px;
+        margin-bottom: 0;
+        
+    }
+    .company-how div{
+        width: 100%;
+    }
+    .company-about{
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .numberAbout{
+        font-size: 24px;
+        margin-top: 0;
+    }
+    .company-doing{
+      
+        margin-top: 53px;
+    }
+    .textABout{
+        font-size: 14px;
+    }
+    .company-doing-content div{
+        width: 150px;
+        min-height: 102px;
+        padding-top: 16px;
+        padding-left: 10px;
+        
+    }
+    .company-how-left h2{
+       font-size: 24px;
+       margin-bottom: 0;
+    }
+    .header-Paragraph{
+        margin-top: 30px;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .about-us{
+        width: 100%;
+    }
+    .learn-left{
+        width: 100%;
+    }
+    .learn-right{
+        width: 100%;
+       height: 254px;
+       margin-bottom: 0;
+       padding-top: 20px;
+       font-size: 14px;
+        
+    }
+    .learn-right p{
+        font-size: 12px;
+    }
+    .abouty-div{
+        width: 100%;
+        margin-left: 0px;
+       margin-top: 30px;
+    }
+    .abouty-div img{
+        width: 100%;
+    }
+    .learn-left{
+        font-size: 24px;
+        align-self: start;
+        width: 90%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    .company-learn{
+        text-align: left;
+        
+    }
+    .line-under-learn-left{
+        border: 1px dashed #6200f0 ;
+        width: 40%;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .company-about{
+       margin-top: 30px;
+    }
+    .about-us h2{
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .about-us p{
+        font-size: 16px;
+        margin-top:30px;
+        margin-bottom: 0;
+    }
+    .about-us{
+        margin-bottom: 0;
+      
+    }
+    .imagesDivs{
+        margin-top: 30px;
+       
+        margin-bottom: 0;
+    }
+    .image-One{
+        margin-bottom: 53.3px;
+    }
+    .image-Two{
+        margin-bottom: 53.3px;
+    }
+    .image-Three{
+        margin-bottom: 53.3px;
+    }
+}

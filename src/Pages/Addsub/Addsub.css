@@ -1,0 +1,24 @@
+.addsubb{
+   
+    max-width: 100%;
+    min-width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+    font-family: 'DM Sans', sans-serif;
+}
+.add-sub-mobile{
+    display: none;
+}
+@media screen and (max-width:960px) {
+    .add-sub-web{
+        display: none;
+    }.add-sub-mobile{
+        display: flex;
+    }
+    .addsubb{
+        
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
