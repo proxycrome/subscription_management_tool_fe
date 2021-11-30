@@ -114,12 +114,12 @@ import '../Sign-in/Signin.css'
         //customer-details
       
         if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
-            localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));
+            localStorage.setItem('customerDetail', JSON.stringify({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""}));
         }
-        else{localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));}
+        else{localStorage.setItem('customerDetail', JSON.stringify({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""}));}
         
         setAuthHeader()
-          customerdetails({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName})
+          customerdetails({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""})
           console.log(customer)
           history.push("/Dashboard")
       }

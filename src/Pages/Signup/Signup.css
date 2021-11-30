@@ -735,7 +735,7 @@ margin-right: 15px;
     margin: 0px;
     position: absolute;
    margin-left: 0;
-    position: absolute;
+   
 }
 .signup-total{
     position: relative;
@@ -1047,6 +1047,8 @@ margin-right: 15px;
         .mobile-signup-inner{
             background-color: white;
             padding: 20px 30px;
+            margin-left: 16px;
+            margin-right: 16px;
         }
         .google-AND-facebook-mobile{
             width: 100%;

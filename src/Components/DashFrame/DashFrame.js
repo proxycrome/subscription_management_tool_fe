@@ -81,8 +81,8 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                 <div className="dashboard-right">
                     <div className="dash-upper">
                         <div className="dash-upper-left">
-                            <div className="first"><div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div></div>
-                            <div>Hi,{customerDetail.firstname}</div>
+                            <div className="first">{customerDetail.photo==""? (customerDetail.photo): (<div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div>)}</div>
+                            <div>Hi,{customerDetail.firstName}</div>
                         </div>
                         <div className="dash-upper-right">
                             <div className="firsts"><img src={newsfeed}/></div>
