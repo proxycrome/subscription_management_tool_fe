@@ -69,3 +69,38 @@
     box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
+
+.pers-info{
+    width: 189px;
+    border-bottom: 1.5px solid rgba(98, 0, 240, 0.3);
+    font-family: "DM Sans";
+}
+
+.fund-hist-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.fund-hist-box h4{
+    width: 172px;
+    height: 23px;
+    margin: 0 96px 0 0;
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.44px;
+    text-align: left;
+    color: #fff;
+}
+
+.fund-hist-box{
+    width: 1016px;
+    height: 68px;
+    margin: 20px 0;
+    margin-left: -30px;
+    padding: 22px 547px 23px 30px;
+    background-color: #030640;
+}
