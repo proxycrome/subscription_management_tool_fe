@@ -11,6 +11,9 @@ import { addsubs } from '../../redux/flex/flex.actions';
 import { subarray } from '../../redux/flex/flex.actions';
 import { addarray } from '../../redux/flex/flex.actions';
 import { FaEye } from 'react-icons/fa';
+import Dashopen from '../../Components/Dashopen/Dashopen';
+import MobileDashopen from '../../Components/MobileDashopen/MobileDashopen'
+import Upperbox from '../../Components/Upperbox/Upperbox';
 
 function Belowbox({match,presentcolor,headercolor,firstbutn,secondbutn,choice,cycle,noclick,
 firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
@@ -253,7 +256,125 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
 
      }
 return(
-    
+    <div className="renew-totaL">
+    <div className="renew-web-view">
+   <Dashopen>
+       <Upperbox/>
+        <div className="belowbox">
+            <div>
+                <div className="belowbox-Header">
+                    <h3>Product Category</h3>
+                    <h3>ENTERTAINMENT</h3>
+                </div>
+                <div className="belowbox-inner-all">
+                <div className="belowbox-inner">
+                    <Smallbox icon={Info.image}/>
+                    <div className="below-categ-div">
+                        
+                        <div className="below-category-options">
+                            <p>Packages</p>
+                            <div className="selected-div-below">
+          
+                <select name="choice" onChange={Changevalue} className="select-placeholder-below" id="selectlists-below" >
+                <option value="country" >{Info.name}</option>
+                   {packageFiles.map((vals,index)=>{
+                      selectindex=index
+                       console.log(product)
+                       console.log(vals.productName)
+                    //    cont= 
+                        return(
+                            <option key={index} value={vals.productName}>{vals.productName}</option>
+                        )
+                    })} 
+                     
+
+                </select>
+           
+                </div>
+                        </div>
+                        <div className="below-category-options">
+                        <p>Amount</p>
+                        <p>NGN{deleteamt}</p>
+                        {/* {  result=product.filter((vals,index)=>{
+                      
+                       selectindex==index
+                        return(
+                            <option key={index} value={vals}>{vals.productName}</option>
+                        )
+                    })}  */}
+                        {/* <input type="number" onChange={((e)=>{addsubs({Amount:e.target.value});console.log(e.target.value)})}/>
+                        <p>package</p>
+                        <input type="text" onChange={((e)=>{addsubs({Package:e.target.value})})}/> */}
+                        {/* <p>N2500.00</p> */}
+                        </div>
+                        <div className="below-category-options">
+                        <p>Billing Cycle</p>
+                        <div className="selected-div-below">
+          
+                <select name="cycle"  onChange={Changecycle} className="select-placeholder-below" id="selectlist-below" >
+                <option value="country" >{Info.billincycle}</option>
+                {/* {product.map((vals,index)=>{
+                      
+                      console.log(product) */}
+                       {/* return( */}
+                           <option  value="Monthly">Monthly</option>
+                       {/* )
+                   })}  */}
+
+                </select>
+           
+                </div>
+                        </div>
+                        <div className="below-category-options">
+                        <p>Auto Renewal</p>
+                        <div className="below-enable">
+                            <p>{autorenewal}</p>
+                            <label className="switch">
+  <input type="checkbox" onClick={(()=>{if(autorenewal=="Disabled"){setAutorenewal("Enabled")
+   setCheckers(true)}
+  else{setAutorenewal("Disabled")
+  setCheckers(false)}
+//   let option=autorenewal
+//   console.log(option)
+    //   setAutorenewal("Enabled");
+   //addsubs({Renew:autorenewal});console.log(autorenewal)
+})
+  
+  } checked={checkers}/>
+  <span class="slider round"></span>
+</label>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                   
+                <div className="below-butn">
+                    <button className="first-belowbutton" onClick={
+                        history.goBack
+                     
+                   } >DISCARD</button>
+                    {/* <button className="second-belowbutton" onClick={(()=>{choice=="" ? noclick(): secondclick()})} >{secondbutn}</button> */}
+                    <button className="second-belowbutton" onClick={(()=>{
+                        
+                        if((billingCycle!="")&&(selectpack!="")){
+                           
+                           sub()
+                        }
+                        
+                        })} >RENEW</button>
+                </div>
+                </div>
+               
+            </div>
+
+        </div>
+         
+        </Dashopen>
+        </div>
+
+        <div className="renew-mobile-view">
+        <MobileDashopen>
+       <Upperbox/>
         <div className="belowbox">
             <div>
                 <div className="belowbox-Header">
@@ -363,7 +484,10 @@ return(
 
         </div>
          
-  
+        </MobileDashopen>
+
+        </div>
+        </div>
 
 )
 

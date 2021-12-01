@@ -19,7 +19,7 @@ import Upperbox from '../../Components/Upperbox/Upperbox'
 // import MobileDash from '../../Components/MobileDash/MobileDash'
 import axios from 'axios'
 import '../Newsub/Newsub.css'
-import MobileDash from '../../Components/MobileDash/MobileDash'
+import MobileDashopen from '../../Components/MobileDashopen/MobileDashopen'
 
 function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addarray}){
     let packageFile=[]
@@ -263,7 +263,7 @@ return(
     </Dashopen>
     </div>
     <div className="newsub-mobile">
-        <MobileDash>
+        <MobileDashopen>
 
         <div className="newsubContainer">
         {/* <div className="upperboX">
@@ -302,7 +302,7 @@ return(
 
         </div>
          
-        </MobileDash>
+        </MobileDashopen>
 
     </div>
     </div>

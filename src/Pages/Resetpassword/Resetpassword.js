@@ -96,7 +96,7 @@ axios.put("https://subscription-management-tool.herokuapp.com/resetpassword",par
       //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
       
    
-      history.push("/signin")
+      history.push("/signincontinue")
   }
 
 

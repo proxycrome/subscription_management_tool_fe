@@ -36,7 +36,7 @@ function Paymentcard({presentcolor,headercolor}){
          }
      }
 return(
-    <div>
+    <div className="total-payMENT-CARD">
         <div className="web-view-paycard-div">
     <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
         <div className="paymentoption">

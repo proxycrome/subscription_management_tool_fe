@@ -3,12 +3,12 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #FAFAFE;
     
 }
 .works-inner{
-    width: 45%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -25,6 +25,7 @@
     text-align: left;
     margin-left: 0px;
     margin-top: 40px;
+    
 }
 .works-inner-second h2{
     font-size: 48px;
@@ -41,11 +42,17 @@
 .works-inner-second p{
     font-size: 24px;
     margin-bottom: 20px;
+    color: #333333;
+    width: 80%;
 }
 .works-lower-inner{
     display: flex;
    
     
+}
+.functionality-inner p{
+    color: #030640;
+    width: 60%;
 }
 .works-lower-inner span{
     border: none;
@@ -55,19 +62,26 @@
     width: 180px;
     margin-right: 20px;
     margin-bottom: 30px;
-    word-break: break-all;
+    /* word-break: break-all; */
+    /* word-break: initial; */
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding: 0px;
     text-align: left;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 20px;
     width: 50%;
    
     
+}
+.works-lower-inner span p{
+    word-break: normal;
+    word-break: keep-all;
+
 }
 .work-intro-show{
     
@@ -118,6 +132,10 @@
     background-color: #6200F0;
     border-radius: 6px;
     color: white;
+   
+}
+.works-inner button:hover{
+    background-color: #5205C1;
 }
 .works-image{
     width: 45%;
@@ -148,8 +166,9 @@
 }
 .works-and-image{
     padding-left: 100px;
-    
+    padding-right: 100px;
     margin-top: 80px;
+    
 }
 .works-and-image-original{
     padding-left: 100px;
@@ -198,8 +217,8 @@
 }
 .work-header-line{
     height: 3px;
-    background-color: black;
-    color: brown;
+    background-color: #6200f0;
+ 
     margin-left: 100px;
     width: 40%;
     margin-top: 40px;
@@ -237,16 +256,33 @@
 .works-inner h2{
     font-size: 28px;
     color: #030640;
+    line-height: 50px;
+  
 }
 .work-inner-p{
     font-size: 18px;
     margin-top: 40px;
     margin-bottom: 50px;
+    width: 90%;
+    line-height: 30px;
+}
+#extra-img{
+    display: none;
 }
 @media screen and (max-width:700px) {
     .mobile-works-inner h2{
         margin-bottom: 30px;
         margin-top: 60px;
+        color: #030640;
+        font-size: 24px;
+    }
+    #extra-img{
+        display: inline-block;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #extra-img-web{
+        display: none;
     }
     .mobile-works-inner p{
        font-size: 20px;
@@ -257,13 +293,25 @@
     }
     .works-inner button{
         width: 100%;
-        margin-bottom: 60px;
+        margin-bottom: 0px;
+        font-size: 16px;
     }
     .works-inner h2{
         font-size: 24px;
+        margin-left: 24px;
+        margin-bottom: 0;
+        line-height: 30px;
     }
     .works-inner p{
-        font-size: 20px;
+        margin-bottom: 0;
+        margin-top: 30px;
+        line-height: 22px;
+        width: 100%;
+    }
+    
+    .works-inner-p{
+        font-size: 16px;
+        margin-top: 0;
     }
     .work-header .sep-H2{
         font-size: 28px;
@@ -283,10 +331,17 @@
         margin-left: 0px;
         padding-left: 20px;
         width: 100%;
-        font-size: 28px;
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .work-header-line{
+        margin-top: 19px;
+        background-color: #6200f0;
+        margin-bottom: 30px;
     }
     .work-header-line-div{
         padding-left: 20px;
+       
         width: 90%;
     }
     
@@ -310,6 +365,8 @@
     }
     .works-and-image{
         display: none;
+        margin-top: 0;
+       
     }
     .works-lower{
         flex-direction: column;
@@ -325,6 +382,10 @@
         word-break: break-all;
         font-size: 15px;
         margin-right: 0px;
+        margin-bottom: 30px;
+        min-height: 230px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         
         
         
@@ -340,7 +401,7 @@
        
         width: 90%;
         margin: auto;
-        margin: 10px auto;
+        margin: 30px auto;
         margin-left: 10px;
         margin-right: 0px;
       align-items: center;
@@ -363,6 +424,7 @@
         text-align: left;
         padding-left: 20px;
         padding-right: 20px;
+        
     }
     .works-image-first{
         width: 100%;
@@ -371,6 +433,22 @@
         width: 100%;
     }
     .mobile-work-img img{
+        width: 100%;
+    }
+    .mobile-works-inner p{
+        font-size: 16px;
+        color: #333333;
+    }
+    .functionality-inner p{
+        font-size: 14px;
+        color: #030640;
+        width: 100%;
+    }
+    .funct-Image-div{
+        height: 13.3px;
+        width: 13.3px;
+    }
+    .works-inner-second p{
         width: 100%;
     }
 }

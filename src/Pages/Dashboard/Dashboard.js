@@ -15,7 +15,7 @@ import Smallestbox from '../../Components/Smallestbox/Smallestbox'
 import Dstiv from '../../Asset/Dstv.png'
 import Gotiv from '../../Asset/GOTV.png'
 import MobileDash from '../../Components/MobileDash/MobileDash';
-
+import plusCircle from '../../Asset/plus-circle.png'
 
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import axios from 'axios';
@@ -36,6 +36,28 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[itemColor,setItemColor]=useState({color:""})
     const[checkarr,setCheckarr]=useState([])
     const[searchDatar,setSearchDatar]=useState("")
+    const[oct,setOct]=useState("")
+    const[nov,setNov]=useState("")
+    const[dec,setDec]=useState("")
+    const[lastDate,setLastDate]=useState("-")
+    let janAmt=0
+let febAmt=0
+let marAmt=0
+let aprAmt=0
+let mayAmt=0
+let junAmt=0
+let julAmt=0
+let augAmt=0
+let sepAmt=0
+let octAmt=0
+let novAmt=0
+let decAmt=0
+let grapharr=[]
+
+let news=0
+let newsoct=0
+let newoct=0
+
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -78,6 +100,9 @@ function Dashboard({presentcolor,headercolor,subarray}){
         userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
      setArr(itemArray)
         console.log(itemArray)
+        
+
+           
         //arrs=itemArray
         
    
@@ -101,6 +126,20 @@ function Dashboard({presentcolor,headercolor,subarray}){
             setItemId(catId)
             console.log(itemStatus)
 
+            //linegraph
+            if(val.dateSubscribed.split("-")[1]==10){
+                octAmt+=val.amount}
+                setOct(octAmt)
+                if(val.dateSubscribed.split("-")[1]==11){
+                    novAmt+=val.amount}
+                    if(val.dateSubscribed.split("-")[1]==12){
+                        decAmt+=val.amount}
+                    setNov(novAmt)
+                    setDec(decAmt)
+
+                    // setLastDate(val.dateSubscribed)
+                    // console.log(lastDate)
+                    // console.log(val.dateSubscribed)
         //     let contents=arr.map((val,index)=>{
         //         console.log(userDisplay)
         //     cats=val.subCategory
@@ -176,8 +215,40 @@ function Dashboard({presentcolor,headercolor,subarray}){
     userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
     setNamearr(userDisplay)
 },[]) 
+const data = {
+  
+    labels: ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+   //labels: [],
+   datasets: [
+     {
+       label: 'Subscription',
+       data: [janAmt, febAmt, marAmt, aprAmt, mayAmt, junAmt,julAmt,augAmt,sepAmt,oct,nov,dec],
+      lineTension:0.5,
+       fill: false,
+     //   backgroundColor: 'rgb(255, 99, 132)',
+     backgroundColor: '#A6CEE3',
+     
+     borderColor: '#A6CEE3',
+     width:"1000px",
+     
+     // height:"100%"
+     //   borderColor: 'rgba(255, 99, 132, 0.2)',
+     },
+   ],
+ };
+ 
+ const options = {
+   scales: {
+     y: {
+       beginAtZero: true
+     }
+   }
+ };
+ 
     userDisplay = JSON.parse(localStorage.getItem('userDisplay'));  
     console.log(userDisplay)
+    console.log(oct)
+    console.log(nov)
 //     if(arr==null){
 //         return( <div className="main-loading-spinner">
 //             <Loader type="Oval" width={40} color="#030640" />
@@ -250,7 +321,8 @@ function Dashboard({presentcolor,headercolor,subarray}){
          console.log(index)
         //  if(val.subCategory=="Gotv")
         //  { setProductId("")}
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+           arr.map((item,indx)=>{
             console.log(indx)
         if(indx==index){
             console.log(item._id)
@@ -266,7 +338,8 @@ function Dashboard({presentcolor,headercolor,subarray}){
      function Active(val,index){
        
         //console.log(indx)
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
         if(indx==index){
             console.log(item._id)
             clientItem=item._id
@@ -283,7 +356,8 @@ function Dashboard({presentcolor,headercolor,subarray}){
     }
     function Expired(val,index){
     
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
         if(indx==index){
             console.log(item._id)
             clientItem=item._id
@@ -301,7 +375,8 @@ function Dashboard({presentcolor,headercolor,subarray}){
     function handledelete(val){
       
         console.log(val)
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
             console.log(item.subscriptionStatus)
             if(item.subscriptionStatus!=="Active"){
              
@@ -390,7 +465,7 @@ console.log(contentd)
       //  headercolor({ dashheadercolor:"#6200F0"})                   
      //},[])
      //console.log(presentcolor.dashheadercolor)
-
+    // },[]) 
 
     return(
             <div className="dashtotal">
@@ -427,7 +502,7 @@ console.log(contentd)
                                         <button className="first-graph-button">MONTHLY</button>
                                         <button className="second-graph-button">YEARLY</button>
                                     </div>
-                                    <div className="linechart"><LineChart/></div>
+                                    <div className="linechart"> <Line data={data} options={options} style={{minHeight:"150px",maxHeight:"150px"} }/></div>
                                     </div>
                                 </div>
                                 <div className="fourth-line-right">
@@ -440,7 +515,7 @@ console.log(contentd)
                                             </div>
                                             <div className="wallets-lower">
                                                 <div><p className="medium-weight-dashboard">E-wallet Balance</p></div>
-                                                <div><p className="money-dashboard">NGN 134,457.56</p></div>
+                                                <div><p className="money-dashboard">NGN 0.00</p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -643,7 +718,7 @@ console.log(contentd)
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
                                     <h3>Overview</h3>
-                                    <button>ADD SUBSCRIPTION</button>
+                                    <button onClick={(()=>{history.push("/productcategory")})}> <img src={plusCircle} alt="add"/><p>ADD SUBSCRIPTION</p></button>
                                 </div>
                                 <div className="mobile-categ">
                                     <span className="mobile-acc-line">
@@ -663,7 +738,7 @@ console.log(contentd)
                                         <button className="first-graph-button">MONTHLY</button>
                                         <button className="second-graph-button">YEARLY</button>
                                     </div>
-                                    <div className="linechart"><LineChart className="linestyle"/></div>
+                                    <div className="linechart"> <Line data={data} options={options} style={{minHeight:"150px",maxHeight:"150px"} }/></div>
                                     </div>
                             </div>
                             </div>

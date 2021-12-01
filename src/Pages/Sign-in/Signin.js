@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
+import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import Recaptcha from 'react-recaptcha';
 import flexpng from '../../Asset/flexpng.png'
 import setAuthHeader from '../../Components/Utility/Utility'
@@ -18,6 +19,8 @@ import '../Sign-in/Signin.css'
 
     
      function Signin({detailssignin,signindetails,customerdetails,customer}){
+         const[errMess,setErrMess]=useState("")
+         const[errPop,setErrPop]=useState({display:"none"})
     const[passwordshow, setPasswordshow]=useState(false)
     const[password,setPassword]=useState("")
     const[email,setEmail]=useState("")
@@ -32,12 +35,12 @@ import '../Sign-in/Signin.css'
 
     useEffect(()=>{
         let remeberEmail=JSON.parse(localStorage.getItem('userEmail'))
-        let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
-    if((remeberEmail && rememberPassword)!==null){
+        // let rememberPassword=JSON.parse(localStorage.getItem('userPassword'))
+    if((remeberEmail )!==null){
         setEmail(remeberEmail)
-      setPassword(rememberPassword)
+    //   setPassword(rememberPassword)
       signindetails({email:email})
-      signindetails({password:password})
+    //   signindetails({password:password})
 
     }
 
@@ -67,8 +70,10 @@ import '../Sign-in/Signin.css'
         //history.push("/Dashboard")
    
     const params={
-        password:detailssignin.password,
-  email:detailssignin.email,
+//         password:detailssignin.password,
+//   email:detailssignin.email,
+        password:password,
+        email:email
    
       
       
@@ -109,17 +114,17 @@ import '../Sign-in/Signin.css'
         //customer-details
       
         if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
-            localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));
+            localStorage.setItem('customerDetail', JSON.stringify({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""}));
         }
-        else{localStorage.setItem('customerDetail', JSON.stringify({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName}));}
+        else{localStorage.setItem('customerDetail', JSON.stringify({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""}));}
         
         setAuthHeader()
-          customerdetails({firstname:res.data.data.firstName,email:res.data.data.email,lastname:res.data.data.lastName})
+          customerdetails({firstName:res.data.data.firstName,email:res.data.data.email,lastName:res.data.data.lastName,photo:"",phone:""})
           console.log(customer)
           history.push("/Dashboard")
       }
       else{
-          alert('invalid input')
+        //   alert('invalid input')
       }
 
     
@@ -128,7 +133,13 @@ import '../Sign-in/Signin.css'
    
     
     .catch((err)=>{
-     console.log(err)
+     console.log(err.response.data.message)
+     
+   setErrPop({display:"flex"})
+   setErrMess(err.response.data.message)
+   setButnstyle({backgroundColor:"#6200f0"})
+   setLogtext({color:"white"})
+   setLoading(true)
   })
 }}
     //const keeploggedin=(e)=>{
@@ -147,6 +158,10 @@ import '../Sign-in/Signin.css'
     return(
         <div className="signintotal">
         <div className="signin" >
+        <div style={errPop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setErrPop({display:"none"}) }) } ><Cancel/></div>
+                <p>{errMess}</p>
+            </div>
             <div className="inner-signin">
             <div className="textandimage">
                 <div className="textandimage-logo">
@@ -212,6 +227,7 @@ import '../Sign-in/Signin.css'
             </div>
             </div>
         </div>
+        
         
  
     </div>  

@@ -12,7 +12,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: DM SANS;
+    font-family: 'DM Sans', sans-serif;
     
     
   
@@ -102,6 +102,9 @@
     font-weight: bold;
     color: white;
 
+}
+.newsletter button:hover{
+    background-color: #5205C1;
 }
 .newsletter input{
     padding-left: 20px;

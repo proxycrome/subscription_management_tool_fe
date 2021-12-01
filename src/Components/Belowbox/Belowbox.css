@@ -39,7 +39,7 @@ margin-left: 70px;
 }
 .belowbox{
     padding: 33.5px 00px;
-   
+    font-family: 'DM Sans', sans-serif;
     background-color: white;
     /* border: 1px solid rgba(7,10,74 ,10%); */
     border: none;
@@ -104,6 +104,7 @@ margin-left: 70px;
     margin-bottom: 22px;
     border-radius: 6px;
 }
+
 .selected-div-below{
     width: 186px;
     height: 47px;
@@ -140,10 +141,16 @@ background-color: white;
     color: #6200f0;
     background-color: white;
 }
+.first-belowbutton:hover{
+    border: 3px solid  #5205C1; 
+}
 .second-belowbutton{
     background-color: #6200f0;
     color: white;
     border: none;
+}
+.second-belowbutton:hover{
+    background-color: #5205C1;
 }
 
 .below-enable p{

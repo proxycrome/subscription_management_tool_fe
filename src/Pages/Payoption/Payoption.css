@@ -12,6 +12,9 @@
     align-items: center;
    
 }
+.total-pay-option{
+    font-family: 'DM Sans', sans-serif;
+}
 .header-payment h3{
     font-size: 18px;
     text-align: left;
@@ -98,11 +101,19 @@
 .pay-mobile-views{
     display: none;
 }
+
+.proceed-payment:hover{
+        background-color: #5205C1;
+    }
+
 .paymentoption .cancel-payment{
     margin-right: 40px;
     color: #6200f0;
     background-color: white;
     border: 1px solid #6200f0;
+}
+.paymentoption .cancel-payment:hover{
+    border: 3px solid #5205C1;
 }
 
 @media screen and (max-width:960px){

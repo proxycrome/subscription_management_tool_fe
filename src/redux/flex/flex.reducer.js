@@ -21,6 +21,7 @@ const INITIAL_STATE={
                     howcolor:"",
                     privacystyle:"#030640",
                     aboutstyle:"",
+                    blogcolor:"",
                     dashheadercolor:"",
                     dashinvitecolor:"",
                     dashsubscribecolor:"",

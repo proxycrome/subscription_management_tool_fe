@@ -34,7 +34,7 @@ function MobileDash({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle
       let customerDetails=JSON.parse(localStorage.getItem('customerDetail'))
      setCustomerDetail(customerDetails)
         //let customers=customer
-        console.log(customerDetail.firstname)
+        console.log(customerDetail.firstName)
     },[])
 return(
     <div className="top-mobile-dash-nav">
@@ -47,7 +47,7 @@ return(
                        
                        <div onClick={(()=>{history.push("/dashboard")})} style={dashheaderstyle} className="inner-list">
                            <div className="dash-icon"><Home/></div>
-                           <p>Homes</p>
+                           <p>Home</p>
                            </div>
                            <div onClick={(()=>{history.push("/subscription");setLeftNav({display:"none"})})} style={dashsubscribestyle} className="inner-list">
                            <div className="dash-icon"><Sub/></div>
@@ -97,8 +97,12 @@ return(
        </div>
        </div>
        <div className="mobile-dash-lower">
-       <div className="profile-avatar"><FaUserAlt/></div>
-       <p>Hi,{ customerDetail.firstname}</p>
+       {/* <div className="profile-avatar">{customerDetail.photo!=""? ( */}
+       
+       <div className="profile-avatar">{customerDetail.photo!=""? (<img src={customerDetail.photo}/>):(<FaUserAlt />)}</div>
+       {/* )}</div> */}
+       {/* <div className="profile-avatar"><FaUserAlt/></div> */}
+       <p>Hi,{ customerDetail.firstName}</p>
        </div>
        <div style={rightNav}>
            {children}

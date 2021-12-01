@@ -47,7 +47,7 @@ userObject.dateSubscribed=date
 //         billingCycle:subscription.billingCycle,category:"Entertainment",dateExpired:2021-11-9,dateSubscribed:2021-10-10,
 //         subscriptionStatus:"Expired"}
     testObject.dateExpired="2021-11-09"
-testObject.dateSubscribed="2021-10-10"
+testObject.dateSubscribed="2021-11-10"
     testObject.subscriptionStatus="Expired"
 
 

@@ -11,6 +11,7 @@ import {ReactComponent as FacebookLogo} from '../../Asset/FACEBOOK ICON.svg';
 import {ReactComponent as GoogleLogo} from '../../Asset/google logo.svg';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {ReactComponent as SignflexLogo} from '../../Asset/LOGO FLEX.svg';
+import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import axios from 'axios'
 import Recaptcha from 'react-recaptcha'
 import {ReactComponent as Info} from '../../Asset/info.svg'
@@ -18,6 +19,8 @@ import flexpng from '../../Asset/flexpng.png'
 import '../Signup/Signup.css'
 
 function Signup({details,signupdetails,signup}){
+    const[message,setMessage]=useState("")
+    const[issuePop,setIssuePop]=useState({display:"none"})
     const[logtext,setLogtext]=useState({})
     const[butnstyle,setButnstyle]=useState({})
     const[countrystyle,setCountrystyle]=useState({color:'#c4c4c4'})
@@ -34,6 +37,7 @@ function Signup({details,signupdetails,signup}){
     const[countryval,setCountryval]=useState("")
     const[loading, setLoading]=useState(true)
     const[popup,setPopup]=useState({display:"none"})
+    const[popupInfo,setPopupInfo]=useState({display:"none"})
     const history=useHistory()
 
     
@@ -100,7 +104,36 @@ function Signup({details,signupdetails,signup}){
             setPasswordWrap({marginBottom:"5px"})
         }
         var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-if(passval.match(decimal))
+        
+// if(passval.match(decimal))
+// {
+  
+
+//         console.log(details)
+//         //console.log(signup)
+        
+//         const params={
+//              firstName:details.firstName,
+//             lastName:details.lastName,
+//        email:details.email,
+//         password:details.password,
+//             country:details.country
+           
+//         }
+//         console.log(params)
+        
+       //fetch("https://subscription-management-tool.herokuapp.com/register",
+      //{method: 'POST',
+  //body:JSON.stringify(params)})
+  
+       //.then((resp) => {console.log(resp)})
+      
+      // .catch((err)=>{
+          // console.log(err)
+       //})
+
+        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")){
+            if(passval.match(decimal))
 {
   
 
@@ -116,18 +149,6 @@ if(passval.match(decimal))
            
         }
         console.log(params)
-        
-       //fetch("https://subscription-management-tool.herokuapp.com/register",
-      //{method: 'POST',
-  //body:JSON.stringify(params)})
-  
-       //.then((resp) => {console.log(resp)})
-      
-      // .catch((err)=>{
-          // console.log(err)
-       //})
-
-        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")){
 
             setButnstyle({backgroundColor:"grey"})
             // setLogtext({color:"rgba(3,64,6,20%)"})
@@ -159,9 +180,15 @@ if(passval.match(decimal))
         //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
         //setTimeout(()=>{
             setPopup({display:"flex"})
-       
-        setTimeout(function(){history.push("/signin")},3000);
+            setButnstyle({backgroundColor:"#6200f0"})
+   setLogtext({color:"white"})
+   setLoading(true)
+       //console.log(res.data.message)
+       // setTimeout(function(){history.push("/signin")},3000);
        //history.push("/signin")
+    }
+    else{
+        console.log(res.data.message)
     }
 
 
@@ -172,7 +199,12 @@ if(passval.match(decimal))
  
   
   .catch((err)=>{
-   console.log(err)
+   console.log(err.response.data.message)
+   setIssuePop({display:"flex"})
+   setMessage(err.response.data.message)
+   setButnstyle({backgroundColor:"#6200f0"})
+   setLogtext({color:"white"})
+   setLoading(true)
 })
         }
     
@@ -182,7 +214,10 @@ if(passval.match(decimal))
     }
 
     }
-
+    else{
+        setPopupInfo({display:"flex"})
+    }
+    
 
 
        
@@ -210,10 +245,11 @@ if(passval.match(decimal))
             if(((JSON.parse(localStorage.getItem('userEmail')))&&
              (JSON.parse(localStorage.getItem('userPassword'))))!==null){
             localStorage.setItem(('userEmail', JSON.stringify(details.email)),
-            ('userPassword',JSON.stringify(details.password)));  
+            )
         }
         else{ localStorage.setItem(('userEmail', JSON.stringify(details.email)),
-        ('userPassword',JSON.stringify(details.password)));  }
+          )  }
+        //   ('userPassword',JSON.stringify(details.password)));
         }
 
     }
@@ -246,11 +282,22 @@ if(passval.match(decimal))
         <div className="signup-total" >
             
             <div className="signup" >
-            <div className="cover-check" style={popup}>
-                    <div className="check-text">
+            {/* <div className="cover-check" style={popup}> */}
+            <div  style={popupInfo} className="check-issue">
+                    <div className="cancel-confirm-signup" onClick={(()=>{setPopupInfo({display:"none"}) }) } ><Cancel/></div>
+                        <p>Incomplete information.</p>
+                    </div>
+            
+                    <div  style={popup} className="check-issue">
+                    <div className="cancel-confirm-signup" onClick={(()=>{history.push("/signin") }) } ><Cancel/></div>
                         <p>Account created successfully.</p>
                     </div>
-                </div>
+                {/* </div> */}
+
+                <div style={issuePop} className="check-issue">
+                    <div className="cancel-confirm-signup" onClick={(()=>{setIssuePop({display:"none"}) }) } ><Cancel/></div>
+                        <p>{message}</p>
+                    </div>
             <div className="inner-signup">
             <div className="signup-textandimage">
                 <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}/></div>
@@ -362,6 +409,21 @@ if(passval.match(decimal))
 
 
             <div className="signup-mobile">
+
+            <div  style={popupInfo} className="check-issue">
+                    <div className="cancel-confirm-signup" onClick={(()=>{setPopupInfo({display:"none"}) }) } ><Cancel/></div>
+                        <p>Incomplete information.</p>
+                    </div>
+            
+                    <div  style={popup} className="check-issue">
+                    <div className="cancel-confirm-signup" onClick={(()=>{history.push("/signin") }) } ><Cancel/></div>
+                        <p>Account created successfully.</p>
+                    </div>
+
+        <div style={issuePop} className="check-issue">
+            <div className="cancel-confirm-signup" onClick={(()=>{setIssuePop({display:"none"}) }) } ><Cancel/></div>
+                <p>{message}</p>
+            </div>
                 <div className="mobile-signup-header"> 
                 <img src={flexpng} style= {{width: "78px",
         height: "32px"}}/>
@@ -375,18 +437,16 @@ if(passval.match(decimal))
                 <div className="mobile-signup-inner">
                 <h3>CREATE AN ACCOUNT</h3>
                 <div className="input-wrapper">
-                    <input type="text"/>
+                    <input type="text" placeholder="First name" name="firstName" value={first} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setFirst(e.target.value);console.log(first)}} />
                 </div>
                 <div className="input-wrapper">
-                    <input type="text"/>
+                    <input type="text" value={second} name="lastName" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setSecond(e.target.value)}} placeholder="Last name"/>
                 </div>
-                <div className="input-wrapper">
-                    <input type="text"/>
-                </div>
+               
                 <div className="input-wrapper">
                     
-                <select name="country" id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})}}>
-                <option value="country" className="select-placeholder">Country</option>
+                <select name="country"  style={countrystyle} id="selectlist" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setCountrystyle({color:"black"});setCountryval(e.target.value)}}>
+                <option value="countryval" className="select-placeholder">Country</option>
                     {answer.map((val,index)=>{
                         return(
                             <option key={index} value={val}>{val}</option>
@@ -396,7 +456,30 @@ if(passval.match(decimal))
 
                 </select>
                 </div>
-                <div className="input-wrapper" id="passwordmobilewrapper">
+
+                
+
+
+                <div className="input-wrapper">
+                    <input type="text" placeholder="Email" name="email" value={emailval} onChange={(e)=>{signupdetails({[e.target.name]:e.target.value});setEmailval(e.target.value)}}/>
+                </div>
+                <div style={PasswordWrap} className="input-wrapper" id="passwordmobilewrapper">
+            <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
+            ;setPasswordCharacter({display:"none"})
+            ;setPasswordWrap({marginBottom:"24px"})
+            // ;setPassval(e.target.value)
+        ;setPassval(e.target.value)}}
+             onFocus={(()=>{setPasswordCharacter({display:"flex"});setPasswordWrap({marginBottom:"5px"})})} placeholder="Password" required/>
+            <i onClick={handletoggle}><FaEye style={passwordshow ? {display:"none"}:{display:"inline"}}/><FaEyeSlash style={passwordshow ? {display:"inline"}: {display:"none"}}/></i>
+          
+            </div>
+            <div style={passwordCharacter} className="password-charac">
+            <div className="infoDivs"><Info/></div><p className="passwordcond">Password should not be less than 8 characters and must include caps,numbers and 
+            special characters</p>
+            </div>
+
+
+                {/* <div className="input-wrapper" id="passwordmobilewrapper">
                    
                     <input type={passwordshow ? "text": "password"} name="password" onChange={(e)=>{signupdetails({[e.target.name]:e.target.value})
             ;setPasswordCharacter({display:"none"})
@@ -409,7 +492,7 @@ if(passval.match(decimal))
                 <div style={passwordCharacter} className="password-charac">
             <div className="infoDiv"><i><FaInfo/></i></div><p>Password should not be less than 8 characters and must include caps,numbers and 
             special characters</p>
-            </div>
+            </div> */}
 
             <div className="signup-remember-me">
             
@@ -419,9 +502,10 @@ if(passval.match(decimal))
             {/* <p>Remember me</p> */}
        </div>
 
+       <button className="signup-create" style={butnstyle} onClick={handlesubmit}>{loading ? (<p style={logtext}>CREATE ACCOUNT</p>) : (<div className="spinner-signin"> <Loader
+            type="Oval" width={20} color="#000000"/></div>)}</button>
 
-
-                <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button>
+                {/* <button className="signup-create" onClick={handlesubmit}>CREATE ACCOUNT</button> */}
 
                 <div className="terms"> 
            <div className="signup-remember-me">

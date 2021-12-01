@@ -1,0 +1,14 @@
+.mobile-dash-lower-dash{
+    margin-left: 16px;
+    margin-top: 23px;
+    font-size: 16px;
+    color: #6200f0;
+    align-self: start;
+    display: flex;
+    align-items: center;
+    
+    /* display: flex; */
+}
+.mobile-dash-lower-dash p{
+    margin-left: 10px;
+}
