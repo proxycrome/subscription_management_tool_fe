@@ -4,62 +4,24 @@ import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
 import {Link, useParams, useHistory} from 'react-router-dom'
 import DashFrame from '../../Components/DashFrame/DashFrame';
-import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import { connect } from 'react-redux';
+import {useEffect} from 'react';
 import { headercolor, updatedetails } from '../../redux/flex/flex.actions';
 import './payment.css'
+import call from '../../Asset/Call Icon.png';
+import Mail from '../../Asset/Mail icon.png';
+// import '../../Components/Upperbox/Upperbox.css';
 
 const Pmt = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
     const history = useHistory();
-    const {id} = useParams();
-    const [image, setImage] = useState("");
-    
-    const fileInputRef = useRef();
-
-    const user = localStorage.getItem('user');
-    const userStr = JSON.parse(user)
-    
-
-    // const handleFormChanges = (event) => {
-    //     event.preventDefault()
-    //     event.stopPropagation()
-        
-    //     setUserData({ ...userData, [event.target.name]: event.target.value });
-    // }
-
-    useEffect(() => {
-        console.log(image)
-    }, [image])
-
+   
     useEffect(()=>{
         headercolor({ dashheadercolor:"#6200f0"}) 
 
     },[]);
 
-    
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const params = {
-            firstName: detailsupdate.firstName,
-            lastName: detailsupdate.lastName,
-            country: detailsupdate.country,
-            email: detailsupdate.email,
-            phone: detailsupdate.phone,
-            photo: image,
-        }
-
-        axios.patch(`https://subscription-management-tool.herokuapp.com/users/edit/${id}`, params)
-        .then(res => {
-            localStorage.setItem('customerDetail', JSON.stringify(res.data.data))
-        })
-        .catch(err => {
-            console.log(err)
-        })
-        
-    }
-
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     return (
         <>
             <DashFrame dashPaymentStyle={{backgroundColor:presentcolor.dashheadercolor}}>
@@ -79,8 +41,48 @@ const Pmt = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                         </select>
                     </div>
                     <div className="inner-section">  
-                        <div></div>
+                    <div className="payments-form">
+                            <div className="payments-settings">
+                                <div className="payment-options">
+                                    <div className="upperleftCOntent">
+                                        <h2>CUSTOMER INFORMATION</h2>
+                                        <hr className="customer-info-line"/>
+                                        <p className="accountId-upperbox">Account ID: 20210801</p>
+                                        <h3>Customer Name: {customerDetail.firstName} {customerDetail.lastName}</h3>
+                                        <div className="upperleft-and-icon" 
+                                        style={customerDetail.phone==="" ? {display:"none"}:{display:"flex"}}><img src={call}/><p>{customerDetail.phone}</p></div>
+                                        <div className="upperleft-and-icon"><img src={Mail}/><p>{customerDetail.email}</p></div>
+                                    </div>
+                                </div>
+
+                                <div className="change-pin">
+                                    <div className="cardImage">
+                                        <div className="cardImage-acc">
+                                            <p>Account Id</p>
+                                            <p className="medium-weight-dashboard-upp">20210801</p>
+                                        </div>
+                                        <div className="cardImage-balance">
+                                            <p className="medium-weight-dashboard">E-wallet Balance</p>
+                                            <p className="money-dashboard-upp">NGN 0.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <div className="inner-section">  
+                        <div className="fund-hist-header">
+                            <h3> Funding history</h3>
+                            <div className="fund-hist-box">
+                                <h4> My E-wallet</h4>
+                                <h5>Transaction</h5>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+
                     
                 </div>    
             </DashFrame> 
