@@ -321,7 +321,8 @@ const data = {
          console.log(index)
         //  if(val.subCategory=="Gotv")
         //  { setProductId("")}
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+           arr.map((item,indx)=>{
             console.log(indx)
         if(indx==index){
             console.log(item._id)
@@ -337,7 +338,8 @@ const data = {
      function Active(val,index){
        
         //console.log(indx)
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
         if(indx==index){
             console.log(item._id)
             clientItem=item._id
@@ -354,7 +356,8 @@ const data = {
     }
     function Expired(val,index){
     
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
         if(indx==index){
             console.log(item._id)
             clientItem=item._id
@@ -372,7 +375,8 @@ const data = {
     function handledelete(val){
       
         console.log(val)
-        namearr.map((item,indx)=>{
+        // namearr.map((item,indx)=>{
+            arr.map((item,indx)=>{
             console.log(item.subscriptionStatus)
             if(item.subscriptionStatus!=="Active"){
              
@@ -461,7 +465,7 @@ console.log(contentd)
       //  headercolor({ dashheadercolor:"#6200F0"})                   
      //},[])
      //console.log(presentcolor.dashheadercolor)
-
+    // },[]) 
 
     return(
             <div className="dashtotal">
