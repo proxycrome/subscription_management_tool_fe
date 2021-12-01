@@ -38,6 +38,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[searchDatar,setSearchDatar]=useState("")
     const[oct,setOct]=useState("")
     const[nov,setNov]=useState("")
+    const[dec,setDec]=useState("")
     const[lastDate,setLastDate]=useState("-")
     let janAmt=0
 let febAmt=0
@@ -131,11 +132,14 @@ let newoct=0
                 setOct(octAmt)
                 if(val.dateSubscribed.split("-")[1]==11){
                     novAmt+=val.amount}
+                    if(val.dateSubscribed.split("-")[1]==12){
+                        decAmt+=val.amount}
                     setNov(novAmt)
+                    setDec(decAmt)
 
-                    setLastDate(val.dateSubscribed)
-                    console.log(lastDate)
-                    console.log(val.dateSubscribed)
+                    // setLastDate(val.dateSubscribed)
+                    // console.log(lastDate)
+                    // console.log(val.dateSubscribed)
         //     let contents=arr.map((val,index)=>{
         //         console.log(userDisplay)
         //     cats=val.subCategory
@@ -218,7 +222,7 @@ const data = {
    datasets: [
      {
        label: 'Subscription',
-       data: [janAmt, febAmt, marAmt, aprAmt, mayAmt, junAmt,julAmt,augAmt,sepAmt,oct,nov,decAmt],
+       data: [janAmt, febAmt, marAmt, aprAmt, mayAmt, junAmt,julAmt,augAmt,sepAmt,oct,nov,dec],
       lineTension:0.5,
        fill: false,
      //   backgroundColor: 'rgb(255, 99, 132)',
@@ -710,7 +714,7 @@ console.log(contentd)
                             <div  className="inner-mobile-dashboard">
                                 <div className="view-and-button">
                                     <h3>Overview</h3>
-                                    <button onClick={(()=>{history.push("/addsub")})}> <img src={plusCircle} alt="add"/><p>ADD SUBSCRIPTION</p></button>
+                                    <button onClick={(()=>{history.push("/productcategory")})}> <img src={plusCircle} alt="add"/><p>ADD SUBSCRIPTION</p></button>
                                 </div>
                                 <div className="mobile-categ">
                                     <span className="mobile-acc-line">
