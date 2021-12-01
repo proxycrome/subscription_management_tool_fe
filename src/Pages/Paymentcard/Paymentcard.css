@@ -14,6 +14,9 @@
     align-self: start;
     /* margin-bottom: 50.6px; */
 }
+.total-payMENT-CARD{
+    font-family: 'DM Sans', sans-serif;
+}
 .image-and-option-card-payment{
     display: flex;
     margin-top: 70px;
@@ -45,6 +48,9 @@
 .payment-option-card-buttons button:hover{
     border: 1px solid #6200f0;
 }
+.cancel-payment:hover{
+    border: 3px solid #5205C1;
+}
 .paymentoption .payment-inner-content .payment-select-cards-buttons{
     display: flex;
     
@@ -69,6 +75,9 @@
     margin-bottom: 160px;
     border: none;
 }
+.proceed-payment:hover{
+    background-color: #5205C1;
+}
 .payment-select-cards-buttons .flutterbutn{
     margin-right: 20px;
     margin-bottom: 40px;
@@ -88,5 +97,25 @@
     margin: 0 auto;
     padding: 0px;
   align-self: start;
+    
+}
+@media screen and (max-width:960px) {
+    .web-view-paycard-div{
+        display: none;
+    }
+    .payment-option-cad-mobile button{
+        width: 100%;
+        border: none;
+    }
+   
+    #cancel-Except{
+        background-color: white;
+        border: 1px solid #6200f0;
+        color: black;
+    }
+    .cance-proceed-mobile button{
+        background-color: #6200f0;
+        color: white;
+    }
     
 }

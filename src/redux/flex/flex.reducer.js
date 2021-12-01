@@ -5,6 +5,7 @@ const INITIAL_STATE={
     //sub:[],
     details:{},
     //signininput:{},
+    detailsupdate:{},
     detailssignin:{},
     forgotpassword:{},
     cancelicon:{display:"flex"},
@@ -20,6 +21,7 @@ const INITIAL_STATE={
                     howcolor:"",
                     privacystyle:"#030640",
                     aboutstyle:"",
+                    blogcolor:"",
                     dashheadercolor:"",
                     dashinvitecolor:"",
                     dashsubscribecolor:"",
@@ -117,6 +119,12 @@ const FlexReducer=(state=INITIAL_STATE,action)=>{
         
                 
                 Object.assign(state.detailssignin,action.value)
+
+                case 'updatedetails': 
+
+                Object.assign(state.detailsupdate,action.value)
+
+
                 case'headercolor':
                 return{
                     ...state,

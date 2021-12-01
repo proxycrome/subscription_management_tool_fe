@@ -7,9 +7,11 @@ import { headercolor } from '../../redux/flex/flex.actions';
 import MobileDash from '../../Components/MobileDash/MobileDash';
 import Mobilecard from '../../Components/Mobilecard/Mobilecard'
 import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
+import { Pie } from 'react-chartjs-2';
 import Bin from '../../Asset/dustbin.png'
-
+import {ReactComponent as Calendar} from '../../Asset/Calender Icon.svg'
 import Smallestbox from '../../Components/Smallestbox/Smallestbox'
+import plusCircle from '../../Asset/plus-circle.png'
 import axios from 'axios'
 import '../Subscription/Subscription.css'
 import { useHistory } from 'react-router-dom';
@@ -36,6 +38,9 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[idReal,setIdReal]=useState("")
     const[dateval,setDateval]=useState("")
     const[searchDatar,setSearchDatar]=useState("")
+    const[nametem,setNametem]=useState("")
+    const[amttem,setAmttem]=useState("")
+    const[lastDate,setLastDate]=useState("-")
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -63,6 +68,8 @@ function Subscription({presentcolor,headercolor,subarray}){
    let expiredsub=0
    let dates;
    let ans=""
+   let newArr=[]
+   let amtArr=[]
 
     
 
@@ -110,6 +117,30 @@ function Subscription({presentcolor,headercolor,subarray}){
           console.log(itemExp)
           console.log(billingcycle);
           console.log(arr)
+
+        //last date
+        
+        setLastDate(val.dateSubscribed)
+        console.log(lastDate)
+        console.log(val.dateSubscribed)
+
+
+
+        //   let newvalue=userDisplay.map((val,index)=>{
+            console.log(val)
+            if(val.subscriptionStatus!=="Inactive"){
+          newArr.push(val.subCategory)
+        
+        
+        }
+      
+        console.log(newArr)
+        setNametem(newArr)
+        if(val.subscriptionStatus!=="Inactive"){
+            amtArr.push(val.amount)}
+          console.log(amtArr)
+            // })
+            setAmttem(amtArr)
     //       if(itemStatus=="Active"){
     //         alert('active')
     //       setItemColor({color:"#17AD37"})
@@ -180,7 +211,52 @@ function Subscription({presentcolor,headercolor,subarray}){
 }
 userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
 setNamearr(userDisplay) 
+console.log(lastDate)
      },[])
+     if(nametem===""){
+        setNametem(["Subscription"])
+        setAmttem(["10"])
+    }
+     //pie info
+     const data = {
+ 
+        //   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: nametem,
+          datasets: [
+            {
+              label: '# of Votes',
+              //data: [1],
+               data: amttem,
+              backgroundColor: [
+                
+                '#ACB9FF',
+                '#e289f2',
+                '#855cf8',
+                '#b089ff',
+                '#503975',
+                 'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                //'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)',
+              ],
+             
+              // borderColor: [
+              //   '#ACB9FF',
+              //   'rgba(54, 162, 235, 1)',
+              //  'rgba(255, 206, 86, 1)',
+                //'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)',
+              //],
+              borderWidth: 1,
+            },
+          ],
+        };
+        
+
+
+     console.log(amttem)
      console.log(arr) 
      function Inactivey(val,index){
         console.log(val)
@@ -280,7 +356,20 @@ setNamearr(userDisplay)
                         <div className="sub-below">
                         <div className="pie-subdcribe">
                             <div className="pieInner">
-                            <PieChart month={ansDate}/>
+                            <div className='header'>
+      <h1 className='title' style={{textAlign:"left",marginLeft:"30px",marginBottom:"20px"}}>Pie Chart</h1>
+      <span className="subscriptionPie" style={{display:"flex",marginLeft:"30px",justifyContent:"space-between"}}> <p style={{marginRight:"30px"}}>Monthly Subscription</p><Calendar /> <p className="calendar">{ansDate}</p></span>
+      {/* <div className='links'>
+        <a
+          className='btn btn-gh'
+          href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Pie.js'
+        >
+          Github Source
+        </a>
+      </div> */}
+    </div>
+    <Pie data={data} />
+                            {/* <PieChart month={ansDate}/> */}
                             </div>
                         </div>
                         <div className="card-and-activity">
@@ -293,14 +382,15 @@ setNamearr(userDisplay)
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 134,457.56</p>
+                         <p className="money-dashboard">NGN 0.00</p>
                      </div>
                  </div>
                     </div>
                  <div className="activity-subscribe">
                      <div className="activity-subscribe-header">
                          <p className="your-activity-sub">Your activity</p>
-                         <p style={dates!=null ? {display:"none"}:{display:"flex"}}>Last subscription:{ dated}</p>
+                         {/* <p style={dates!=null ? {display:"none"}:{display:"flex"}}>Last subscription:{ dated}</p> */}
+                         <p >Last subscription:{ lastDate}</p>
                      </div>
                      <div className="subscription-circle-and-text-div">
                          <div className="subscription-circle-and-text">
@@ -409,6 +499,10 @@ setNamearr(userDisplay)
      
                             
                         </div>
+
+
+
+
                 </div>
                 <div></div>
 
@@ -416,58 +510,159 @@ setNamearr(userDisplay)
         </DashFrame>
         </div>
         <div className="subscribemobilescreen">
-            <MobileDash/>
+            <MobileDash dashsubscribestyle={{backgroundColor:presentcolor.dashsubscribecolor}}>
             <h3 className="sub-mobile-header">Subscriptions</h3>
             <input type="search" placeholder="Search for products"/>
             <div className="subscribemobilescreen-inner">
             <div className="subscribemobilescreen-second">
                 <p>My Subscriptions</p>
-                <button>ADD SUBSCRIPTION</button>
-
+                <button onClick={(()=>{history.push("/productcategory")})} className="subSCRIPTION-pluslogo-mobile"><img src={plusCircle} alt="add"/><p>ADD SUBSCRIPTION</p></button>
+            
             </div>
             <div className="sub-mobile-card">
                 <Mobilecard/>
             </div>
             </div>
-            <div>
-                PIE
+            <div className="piemobile">
+               
+                    
+    <div className='header'>
+      <h1 className='title' style={{textAlign:"left",marginLeft:"30px",marginBottom:"20px"}}>Pie Chart</h1>
+      <span className="subscriptionPie" style={{display:"flex",marginLeft:"30px",justifyContent:"space-between"}}> <p style={{marginRight:"30px"}}>Monthly Subscription</p> <p className="calendar">{ansDate}</p></span>
+      {/* <div className='links'>
+        <a
+          className='btn btn-gh'
+          href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Pie.js'
+        >
+          Github Source
+        </a>
+      </div> */}
+    </div>
+    <div className="innerpie">
+    <Pie data={data} />
+            </div>
             </div>
             {/* <div> */}
+            {/* <div className="all-mobile"></div> */}
             <div className="activity-subscribe">
                      <div className="activity-subscribe-header">
                          <p>Your activity</p>
-                         <p>Last subscription:30th October 2021</p>
+                         <p>Last subscription: { lastDate}</p>
                      </div>
                      <div className="subscription-circle-and-text-div">
                          <div className="subscription-circle-and-text">
-                             <div className="subscription-circle">10</div>
+                             <div className="subscription-circle">{total}</div>
                              <p>Total </p>
+                                 <p>subscriptions</p>
+                         </div>
+                         <div className="subscription-circle-and-text" >
+                             <div className="subscription-circle" id="subscription-circle-green-mobile">{activ}</div>
+                             <p>Active </p>
                                  <p>subscriptions</p>
                          </div>
                          <div className="subscription-circle-and-text">
-                             <div className="subscription-circle">10</div>
-                             <p>Total </p>
+                             <div className="subscription-circle" id="subscription-circle-ash-mobile" >{inactiv}</div>
+                             <p>Inactive </p>
                                  <p>subscriptions</p>
                          </div>
-                         <div className="subscription-circle-and-text">
-                             <div className="subscription-circle">10</div>
-                             <p>Total </p>
+                         <div className="subscription-circle-and-text"  style={{border:"red"}}>
+                             <div className="subscription-circle"id="subscription-circle-red-mobile"  >{expiredval}</div>
+                             <p>Expired </p>
                                  <p>subscriptions</p>
                          </div>
-                         <div className="subscription-circle-and-text">
-                             <div className="subscription-circle">10</div>
-                             <p>Total </p>
-                                 <p>subscriptions</p>
-                         </div>
-                         <div className="subscription-circle-and-text">
-                             <div className="subscription-circle">10</div>
-                             <p>Total </p>
-                                 <p>subscriptions</p>
-                         </div>
+                         
                      </div>
                  </div>
+
+                 {/* //table */}
+
+                
+                        <hr className="sub-divider-line"/>
+                        <div className="sub-below-second">
+                            <h3 className="allSub">All Subscriptions</h3>
+                            <span className="teedee">
+                                <span className="teehaych">Products</span>
+                                <span className="teehaych">Date Subscribed</span>
+                                <span className="teehaych">Expiry date</span>
+                                <span className="teehaych">Auto renewal</span>
+                                <span className="teehaych">Status</span>
+                                <span className="teehaych">Billing cycle</span>
+                                <span className="teehaych"></span>
+                            </span>
+                            {arr.filter((val,index)=>
+    {   
+        //console.log(val)
+       if(searchDatar===""){
+        console.log(val)
+            return val}
+        else if((((val.subCategory).toUpperCase())).includes((searchDatar).toUpperCase())){
+            
+            return val
+        }
+       
+    }
+)
+                            
+                            
+                            .map((val,index)=>{
+            cats=val.subCategory
+            catg=val.category
+            itemAmt=val.amount
+            itemImg=val.productImg
+            itemExp=val.dateExpired
+            itemStatus=val.subscriptionStatus
+            let colours={}
+             //console.log(cats +"" + catg+""+itemImg)
+            if(itemStatus=="Active"){
+                colours={coloritem:"#17AD37"}
+            }
+            if(itemStatus=="Inactive"){
+                colours={coloritem:"rgba(3,6,64,30%"}
+            }
+            if(itemStatus=="Expired"){
+                colours={coloritem:"#E40C0C"}
+            }
+
+           return <div  className="catresult-sub" key={index}>
+            <span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>
+             
+                 
+
+
+           
+            <p>{cats}</p></span> 
+            <span>{val.dateSubscribed}</span>
+        <span><p style={{color:"rgba(51,51,51,50%"}}>{val.dateExpired}</p></span>
+       
+        <span>{val.autoRenew}</span>
+       {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
+       <span style={{color:colours.coloritem}}  >{itemStatus}</span>
+       <span>{val.billingCycle}</span>
+       
+        <span className="editprof" 
+        // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        ><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactivey(val,index)}
+        // if(itemStatus=="Active") { Active(val,index) }}
+        if(val.subscriptionStatus=="Active") { Active(val,index) } 
+        if(val.subscriptionStatus=="Expired") { Expired(val,index) }}
+        }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        
+        <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+        </span>
+        
+       </div>
+
+        })
+    }
+     
+                            
+                        </div>
+
+
+   
                  {/* </div> */}
             <div></div>
+            </MobileDash>
         </div>
         </div>
 

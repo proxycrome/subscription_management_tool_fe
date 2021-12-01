@@ -11,7 +11,7 @@
     padding-top: 40px;
     /* padding:30px 20px ; */
     justify-content: center;
-    background-color: teal;
+    /* background-color: teal; */
 }
 .Upperright-newsub button{
     margin-left: 30px;
@@ -30,4 +30,17 @@
     max-width: 100%;
     min-width: 100%;
    
+}
+.newsub-mobile{
+    display: none;
+}
+@media screen and (max-width:960px) {
+    .newsub-mobile{
+        display: flex;
+        position: relative;
+        min-width: 100%;
+    }
+    .newsub-web{
+        display: none;
+    }
 }

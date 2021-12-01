@@ -1,3 +1,7 @@
+.NavBar{
+    font-family: 'DM Sans', sans-serif;
+}
+
 .Nav{
     display: flex;
     justify-content: space-between;
@@ -43,7 +47,7 @@
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
- 
+   
     padding: 0px;
     position: relative;
     
@@ -222,24 +226,30 @@
 }
 
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:1060px) {
     .Nav{
-        margin-bottom: 30px;
+    margin-bottom: 30px;
+    
+    padding-top: 20px;
     }
+    
     .Navlogo{
         margin-top: 0px;
     }
     .mobilenavrightbar{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
+        
         
      
         
     } 
+    
     .laptop-logo{
         width: 78px;
         height: 32px;
+        margin-bottom: 10px;
     }
     
     
@@ -257,10 +267,12 @@
         padding-left: 20px;
         padding-right: 20px;
         align-items: center;
+       
     }
     
     .mobilenavrightcontent{
         background-color: white;
+       
         display: none;
         justify-content: center;
         transition:1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -273,9 +285,11 @@
       
         flex-direction: column;
        
-        margin-top: 18px;
+        /* margin-top: 18px; */
         background-color: #FAFAFE;
+      
         line-height: 180%;
+       
     
        
        

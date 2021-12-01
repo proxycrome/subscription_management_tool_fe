@@ -244,7 +244,7 @@ return(
     <MobileDash/>
     <div className="product-category-inner">
                     <h3>Product Category</h3>
-                    <input type="search"/>
+                    <input type="search" placeholder="Search for products"  onChange={((e)=>{setSearchDatar(e.target.value)})}/>
                 </div>
                 <div className="inner-product-catg-All">
                 <div className="listOfproduct">
@@ -256,8 +256,86 @@ return(
                 </div>
 
     <div className="product-category-second">
-                <h3>ProductList</h3>
-                <div className="product-category-second-list">
+                <h3>PRODUCT LIST</h3>
+                
+                {users.filter((val)=>
+    {   
+        
+       if(searchDatar===""){
+        console.log(val)
+            return val}
+        else if((((val).toUpperCase())).includes((searchDatar).toUpperCase())){
+            
+            return val
+        }
+       
+    }
+).map((item,index) =>{
+    if(item=="Gotv"){
+        items=Gotv
+        //setImage({val:Gotv})
+
+      
+
+    }
+     if(item=="Netflix"){
+        items=Netflix
+         //setImage({val:Netflix})
+       
+     }
+     if(item=="Showmax"){
+        items=Showmax
+    //      setImage({val:Showmax})
+         
+    }
+    if(item=="Playstation"){
+        items=Playstation
+    //      setImage({val:Playstation})
+         
+     }
+   if(item=="Dstv"){
+    items=Dstv
+    //     setImage({val:Dstv})
+        
+        
+    }
+    if(item=="Boxoffice"){
+        items=Boxoffice
+        //     setImage({val:Dstv})
+            
+            
+        }
+        if(item=="Startimes"){
+            items=Startimes
+            //     setImage({val:Dstv})
+                
+                
+            }
+return( 
+    <div className="product-category-second-list" key={index}>
+        <div className="product-category-second-inner">
+            <div className="list-specification">
+               
+                <div><Smallbox icon={items}/></div>
+                <p>{item}</p>
+            </div>
+            <button className="productADD" onClick={(()=>{
+                
+                history.push(`/newsub/${item}`)})}><PlusLogo/><p>ADD</p> </button>
+        </div>
+    </div>
+       
+
+)
+
+
+})}
+
+
+
+
+
+                {/* <div className="product-category-second-list">
                     <div className="product-category-second-inner">
                         <div className="list-specification">
                             <div><Smallbox icon={Gotv}/></div>
@@ -301,8 +379,8 @@ return(
                         </div>
                         <button className="productADD">ADD </button>
                     </div>
-                </div>
-                <div className="product-category-second-list">
+                </div> */}
+                {/* <div className="product-category-second-list">
                     <div className="product-category-second-inner">
                         <div className="list-specification">
                             <div><Smallbox/></div>
@@ -310,7 +388,7 @@ return(
                         </div>
                         <button className="productADD">ADD </button>
                     </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

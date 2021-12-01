@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
-import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook,FaUserAlt} from "react-icons/fa"; 
+import {FaUserAlt} from "react-icons/fa"; 
 import { useHistory, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {useEffect} from 'react'
@@ -22,7 +22,7 @@ import {ReactComponent as Logoutsvg} from  '../../Asset/Logoutsvg.svg'
 import settings from '../../Asset/Settings.png'
 import '../DashFrame/DashFrame.css';
 
-function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle,dashSupportStyle, paymentstyle, customer}){
+function DashFrame({dashPaymentStyle, children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,dashSettingsStyle,dashSupportStyle, paymentstyle, customer}){
     const history = useHistory()
     const user = localStorage.getItem('user');
     const userStr = JSON.parse(user)
@@ -52,7 +52,7 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                             <div className="dash-icon"><Sub/></div>
                             <div >Subscription</div>
                             </div>
-                            <div className="inner-list" style={paymentstyle}>
+                            <div onClick={() => {history.push('/payment/funding-history')}} className="inner-list"  style={dashPaymentStyle}>
                             <div className="dash-icon"><Paymentsvg/></div>
                             <div>Payments</div>
                             </div>
@@ -81,8 +81,13 @@ function DashFrame({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,
                 <div className="dashboard-right">
                     <div className="dash-upper">
                         <div className="dash-upper-left">
-                            <div className="first"><div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div></div>
-                            <div>Hi,{customerDetail.firstname}</div>
+
+                            <div className="first">{customerDetail.photo!=""? (<div className="profile-image-dash"><img src={customerDetail.photo}/></div>): (<div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div>)}</div>
+
+                            <div>Hi, {customerDetail.firstName}</div>
+
+                            
+
                         </div>
                         <div className="dash-upper-right">
                             <div className="firsts"><img src={newsfeed}/></div>

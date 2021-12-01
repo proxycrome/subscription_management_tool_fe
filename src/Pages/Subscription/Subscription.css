@@ -60,6 +60,9 @@
     border: none;
   
 }
+.mysubsribe-and-button button:hover{
+    background-color: #5205C1;
+}
 .subSCRiption{
     margin: 20px;
     margin-left: 0;
@@ -78,6 +81,7 @@
     background-color: coral;
     align-items: center;
     background-color: white;
+   
     /* border-left: 2px solid rgba(7,10,74 ,10%) ; */
 }
 .sub-below{
@@ -86,6 +90,7 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    
     /* border-bottom: 2px solid rgba(7,10,74 ,10%) ; */
     /* margin-bottom: 20px; */
 }
@@ -103,6 +108,8 @@
     border-top: none;
     padding: 35px;
     height: 308px;
+   
+   
 }
 .subSCRIPTION-pluslogo{
     display: flex;
@@ -169,6 +176,7 @@ display: flex;
     /* background-color: #6200f0; */
     padding-left: 32px;
     margin-bottom: 24px;
+   
 
 }
 .editprof-sub p{
@@ -223,6 +231,7 @@ display: flex;
     border-radius: 20px;
     padding: 20px;
     width: 391px;
+ 
     height: 221px;
     background: linear-gradient(rgba(254,118,1,100%),rgba(255,118,0,80%));
     color: white;
@@ -334,13 +343,84 @@ display: flex;
     justify-content: space-between;
 }
 @media screen and (max-width:960px) {
+    .catresult-sub{
+        padding-left: 20px;
+        margin-right: 0;
+      
+      /* width: 100%; */
+        /* overflow-x: scroll; */
+
+    }
+    .sub-below-second .catresult-sub span{
+        min-width: 23%;
+        /* max-width: 20%; */
+        padding-right: 0;
+        padding: 0;
+        margin-right: 54px;
+        margin-left: 0;
+        /* background-color: lightsalmon;
+        background-color: magenta; */
+    }
+    .sub-below-second{
+      /* position: relative; */
+        overflow-x: scroll;
+        min-width: 100vw;
+        min-width: inherit;
+        padding-right: 0px;
+        /* background-color: lawngreen; */
+        /* min-width: 100%; */
+    }
+    .catresult-sub span{
+        min-width: 35%;
+       
+        font-size: 14px;
+    }
+    #subscription-circle-red-mobile{
+        border-color: #E40C0C;
+    }
+    #subscription-circle-green-mobile{
+        border-color: #17AD37;
+    }
+    #subscription-circle-ash-mobile{
+        border-color: rgba(3,6,64,30%);
+    }
+    .sub-below-second .teedee{
+       /* overflow-x: scroll; */
+     
+       min-width: 280%;
+       max-width: 280%;
+       /* bottom: 20px;
+        min-width: none; 
+        min-width: auto; 
+       max-width: auto;  */
+      /* overflow-x: scroll; */
+      
+     /* background-color: lightcoral; */
+       padding-left: 20px;
+       justify-content: flex-start;
+       /* position: absolute; */
+    }
+    .sub-below-second .teehaych{
+        font-size: 14px;
+        margin-right: 54px;
+        min-width: 8%;
+        max-width: 8%;
+        /* background-color: lightblue; */
+        /* min-width: 25%;*/
+        /* max-width: 50%;  */
+        
+    }
     .subscription-circle-and-text{
         width: 100px;
+        height: 100px;
         padding: 10px;
+        margin: 0;
         margin-top: 10px;
     }
     .activity-subscribe{
 
+padding: 22px 20px;
+color: #070a4a;
         width: 90%;
         margin-right: 20px;
     }
@@ -348,7 +428,9 @@ display: flex;
         display: flex;
         flex-direction: row;
        flex-wrap: wrap;
-       justify-content: center;
+       justify-content: space-between;
+       padding: 0;
+       
 
     }
     .subscribemobilescreen{
@@ -356,14 +438,30 @@ display: flex;
         display: flex;
         flex-direction: column;
         background-color: #FAFAFE;
+        min-height: 100%;
+        position: relative;
     }
     .subscribemobilescreen input{
         padding: 0 20px;
-        margin: 0 20px;
+        margin: 20px 16px;
+        border-radius: 10px;
+        height: 40px;
+        border: 1px solid rgba(3,6,64,0.2);
+        font-size: 14px;
+        color: rgba(51,51,51,0.5);
+        background-color: transparent;
+        width:80%;
+        
     }
     .sub-mobile-header{
        padding: 0 20px;
        text-align: left;
+       font-size: 16px;
+       font-weight: 500px;
+       color: #333333;
+      
+       margin-top: 30px;
+       margin-left: 16px;
     }
     .subscribewebscreen{
       display: none;
@@ -375,23 +473,72 @@ display: flex;
         padding: 20px 20px;
         background-color: white;
        
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgba(7,10,74,0.05);
+    }
+    .subscribemobilescreen-second p{
+        font-size: 14px;
+        font-weight: 500px;
+        color: #030640;
+        border-bottom: 2px solid #6200f0;
     }
     .subscribemobilescreen-inner{
        background-color: white;
-       margin: 30px 20px;
+       margin: 20px 20px;
       
     }
-    .subscribemobilescreen-second p{
-        border-bottom: 1px solid black;
+    .allSub{
+       margin-left: 20px;
     }
     .sub-mobile-card{
-        padding: 20px 20px;
-       
+        padding: 26px 6px;
+        margin-top: 12.5px;
+        margin-bottom: 20px;
+       height: 180px;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: white;
+        
+    }
+    .piemobile{
+        background-color: white;
+      
+      padding: 20px 0;
+       font-size: 14px;
+       color: rgba(7,10,74,0.7);
+       margin: 0 26px;
+    }
+    .innerpie{
+        width: 60%;
+        margin: 0 auto;
+       
+    }
+    .subSCRIPTION-pluslogo-mobile{
+        width: 143px;
+        height: 36px;
+        border: none;
+        background-color: #6200f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 500px;
+    }
+    .activity-subscribe-header{
+        font-size: 12px;
+        padding: 0px;
+    }
+    .subSCRIPTION-pluslogo-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .subSCRIPTION-pluslogo-mobile p{
+        font-size: 12px;
+        color: white;
+        margin-left: 3px;
     }
     
 }

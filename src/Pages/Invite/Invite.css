@@ -26,9 +26,9 @@
     color: rgba(3, 6, 64, 0.5);
 }
 
-.inner-section{
+.inner-sect{
     width: 1016px;
-    height: 662px;
+    height: 762px;
     margin: 12.5px 0 0;
     display: flex;
     padding: 50px 30px 66px;
@@ -37,22 +37,22 @@
     background-color: #fff;
 }
 
-.inner-section .tell{
+.inner-sect .tell{
     font-family: "DM Sans";
     color: #191d6c;
     margin: 40px 0 50px -300px;
 }
 
-.inner-section .phone-label{
+.inner-sect .phone-label{
     color: rgba(7, 10, 74, 0.7);
     margin: 10px 0 10px -195px;
 }
 
-.input-fld{
+.inp-fld{
     width: 300px;
     font-size: 14px;
     height: 40px;
-    padding-left: 20px;
+    padding: 20px;
     margin-bottom: 20px;
     border: solid 1px rgba(25, 29, 108, 0.3);
     margin-left: 450px;
