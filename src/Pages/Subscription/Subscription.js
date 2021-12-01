@@ -40,6 +40,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[searchDatar,setSearchDatar]=useState("")
     const[nametem,setNametem]=useState("")
     const[amttem,setAmttem]=useState("")
+    const[lastDate,setLastDate]=useState("-")
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -116,6 +117,14 @@ function Subscription({presentcolor,headercolor,subarray}){
           console.log(itemExp)
           console.log(billingcycle);
           console.log(arr)
+
+        //last date
+        
+        setLastDate(val.dateSubscribed)
+        console.log(lastDate)
+        console.log(val.dateSubscribed)
+
+
 
         //   let newvalue=userDisplay.map((val,index)=>{
             console.log(val)
@@ -202,6 +211,7 @@ function Subscription({presentcolor,headercolor,subarray}){
 }
 userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
 setNamearr(userDisplay) 
+console.log(lastDate)
      },[])
      if(nametem===""){
         setNametem(["Subscription"])
@@ -379,7 +389,8 @@ setNamearr(userDisplay)
                  <div className="activity-subscribe">
                      <div className="activity-subscribe-header">
                          <p className="your-activity-sub">Your activity</p>
-                         <p style={dates!=null ? {display:"none"}:{display:"flex"}}>Last subscription:{ dated}</p>
+                         {/* <p style={dates!=null ? {display:"none"}:{display:"flex"}}>Last subscription:{ dated}</p> */}
+                         <p >Last subscription:{ lastDate}</p>
                      </div>
                      <div className="subscription-circle-and-text-div">
                          <div className="subscription-circle-and-text">
@@ -536,7 +547,7 @@ setNamearr(userDisplay)
             <div className="activity-subscribe">
                      <div className="activity-subscribe-header">
                          <p>Your activity</p>
-                         <p>Last subscription: { dated}</p>
+                         <p>Last subscription: { lastDate}</p>
                      </div>
                      <div className="subscription-circle-and-text-div">
                          <div className="subscription-circle-and-text">

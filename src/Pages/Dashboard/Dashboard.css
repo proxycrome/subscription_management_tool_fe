@@ -461,10 +461,13 @@ padding: 10px 0px;
         border: none;
         background-color: #6200f0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 0 5px;
        
+    }
+    .view-and-button button p{
+        margin-left: 5px;
     }
     .view-and-button button:hover{
         background-color: #5205C1;
