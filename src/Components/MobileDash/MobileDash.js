@@ -104,7 +104,7 @@ return(
        {/* <div className="profile-avatar"><FaUserAlt/></div> */}
        <p>Hi,{ customerDetail.firstName}</p>
        </div>
-       <div style={rightNav}>
+       <div className="children" style={rightNav}>
            {children}
        </div>
       
