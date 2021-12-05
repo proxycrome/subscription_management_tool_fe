@@ -59,9 +59,9 @@
     border: none;
   }
 
-.inner-section{
+.inner-sec{
     width: 1016px;
-    height: 662px;
+    height: 462px;
     margin: 12.5px 0 0;
     display: flex;
     padding: 50px 30px 66px;
@@ -79,6 +79,11 @@
 .fund-hist-header{
     display: flex;
     flex-direction: column;
+}
+
+.fund-hist-header h3{
+    text-align: left;
+    color: #191d6c;
 }
 
 .fund-hist-box h4{
@@ -103,4 +108,55 @@
     margin-left: -30px;
     padding: 22px 547px 23px 30px;
     background-color: #030640;
+}
+
+.cardImg{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    width: 351px;
+    height: 221px;
+    color: #fff;
+    background: linear-gradient(rgba(254,118,1,100%),rgba(255,118,0,80%));
+   
+    border-color: rgba(251,251,255,5%);
+   
+    justify-content: space-between;
+}
+
+.pay-layer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.pay-options{
+    width: 420px;
+    height: 350px;
+    margin: 2px 88px 114px 0;
+    padding: 22px 153px 168px 30px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+}
+
+.card-layer{
+    width: 420px;
+    height: 350px;
+    margin: 2px 88px 114px 0;
+    padding: 22px 153px 168px 30px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+}
+
+.fund-hist-section{
+    width: 1016px;
+    height: 300px;
+    margin: 12.5px 0 0;
+    display: flex;
+    padding: 50px 30px 66px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }

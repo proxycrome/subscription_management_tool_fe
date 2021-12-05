@@ -40,10 +40,10 @@ const Pmt = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                             <option>Filter transaction</option>
                         </select>
                     </div>
-                    <div className="inner-section">  
+                    <div className="inner-sec">  
                     <div className="payments-form">
-                            <div className="payments-settings">
-                                <div className="payment-options">
+                            <div className="pay-layer">
+                                <div className="pay-options">
                                     <div className="upperleftCOntent">
                                         <h2>CUSTOMER INFORMATION</h2>
                                         <hr className="customer-info-line"/>
@@ -55,9 +55,9 @@ const Pmt = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                                     </div>
                                 </div>
 
-                                <div className="change-pin">
-                                    <div className="cardImage">
-                                        <div className="cardImage-acc">
+                                <div className="card-layer">
+                                    <div className="cardImg">
+                                        <div className="cardImage-acc" style={{color: "white"}}>
                                             <p>Account Id</p>
                                             <p className="medium-weight-dashboard-upp">20210801</p>
                                         </div>
@@ -71,7 +71,7 @@ const Pmt = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                         </div>
                     </div>
                     
-                    <div className="inner-section">  
+                    <div className="fund-hist-section">  
                         <div className="fund-hist-header">
                             <h3> Funding history</h3>
                             <div className="fund-hist-box">
