@@ -150,7 +150,7 @@ const Profile = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
             </DashFrame> 
             </div>
             <div className="mobile-setings-view">
-                <MobileDash>
+                <MobileDash  dashSettingsStyle={{backgroundColor:presentcolor.dashheadercolor}}>
                
                     <div className="header">
                         <h3>Settings</h3>

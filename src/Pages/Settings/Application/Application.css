@@ -55,6 +55,18 @@
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
+   
+    
+}
+.Application-settings{
+   
+    min-width: 100%;
+    max-width: 100%;
+}
+.App-form{
+   
+    min-width: 100%;
+    max-width: 100%;
 }
 
 .display{
@@ -148,6 +160,8 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     text-align: left;  
+   
+  
 }
 
 .app-button-field{
