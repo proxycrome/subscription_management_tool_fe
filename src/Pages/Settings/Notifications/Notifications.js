@@ -107,7 +107,7 @@ const Notifications = ({presentcolor,headercolor}) => {
             </DashFrame> 
             </div>
             <div className="mobile-view-notification">
-                <MobileDash>
+                <MobileDash  dashSettingsStyle={{backgroundColor:presentcolor.dashheadercolor}}>
                 <div className="inner-settings-sectionsd">
                     <div className="header">
                         <h3>Settings</h3>

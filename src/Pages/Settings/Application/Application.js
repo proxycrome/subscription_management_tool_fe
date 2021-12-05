@@ -91,7 +91,7 @@ const Application = ({presentcolor,headercolor}) => {
             </DashFrame> 
             </div>
             <div className="mobile-App-Setting">
-                <MobileDash>
+                <MobileDash  dashSettingsStyle={{backgroundColor:presentcolor.dashheadercolor}}>
                 <div className="inner-settings-section">
                     <div className="header">
                         <h3>Settings</h3>

@@ -78,13 +78,13 @@ const Payments = ({presentcolor,headercolor}) => {
             </DashFrame>
             </div> 
             <div className="mobile-view-payment-settings">
-                <MobileDash>
-                <div className="inner-settings-section">
+                <MobileDash  dashSettingsStyle={{backgroundColor:presentcolor.dashheadercolor}}>
+                <div className="inner-settings-sectionr">
                     <div className="header">
                         <h3>Settings</h3>
-                        <hr className="welcome-divider"/>
+                        {/* <hr className="welcome-divider"/> */}
                     </div>
-                    <div className="sub-header">
+                    <div className="sub-headers">
                         <Link to={`/settings/profile/${userStr.id}`}><p>Profile</p></Link>
                         <Link to="/settings/notifications"><p>Notifications</p></Link>
                         <Link to="/settings/application"><p>Application</p></Link>
@@ -112,16 +112,16 @@ const Payments = ({presentcolor,headercolor}) => {
                                     <h4>Change PIN</h4>
                                     <p>Please type in a 4-digit number as your pin and confirm new pin</p>
                                     <div className="old-pin">
-                                        <label for="old-pin">Old PIN</label>
-                                        <input type="text"  />
+                                       
+                                        <input type="text" placeholder="Old PIN" />
                                     </div>
                                     <div className="new-pin">
-                                        <label for="new-pin">New PIN</label>
-                                        <input type="text"/>
+                                        
+                                        <input type="text" placeholder="New PIN"/>
                                     </div>
                                     <div className="confirm-pin">
-                                        <label for="confirm-pin">Confirm PIN</label>
-                                        <input type="text"/>
+                                      
+                                        <input type="text"placeholder="Confirm PIN"/>
                                     </div>
                                 </div>
                             </div>

@@ -27,7 +27,8 @@
 }
 
 .inner-section-faq{
-    width: 1016px;
+    /* width: 1016px; */
+    width: 100%;
     height: 750px;
     margin: 12.5px 0 0;
     display: flex;
@@ -37,7 +38,8 @@
 }
 
 .faq-general{
-    width: 1016px;
+    /* width: 1016px; */
+    width: 100%;
     height: 83px;
     display: flex;
     align-items: center;
@@ -62,4 +64,31 @@
     font-size: 16px;
     font-weight: 500;
     color: #070a4a;
+}
+.mobile-frequent-view{
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+    .webmobile-frequent-view{
+        position: relative;
+    }
+    .mobile-frequent-view{
+        display: flex;
+    }
+    .mobile-frequent-view .inner-section-faq{
+        margin-left: 16px;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    .web-frequent-view{
+        display: none;
+    }
+    .questions {
+        font-size: 14px;
+        overflow-x: auto;
+    }
+    .header h3{
+       font-size: 16px;
+    }
 }

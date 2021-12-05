@@ -1,6 +1,10 @@
 .inner-settings-section{
     /* background-color: aqua; */
     margin: 20px 30px 0 30px;
+   
+}
+.invite-inner-form{
+    background-color: blue;
 }
 
 .header h3{
@@ -28,9 +32,11 @@
 
 .inner-section{
     width: 1016px;
-    height: 662px;
+    width: 100%;
+    min-height: 662px;
     margin: 12.5px 0 0;
     display: flex;
+    flex-wrap: nowrap;
     padding: 50px 30px 66px;
     border-radius: 10px;
     box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
@@ -49,14 +55,24 @@
 }
 
 .input-fld{
-    width: 300px;
+    /* width: 300px; */
+    min-width: 50%;
+    max-width: 50%;
     font-size: 14px;
     height: 40px;
     padding-left: 20px;
     margin-bottom: 20px;
     border: solid 1px rgba(25, 29, 108, 0.3);
-    margin-left: 450px;
+    /* margin-left: 450px; */
+    /* margin-left: 12%; */
     font-family: "DM Sans";
+}
+.phone-input-invite-div{
+    
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin-left: 40%;
 }
 
 .message-label{
@@ -65,23 +81,35 @@
 }
 
 .textarea-div{
-    width: 300px;
+    /* width: 300px; */
+    max-width: 100%;
+    margin-left: 40%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* overflow-x: scroll; */
+  
 }
 .textarea{
+    min-width: 50%;
+    max-width: 50%;
     font-size: 14px;
     padding: 10px;
     margin-bottom: 20px;
     border: solid 1px rgba(25, 29, 108, 0.3);
-    margin-left: 450px;
+    /* margin-left: 450px; */
+    /* margin-left: 20%; */
     color: rgba(25, 29, 108, 0.3);
     font-family: "DM Sans";
 }
 
 .invite-button{
-    width: 300px;
+    /* width: 300px; */
+    min-width: 50%;
     height: 54px;
     padding: 15px 68.5px 16px;
-    margin-left: 450px;
+    padding: 0;
+    /* margin-left: 450px; */
     margin-top: 50px;
     color: white;
     font-size: 16px;
@@ -96,4 +124,76 @@
 .copy-label{
     color: rgba(7, 10, 74, 0.7);
     margin: 50px 0 10px -420px;
+
+}
+.mobile-invite-view{
+    display: none;
+}
+@media screen and (max-width:800px) {
+    .mobile-invite-view .inner-section{
+        margin-left: 16px;
+        margin-right: 16px;
+       max-width: 90%;
+       min-width: 90%;
+    }
+    .inner-settings-section{
+        margin: 0;
+    }
+    .webmobile-invite-view{
+        position: relative;
+    }
+    .mobile-invite-view{
+        display: flex;
+    }
+    .web-invite-view{
+        display: none;
+    }
+    .mobile-invite-view .header h3{
+        font-size: 16px;
+       padding-left:35px;
+    }
+    .inner-section .tell{
+        margin: 0;
+        text-align: left;
+        margin-left: -10px;
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+    .message-label{
+        margin: 0;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+    .inner-section .phone-label{
+        margin: 0;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+    .input-fld{
+        min-width: 100%;
+        min-height: 40px;
+        font-size: 14px;
+    }
+    .textarea-div{
+        min-width: 100%;
+        margin-left: 0;
+    }
+    .textarea{
+        min-width: 100%;
+        margin-left: 0;
+        font-size: 14px;
+    }
+    .copy-label{
+        margin: 0;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+    .invite-button{
+        min-height: 36px;
+        font-size: 12px;
+    }
 }

@@ -52,9 +52,14 @@
     margin: 0;
     margin-bottom: 30px;
     padding-left: 25%;
+    padding-left: 100px;
+    padding-right: 100px;
+    overflow-x: auto;
+    
  
   height: 46px;
-  width: 100%;
+  min-width: 100%;
+  /* max-width: 100%; */
     
 
 }
@@ -79,7 +84,10 @@
     justify-content: center;
   
     text-align: left;
-    width: 100%;
+    min-width: 100%;
+   
+  
+   
 
 }
 .dash-upper{
