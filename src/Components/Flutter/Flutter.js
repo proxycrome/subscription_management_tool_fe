@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 
 export default function App() {
@@ -41,10 +43,10 @@ export default function App() {
        console.log(response);
        localStorage.setItem('fundRes', JSON.stringify(response))
       closePaymentModal() // this will close the modal programmatically
-      history.push("/fundsuccess")
+      history.push("/Fundsuccess")
     },
     onClose: () => {
-        history.push("/Paymentcard")
+        history.push("/Fundwallet")
     },
   };
 

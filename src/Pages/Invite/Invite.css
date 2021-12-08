@@ -4,7 +4,7 @@
    
 }
 .invite-inner-form{
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .header h3{
@@ -12,6 +12,7 @@
     font-weight: 500;
     padding: 20px;
     color: #191d6c;
+    
 }
 
 .welcome-divider{
@@ -21,6 +22,7 @@
 .sub-header{
     display: flex;
     margin-bottom: 20px;
+    
 }
 
 .sub-header a {
@@ -55,7 +57,7 @@
 
 .inner-sect .phone-label{
     color: rgba(7, 10, 74, 0.7);
-    margin: 10px 0 10px -195px;
+    /* margin: 10px 0 10px -195px; */
 }
 
 
@@ -85,7 +87,12 @@
 
 .message-label{
     color: rgba(7, 10, 74, 0.7);
-    margin: 10px 0 10px -420px;
+    /* margin: 10px 0 10px -420px; */
+  
+    max-width: 100%;
+    text-align: left;
+    padding-left:250px ;
+    margin-bottom: 20px;
 }
 
 .textarea-div{
@@ -131,11 +138,36 @@
 
 .copy-label{
     color: rgba(7, 10, 74, 0.7);
-    margin: 50px 0 10px -420px;
+  
+    max-width: 100%;
+    text-align: left;
+    padding-left:250px ;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    /* margin: 50px 0 10px -420px; */
 
 }
 .mobile-invite-view{
     display: none;
+}
+.phone-label{
+    max-width: 100%;
+    margin: 0 auto;
+    margin: 10px 0 10px -420px;
+    margin: 0;
+   
+    margin-top: 20px;
+    /* text-align: left; */
+    color: rgba(7, 10, 74, 0.7);
+    max-width: 100%;
+    text-align: left;
+    padding-left:250px ;
+    margin-bottom: 20px;
+    /* margin: 50px 0 10px -420px; */
+}
+.tell{
+    text-align: left;
+    margin-left: 250px;
 }
 @media screen and (max-width:800px) {
     .mobile-invite-view .inner-section{
@@ -146,6 +178,9 @@
     }
     .inner-settings-section{
         margin: 0;
+    }
+    .phone-label{
+        padding-left: 0;
     }
     .webmobile-invite-view{
         position: relative;
@@ -172,6 +207,7 @@
         margin-bottom: 10px;
         text-align: left;
         font-size: 14px;
+        padding-left: 0;
     }
     .inner-section .phone-label{
         margin: 0;
@@ -199,6 +235,7 @@
         margin-bottom: 10px;
         text-align: left;
         font-size: 14px;
+        padding-left: 0;
     }
     .invite-button{
         min-height: 36px;

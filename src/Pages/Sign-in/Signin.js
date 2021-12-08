@@ -113,12 +113,7 @@ import '../Sign-in/Signin.css'
   
 
         //customer-details
-        if(typeof (res.data.data.photo)!=="string"){
-            setPhotoval("")
-        }
-        if(typeof (res.data.data.photo)==="string"){
-            setPhotoval(res.data.data.photo)
-        }
+        
        
       
         if((JSON.parse(localStorage.getItem('customerDetail')))!=null){
@@ -132,7 +127,7 @@ import '../Sign-in/Signin.css'
           history.push("/Dashboard")
       }
       else{
-          alert('invalid input')
+        //   alert('invalid input')
       }
 
     

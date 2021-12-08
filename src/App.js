@@ -36,11 +36,14 @@ import Paymentsuccess from './Pages/Paymentsuccess/Paymentsuccess';
 import Passwordreset from './Pages/Passwordreset/Passwordreset';
 import Resetpassword from './Pages/Resetpassword/Resetpassword';
 import Passwordconfirmation from './Pages/Passwordconfirmation/Passwordconfirmation'
+import Processing from './Pages/Processing/Processing';
 import Frequent from './Pages/Support/Frequent/Frequent'
 import Autochange from './Pages/Autochange/Autochange';
 import Walletpayment from './Pages/Walletpayment/Walletpayment';
+import Walletsuccesspayment from './Pages/Walletsuccesspayment/Walletsuccesspayment';
 import Pinverification from './Pages/Pinverification/Pinverification';
 import './App.css';
+
 
 
 function App() {
@@ -80,6 +83,7 @@ function App() {
      <Route exact path="/signincontinue" component={Signincontinue}/>
      <Route exact path="/subscription" component={Subscription}/>
      <Route exact path="/settings/profile/:id" component={Profile}/>
+     <Route exact path="/processing" component={Processing}/>
      <Route exact path="/settings/notifications" component={Notifications}/>
      <Route exact path="/settings/application" component={Application}/>
      <Route exact path="/settings/payments" component={Payments}/>
@@ -87,6 +91,7 @@ function App() {
      <Route exact path="/support/faq" component={Frequent}/>
      <Route exact path="/payment/funding-history" component={payment}/>
      <Route exact path="/walletpayment" component={Walletpayment}/>
+     <Route exact path="/walletsuccesspayment" component={Walletsuccesspayment}/>
     </Switch>
     </div>
   );

@@ -9,6 +9,7 @@ import { customerdetails } from '../../redux/flex/flex.actions';
 
 
 function Mobilecard(){
+    let history=useHistory()
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
 
     return(
@@ -18,7 +19,7 @@ function Mobilecard(){
                     <p className="smallfont">Account ID</p>
                     <p className="bigfont">{customerDetail.userId} </p>
                 </div>
-                <button>FUND WALLET</button>
+                <button onClick={(()=>{history.push("/fundwallet")})}>FUND WALLET</button>
                 </div>
                 <div className="third-inner-mobilecard">
                     <p className="smallfont">E-wallet Balance</p>

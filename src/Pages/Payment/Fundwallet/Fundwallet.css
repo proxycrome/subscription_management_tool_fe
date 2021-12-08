@@ -11,12 +11,13 @@
     padding-right: 124px;
     padding-left: 118.3px;
 }
-.image-and-option-fund{
+ .image-and-option-fund{
     display: flex;
-   
+  
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 100%;
     margin-bottom: 100px;
     /* padding-right: 124px; */
     /* padding-left: 118.3px; */
@@ -33,6 +34,12 @@
    margin-bottom: 40px;
    flex-wrap: wrap;
 }
+.fundwallet-inner .payment-option-card-buttons{
+   
+    margin: 0;
+    max-width: 100%;
+}
+
 .fundwallet-inner .payment-select-cards-buttons .flutterbutn{
   
     margin: 0;
@@ -40,6 +47,9 @@
 }
 .option-right-fund{
     margin: 0 auto;
+  
+    min-width: 50%;
+    /* max-width: 50%; */
 }
 .image-left-fund{
     margin: 0 auto;
@@ -47,6 +57,7 @@
     /* margin-left: 0; */
     margin-bottom: 100px;
     margin-top: 100px;
+    /* margin-left: 0; */
   
 }
 .option-right-fund p{
@@ -81,7 +92,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   justify-content: center;
+   justify-content: center; 
+  
+
 }
 .fund-mobile-views{
     display: none;
@@ -111,14 +124,17 @@
    /* margin: 0 auto; */
    
 }
-.payment-select-cards-buttons{
+.fundwallet-inner .payment-select-cards-buttons{
     margin: 0 auto;
-  
-    min-width: 60%;
+ 
+    /* min-width: 60%; */
     display: flex;
     justify-content: space-between;
     justify-content: center;
+    padding-bottom: 30px;
+  
 }
+
 
 @media screen and (max-width:930px) {
     .option-right-fund{
@@ -171,6 +187,7 @@
     .fundwallet-inner  .payment-select-cards-buttons{
         display: flex;
         justify-content: center;
+       
       
     }
     .fundwallet-inner  .payment-select-cards-buttons button{

@@ -96,7 +96,7 @@ function Signup({details,signupdetails,signup}){
         
 
     }
-    const handlesubmit=(e)=>{
+    const  handlesubmit=  (e)=>{
         e.preventDefault()
       
         if((passval.length <8) ){
@@ -159,7 +159,7 @@ function Signup({details,signupdetails,signup}){
   .then(res=>{
     
     console.log(res)
-    console.log(res.data.data.userId)
+    console.log(res.data.data.id)
     if(((details.email)&&(details.password))!==""){
         if(remember===true){
     
@@ -178,6 +178,28 @@ function Signup({details,signupdetails,signup}){
     }
 
     if(res.data.status==='success'){
+        let walletparams={
+            balance: 0,
+            userId:res.data.data.id
+           
+        }
+        console.log(walletparams)
+        // fetch("https://subscription-management-tool.herokuapp.com/users/wallet",
+        // {method:'POST', body: walletparams})
+        // .then(res =>{
+        //     res.json()
+           
+        //     .then(file =>{console.log(file)})
+        //     // .catch(err=>console.log(err))
+        // })
+        // .catch(err=>console.log(err))
+        
+        axios.post("https://subscription-management-tool.herokuapp.com/users/wallet",walletparams)
+        .then(res=>{
+          
+          console.log(res)
+        })
+
         //let keeplogs=JSON.parse(localStorage.getItem('keeplog'))
         //setTimeout(()=>{
             setPopup({display:"flex"})
