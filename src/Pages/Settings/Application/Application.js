@@ -92,7 +92,7 @@ const Application = ({presentcolor,headercolor}) => {
             </div>
             <div className="mobile-App-Setting">
                 <MobileDash  dashSettingsStyle={{backgroundColor:presentcolor.dashheadercolor}}>
-                <div className="inner-settings-section">
+                <div className="inner-settings-sectiong">
                     <div className="header">
                         <h3>Settings</h3>
                         {/* <hr className="welcome-divider"/> */}
@@ -103,7 +103,7 @@ const Application = ({presentcolor,headercolor}) => {
                         <Link to="/settings/application" style={{borderBottom: "3px solid #6200f0", color: "#030640",marginRight:"16px"}}><p style={{marginRight:"0"}}>Application</p></Link>
                         <Link to="/settings/payments"><p>Payments</p></Link>
                     </div>
-                    <div className="inner-sectiony">
+                    <div className="inner-sectiong">
                         <form className="App-form">
                             <div className="Application-settings">
                                 <div className="display">

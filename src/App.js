@@ -17,13 +17,14 @@ import About from './Pages/About/About';
 import Addsub from  './Pages/Addsub/Addsub';
 import Blog from  './Pages/Blog/Blog'
 import Delete from './Pages/Delete/Delete'
+import Fundsuccess from './Pages/Payment/fundsuccess/Fundsuccess';
 import Profile from './Pages/Settings/Profile/Profile';
 import Notifications from './Pages/Settings/Notifications/Notifications'
 import Application from './Pages/Settings/Application/Application';
 import Payments from './Pages/Settings/Payments/Payments';
 import payment from './Pages/Payment/payment';
 //import Passwordreset from './Pages/Passwordreset/Passwordreset'
-
+import Fundwallet from './Pages/Payment/Fundwallet/Fundwallet';
 import Signincontinue from './Pages/Sigincontinue/Signincontinue'
 import Logout from './Pages/Logout/Logout';
 import LogoutReal from './Pages/LogoutReal/LogoutReal';
@@ -37,8 +38,10 @@ import Resetpassword from './Pages/Resetpassword/Resetpassword';
 import Passwordconfirmation from './Pages/Passwordconfirmation/Passwordconfirmation'
 import Frequent from './Pages/Support/Frequent/Frequent'
 import Autochange from './Pages/Autochange/Autochange';
-
+import Walletpayment from './Pages/Walletpayment/Walletpayment';
+import Pinverification from './Pages/Pinverification/Pinverification';
 import './App.css';
+
 
 function App() {
   return (
@@ -55,6 +58,8 @@ function App() {
      <Route exact path="/company" component={Company}/>
      <Route exact path="/contact" component={Contact}/>
      <Route exact path="/delete/:name" component={Delete}/>
+     <Route exact path="/fundwallet" component={Fundwallet}/>
+     <Route exact path="/fundsuccess" component={Fundsuccess}/>
      <Route exact path="/HowWorks" component={HowWorks}/>
      <Route exact path="/invite" component={Invite}/>
      <Route exact path="/Newsub/:name" component={Newsub}/>
@@ -78,8 +83,10 @@ function App() {
      <Route exact path="/settings/notifications" component={Notifications}/>
      <Route exact path="/settings/application" component={Application}/>
      <Route exact path="/settings/payments" component={Payments}/>
+     <Route exact path="/pinverification" component={Pinverification}/>
      <Route exact path="/support/faq" component={Frequent}/>
      <Route exact path="/payment/funding-history" component={payment}/>
+     <Route exact path="/walletpayment" component={Walletpayment}/>
     </Switch>
     </div>
   );

@@ -75,7 +75,7 @@ function Dashopen({children,dashheaderstyle,dashinvitestyle,dashsubscribestyle,p
                             {/* <div>Hi,Judith</div> */}
                         </div>
                         <div className="dash-upper-right">
-                        <div className="front">{customerDetail.photo!=""? (<div className="profile-image-dash"><img src={customerDetail.photo}/></div>): (<div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div>)}</div>
+                        <div className="front">{typeof (customerDetail.photo==="string")? (<div className="profile-image-dash"><img src={customerDetail.photo}/></div>): (<div className="profile-image-dash"><FaUserAlt className="userpix-dash"/></div>)}</div>
                         {/* <div className="front"><div className="profile-image-dashopen"><FaUserAlt className="userpix"/></div></div> */}
                         <div className="divider"></div>
                         <div className="firsts"><img src={search}/></div>
