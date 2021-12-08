@@ -41,6 +41,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[nametem,setNametem]=useState("")
     const[amttem,setAmttem]=useState("")
     const[lastDate,setLastDate]=useState("-")
+    const[cardbalance,setCardbalance]=useState(0)
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -99,6 +100,14 @@ function Subscription({presentcolor,headercolor,subarray}){
         axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
     .then(res=>{
       console.log(res.data.data)
+       //cardbalance
+       axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+       .then(res=>{
+         
+       //   console.log(res.data.data.data.balance)
+       setCardbalance(res.data.data.balance)
+         console.log(res.data.data.balance)
+       })
       itemArray=res.data.data
       localStorage.setItem('userDisplay', JSON.stringify(itemArray))
      setArr(itemArray)
@@ -118,6 +127,8 @@ function Subscription({presentcolor,headercolor,subarray}){
           console.log(itemExp)
           console.log(billingcycle);
           console.log(arr)
+
+         
 
         //last date
         
@@ -387,7 +398,7 @@ console.log(lastDate)
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN {cardbalance}</p>
                      </div>
                  </div>
                     </div>

@@ -14,10 +14,39 @@ import '../fundsuccess/Fundsuccess.css'
 import { FaSellsy } from 'react-icons/fa'
 
 function Fundsuccess({subscription,editarray}){
+    const[realBalance,setRealBalance]=useState()
+
+    useEffect(()=>{
    
-   
-   
-       
+  
+   let token = JSON.parse(localStorage.getItem('bearertoken'));
+          axios.defaults.headers.common['Authorization'] = token; 
+         
+
+    axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    .then(res=>{
+      
+    //   console.log(res.data.data.data.balance)
+      console.log(res.data.data.balance)
+      let amtBalance=res.data.data.balance
+    //   console.log(amtBalance)
+      let fundRes=JSON.parse(localStorage.getItem('fundRes'))
+      console.log(fundRes.amount)
+      let newBalance=(+amtBalance)+(+fundRes.amount)
+      setRealBalance((+amtBalance)+(+fundRes.amount))
+      console.log(newBalance)
+      let paramval={
+          balance:newBalance
+      }
+      axios.patch("https://subscription-management-tool.herokuapp.com/users/wallet",paramval)
+    .then(res=>{
+        console.log(res)
+    })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+},[])
    
 return(
     

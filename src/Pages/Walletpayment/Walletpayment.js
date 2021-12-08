@@ -19,7 +19,7 @@ import Flutterwavepng from '../../Asset/Flutterwave.png'
 import paystack from '../../Asset/paystack.png'
 import {ReactComponent as Paystack} from '../../Asset/paystack.svg'
 import Flutter from '../../Components/Flutter/Flutter'
-
+import axios from 'axios'
 import '../Walletpayment/Walletpayment.css'
 
 
@@ -30,15 +30,25 @@ function Walletpayment({presentcolor,headercolor}){
     const[chosen,setChosen]=useState("")
     const[butnbordersecond,setButnbordersecond]=useState({})
     const[fundvalue,setFundvalue]=useState("0.00")
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
         headercolor({ dashheadercolor:"#6200f0"})
-                    
+       
+        let userObject = JSON.parse(localStorage.getItem('userObject')); 
+        setFundvalue(userObject.amount)
+
+        axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    .then(res=>{
+      
+      console.log(res)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
        
      },[])
      function Continue(){
-         if(chosen=="flutter"){
-        //    alert('flutter')
-         }
+         history.push("/pinverification")
      }
 return(
     <div className="total-payMENT-CARD">
@@ -57,7 +67,7 @@ return(
                    
                    <div className="cardImage-acc-subscribe">
                        <p>Account Id</p>
-                       <p className="medium-weight-dashboard">20210801</p>
+                       <p className="medium-weight-dashboard">{customerDetail.userId}</p>
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
@@ -77,8 +87,8 @@ return(
 
                 <div className="payment-select-cards-buttons">
                             <button onClick={history.goBack} className="cancel-payment">CANCEL</button>
-                            <button className="proceed-payment" style={chosen==="flutter" ? {display:"none"}:{display:"inline-block"}} onClick={Continue}>PROCEED</button>
-                            <div className="flutterbutn" style={chosen!=="flutter" ? {display:"none"}:{display:"inline-block"}}><Flutter id="flutterbutn"  className="flutterbutn" /></div>
+                            <button className="proceed-payment"  onClick={Continue}>PROCEED</button>
+                           
                         </div>
                 </div>
 

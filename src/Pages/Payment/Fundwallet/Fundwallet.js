@@ -4,8 +4,8 @@ import Dashopen from '../../../Components/Dashopen/Dashopen'
 import { connect } from 'react-redux'
 import {useEffect,useState} from 'react'
 import { useHistory } from 'react-router-dom'
-
-import { headercolor } from '../../../redux/flex/flex.actions'
+import axios from 'axios'
+import { customerdetails, headercolor } from '../../../redux/flex/flex.actions'
 import {ReactComponent as Rectangle} from '../../../Asset/Rectangle-option.svg'
 import {ReactComponent as Paycard} from '../../../Asset/PayCard.svg'
 import {ReactComponent as Paywallet} from '../../../Asset/Paywallet.svg'
@@ -29,8 +29,19 @@ function Fundwallet({presentcolor,headercolor}){
     const[butnborder,setButnborder]=useState({})
     const[chosen,setChosen]=useState("")
     const[butnbordersecond,setButnbordersecond]=useState({})
+    const[cardbalance,setCardbalance]=useState(0)
+
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
         headercolor({ dashheadercolor:"#6200f0"})
+         //cardbalance
+         axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+         .then(res=>{
+           
+         //   console.log(res.data.data.data.balance)
+         setCardbalance(res.data.data.balance)
+           console.log(res.data.data.balance)
+         })
                     
        
      },[])
@@ -56,11 +67,11 @@ return(
                    
                    <div className="cardImage-acc-subscribe">
                        <p>Account Id</p>
-                       <p className="medium-weight-dashboard">20210801</p>
+                       <p className="medium-weight-dashboard">{customerDetail.userId}</p>
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN {cardbalance}</p>
                      </div>
                  </div>
                     </div>
@@ -122,11 +133,11 @@ return(
                    
                    <div className="cardImage-acc-subscribe">
                        <p>Account Id</p>
-                       <p className="medium-weight-dashboard">20210801</p>
+                       <p className="medium-weight-dashboard">{customerDetail.userId}</p>
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN </p>{cardbalance}
                      </div>
                  </div>
                     </div>
