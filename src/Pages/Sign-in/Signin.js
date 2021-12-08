@@ -132,7 +132,7 @@ import '../Sign-in/Signin.css'
           history.push("/Dashboard")
       }
       else{
-        //   alert('invalid input')
+          alert('invalid input')
       }
 
     

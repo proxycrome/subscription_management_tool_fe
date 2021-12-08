@@ -22,6 +22,7 @@ return(
                     <h3>Invite a friend</h3>
                     <hr className="welcome-divider"/>
                 </div>
+
                 <div className="invite-inner-form">
                 <form >
                     <div className="inner-section" style={{flexDirection: "column"}}>   
@@ -30,6 +31,8 @@ return(
                         <div className="phone-input-invite-div">
                         <input type="text" placeholder="Email or Phone number" className="input-fld"/>
                         </div>
+
+               
                         <label className="message-label">Message</label>
                         <div className="textarea-div">
                             <textarea className="textarea">Flex is a subscription management platform that allows you to mange multiple subscription plans.it gives you the freedom to control and keep track of your expenses.</textarea>
@@ -38,9 +41,11 @@ return(
                         <button type="submit" className="invite-button">SEND INVITE</button>
                         </div>
                         <label className="copy-label">Or Copy Link</label>
+
                         <div className="phone-input-invite-div">
                         <input type="text" placeholder="https://bit.ly?exgO9fdjhjgh" className="input-fld"/>
                         </div>
+
                     </div>
                 </form>
                 </div>
