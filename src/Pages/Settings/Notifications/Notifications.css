@@ -142,6 +142,7 @@
     }
     .mobile-view-notification .inner-section{
         max-width: 90%;
+        min-width: 90%;
         padding: 0;
        
         padding: 30px 20px;
@@ -149,6 +150,7 @@
         margin-right: 16px;
         margin-bottom: 30px;
         padding-bottom: 30px;
+       
     }
     .notification h3{
         font-size: 16px;

@@ -81,7 +81,9 @@ let newoct=0
     let conty;
     //window.location.reload()
     let contentd=""
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
+       
         headercolor({ dashheadercolor:"#6200F0"})
           let token = JSON.parse(localStorage.getItem('bearertoken'));
           axios.defaults.headers.common['Authorization'] = token; 
@@ -489,7 +491,7 @@ console.log(contentd)
                             <div className="acc-summ"><p>Account summary</p></div>
                             <div className="account-line"></div>
                             </div>
-                            <p onClick={(()=>{history.push("/Product")})} className="dashproduct">Products</p>
+                            <p onClick={(()=>{history.push("/product")})} className="dashproduct">Products</p>
                             </div>
                             <button className="dash-add-button" onClick={(()=>{history.push("/productcategory")})}> <PlusLogo/> <p> ADD SUBSCRIPTION</p></button>
                             </div>
@@ -511,7 +513,7 @@ console.log(contentd)
                                         <div className="wallet">
                                             <div className="wallet-upper">
                                                 <p className="regular-weight-dash">Account Id</p>
-                                                <p className="medium-weight-dashboard">20210801</p>
+                                                <p className="medium-weight-dashboard"></p>{customerDetail.userId}
                                             </div>
                                             <div className="wallets-lower">
                                                 <div><p className="medium-weight-dashboard">E-wallet Balance</p></div>
@@ -726,7 +728,7 @@ console.log(contentd)
                                     <hr/>
                                     </span>
                                    
-                                    <p className="p-Mobiles">Products</p>
+                                    <p onClick={(()=>{history.push("/product")})} className="p-Mobiles" >Products</p>
                                 </div>
                                 <div className="mobilecard-in-Dashboard"><Mobilecard/></div>
                                

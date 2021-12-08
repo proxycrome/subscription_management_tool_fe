@@ -159,6 +159,7 @@ function Signup({details,signupdetails,signup}){
   .then(res=>{
     
     console.log(res)
+    console.log(res.data.data.userId)
     if(((details.email)&&(details.password))!==""){
         if(remember===true){
     
