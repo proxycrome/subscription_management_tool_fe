@@ -40,6 +40,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[nov,setNov]=useState("")
     const[dec,setDec]=useState("")
     const[lastDate,setLastDate]=useState("-")
+    const[cardbalance,setcardbalance]=useState(0)
     let janAmt=0
 let febAmt=0
 let marAmt=0
@@ -81,7 +82,9 @@ let newoct=0
     let conty;
     //window.location.reload()
     let contentd=""
+    let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
+       
         headercolor({ dashheadercolor:"#6200F0"})
           let token = JSON.parse(localStorage.getItem('bearertoken'));
           axios.defaults.headers.common['Authorization'] = token; 
@@ -101,7 +104,13 @@ let newoct=0
      setArr(itemArray)
         console.log(itemArray)
         
-
+        axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    .then(res=>{
+      
+    //   console.log(res.data.data.data.balance)
+    setcardbalance(res.data.data.balance)
+      console.log(res.data.data.balance)
+    })
            
         //arrs=itemArray
         
@@ -489,7 +498,7 @@ console.log(contentd)
                             <div className="acc-summ"><p>Account summary</p></div>
                             <div className="account-line"></div>
                             </div>
-                            <p onClick={(()=>{history.push("/Product")})} className="dashproduct">Products</p>
+                            <p onClick={(()=>{history.push("/product")})} className="dashproduct">Products</p>
                             </div>
                             <button className="dash-add-button" onClick={(()=>{history.push("/productcategory")})}> <PlusLogo/> <p> ADD SUBSCRIPTION</p></button>
                             </div>
@@ -506,16 +515,16 @@ console.log(contentd)
                                     </div>
                                 </div>
                                 <div className="fourth-line-right">
-                                    <button>FUND WALLET</button>
+                                    <button onClick={(()=>{history.push("/fundwallet")})}>FUND WALLET</button>
                                     <div className="WALLET-div" >
                                         <div className="wallet">
                                             <div className="wallet-upper">
                                                 <p className="regular-weight-dash">Account Id</p>
-                                                <p className="medium-weight-dashboard">20210801</p>
+                                                <p className="medium-weight-dashboard"></p>{customerDetail.userId}
                                             </div>
                                             <div className="wallets-lower">
                                                 <div><p className="medium-weight-dashboard">E-wallet Balance</p></div>
-                                                <div><p className="money-dashboard">NGN 0.00</p></div>
+                                                <div><p className="money-dashboard">NGN {cardbalance}</p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -726,7 +735,7 @@ console.log(contentd)
                                     <hr/>
                                     </span>
                                    
-                                    <p className="p-Mobiles">Products</p>
+                                    <p onClick={(()=>{history.push("/product")})} className="p-Mobiles" >Products</p>
                                 </div>
                                 <div className="mobilecard-in-Dashboard"><Mobilecard/></div>
                                

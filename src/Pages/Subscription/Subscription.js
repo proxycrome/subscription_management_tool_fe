@@ -3,7 +3,7 @@ import DashFrame from '../../Components/DashFrame/DashFrame'
 import { connect } from 'react-redux'
 import {useEffect,useState} from 'react'
 import PieChart from '../../Components/Pie/Pie'
-import { headercolor } from '../../redux/flex/flex.actions';
+import { customerdetails, headercolor } from '../../redux/flex/flex.actions';
 import MobileDash from '../../Components/MobileDash/MobileDash';
 import Mobilecard from '../../Components/Mobilecard/Mobilecard'
 import {ReactComponent as PlusLogo} from '../../Asset/Plus.svg'
@@ -41,6 +41,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[nametem,setNametem]=useState("")
     const[amttem,setAmttem]=useState("")
     const[lastDate,setLastDate]=useState("-")
+    const[cardbalance,setCardbalance]=useState(0)
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -72,8 +73,9 @@ function Subscription({presentcolor,headercolor,subarray}){
    let amtArr=[]
 
     
-
+   let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
+      
         headercolor({ dashsubscribecolor:"#6200F0"})
         //month
         var today = new Date();
@@ -98,6 +100,14 @@ function Subscription({presentcolor,headercolor,subarray}){
         axios.get("https://subscription-management-tool.herokuapp.com/users/subscription")
     .then(res=>{
       console.log(res.data.data)
+       //cardbalance
+       axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+       .then(res=>{
+         
+       //   console.log(res.data.data.data.balance)
+       setCardbalance(res.data.data.balance)
+         console.log(res.data.data.balance)
+       })
       itemArray=res.data.data
       localStorage.setItem('userDisplay', JSON.stringify(itemArray))
      setArr(itemArray)
@@ -117,6 +127,8 @@ function Subscription({presentcolor,headercolor,subarray}){
           console.log(itemExp)
           console.log(billingcycle);
           console.log(arr)
+
+         
 
         //last date
         
@@ -263,7 +275,8 @@ console.log(lastDate)
         console.log(index)
        //  if(val.subCategory=="Gotv")
        //  { setProductId("")}
-       namearr.map((item,indx)=>{
+    //    namearr.map((item,indx)=>{
+       arr.map((item,indx)=>{
            console.log(indx)
        if(indx==index){
            console.log(item._id)
@@ -280,7 +293,8 @@ console.log(lastDate)
     function Active(val,index){
      
       console.log(namearr)
-       namearr.map((item,indx)=>{
+    //    namearr.map((item,indx)=>{
+        arr.map((item,indx)=>{
        if(indx==index){
            console.log(item._id)
            clientItem=item._id
@@ -298,7 +312,8 @@ console.log(lastDate)
    function Expired(val,index){
       
     //console.log(indx)
-    namearr.map((item,indx)=>{
+    // namearr.map((item,indx)=>{
+       arr.map((item,indx)=>{
     if(indx==index){
         console.log(item._id)
         clientItem=item._id
@@ -315,7 +330,8 @@ console.log(lastDate)
 }
    function handledelete(index){
        console.log(index)
-       namearr.map((item,indx)=>{
+    //    namearr.map((item,indx)=>{
+       arr.map((item,indx)=>{
 
            if(indx==index){
            console.log(item._id)
@@ -378,11 +394,11 @@ console.log(lastDate)
                    
                    <div className="cardImage-acc-subscribe">
                        <p>Account Id</p>
-                       <p className="medium-weight-dashboard">20210801</p>
+                       <p className="medium-weight-dashboard">{customerDetail.userId}</p>
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN {cardbalance}</p>
                      </div>
                  </div>
                     </div>
