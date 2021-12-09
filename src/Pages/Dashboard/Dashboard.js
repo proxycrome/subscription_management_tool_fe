@@ -40,7 +40,7 @@ function Dashboard({presentcolor,headercolor,subarray}){
     const[nov,setNov]=useState("")
     const[dec,setDec]=useState("")
     const[lastDate,setLastDate]=useState("-")
-    const[cardbalance,setcardbalance]=useState(0)
+    const[cardbalance,setcardbalance]=useState(0.00)
     let janAmt=0
 let febAmt=0
 let marAmt=0
