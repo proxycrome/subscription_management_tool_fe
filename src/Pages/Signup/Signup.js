@@ -324,7 +324,7 @@ function Signup({details,signupdetails,signup}){
                     </div>
             <div className="inner-signup">
             <div className="signup-textandimage">
-                <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}/></div>
+                <div className="signup-textandimage-logo"><FlexLogo style={{width:"108px",height:"42px"}}  onClick={(()=>{history.push("/")})}/></div>
                 <div>
                 <h2>Stay connected always</h2>
                 <p>All-in-one subscription management platform. Keep track of your expenses, set auto-renewal
