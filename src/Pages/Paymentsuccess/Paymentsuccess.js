@@ -48,9 +48,9 @@ userObject.dateSubscribed=date
 //         subscriptionStatus:"Expired"}
 
 //later
-    testObject.dateExpired="2021-12-10"
-testObject.dateSubscribed="2021-11-10"
-    testObject.subscriptionStatus="Expired"
+//     testObject.dateExpired="2021-12-10"
+// testObject.dateSubscribed="2021-11-10"
+//     testObject.subscriptionStatus="Expired"
 
 
     newObject.dateExpired=future
@@ -79,7 +79,7 @@ localStorage.removeItem(clientIds)
     
     else{
         //let userObject={}
-         axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",testObject)
+         axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
       .then(res=>{
          
        console.log(res)
