@@ -41,15 +41,15 @@
 }
 
 .payments-settings{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* display: flex;
     align-self: center;
     justify-content: center;
    
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     max-width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
 }
 .payments-form{
   

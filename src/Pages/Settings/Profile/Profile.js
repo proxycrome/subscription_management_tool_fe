@@ -80,8 +80,8 @@ const Profile = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                         <Link to="/settings/payments"><p>Payments</p></Link>
                     </div>
                     <form>
-                        <div className="flex-profile-settings">
-                        <div className="inner-section">   
+                        {/* <div className="flex-profile-settings"> */}
+                        <div className="inner-sector">   
                     
                             <div className="inner-left-section">
                                 <div className="image-form">
@@ -126,24 +126,25 @@ const Profile = ({presentcolor,headercolor, updatedetails, detailsupdate}) => {
                                             <input type="email" name="email" placeholder="Email address" className="input-field" onChange={(e)=>{updatedetails({[e.target.name]:e.target.value})}}/>
                                         </div>
                                     </div>
-                                    {/* <div className="btn-field">
-                                        <button type="submit" className="pro-submit-btn" onClick={handleSubmit}>APPLY</button>
-                                        <button type="button" className="discard-btn" onClick={()=> {history.goBack()}} >DISCARD</button>
-                                    </div>    */}
-                                </div>
-                            </div>  
-                            </div>  
-                           
-                            <div className="btn-field">
+                                    <div className="btn-field">
                                         <button type="submit" className="pro-submit-btn" onClick={handleSubmit}>APPLY</button>
                                         <button type="button" className="discard-btn" onClick={()=> {history.goBack()}} >DISCARD</button>
                                     </div>
+                                      
+                                </div>
+                            </div>   
+                            </div>  
+                           
+                            {/* <div className="btn-field">
+                                        <button type="submit" className="pro-submit-btn" onClick={handleSubmit}>APPLY</button>
+                                        <button type="button" className="discard-btn" onClick={()=> {history.goBack()}} >DISCARD</button>
+                                    </div> */}
                            
                         
                             
                             
                         
-                       </div>
+                       {/* </div> */}
                     </form>
                     
                 </div>    
