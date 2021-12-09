@@ -38,6 +38,7 @@ function Signup({details,signupdetails,signup}){
     const[loading, setLoading]=useState(true)
     const[popup,setPopup]=useState({display:"none"})
     const[popupInfo,setPopupInfo]=useState({display:"none"})
+    const[terms,setTerms]=useState(false)
     const history=useHistory()
 
     
@@ -132,7 +133,7 @@ function Signup({details,signupdetails,signup}){
           // console.log(err)
        //})
 
-        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")){
+        if((emailval!="")&&(passval!="")&&(countryval!="")&&(first!="")&&(second!="")&&(terms===true)){
             if(passval.match(decimal))
 {
   
@@ -407,7 +408,7 @@ function Signup({details,signupdetails,signup}){
             type="Oval" width={20} color="#000000"/></div>)}</button>
            <div className="terms"> 
            <div className="signup-remember-me">
-           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <input id="termscheck" onChange={(()=>{setTerms(true)})} className="terms-checkbox" type="checkbox" required />
            <label for="termscheck"> </label>
            <div  className="terms-and-policy">
            <p >By clicking you agree to our 
@@ -532,7 +533,7 @@ function Signup({details,signupdetails,signup}){
 
                 <div className="terms"> 
            <div className="signup-remember-me">
-           <input id="termscheck" className="terms-checkbox" type="checkbox" required />
+           <input id="termscheck" className="terms-checkbox" onChange={(()=>{setTerms(true)})} type="checkbox" required />
            <label for="termscheck"> </label>
            <div  className="terms-and-policy">
            <p >By clicking you agree to our 

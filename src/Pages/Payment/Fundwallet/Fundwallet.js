@@ -33,7 +33,7 @@ function Fundwallet({presentcolor,headercolor}){
 
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
-        headercolor({ dashheadercolor:"#6200f0"})
+        headercolor({ paymentcolor:"#6200f0"})
          //cardbalance
          axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
          .then(res=>{
@@ -53,7 +53,7 @@ function Fundwallet({presentcolor,headercolor}){
 return(
     <div className="total-payMENT-CARD">
         <div className="fund-view-paycard-div">
-    <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
+    <DashFrame dashPaymentStyle={{backgroundColor:presentcolor.paymentcolor}}>
         <div className="paymentoption">
             <div>
                 <div className="header-payment">

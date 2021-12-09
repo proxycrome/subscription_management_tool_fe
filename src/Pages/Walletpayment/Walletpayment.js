@@ -25,6 +25,7 @@ import '../Walletpayment/Walletpayment.css'
 
 function Walletpayment({presentcolor,headercolor}){
     const history=useHistory()
+    const[cardbalance,setCardbalance]=useState(0.00)
     const[click,setClick]=useState(false)
     const[butnborder,setButnborder]=useState({})
     const[chosen,setChosen]=useState("")
@@ -39,7 +40,7 @@ function Walletpayment({presentcolor,headercolor}){
 
         axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
     .then(res=>{
-      
+        setCardbalance(res.data.data.balance)
       console.log(res)
     })
     .catch((err)=>{
@@ -71,7 +72,7 @@ return(
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN {cardbalance}</p>
                      </div>
                  </div>
                     </div>
@@ -117,7 +118,7 @@ return(
                    </div>
                      <div className="cardImage-balance-subscribe">
                          <p className="medium-weight-dashboard">E-wallet Balance</p>
-                         <p className="money-dashboard">NGN 0.00</p>
+                         <p className="money-dashboard">NGN {cardbalance}</p>
                      </div>
                  </div>
                     </div>

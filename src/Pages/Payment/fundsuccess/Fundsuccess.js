@@ -12,6 +12,7 @@ import axios from 'axios'
 // import '../Fundsuccess/Fundsuccess.css'
 import '../fundsuccess/Fundsuccess.css'
 import { FaSellsy } from 'react-icons/fa'
+import { FlutterWaveButton } from 'flutterwave-react-v3'
 
 function Fundsuccess({subscription,editarray}){
     const[realBalance,setRealBalance]=useState()
@@ -38,9 +39,25 @@ function Fundsuccess({subscription,editarray}){
       let paramval={
           balance:newBalance
       }
+      var today= new Date()
+      var time=today.getHours() + ":" + today
+      
+    // var time= new Date().toLocaleTimeString()
+      let paramfund={
+          amount: fundRes.amount,
+          paymentGateway: "FlutterWave",
+          status:"successful",
+          date:today,
+          time:time
+      }
       axios.patch("https://subscription-management-tool.herokuapp.com/users/wallet",paramval)
     .then(res=>{
         console.log(res)
+        axios.post("https://subscription-management-tool.herokuapp.com/users/walletfund",paramfund)
+        .then(res=>{
+           
+         console.log(res)
+        })
     })
     })
     .catch((err)=>{
