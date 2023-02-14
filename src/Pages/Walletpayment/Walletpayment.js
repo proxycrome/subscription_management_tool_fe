@@ -21,6 +21,7 @@ import {ReactComponent as Paystack} from '../../Asset/paystack.svg'
 import Flutter from '../../Components/Flutter/Flutter'
 import axios from 'axios'
 import '../Walletpayment/Walletpayment.css'
+import { baseURL } from '../../domain'
 
 
 function Walletpayment({presentcolor,headercolor}){
@@ -38,7 +39,7 @@ function Walletpayment({presentcolor,headercolor}){
         let userObject = JSON.parse(localStorage.getItem('userObject')); 
         setFundvalue(userObject.amount)
 
-        axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+        axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
         setCardbalance(res.data.data.balance)
       console.log(res)

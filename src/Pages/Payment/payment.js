@@ -22,6 +22,7 @@ import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import axios from 'axios';
 import download from '../../Asset/feather_download.png'
 import '../Payment/payment.css'
+import { baseURL } from '../../domain';
 
 function Payment({presentcolor,headercolor,subarray}){
     const[image,setImage]=useState({val:""})
@@ -96,12 +97,14 @@ let newoct=0
         //   let token = JSON.parse(localStorage.getItem('bearertoken'));
         //   axios.defaults.headers.common['Authorization'] = token;
  
-          axios.get("https://subscription-management-tool.herokuapp.com/users/walletfund")
+
+          axios.get(`${baseURL}/users/subscription`)
+        
       .then(res=>{
           
         console.log(res.data.data)
          //cardbalance
-         axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+         axios.get(`${baseURL}/users/wallet`)
          .then(res=>{
            
          //   console.log(res.data.data.data.balance)

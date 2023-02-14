@@ -11,6 +11,7 @@ import axios from 'axios'
 // import '../ Paymentsuccess/ Paymentsuccess.css'
 import '../Paymentsuccess/Paymentsuccess.css'
 import { FaSellsy } from 'react-icons/fa'
+import { baseURL } from '../../domain'
 
 function  Paymentsuccess({subscription,editarray}){
     const history=useHistory()
@@ -63,7 +64,7 @@ newObject.dateSubscribed=date
     if(resVal.Hidy!=""){
        
         
-        axios.patch(`https://subscription-management-tool.herokuapp.com/users/subscription/${clientIds}`,newObject)
+        axios.patch(`${baseURL}/users/subscription/${clientIds}`,newObject)
 .then(res=>{
 console.log(res)
 localStorage.removeItem(clientIds)
@@ -79,7 +80,7 @@ localStorage.removeItem(clientIds)
     
     else{
         //let userObject={}
-         axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
+         axios.post(`${baseURL}/users/subscription/`,userObject)
       .then(res=>{
          
        console.log(res)
