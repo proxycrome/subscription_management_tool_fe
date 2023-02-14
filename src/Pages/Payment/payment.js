@@ -16,9 +16,11 @@ import Dstiv from '../../Asset/Dstv.png'
 import Gotiv from '../../Asset/GOTV.png'
 import MobileDash from '../../Components/MobileDash/MobileDash';
 import plusCircle from '../../Asset/plus-circle.png'
-
+import call from '../../Asset/Call Icon.png'
+import Mail from '../../Asset/Mail icon.png'
 import Mobilecard from '../../Components/Mobilecard/Mobilecard';
 import axios from 'axios';
+import download from '../../Asset/feather_download.png'
 import '../Payment/payment.css'
 import { baseURL } from '../../domain';
 
@@ -86,7 +88,7 @@ let newoct=0
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
     useEffect(()=>{
        
-        headercolor({ dashheadercolor:"#6200F0"})
+        headercolor({ paymentcolor:"#6200F0"})
           let token = JSON.parse(localStorage.getItem('bearertoken'));
           axios.defaults.headers.common['Authorization'] = token; 
        //location.reload()
@@ -95,7 +97,9 @@ let newoct=0
         //   let token = JSON.parse(localStorage.getItem('bearertoken'));
         //   axios.defaults.headers.common['Authorization'] = token;
  
+
           axios.get(`${baseURL}/users/subscription`)
+        
       .then(res=>{
           
         console.log(res.data.data)
@@ -108,8 +112,8 @@ let newoct=0
            console.log(res.data.data.balance)
          })
         itemArray=res.data.data
-        localStorage.setItem('userDisplay', JSON.stringify(itemArray))
-        userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+        // localStorage.setItem('userDisplay', JSON.stringify(itemArray))
+        // userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
      setArr(itemArray)
         console.log(itemArray)
         
@@ -117,26 +121,26 @@ let newoct=0
        
          itemArray.map((val)=>{
             catId=val._id
-            cats=val.subCategory
-            catg=val.category
+            // cats=val.subCategory
+            // catg=val.category
             itemAmt=val.amount
-            itemImg=val.productImg
-            itemExp=val.dateExpired
-            itemStatus=val.subscriptionStatus
-            console.log(cats +"" + catg+""+itemImg)
+            // itemImg=val.productImg
+            // itemExp=val.dateExpired
+            itemStatus=val.status
+            // console.log(cats +"" + catg+""+itemImg)
             setItemId(catId)
             console.log(itemStatus)
 
             //linegraph
-            if(val.dateSubscribed.split("-")[1]==10){
-                octAmt+=val.amount}
-                setOct(octAmt)
-                if(val.dateSubscribed.split("-")[1]==11){
-                    novAmt+=val.amount}
-                    if(val.dateSubscribed.split("-")[1]==12){
-                        decAmt+=val.amount}
-                    setNov(novAmt)
-                    setDec(decAmt)
+            // if(val.dateSubscribed.split("-")[1]==10){
+            //     octAmt+=val.amount}
+            //     setOct(octAmt)
+            //     if(val.dateSubscribed.split("-")[1]==11){
+            //         novAmt+=val.amount}
+            //         if(val.dateSubscribed.split("-")[1]==12){
+            //             decAmt+=val.amount}
+            //         setNov(novAmt)
+            //         setDec(decAmt)
 
                    
        
@@ -150,15 +154,15 @@ let newoct=0
      
           
      
-    userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
-    setNamearr(userDisplay)
+    // userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
+    // setNamearr(userDisplay)
 },[]) 
 
  
-    userDisplay = JSON.parse(localStorage.getItem('userDisplay'));  
-    console.log(userDisplay)
-    console.log(oct)
-    console.log(nov)
+    // userDisplay = JSON.parse(localStorage.getItem('userDisplay'));  
+    // console.log(userDisplay)
+    // console.log(oct)
+    // console.log(nov)
 
    
 
@@ -229,6 +233,9 @@ let newoct=0
         //localStorage.setItem('clientIds', JSON.stringify(item._id))
         //localStorage.setItem('detailedInfos', JSON.stringify({amount:val.amount,name:val.product,image:productImg,renew:val.autoRenew,billincycle:val.billingCycle}))
     }
+    function handledeleted(){
+
+    }
     function handledelete(val){
       
         console.log(val)
@@ -265,7 +272,7 @@ console.log(contentd)
             <div className="paymentdashtotal">
                 
                 <div className="webDashboard">
-                        <DashFrame dashheaderstyle={{backgroundColor:presentcolor.dashheadercolor}}>
+                        <DashFrame dashPaymentStyle={{backgroundColor:presentcolor.paymentcolor}}>
                            
                         <div className="inner-body-dashboard">
                         <div className="second-line-dashboard">
@@ -285,23 +292,32 @@ console.log(contentd)
                             </div>
                             {/* <p onClick={(()=>{history.push("/product")})} className="dashproduct">Products</p> */}
                             </div>
-                            <select name="choice"  className="selected-placeholder-below" id="selectlists-below" >
+                            <div className="selected-placeholder-below-div">
+                            <select name="choice"  className="selected-placeholder-below" id="select-payment-below" >
                 <option value="filter" >Filter transaction</option>
                    
                      
 
                 </select>
-                           
+                           </div>
                             </div>
                             {/* <hr className="welcome-divider"/> */}
                             <div className="fourth-line-dashboard-inner">
                                 <div className="fourth-line-left">
                                     <div className="fourth-line-left-content">
-                                    <div><p className="subOverview">Subscription overview</p></div>
+                                    {/* <div><p className="subOverview">Subscription overview</p></div> */}
                                     <div >
-                                        
+                                        <div className="upperleftCOntent">
+                   <h2>PERSONAL INFORMATION</h2>
+                   <hr className="customer-info-line"/>
+                   <p className="accountId-upperbox" style={{color:"red"}}>Account ID: {customerDetail.userId}</p>
+                   <h3>Customer Name: {customerDetail.firstName} {customerDetail.lastName}</h3>
+                   <div className="upperleft-and-icon" 
+                   style={typeof (customerDetail.phone)!=="number" ? {display:"none"}:{display:"flex"}}><img src={call}/><p>{customerDetail.phone}</p></div>
+                   <div className="upperleft-and-icon"><img src={Mail}/><p>{customerDetail.email}</p></div>
+               </div> 
                                     </div>
-                                    <div className="linechart"> </div>
+                                  
                                     </div>
                                 </div>
                                 <div className="fourth-line-right">
@@ -324,16 +340,16 @@ console.log(contentd)
                         </div>
                         <div className="inner-half-dashboard">
 
-                        <p className="recent-sub-dashboard">Recent Subscriptions</p>
-                        <div className="inner-half-header">
+                        <p className="recent-sub-dashboard">Funding History</p>
+                        <div className="inner-half-header" id="payment-half-header-div">
                           
                            
                            
-                                <span>Products</span>
-                                <span>Product category</span>
+                                <span>E-wallet</span>
+                                {/* <span>Product category</span>
                                 <span>Expiry Date</span>
                                 <span>Status</span>
-                                <span></span>
+                                <span></span> */}
                                
                             </div>
                            
@@ -425,7 +441,14 @@ console.log(contentd)
     
    }         */}
 
-
+   <div  className="inner-half-header" id="payment-new-header">
+   
+                                <span>DATE&TIME</span>
+                                <span>AMOUNT</span> 
+                                <span>PAYMENT GATEWAY</span>
+                                <span>STATUS</span> 
+                                <span></span> 
+   </div>
   
 
    {arr.filter((val,index)=>
@@ -450,6 +473,14 @@ console.log(contentd)
             itemImg=val.productImg
             itemExp=val.dateExpired
             itemStatus=val.subscriptionStatus
+            // let time= (val.time).toLocaleTimeString()
+            let timed=val.time.split("GMT")[0]
+            let timeA=timed.split(" ")[1]
+            let timeB=timed.split(" ")[2]
+            let timeC=timed.split(" ")[3]
+            let timeD=timed.split(" ")[4]
+            let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+            
             let colours={}
              console.log(cats +"" + catg+""+itemImg)
             if(itemStatus=="Active"){
@@ -463,24 +494,21 @@ console.log(contentd)
             }
 
            return <div  className="catresult" key={index}>
-               <span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
-              className="excIcon"icon={itemImg}/><p>{cats}</p></span> 
+               <span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><p>{time}</p></span> 
              
             
        
-        <span>{val.category}</span>
+        <span>{val.amount}</span>
        {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
-      <span>{val.dateExpired}</span>
-       <span style={{color:colours.coloritem}}  >{itemStatus}</span>
+      <span>{val.paymentGateway}</span>
+       <span style={{color:"green"}}  >{val.status}</span>
        {/* <tr>{val.billingCycle}</tr> */}
        
        <span className="editprof" 
         // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
-        ><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactive(val,index)}
-        if(val.subscriptionStatus=="Active") { Active(val,index) }
-        if(val.subscriptionStatus=="Expired") { Expired(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+        ><p className="download-div" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={download} alt="download"/></p>
         
-        <div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+        <div className="binDiv" onClick={(()=>{handledeleted(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
         </span>
         
        </div>
@@ -538,24 +566,33 @@ console.log(contentd)
                             </div>
                             <div className="mobile-graph-dashboard">
                             <div className="fourth-line-left-content">
+                            <div className="upperleftCOntent">
+                   <h2>PERSONAL INFORMATION</h2>
+                   <hr className="customer-info-line"/>
+                   <p className="accountId-upperbox" style={{color:"red"}}>Account ID: {customerDetail.userId}</p>
+                   <h3>Customer Name: {customerDetail.firstName} {customerDetail.lastName}</h3>
+                   <div className="upperleft-and-icon" 
+                   style={typeof (customerDetail.phone)!=="number" ? {display:"none"}:{display:"flex"}}><img src={call}/><p>{customerDetail.phone}</p></div>
+                   <div className="upperleft-and-icon"><img src={Mail}/><p>{customerDetail.email}</p></div>
+               </div> 
                                     <div><p className="subOverview"></p></div>
                                     
                                     <div className="linechart"></div>
                                     </div>
                             </div>
                             </div>
-                            <div className="inner-half-dashboard">
+                            <div className="inner-half-dashboard" >
 
-<p className="recent-sub-dashboard">Recent Subscriptions</p>
-<div className="inner-half-header">
+<p className="recent-sub-dashboard">Funding History</p>
+<div className="inner-half-header" id="payment-half-header-div">
   
    
    
-        <span>Products</span>
-        <span>Product category</span>
+        <span>E-wallet</span>
+        {/* <span>Product category</span>
         <span>Expiry Date</span>
         <span>Status</span>
-        <span></span>
+        <span></span> */}
        
     </div>
    
@@ -647,7 +684,14 @@ if(itemStatus=="Active") { Active(val,index) }} }style={itemStatus=="" ? {displa
 
 }         */}
 
-
+<div  className="inner-half-header" id="payment-new-header">
+   
+                                <span>DATE&TIME</span>
+                                <span>AMOUNT</span> 
+                                <span>PAYMENT GATEWAY</span>
+                                <span>STATUS</span> 
+                                <span></span> 
+   </div>
 
 
 {arr.filter((val,index)=>
@@ -672,6 +716,13 @@ itemAmt=val.amount
 itemImg=val.productImg
 itemExp=val.dateExpired
 itemStatus=val.subscriptionStatus
+let timed=val.time.split("GMT")[0]
+let timeA=timed.split(" ")[1]
+let timeB=timed.split(" ")[2]
+let timeC=timed.split(" ")[3]
+let timeD=timed.split(" ")[4]
+let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+
 let colours={}
 console.log(cats +"" + catg+""+itemImg)
 if(itemStatus=="Active"){
@@ -685,27 +736,25 @@ colours={coloritem:"#E40C0C"}
 }
 
 return <div  className="catresult" key={index}>
-<span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><Smallestbox
-className="excIcon"icon={itemImg}/><p>{cats}</p></span> 
+<span className="Product-and-Pname" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><p>{time}</p></span> 
 
 
 
-<span>{val.category}</span>
+<span>{val.amount}</span>
 {/* <tr style={itemStatus=="Inactive"? {color:"rgba(3,64,6,30%)"} :null} >{itemStatus}</tr> */}
-<span>{val.dateExpired}</span>
-<span style={{color:colours.coloritem}}  >{itemStatus}</span>
+<span>{val.paymentGateway}</span>
+<span style={{color:"green"}}  >{val.status}</span>
 {/* <tr>{val.billingCycle}</tr> */}
 
 <span className="editprof" 
 // ><p onClick={()=>{stat=="Inactive"? Inactive(val) : Active()}}style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
-><p onClick={()=>{if(val.subscriptionStatus=="Inactive"){Inactive(val,index)}
-if(val.subscriptionStatus=="Active") { Active(val,index) }
-if(val.subscriptionStatus=="Expired") { Expired(val,index) }} }style={itemStatus=="" ? {display:"none"}:{display:"flex"}}>Edit</p>
+><p className="download-div" style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={download} alt="download"/></p>
 
-<div className="binDiv" onClick={(()=>{handledelete(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
+<div className="binDiv" onClick={(()=>{handledeleted(index)})} style={itemStatus=="" ? {display:"none"}:{display:"flex"}}><img src={Bin}/></div>
 </span>
 
 </div>
+
 
 })
 }

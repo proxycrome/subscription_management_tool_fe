@@ -42,7 +42,7 @@ function Subscription({presentcolor,headercolor,subarray}){
     const[nametem,setNametem]=useState("")
     const[amttem,setAmttem]=useState("")
     const[lastDate,setLastDate]=useState("-")
-    const[cardbalance,setCardbalance]=useState(0)
+    const[cardbalance,setCardbalance]=useState(0.00)
     let itemArray=[]
     let userDisplay=[]
     let pname=""
@@ -101,6 +101,7 @@ function Subscription({presentcolor,headercolor,subarray}){
         axios.get(`${baseURL}/users/subscription`)
     .then(res=>{
       console.log(res.data.data)
+      setArr(res.data.data)
        //cardbalance
        axios.get(`${baseURL}/users/wallet`)
        .then(res=>{
@@ -111,7 +112,7 @@ function Subscription({presentcolor,headercolor,subarray}){
        })
       itemArray=res.data.data
       localStorage.setItem('userDisplay', JSON.stringify(itemArray))
-     setArr(itemArray)
+    
       console.log(itemArray)
       content=itemArray.map((val)=>{
           catId=val._id
@@ -226,9 +227,10 @@ userDisplay = JSON.parse(localStorage.getItem('userDisplay'));
 setNamearr(userDisplay) 
 console.log(lastDate)
      },[])
-     if(nametem===""){
+     console.log(nametem)
+     if(nametem.length===0){
         setNametem(["Subscription"])
-        setAmttem(["10"])
+        setAmttem(["100"])
     }
      //pie info
      const data = {

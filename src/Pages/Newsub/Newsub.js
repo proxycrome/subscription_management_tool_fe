@@ -214,6 +214,7 @@ function Newsub({presentcolor,headercolor,date,match,subarray,subscription,addar
         console.log(err)
      })
             history.push("/subscription")
+            // history.push("/dashboard")
        
      }
      
