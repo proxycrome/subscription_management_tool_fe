@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {ReactComponent as FlexLogo} from '../../Asset/LOGO FLEX.svg';
 import {FaEye,FaEyeSlash,FaFacebookF,FaFacebook} from "react-icons/fa"; 
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import call from '../../Asset/Call Icon.png'
 import Mail from '../../Asset/Mail icon.png'
+import axios from 'axios';
 import '../Upperbox/Upperbox.css'
 
 function Upperbox({customer,presentcolor}){
     console.log(presentcolor)
+    const[cardbalance,setCardbalance]=useState(0.00)
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
+    axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    .then(res=>{
+      
+    //   console.log(res.data.data.data.balance)
+    setCardbalance(res.data.data.balance)
+      console.log(res.data.data.balance)
+    })
     return(
         <div className="upperboX">
             <div className="Upperleft">
@@ -32,7 +41,7 @@ function Upperbox({customer,presentcolor}){
                   </div>
                     <div className="cardImage-balance">
                         <p className="medium-weight-dashboard">E-wallet Balance</p>
-                        <p className="money-dashboard-upp">NGN 0.00</p>
+                        <p className="money-dashboard-upp">NGN {cardbalance}</p>
                     </div>
                 </div>
             </div>

@@ -169,7 +169,7 @@ import { baseURL } from '../../domain';
             <div className="inner-signin">
             <div className="textandimage">
                 <div className="textandimage-logo">
-                    <FlexLogo style={{width:"108px",height:"42px"}}/>
+                    <FlexLogo style={{width:"108px",height:"42px"}} onClick={(()=>{history.push("/")})}/>
                    
                     </div>
                 <div className="">
