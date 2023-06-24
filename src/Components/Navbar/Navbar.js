@@ -80,7 +80,7 @@ return(
                </span>
                
              <div>
-               <p className="HwOrks"  style={howworks} onHover={{color:"#6200f0"}}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
+               <p className="HwOrks"  style={howworks}  onClick={(()=>{history.push("/howworks")})}> How it works</p>
                <div style={howlinestyle}></div>
                </div>
                <div>

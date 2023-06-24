@@ -23,6 +23,7 @@ import axios from 'axios';
 import download from '../../Asset/feather_download.png'
 import '../Payment/payment.css'
 import { baseURL } from '../../domain';
+import moment from 'moment';
 
 function Payment({presentcolor,headercolor,subarray}){
     const[image,setImage]=useState({val:""})
@@ -474,12 +475,13 @@ console.log(contentd)
             itemExp=val.dateExpired
             itemStatus=val.subscriptionStatus
             // let time= (val.time).toLocaleTimeString()
-            let timed=val.time.split("GMT")[0]
-            let timeA=timed.split(" ")[1]
-            let timeB=timed.split(" ")[2]
-            let timeC=timed.split(" ")[3]
-            let timeD=timed.split(" ")[4]
-            let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+            // let timed=val.time.split("GMT")[0]
+            // let timeA=timed.split(" ")[1]
+            // let timeB=timed.split(" ")[2]
+            // let timeC=timed.split(" ")[3]
+            // let timeD=timed.split(" ")[4]
+            // let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+            let time = moment(val.createdAt).format("DD-MM-YYYY HH:mm")
             
             let colours={}
              console.log(cats +"" + catg+""+itemImg)
@@ -716,12 +718,13 @@ itemAmt=val.amount
 itemImg=val.productImg
 itemExp=val.dateExpired
 itemStatus=val.subscriptionStatus
-let timed=val.time.split("GMT")[0]
-let timeA=timed.split(" ")[1]
-let timeB=timed.split(" ")[2]
-let timeC=timed.split(" ")[3]
-let timeD=timed.split(" ")[4]
-let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+// let timed=val.time.split("GMT")[0]
+// let timeA=timed.split(" ")[1]
+// let timeB=timed.split(" ")[2]
+// let timeC=timed.split(" ")[3]
+// let timeD=timed.split(" ")[4]
+// let time=timeA+ " " +timeB + " " + timeC + " "+ timeD
+let time = moment(val.createdAt).format("DD-MM-YYYY HH:mm");
 
 let colours={}
 console.log(cats +"" + catg+""+itemImg)

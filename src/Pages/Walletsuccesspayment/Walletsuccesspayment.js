@@ -69,7 +69,7 @@ newObject.dateSubscribed=date
 console.log(res)
 localStorage.removeItem(clientIds)
 // localStorage.removeItem(clientRes)
-axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
       
     //   console.log(res.data.data.data.balance)
@@ -84,7 +84,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
       let paramval={
           balance:newBalance
       }
-      axios.patch("https://subscription-management-tool.herokuapp.com/users/wallet",paramval)
+      axios.patch(`${baseURL}/users/wallet`,paramval)
     .then(res=>{
         console.log(res)
     })
@@ -105,7 +105,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
          
        console.log(res)
     //    localStorage.removeItem(clientRes)
-    axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
       
     //   console.log(res.data.data.data.balance)
@@ -120,7 +120,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
       let paramval={
           balance:newBalance
       }
-      axios.patch("https://subscription-management-tool.herokuapp.com/users/wallet",paramval)
+      axios.patch(`${baseURL}/users/wallet`,paramval)
     .then(res=>{
         console.log(res)
     })
@@ -162,7 +162,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
 //             alert("none")
 //         }
            
-//         //     axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
+//         //     axios.post("/users/subscription/",userObject)
 //         //  .then(res=>{
 //         //      alert('new')
 //         //   console.log(res)
@@ -177,7 +177,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
             
 //              alert('lop')
         
-//                     axios.patch(`https://subscription-management-tool.herokuapp.com/users/subscription/${clientIds}`,newObject)
+//                     axios.patch(`/users/subscription/${clientIds}`,newObject)
 //  .then(res=>{
 //  console.log(res)
 //  localStorage.removeItem(clientIds)
@@ -189,7 +189,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
 
 // //next
 
-//     // if(item._id!=clientIds){axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
+//     // if(item._id!=clientIds){axios.post("/users/subscription/",userObject)
 //     // .then(res=>{
 //     //     alert('new')
 //     // console.log(res)
@@ -197,7 +197,7 @@ axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
 //     // })}
 
 //     else{
-//         axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",newObject)
+//         axios.post("/users/subscription/",newObject)
 //      .then(res=>{
 //          alert('new')
 //       console.log(res)

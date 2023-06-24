@@ -39,7 +39,7 @@ function Fundsuccess({subscription,editarray}){
       console.log(newBalance)
       let paramval={
           balance:newBalance
-
+      };
       axios.patch(`${baseURL}/users/wallet`,paramval)
       var today= new Date()
       var time=today.getHours() + ":" + today
@@ -54,7 +54,7 @@ function Fundsuccess({subscription,editarray}){
      }
     .then(res=>{
         console.log(res)
-        axios.post("https://subscription-management-tool.herokuapp.com/users/walletfund",paramfund)
+        axios.post(`${baseURL}/users/walletfund`,paramfund)
         .then(res=>{
            
          console.log(res)

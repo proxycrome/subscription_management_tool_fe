@@ -78,7 +78,7 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
         // else{localStorage.setItem('bearertoken', JSON.stringify(token));}
         
         // })
-            // https://subscription-management-tool.herokuapp.com/users/subscription
+            
          
        
         let packagestore=JSON.parse(localStorage.getItem('packages'))

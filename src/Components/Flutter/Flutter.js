@@ -20,7 +20,7 @@ export default function App() {
     // public_key: 'FLWPUBK-**************************-X',
     public_key:'FLWPUBK_TEST-ab1fabc93f0a6002ce24acf71270d3c4-X',
     tx_ref: Date.now(),
-    // amount: customerInfo.amount,
+    amount: 2000,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
