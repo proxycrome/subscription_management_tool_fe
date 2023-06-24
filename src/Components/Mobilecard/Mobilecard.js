@@ -7,13 +7,14 @@ import flexpng from '../../Asset/flexpng.png'
 import axios from 'axios';
 import '../Mobilecard/Mobilecard.css'
 import { customerdetails } from '../../redux/flex/flex.actions';
+import { baseURL } from '../../domain';
 
 
 function Mobilecard(){
     const[Cardbalance,setCardbalance]=useState(0.00)
     let history=useHistory()
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
-    axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
       
     //   console.log(res.data.data.data.balance)

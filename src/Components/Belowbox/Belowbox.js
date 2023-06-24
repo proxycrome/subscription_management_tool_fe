@@ -26,12 +26,11 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
             return(val)
         }
     })
-    console.log(result)
+    
     useEffect(()=>{
         
         headercolor({ dashinvitecolor:"purple"})
-            console.log(product) 
-            console.log(firstclick)       
+                 
        
      },[])
      let cont=""
@@ -40,7 +39,7 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
      addsubs({Renewal:autorenewal})
      function Changevalue(e){
         chosen=e.target.value
-        console.log(chosen)
+        
         let chosenindex;
         setValChosen(chosen)
         setSelectpack(e.target.value)
@@ -56,7 +55,7 @@ firstclick,secondclick,icon,addsubs,subarray,addarray,subscription,product}){
            amt=val.amount
             return amt
         })
-        console.log(amt)
+        
         setAmount(amt)
         addsubs({amount:amt})
         addsubs({productName:e.target.value})
@@ -86,8 +85,7 @@ return(
                 <option value="country" ></option>
                    {product.map((vals,index)=>{
                       selectindex=index
-                       console.log(product)
-                       console.log(vals.productName)
+                
                     //    cont= 
                         return(
                             <option key={index} value={vals.productName}>{vals.productName}</option>

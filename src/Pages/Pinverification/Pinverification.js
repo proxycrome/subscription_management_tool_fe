@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import {ReactComponent as Cancel} from '../../Asset/Closesvg.svg'
 import axios from 'axios';
 import '../Pinverification/Pinverification.css'
+import { baseURL } from '../../domain';
 
 function Pinverification(){
     const history=useHistory()
@@ -27,7 +28,7 @@ function Pinverification(){
       // if(combinedpin!==""){
         
 
-        axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+        axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
       
     //   console.log(res.data.data.data.balance)

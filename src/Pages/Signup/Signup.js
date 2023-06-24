@@ -54,7 +54,7 @@ function Signup({details,signupdetails,signup}){
             //const response= await fetch("https://restcountries.com/v3.1/all")
             //const countries= await response.json()
            fetch("https://restcountries.com/v3.1/all")
-            //fetch("https://subscription-management-tool.herokuapp.com/")
+            //fetch("/")
     .then(res=>res.json())
     .then(json=>{console.log(json)
        setCountries(json)})
@@ -124,7 +124,7 @@ function Signup({details,signupdetails,signup}){
 //         }
 //         console.log(params)
         
-       //fetch("https://subscription-management-tool.herokuapp.com/register",
+       //fetch("/register",
       //{method: 'POST',
   //body:JSON.stringify(params)})
   
@@ -186,7 +186,7 @@ function Signup({details,signupdetails,signup}){
            
         }
         console.log(walletparams)
-        // fetch("https://subscription-management-tool.herokuapp.com/users/wallet",
+        // fetch("/users/wallet",
         // {method:'POST', body: walletparams})
         // .then(res =>{
         //     res.json()

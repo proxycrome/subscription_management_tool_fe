@@ -7,12 +7,13 @@ import call from '../../Asset/Call Icon.png'
 import Mail from '../../Asset/Mail icon.png'
 import axios from 'axios';
 import '../Upperbox/Upperbox.css'
+import { baseURL } from '../../domain';
 
 function Upperbox({customer,presentcolor}){
     console.log(presentcolor)
     const[cardbalance,setCardbalance]=useState(0.00)
     let customerDetail=JSON.parse(localStorage.getItem('customerDetail'))
-    axios.get("https://subscription-management-tool.herokuapp.com/users/wallet")
+    axios.get(`${baseURL}/users/wallet`)
     .then(res=>{
       
     //   console.log(res.data.data.data.balance)

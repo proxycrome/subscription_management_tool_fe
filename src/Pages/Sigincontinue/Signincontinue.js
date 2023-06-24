@@ -131,7 +131,7 @@ function Signincontinue({detailssignin,signindetails,customerdetails,customer}){
   })
 }
 
-    // axios.post("https://subscription-management-tool.herokuapp.com/login",params)
+    // axios.post("/login",params)
     // .then(res=>{
     //   console.log(res)
     //   console.log(res.data.data.token)

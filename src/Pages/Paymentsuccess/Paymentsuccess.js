@@ -120,13 +120,7 @@ localStorage.removeItem(clientIds)
 //             alert("none")
 //         }
            
-//         //     axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
-//         //  .then(res=>{
-//         //      alert('new')
-//         //   console.log(res)
-//         //   localStorage.removeItem(clientRes)
-//         // // // //history.push("/dashboard")
-//         //  })
+
       
 
 
@@ -135,7 +129,7 @@ localStorage.removeItem(clientIds)
             
 //              alert('lop')
         
-//                     axios.patch(`https://subscription-management-tool.herokuapp.com/users/subscription/${clientIds}`,newObject)
+//                     axios.patch(`/users/subscription/${clientIds}`,newObject)
 //  .then(res=>{
 //  console.log(res)
 //  localStorage.removeItem(clientIds)
@@ -147,7 +141,7 @@ localStorage.removeItem(clientIds)
 
 // //next
 
-//     // if(item._id!=clientIds){axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",userObject)
+//     // if(item._id!=clientIds){axios.post("/users/subscription/",userObject)
 //     // .then(res=>{
 //     //     alert('new')
 //     // console.log(res)
@@ -155,7 +149,7 @@ localStorage.removeItem(clientIds)
 //     // })}
 
 //     else{
-//         axios.post("https://subscription-management-tool.herokuapp.com/users/subscription/",newObject)
+//         axios.post("/users/subscription/",newObject)
 //      .then(res=>{
 //          alert('new')
 //       console.log(res)
