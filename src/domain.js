@@ -1,1 +1,1 @@
-export const baseURL = "https://subscriptionmanagementtoolbe-production.up.railway.app";
+export const baseURL = "https://subscription-management-tool-be.vercel.app/";
