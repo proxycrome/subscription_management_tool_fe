@@ -1,12 +1,11 @@
-
-.renew-mobile-view{
+.renew-mobile-view {
+  display: none;
+}
+@media screen and (max-width: 960px) {
+  .renew-web-view {
     display: none;
-   }
-@media screen and (max-width:960px) {
-   .renew-web-view{
-    display: none;
-   }
-   .renew-mobile-view{
+  }
+  .renew-mobile-view {
     display: flex;
-   }
+  }
 }
