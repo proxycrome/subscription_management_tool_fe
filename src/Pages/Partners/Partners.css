@@ -1,525 +1,469 @@
-.partner-sections{
-    display: flex;
-    justify-content: space-between;
-   align-items: center;
-   padding-left: 100px;
-   padding-right: 100px;
-   margin-top: 60px;
-   min-height: 300px;
-   margin-bottom: 100px;
-   
- 
-   
+.partner-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 60px;
+  min-height: 300px;
+  margin-bottom: 100px;
 }
-.header-image{
-  
+.header-image {
+  width: 50%;
+}
+.design {
+  display: flex;
+  align-items: center;
 
- 
- width: 50%;
- 
-}
-.design{
-    display: flex;
-    align-items: center;
-  
   margin-top: 0px;
-    position: relative;
-    overflow: hidden;
-   
-  
+  position: relative;
+  overflow: hidden;
 }
-.design p{
-    margin: 0px;
-    padding: 0px;
-   
+.design p {
+  margin: 0px;
+  padding: 0px;
 }
-.designs p::before{
-    content: "";
-    height: 100%;
-    width: 2px;
-   
-    position: absolute;
-    margin-right: 20px;
-   
+.designs p::before {
+  content: "";
+  height: 100%;
+  width: 2px;
+
+  position: absolute;
+  margin-right: 20px;
 }
-.design div{
-   
+.design div {
   background-color: blue;
-    border: 1px solid blue ;
-    
-   min-height:  10vh;
-   max-height: 10vh;
-    margin-right: 5px;
+  border: 1px solid blue;
+
+  min-height: 10vh;
+  max-height: 10vh;
+  margin-right: 5px;
 }
-.design p{
-    border-left: 5px  solid  #6200F0;
-    padding-left:  5px;
-    font-size: 18px;
-    color: #333333;
-    
-        
-   
-    ;}
-.header-image img{
-    height: 100%;
-    width: 100%;
+.design p {
+  border-left: 5px solid #6200f0;
+  padding-left: 5px;
+  font-size: 18px;
+  color: #333333;
 }
-.partner-sections h1{
-    width: 50%;
-    text-align: left;
+.header-image img {
+  height: 100%;
+  width: 100%;
 }
-.partner-second-section{
-    display: flex;
-    padding-left: 100px;
-    padding-right: 100px;
-    justify-content: space-between;
-    align-items:flex-start;
-  
-   
-    
-    
-   
+.partner-sections h1 {
+  width: 50%;
+  text-align: left;
 }
-.partner-input-class{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.partner-second-section {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.Partner-areas{
-    display: flex;
-    justify-content: space-between;
-  
-    padding: 0 50px;
-    
+.partner-input-class {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.Partner-areas div{
-    width: 50%;
-   
+.Partner-areas {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 50px;
 }
-.Partner-areas div input{
-    width: 80%;
-   
+.Partner-areas div {
+  width: 50%;
 }
-.partners-text{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 50%;
+.Partner-areas div input {
+  width: 80%;
 }
-.Partners{
-    font-family: 'DM Sans', sans-serif;
-    background-color: #FAFAFE;
-   
+.partners-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 50%;
+}
+.Partners {
+  font-family: "DM Sans", sans-serif;
+  background-color: #fafafe;
 }
 
-.partner-right-text{
-    text-align: left;
-    margin-left: 70px;
-    width: 50%;
-    font-size: 18px;
-    color: #333333;
-    margin-top: 35px;
+.partner-right-text {
+  text-align: left;
+  margin-left: 70px;
+  width: 50%;
+  font-size: 18px;
+  color: #333333;
+  margin-top: 35px;
 }
-.partner-input{
-    display: flex;
-    flex-direction: column;
-   
-    margin-top: 250px;
-   
+.partner-input {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 250px;
 }
-.partner-input-area{
-   
-    width: 60%;
-    margin: 10px auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-radius: 15px;
+.partner-input-area {
+  width: 60%;
+  margin: 10px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: white;
+}
+.partner-input {
+  font-size: 37px;
+  color: #030640;
+}
+.partner-extra {
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  width: 100%;
+}
+.partner-extra button {
+  width: 232px;
+  font-weight: bold;
+  background-color: #6200f0;
+  color: white;
+  border: none;
+  height: 56px;
+  border-radius: 6px;
+  margin-top: 27px;
+  font-size: 18px;
+}
+.partner-extra button:hover {
+  background-color: #5205c1;
+}
+.firstHeader {
+  font-size: 44px;
+  color: #030640;
+  line-height: 157%;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+}
+.partners-text h4 {
+  font-size: 37px;
+  font-weight: bold;
+  margin-top: 50px;
+
+  color: #030640;
+}
+.partners-text h3 {
+  font-size: 18px;
+  color: #6200f0;
+  line-height: 20%;
+  margin-bottom: 35px;
+}
+.ready {
+  font-size: 37px;
+  font-weight: bold;
+  color: #030640;
+}
+.partner-input-class label {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.partner-input-class input {
+  color: #030640;
+  padding-left: 20px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #c4c4c4;
+}
+.partner-input-class input:hover {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.partner-input-class input:focus {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.Partners ::placeholder {
+  color: #c4c4c4;
+  font-size: 16px;
+}
+.tellUs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.textarea:hover {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.textarea:focus {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.textarea {
+  border-radius: 6px;
+  border: 1px solid #c4c4c4;
+  min-width: 100%;
+  max-width: 100%;
+  height: 137px;
+  padding: 20px;
+
+  color: #191d6c;
+  font-size: 16px;
+  font-family: DM SANS;
+}
+.chooseFilE {
+  display: flex;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  max-width: 80%;
+  min-width: 80%;
+}
+.chooseFilE:hover {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.chooseFilE:focus {
+  border: 1px solid #6200f0;
+  outline: none;
+}
+.chooseFilE input {
+  border-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: none;
+}
+.chooseFilE input::placeholder {
+  color: #333333;
+  font-family: DM SANS;
+  font-weight: bold;
+  font-size: 16px;
+}
+.chooseFilE input:focus {
+  border: none;
+}
+.chooseFilE input:hover {
+  border: none;
+}
+.chooseFilE button {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: none;
+  padding: 0 10px;
+  width: 230px;
+  font-weight: bold;
+  font-size: 18px;
+}
+#filePdf {
+  font-size: 16px;
+}
+.underline-partner {
+  border: 1px dashed #6200f0;
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.header-line-div {
+  width: 40%;
+}
+.paragraph-top {
+  margin-bottom: 32px;
+}
+.submit-agree {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 16px;
+  width: 50%;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+  .chooseFilE input::placeholder {
     font-size: 16px;
-    background-color: white;
-}
-.partner-input{
-    font-size:37px ;
-    color: #030640;
-}
-.partner-extra{
-    text-align: left;
-    padding-left: 50px;
-    padding-right: 50px;
-   
-    width: 100%;
-}
-.partner-extra button{
-    width: 232px;
-    font-weight: bold;
-    background-color: #6200F0;
-    color: white;
-    border: none;
-    height: 56px;
-    border-radius: 6px;
-    margin-top: 27px;
-    font-size: 18px;
-}
-.partner-extra button:hover{
-    background-color: #5205C1;
-}
-.firstHeader{
-    font-size: 44px;
-    color: #030640;
-    line-height: 157%;
-    font-weight: bold;
-    text-align: left;
-    width: 100%;
-}
-.partners-text h4{
-    font-size: 37px;
-    font-weight: bold;
-    margin-top: 50px;
-   
-    color: #030640;
-    
-}
-.partners-text h3{
-    font-size: 18px;
-    color: #6200F0;
-    line-height: 20%;
-    margin-bottom: 35px;
-   
-}
-.ready{
-    font-size: 37px;
-   font-weight: bold;
-    color: #030640;
-   
-}
-.partner-input-class label{
-    margin-bottom: 10px;
-    margin-top: 15px;
-    font-weight: bold;
+  }
+  #filePdf {
+    font-size: 14px;
+  }
+  .chooseFilE button {
     font-size: 16px;
-}
-.partner-input-class input{
-    color: #030640;
-    padding-left: 20px;
-    height: 45px;
-    border-radius: 6px;
-    border: 1px solid #c4c4c4;
-    
-}
-.partner-input-class input:hover{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.partner-input-class input:focus{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.Partners ::placeholder{
+  }
+  .Partners ::placeholder {
     color: #c4c4c4;
-    font-size: 16px;
-}
-.tellUs{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    
-}
-.textarea:hover{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.textarea:focus{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.textarea{
-    border-radius: 6px;
-    border: 1px solid #c4c4c4;
-    min-width: 100%;
-    max-width: 100%;
-    height: 137px;
-    padding: 20px;
-    
-    color: #191d6c;
-    font-size: 16px;
-    font-family: DM SANS;
-}
-.chooseFilE{
-    display: flex;
-    border: 1px solid #c4c4c4;
-    border-radius: 6px;
-    max-width: 80%;
-    min-width: 80%;
-    
-}
-.chooseFilE:hover{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.chooseFilE:focus{
-    border: 1px solid #6200f0;
-    outline: none;
-}
-.chooseFilE input{
-    border-radius: 0;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border: none;
-   
-}
-.chooseFilE input::placeholder{
-    color: #333333;
-    font-family: DM SANS;
-    font-weight: bold;
-    font-size: 16px;
-}
-.chooseFilE input:focus{
-    border: none;
-}
-.chooseFilE input:hover{
-    border: none;
-}
-.chooseFilE button{
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border: none;
-    padding:0 10px;
-    width: 230px;
-    font-weight: bold;
-    font-size: 18px;
-}
-#filePdf{
-    font-size: 16px;
-}
-.underline-partner{
-    border: 1px dashed #6200f0 ;
-    width: 40%;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-.header-line-div{
-    width: 40%;
-   
-}
-.paragraph-top{
-    margin-bottom: 32px;
-}
-.submit-agree{
+    font-size: 14px;
+  }
+  .submit-agree {
     font-size: 16px;
     font-weight: bold;
     margin-top: 16px;
-    width: 50%;
-    line-height: 25px;
-}
+    width: 100%;
+  }
+  .paragraph-top {
+    margin-bottom: 16px;
+  }
+  .header-image {
+    width: 100%;
+  }
+  .design {
+    min-height: 50px;
+    padding: 0px;
+  }
+  .designs p::before {
+    content: "";
+    height: 100%;
+    width: 2px;
 
-@media screen and (max-width:1000px) {
-    .chooseFilE input::placeholder{
-    font-size: 16px;
-}
-    #filePdf{
-        font-size: 14px;
-    }
-    .chooseFilE button{
-        font-size: 16px;
-    }
-    .Partners ::placeholder{
-        color: #c4c4c4;
-        font-size: 14px;
-    }
-    .submit-agree{
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 16px;
-        width: 100%;
-    }
-    .paragraph-top{
-        margin-bottom: 16px;
-    }
-    .header-image{
-     width: 100%;
-     
-    ;
-    }
-    .design{
-        min-height: 50px;
-        padding: 0px;
-      
-    }
-    .designs p::before{
-        content: "";
-        height: 100%;
-        width: 2px;
-       
-        position: absolute;
-    }
-    .design div{
-        min-height:  10vh;
-       padding:  10% 0;
-        margin-right: 5px;
-    }
-    .Partner-areas  input{
-       
-        padding: 0 20px;
-      
-       
+    position: absolute;
+  }
+  .design div {
+    min-height: 10vh;
+    padding: 10% 0;
+    margin-right: 5px;
+  }
+  .Partner-areas input {
+    padding: 0 20px;
+  }
+  .partner-right-text {
+    width: 100%;
+  }
 
-    }
-    .partner-right-text{
-        width: 100%;
-    }
-    
-    .Partner-areas{
-        flex-direction: column;
-        padding: 0 20px;
-      
-      
-    }
-    .textarea{
-        width: 100%;
-    }
-    .partner-sections{
-     
-       flex-direction: column;
-       padding-left: 20px;
-       padding-right: 20px;
-       
-    }
-    .partner-sections h1{
-        width: 100%;
-    }
-    .partner-second-section{
-        flex-direction: column;
-        padding-left: 20px;
-        padding-right: 20px;
-       
-    }
-    .partners-text{
-        width: 100%;
-    }
-    .partner-right-text{
-        width: 100%;
-       
-        padding-left: 0px;
-        margin-left: 0px;
-    }
-    .partner-input-area{
-        width: 100%;
-      
-    }
-    .partner-extra{
-        padding-left: 20px;
-        padding-right: 20px;
-       
-        max-width: 100%;
-    }
-    .partner-extra button{
-        width: 100%;
-    }
-    .partner-input-class{
-       
-        min-width: 100%;
-        max-width: 100%;
-       
-    }
-    .partner-input-class input{
-        min-width: 100%;
-        max-width: 100%;
-    }
-    .chooseFilE{
-        max-width: 100%;
+  .Partner-areas {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .textarea {
+    width: 100%;
+  }
+  .partner-sections {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .partner-sections h1 {
+    width: 100%;
+  }
+  .partner-second-section {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .partners-text {
+    width: 100%;
+  }
+  .partner-right-text {
+    width: 100%;
+
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+  .partner-input-area {
+    width: 100%;
+  }
+  .partner-extra {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    max-width: 100%;
+  }
+  .partner-extra button {
+    width: 100%;
+  }
+  .partner-input-class {
     min-width: 100%;
-       
-    }
-    .chooseFilE input{
-        max-width: 50%;
+    max-width: 100%;
+  }
+  .partner-input-class input {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .chooseFilE {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .chooseFilE input {
+    max-width: 50%;
     min-width: 50%;
-    }
-    .chooseFilE button{
-        max-width: 50%;
+  }
+  .chooseFilE button {
+    max-width: 50%;
     min-width: 50%;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border: none;
-    }
-    .firstHeader{
-        width: 100%;
-       
-        font-size: 24px;
-    }
-    .underline-partner{
-        width: 120px;
-        margin-top: 10px;
-        border: 1px dashed #6200f0;
-        margin-bottom: 0;
+  }
+  .firstHeader {
+    width: 100%;
 
-    }
-    .header-line-div{
-        width: 90%;
-      
-        margin-top: 0;
-        align-self: flex-start;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    .partner-sections{
-        margin-left: 0;
-        margin-top:0 ;
-        
-      
-    }
-    .partner-sections {
-        margin-bottom: 59px;
-    }
-    .partners-text h3{
-        margin-bottom: 30px;
-        font-size: 16px;
-    }
-    .partners-text p{
-        font-size: 16px;
-    }
-    .partners-text h4{
-        font-size: 24px;
-        margin-top: 30px;
-        margin-bottom: 0;
-    }
-    .partner-right-text{
-        margin-top: 30px;
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-    .partner-input{
-        margin-top: 80px;
-    }
-    .ready{
-        font-size: 24px;
-        margin-bottom: 0;
-    }
-    .partner-input-area{
-        margin-top: 30px;
-        padding: 0;
-    }
-    .Partner-areas{
-        padding-left:16px;
-    }
-    .Partner-areas label{
-        font-size: 16px;
-    }
-    .partner-input button{
-        font-size: 16px;
-       
-    }
-    .partner-input-class input{
-        font-size: 14px;
-    }
-    .partner-input-class button{
-        font-size: 14px;
-    }
-    .textarea{
-        font-size: 14px;
-    }
-    .textarea ::placeholder{
+    font-size: 24px;
+  }
+  .underline-partner {
+    width: 120px;
+    margin-top: 10px;
+    border: 1px dashed #6200f0;
+    margin-bottom: 0;
+  }
+  .header-line-div {
+    width: 90%;
+
+    margin-top: 0;
+    align-self: flex-start;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .partner-sections {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .partner-sections {
+    margin-bottom: 59px;
+  }
+  .partners-text h3 {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  .partners-text p {
+    font-size: 16px;
+  }
+  .partners-text h4 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+  .partner-right-text {
+    margin-top: 30px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .partner-input {
+    margin-top: 80px;
+  }
+  .ready {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  .partner-input-area {
+    margin-top: 30px;
+    padding: 0;
+  }
+  .Partner-areas {
+    padding-left: 16px;
+  }
+  .Partner-areas label {
+    font-size: 16px;
+  }
+  .partner-input button {
+    font-size: 16px;
+  }
+  .partner-input-class input {
     font-size: 14px;
-    
-}
-    
+  }
+  .partner-input-class button {
+    font-size: 14px;
+  }
+  .textarea {
+    font-size: 14px;
+  }
+  .textarea ::placeholder {
+    font-size: 14px;
+  }
 }
